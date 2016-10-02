@@ -1,6 +1,4 @@
-<!DOCTYPE html>
 <html>
-
 	<?php $this->load->view('layout/head');?>
 	<body>
 		<?php $this->load->view('layout/leftsidebar.php');?>

@@ -1,13 +1,13 @@
 <!-- Navigation-Js-->
-			<script type="text/javascript" src="<?php echo base_url();?>"assets/js/main.js"></script>
-			<script type="text/javascript" src="<?php echo base_url();?>"assets/js/classie.js"></script>
+			<script type="text/javascript" src="<?php echo base_url();?>assets/js/main.js"></script>
+			<script type="text/javascript" src="<?php echo base_url();?>assets/js/classie.js"></script>
 		<!-- //Navigation-Js-->
 		<!-- js -->
-		<script type="text/javascript" src="<?php echo base_url();?>"assets/js/jquery.min.js"></script>
+		<script type="text/javascript" src="<?php echo base_url();?>assets/js/jquery.min.js"></script>
 		<!-- js -->
 		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-		<script src="<?php echo base_url();?>"assets/js/bootstrap.js"></script>
-		<script src="<?php echo base_url();?>"assets/js/bootstrap-select.js"></script>
+		<script src="<?php echo base_url();?>assets/js/bootstrap.js"></script>
+		<script src="<?php echo base_url();?>assets/js/bootstrap-select.js"></script>
 		<script>
 		  $(document).ready(function () {
 			var mySelect = $('#first-disabled2');
@@ -29,17 +29,17 @@
 		  });
 		</script>
 		<!-- language-select -->
-		<script type="text/javascript" src="<?php echo base_url();?>"assets/js/jquery.leanModal.min.js"></script>
-		<link href="<?php echo base_url();?>"assets/css/jquery.uls.css" rel="stylesheet"/>
-		<link href="<?php echo base_url();?>"assets/css/jquery.uls.grid.css" rel="stylesheet"/>
-		<link href="<?php echo base_url();?>"assets/css/jquery.uls.lcd.css" rel="stylesheet"/>
+		<script type="text/javascript" src="<?php echo base_url();?>assets/js/jquery.leanModal.min.js"></script>
+		<link href="<?php echo base_url();?>assets/css/jquery.uls.css" rel="stylesheet"/>
+		<link href="<?php echo base_url();?>assets/css/jquery.uls.grid.css" rel="stylesheet"/>
+		<link href="<?php echo base_url();?>assets/css/jquery.uls.lcd.css" rel="stylesheet"/>
 		<!-- Source -->
-		<script src="<?php echo base_url();?>"assets/js/jquery.uls.data.js"></script>
-		<script src="<?php echo base_url();?>"assets/js/jquery.uls.data.utils.js"></script>
-		<script src="<?php echo base_url();?>"assets/js/jquery.uls.lcd.js"></script>
-		<script src="<?php echo base_url();?>"assets/js/jquery.uls.languagefilter.js"></script>
-		<script src="<?php echo base_url();?>"assets/js/jquery.uls.regionfilter.js"></script>
-		<script src="<?php echo base_url();?>"assets/js/jquery.uls.core.js"></script>
+		<script src="<?php echo base_url();?>assets/js/jquery.uls.data.js"></script>
+		<script src="<?php echo base_url();?>assets/js/jquery.uls.data.utils.js"></script>
+		<script src="<?php echo base_url();?>assets/js/jquery.uls.lcd.js"></script>
+		<script src="<?php echo base_url();?>assets/js/jquery.uls.languagefilter.js"></script>
+		<script src="<?php echo base_url();?>assets/js/jquery.uls.regionfilter.js"></script>
+		<script src="<?php echo base_url();?>assets/js/jquery.uls.core.js"></script>
 		<script>
 					$( document ).ready( function() {
 						$( '.uls-trigger' ).uls( {
@@ -52,7 +52,7 @@
 					} );
 				</script>
 		<!-- //language-select -->
-		<script type="text/javascript" src="<?php echo base_url();?>"assets/js/jquery.flexisel.js"></script><!-- flexisel-js -->	
+		<script type="text/javascript" src="<?php echo base_url();?>assets/js/jquery.flexisel.js"></script><!-- flexisel-js -->	
 					<script type="text/javascript">
 						 $(window).load(function() {
 							$("#flexiselDemo3").flexisel({
@@ -81,7 +81,7 @@
 						});
 					   </script>
 		<!-- Slider-JavaScript -->
-			<script src="<?php echo base_url();?>"assets/js/responsiveslides.min.js"></script>	
+			<script src="<?php echo base_url();?>assets/js/responsiveslides.min.js"></script>	
 			 <script>
 			$(function () {	
 			  $("#slider").responsiveSlides({
@@ -113,8 +113,8 @@
 					});
 			</script>
 			<!-- start-smoth-scrolling -->
-			<script type="text/javascript" src="<?php echo base_url();?>"assets/js/move-top.js"></script>
-			<script type="text/javascript" src="<?php echo base_url();?>"assets/js/easing.js"></script>
+			<script type="text/javascript" src="<?php echo base_url();?>assets/js/move-top.js"></script>
+			<script type="text/javascript" src="<?php echo base_url();?>assets/js/easing.js"></script>
 			<script type="text/javascript">
 				jQuery(document).ready(function($) {
 					$(".scroll").click(function(event){		
