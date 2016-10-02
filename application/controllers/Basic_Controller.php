@@ -6,5 +6,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		{
 			$this->load->view('layout/index');
 		}
+		public function realestate(){
+			$category = "realestate";
+			$this->load->view('pages/mainpage',$category);
+		}
 	}
 ?>

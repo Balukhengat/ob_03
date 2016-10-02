@@ -5,7 +5,7 @@
 				<div class="container">
 				<div class="col-md-4">
 					<div class="focus-grid w3layouts-boder12">
-						<a class="btn-8" href="categories.html#parentVerticalTab12">
+						<a class="btn-8" href="index.php/realestate/real">
 							<div class="focus-border">
 								<div class="focus-layout">
 									<div class="focus-image"><i class="fa fa-home"></i></div>
@@ -74,7 +74,7 @@
 				 <div class="w3l-popular-ads-info">
 					<div class="col-md-4 w3ls-portfolio-left">
 						<div class="portfolio-img event-img">
-							<img src="<?php echo base_url();?>assets/images/da1.jpg" class="img-responsive" alt=""/>
+							<img src="assets/images/da1.jpg" class="img-responsive" alt=""/>
 							 <div class="over-image"></div>
 						</div>
 						<div class="portfolio-description">
@@ -87,7 +87,7 @@
 						<div class="clearfix"> </div>
 					</div>	<div class="col-md-4 w3ls-portfolio-left">
 						<div class="portfolio-img event-img">
-							<img src="<?php echo base_url();?>assets/images/da1.jpg" class="img-responsive" alt=""/>
+							<img src="assets/images/da1.jpg" class="img-responsive" alt=""/>
 							 <div class="over-image"></div>
 						</div>
 						<div class="portfolio-description">
@@ -101,7 +101,7 @@
 					</div>
 					<div class="col-md-4 w3ls-portfolio-left">
 						<div class="portfolio-img event-img">
-							<img src="<?php echo base_url();?>assets/images/da1.jpg" class="img-responsive" alt=""/>
+							<img src="assets/images/da1.jpg" class="img-responsive" alt=""/>
 							 <div class="over-image"></div>
 						</div>
 						<div class="portfolio-description">
@@ -115,7 +115,7 @@
 					</div>
 					<div class="col-md-4 w3ls-portfolio-left">
 						<div class="portfolio-img event-img">
-							<img src="<?php echo base_url();?>assets/images/da1.jpg" class="img-responsive" alt=""/>
+							<img src="assets/images/da1.jpg" class="img-responsive" alt=""/>
 							 <div class="over-image"></div>
 						</div>
 						<div class="portfolio-description">
@@ -129,7 +129,7 @@
 					</div>
 					<div class="col-md-4 w3ls-portfolio-left">
 						<div class="portfolio-img event-img">
-							<img src="<?php echo base_url();?>assets/images/da1.jpg" class="img-responsive" alt=""/>
+							<img src="assets/images/da1.jpg" class="img-responsive" alt=""/>
 							 <div class="over-image"></div>
 						</div>
 						<div class="portfolio-description">
@@ -143,7 +143,7 @@
 					</div>
 					<div class="col-md-4 w3ls-portfolio-left">
 						<div class="portfolio-img event-img">
-							<img src="<?php echo base_url();?>assets/images/da1.jpg" class="img-responsive" alt=""/>
+							<img src="assets/images/da1.jpg" class="img-responsive" alt=""/>
 							 <div class="over-image"></div>
 						</div>
 						<div class="portfolio-description">
@@ -168,7 +168,7 @@
 								<li>
 									<div class="col-md-3 biseller-column">
 										<a href="single.html">
-											<img src="<?php echo base_url();?>assets/images/p1.jpg" alt="" />
+											<img src="assets/images/p1.jpg" alt="" />
 											<span class="price">&#36; 450</span>
 										</a> 
 										<div class="w3-ad-info">
@@ -178,7 +178,7 @@
 									</div>
 									<div class="col-md-3 biseller-column">
 										<a href="single.html">
-											<img src="<?php echo base_url();?>assets/images/p2.jpg" alt="" />
+											<img src="assets/images/p2.jpg" alt="" />
 											<span class="price">&#36; 399</span>
 										</a> 
 										<div class="w3-ad-info">
@@ -188,7 +188,7 @@
 									</div>
 									<div class="col-md-3 biseller-column">
 										<a href="single.html">
-											<img src="<?php echo base_url();?>assets/images/p3.jpg" alt="" />
+											<img src="assets/images/p3.jpg" alt="" />
 											<span class="price">&#36; 199</span>
 										</a> 
 										<div class="w3-ad-info">
@@ -198,7 +198,7 @@
 									</div>
 									<div class="col-md-3 biseller-column">
 										<a href="single.html">
-											<img src="<?php echo base_url();?>assets/images/p4.jpg" alt="" />
+											<img src="assets/images/p4.jpg" alt="" />
 											<span class="price">&#36; 159</span>
 										</a> 
 										<div class="w3-ad-info">
@@ -210,7 +210,7 @@
 								<li>
 									<div class="col-md-3 biseller-column">
 										<a href="single.html">
-											<img src="<?php echo base_url();?>assets/images/p5.jpg" alt="" />
+											<img src="assets/images/p5.jpg" alt="" />
 											<span class="price">&#36; 1599</span>
 										</a> 
 										<div class="w3-ad-info">
@@ -220,7 +220,7 @@
 									</div>
 									<div class="col-md-3 biseller-column">
 										<a href="single.html">
-											<img src="<?php echo base_url();?>assets/images/p6.jpg" alt="" />
+											<img src="assets/images/p6.jpg" alt="" />
 											<span class="price">&#36; 1099</span>
 										</a> 
 										<div class="w3-ad-info">
@@ -230,7 +230,7 @@
 									</div>
 									<div class="col-md-3 biseller-column">
 										<a href="single.html">
-											<img src="<?php echo base_url();?>assets/images/p7.jpg" alt="" />
+											<img src="assets/images/p7.jpg" alt="" />
 											<span class="price">&#36; 109</span>
 										</a> 
 										<div class="w3-ad-info">
@@ -240,7 +240,7 @@
 									</div>
 									<div class="col-md-3 biseller-column">
 										<a href="single.html">
-											<img src="<?php echo base_url();?>assets/images/p8.jpg" alt="" />
+											<img src="assets/images/p8.jpg" alt="" />
 											<span class="price">&#36; 189</span>
 										</a> 
 										<div class="w3-ad-info">
@@ -252,7 +252,7 @@
 								<li>
 									<div class="col-md-3 biseller-column">
 										<a href="single.html">
-											<img src="<?php echo base_url();?>assets/images/p9.jpg" alt="" />
+											<img src="assets/images/p9.jpg" alt="" />
 											<span class="price">&#36; 2599</span>
 										</a> 
 										<div class="w3-ad-info">
@@ -262,7 +262,7 @@
 									</div>
 									<div class="col-md-3 biseller-column">
 										<a href="single.html">
-											<img src="<?php echo base_url();?>assets/images/p10.jpg" alt="" />
+											<img src="assets/images/p10.jpg" alt="" />
 											<span class="price">&#36; 3999</span>
 										</a> 
 										<div class="w3-ad-info">
@@ -272,7 +272,7 @@
 									</div>
 									<div class="col-md-3 biseller-column">
 										<a href="single.html">
-											<img src="<?php echo base_url();?>assets/images/p11.jpg" alt="" />
+											<img src="assets/images/p11.jpg" alt="" />
 											<span class="price">&#36; 2699</span>
 										</a> 
 										<div class="w3-ad-info">
@@ -282,7 +282,7 @@
 									</div>
 									<div class="col-md-3 biseller-column">
 										<a href="single.html">
-											<img src="<?php echo base_url();?>assets/images/p12.jpg" alt="" />
+											<img src="assets/images/p12.jpg" alt="" />
 											<span class="price">&#36; 899</span>
 										</a> 
 										<div class="w3-ad-info">
@@ -301,16 +301,16 @@
 				<h3>Our Partners</h3>
 					<div class="container">
 						<ul>
-							<li><a href="#"><img class="img-responsive" src="<?php echo base_url();?>assets/images/p-1.png" alt=""></a></li>
-							<li><a href="#"><img class="img-responsive" src="<?php echo base_url();?>assets/images/p-2.png" alt=""></a></li>
-							<li><a href="#"><img class="img-responsive" src="<?php echo base_url();?>assets/images/p-3.png" alt=""></a></li>
-							<li><a href="#"><img class="img-responsive" src="<?php echo base_url();?>assets/images/p-4.png" alt=""></a></li>
-							<li><a href="#"><img class="img-responsive" src="<?php echo base_url();?>assets/images/p-5.png" alt=""></a></li>
-							<li><a href="#"><img class="img-responsive" src="<?php echo base_url();?>assets/images/p-6.png" alt=""></a></li>
-							<li><a href="#"><img class="img-responsive" src="<?php echo base_url();?>assets/images/p-7.png" alt=""></a></li>
-							<li><a href="#"><img class="img-responsive" src="<?php echo base_url();?>assets/images/p-8.png" alt=""></a></li>
-							<li><a href="#"><img class="img-responsive" src="<?php echo base_url();?>assets/images/p-9.png" alt=""></a></li>
-							<li><a href="#"><img class="img-responsive" src="<?php echo base_url();?>assets/images/p-10.png" alt=""></a></li>	
+							<li><a href="#"><img class="img-responsive" src="assets/images/p-1.png" alt=""></a></li>
+							<li><a href="#"><img class="img-responsive" src="assets/images/p-2.png" alt=""></a></li>
+							<li><a href="#"><img class="img-responsive" src="assets/images/p-3.png" alt=""></a></li>
+							<li><a href="#"><img class="img-responsive" src="assets/images/p-4.png" alt=""></a></li>
+							<li><a href="#"><img class="img-responsive" src="assets/images/p-5.png" alt=""></a></li>
+							<li><a href="#"><img class="img-responsive" src="assets/images/p-6.png" alt=""></a></li>
+							<li><a href="#"><img class="img-responsive" src="assets/images/p-7.png" alt=""></a></li>
+							<li><a href="#"><img class="img-responsive" src="assets/images/p-8.png" alt=""></a></li>
+							<li><a href="#"><img class="img-responsive" src="assets/images/p-9.png" alt=""></a></li>
+							<li><a href="#"><img class="img-responsive" src="assets/images/p-10.png" alt=""></a></li>	
 						</ul>
 					</div>
 				</div>	
@@ -319,7 +319,7 @@
 			<div class="agile-info-mobile-app">
 				<div class="container">
 					<div class="col-md-5 w3-app-left">
-						<a href="mobileapp.html"><img src="<?php echo base_url();?>assets/images/app.png" alt=""></a>
+						<a href="mobileapp.html"><img src="assets/images/app.png" alt=""></a>
 					</div>
 					<div class="col-md-7 w3-app-right">
 						<h3>Offers BUll</h3><h3><span>WE PROVIDE YOU THE BEST DEAL HIGH QUALITY SERVICE. OUR AIM IS YOUR COMPLETE SATISFACTION.</span></h3>
