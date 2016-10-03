@@ -5,7 +5,7 @@
 				<nav class="menu">
 					<div class="icon-list">
 						<a href=""><h1>Offers Bull</h1></a>
-						<a href="index.php/realestate/real"><i class="fa fa-fw fa-mobile"></i><span>Real Estate</span></a>
+						<a href="mobiles.html"><i class="fa fa-fw fa-mobile"></i><span>Real Estate</span></a>
 						<a href="electronics-appliances.html"><i class="fa fa-fw fa-laptop"></i><span>Tution</span></a>
 						<a href="cars.html"><i class="fa fa-fw fa-car"></i><span>Hotels & Restaurents</span></a>
 						<a href="bikes.html"><i class="fa fa-fw fa-motorcycle"></i><span>Travelling</span></a>
