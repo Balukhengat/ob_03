@@ -54,7 +54,7 @@
 							
 						</select>
 						<button type="submit" class="btn btn-default" aria-label="Left Align">
-							<i class="fa fa-search" aria-hidden="true"> </i>
+							<i class="fa fa-search" aria-hidden="true"></i>
 						</button>
 					</form>
 				<a class="post-w3layouts-ad" href="post-ad.html">Post Free Ad</a>
