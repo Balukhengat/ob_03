@@ -39,7 +39,7 @@
 		<div class="container">
 			<div class="agile-its-header">
 				<div class="logo">
-					<h1><a href="index.html"><span>Offers</span>Bull</a></h1>
+					<h1><a href="<?php echo base_url();?>"><span>Offers</span>Bull</a></h1>
 				</div>
 				<div class="agileits_search">
 					<form action="#" method="post">
