@@ -96,4 +96,20 @@ var elem=$('#container ul');
 });
 </script>
 
+<script>
+$(document).ready(function(){
+        $("#rect1").animate({left: '40px'});
+        $("#rect2").animate({left: '10px'});
+        $("#rect3").animate({right: '10px'});
+        $("#rect4").animate({right: '40px'});
+
+        $("#pslide").animate({
+            left: '30px',
+            opacity: '0.5',
+            height: '20px',
+            width: 'max-width'
+        });
+});
+</script>
+
 </head>

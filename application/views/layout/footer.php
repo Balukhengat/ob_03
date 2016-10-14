@@ -5,25 +5,23 @@
 					<div class="wthree-foo-grids">
 						<div class="col-md-3 wthree-footer-grid">
 							<h4 class="footer-head">Who We Are</h4>
-							<p align="justify">We are offers bull team we continuously developing and growing to provide world class best deals and offers to you, We know what peoples want, we care's you and thats why we are here, every information provided here is free, Just share more and help us to grow to help others too, we are coming soon to give you the 
-best and incredible.</p>
+							<p align="justify">We are offers bull team, we continuously developing and growing to provide world class best deals and offers to you, We know what peoples want, we care's you and thats why we are here, every information provided here is free, Just share more and help us to grow to help others too...</p>
 						</div>
 						<div class="col-md-3 wthree-footer-grid">
 							<h4 class="footer-head">Help</h4>
 							<ul>
-								<li><a href="howitworks.html"><i class="fa fa-long-arrow-right" aria-hidden="true"></i>How it Works</a></li>						
+								<li><a href="<?php echo base_url();?>index.php/help/howwework"><i class="fa fa-long-arrow-right" aria-hidden="true"></i>How OffersBull Works</a></li>						
 								<li><a href="sitemap.html"><i class="fa fa-long-arrow-right" aria-hidden="true"></i>Sitemap</a></li>
-								<li><a href="feedback.html"><i class="fa fa-long-arrow-right" aria-hidden="true"></i>Feedback</a></li>
-								<li><a href="contact.html"><i class="fa fa-long-arrow-right" aria-hidden="true"></i>Contact</a></li>
-								
+								<li><a href="<?php echo base_url();?>index.php/help"><i class="fa fa-long-arrow-right" aria-hidden="true"></i>Feedback</a></li>
+								<li><a href="<?php echo base_url();?>index.php/contact"><i class="fa fa-long-arrow-right" aria-hidden="true"></i>Contact</a></li>
+								<li><a href="<?php echo base_url()?>index.php/help/faq"><i class="fa fa-long-arrow-right" aria-hidden="true"></i>FAQ's</a></li>
 							</ul>
 						</div>
 						<div class="col-md-3 wthree-footer-grid">
 							<h4 class="footer-head">Information</h4>
 							<ul>
-								<li><a href="regions.html"><i class="fa fa-long-arrow-right" aria-hidden="true"></i>Locations Map</a></li>	
-								<li><a href="terms.html"><i class="fa fa-long-arrow-right" aria-hidden="true"></i>Terms and conditions</a></li>
-								<li><a href="privacy.html"><i class="fa fa-long-arrow-right" aria-hidden="true"></i>Privacy Policy</a></li>	
+								<li><a href="<?php echo base_url()?>index.php/help/terms"><i class="fa fa-long-arrow-right" aria-hidden="true"></i>Terms and conditions</a></li>
+								<li><a href="<?php echo base_url()?>index.php/help/privacy"><i class="fa fa-long-arrow-right" aria-hidden="true"></i>Privacy Policy</a></li>
 							</ul>
 						</div>
 						<div class="col-md-3 wthree-footer-grid">
@@ -53,7 +51,7 @@ best and incredible.</p>
 			<div class="agileits-footer-bottom text-center">
 			<div class="container">
 				<div class="w3-footer-logo">
-					<h1><a href="index.html"><span>Offers</span>Bull</a></h1>
+					<h1><a href="<?php echo base_url();?>index.php"><span>Offers</span>Bull</a></h1>
 				</div>
 				<div class="w3-footer-social-icons">
 					<ul>
