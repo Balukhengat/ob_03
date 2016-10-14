@@ -1,6 +1,5 @@
 <html>
-<?php 	$real_info=$this->db->get_where('realestate',array('realid'=>$realid))->result_array();
-		echo print_r($real_info);
+<?php 
 		$this->load->view('layout/head');
 	?>
 	<body>
@@ -9,7 +8,7 @@
 	<div class="w3layouts-breadcrumbs text-center">
 		<div class="container">
 			<span class="agile-breadcrumbs">
-			<a href="<?php base_url();?>"><i class="fa fa-home home_1"></i></a> / 
+			<a href="index.html"><i class="fa fa-home home_1"></i></a> / 
 			<a href="all-classifieds.html">All Ads</a> / 
 			<a href="cars.html">Cars</a> / 
 			<span>Car name</span></span>

@@ -7,9 +7,10 @@
 			$category['template'] = "realestate";
 			$this->load->view('pages/mainpage',$category);
 		}
-		public function manage_view()
+		public function manage_view($realid="")
 		{
-			$this->load->view('pages/realestate/realestate_view');
+			
+			$this->load->view('pages/realestate/realestate_view',$realid);
 		}
 	}
 ?>

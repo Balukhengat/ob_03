@@ -17,7 +17,7 @@
 					</div>
 					<div class="col-md-4">
 						<div class="focus-grid w3layouts-boder1">
-							<a class="btn-8" href="categories.html">
+							<a class="btn-8" href="index.php/tutions/tution">
 								<div class="focus-border">
 									<div class="focus-layout">
 										<div class="focus-image"><i class="fa fa-book"></i></div>

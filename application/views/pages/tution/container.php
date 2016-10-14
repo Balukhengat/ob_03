@@ -1,5 +1,5 @@
-	<?php $realestate_info=$this->db->get('realestate')->result_array();
-	//print_r($realestate_info);
+	<?php $tution_info=$this->db->get('tution')->result_array();
+	//print_r($tution_info);
 	
 	?>
 	
@@ -7,7 +7,7 @@
 	<div class="w3layouts-breadcrumbs text-center">
 		<div class="container">
 			<span class="agile-breadcrumbs">
-			<a href="<?php base_url();?>"><i class="fa fa-home home_1"></i></a> / 
+			<a href="index.html"><i class="fa fa-home home_1"></i></a> / 
 			
 			<span>Real Estate</span></span>
 		</div>
@@ -21,9 +21,14 @@
 					<label>Select your city to see local ads</label>
 						<select>
 												<optgroup label="Popular Cities">
-													<option selected style="display:none;color:#eee;">Select City</option>
-													<option>Pune</option>
-													<option>Mumbai</option>
+													<option selected style="display:none;color:#eee;">Entire USA</option>
+													<option>Birmingham</option>
+													<option>Anchorage</option>
+													<option>Phoenix</option>
+													<option>Little Rock</option>
+													<option>Los Angeles</option>
+													<option>Denver</option>
+												
 												</optgroup>
 			            </select>
 				</div>
@@ -31,11 +36,17 @@
 					<label>Browse Categories</label>
 					<select class="selectpicker show-tick" data-live-search="true">
 					  <option data-tokens="Real Estate">Real Estate</option>
-					  <option data-tokens="Tution">Tution</option>
-					  <option data-tokens="Hotel & Restaurents">Hotel & Restaurents</option>
-					  <option data-tokens="Travelling">Travelling</option>
-					  <option data-tokens="Automobiles">Automobiles</option>
-					  
+					  <option data-tokens="Mobiles">Mobiles</option>
+					  <option data-tokens="Electronics & Appliances">Electronics & Appliances</option>
+					  <option data-tokens="Cars">Cars</option>
+					  <option data-tokens="Bikes">Bikes</option>
+					  <option data-tokens="Furniture">Furniture</option>
+					  <option data-tokens="Pets">Pets</option>
+					  <option data-tokens="Books, Sports & Hobbies">Books, Sports & Hobbies</option>
+					  <option data-tokens="Fashion">Fashion</option>
+					  <option data-tokens="Kids">Kids</option>
+					  <option data-tokens="Services">Services</option>
+					  <option data-tokens="Jobs">Jobs</option>
 					</select>
 				</div>
 				<div class="search-product ads-list">
@@ -43,7 +54,7 @@
 					<div class="search">
 						<div id="custom-search-input">
 						<div class="input-group">
-							<input type="text" class="form-control input-lg" placeholder="Search Your Dream House" />
+							<input type="text" class="form-control input-lg" placeholder="Buscar" />
 							<span class="input-group-btn">
 								<button class="btn btn-info btn-lg" type="button">
 									<i class="glyphicon glyphicon-search"></i>
@@ -93,9 +104,9 @@
 									 </div>
 								<div class="clearfix"></div>
 							<ul class="list">
-							<?php foreach ($realestate_info as $row)
+							<?php foreach ($tution_info as $row)
 							{?>
-								<a href="<?php echo base_url();?>index.php/realestate/manage_view/<?php $row['realid'];?>">
+								<a href="<?php echo base_url();?>index.php/tutions/manage_view">
 									<li>
 									<img src="<?php echo base_url();?>assets/images/r1.jpg" title="" alt="" />
 									<section class="list-left">
@@ -135,7 +146,7 @@
 									 </div>
 								<div class="clearfix"></div>
 							<ul class="list">
-								<?php foreach ($realestate_info as $row)
+								<?php foreach ($tution_info as $row)
 							{?>
 								<a href="single.html">
 									<li>
@@ -223,7 +234,7 @@
 					  <option data-tokens="Sale">Sale</option>
 					</select>
 				</div>
-				<div class="w3ls-featured-ads">	
+				<div class="w3ls-featured-ads">
 					<h2 class="sear-head fer">Featured Ads</h2>
 					<div class="w3l-featured-ad">
 						<a href="single.html">

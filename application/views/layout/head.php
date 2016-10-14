@@ -21,7 +21,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 
 <!-- switcher-grid and list alignment -->
-<script src="<?php base_url();?>assets/js/tabs.js"></script>
+<script src="<?php echo base_url();?>assets/js/tabs.js"></script>
+<script type="text/javascript" src="<?php echo base_url(); ?>assets/js/jquery.min.js"></script>
+<script src="<?php echo base_url();?>assets/js/bootstrap.js"></script>
 
 <script>
   $(document).ready(function () {
@@ -44,17 +46,17 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
   });
 </script>
 <!-- language-select -->
-<script type="text/javascript" src="<?php base_url();?>assets/js/jquery.leanModal.min.js"></script>
-<link href="<?php base_url();?>assets/css/jquery.uls.css" rel="stylesheet"/>
-<link href="<?php base_url();?>assets/css/jquery.uls.grid.css" rel="stylesheet"/>
-<link href="<?php base_url();?>assets/css/jquery.uls.lcd.css" rel="stylesheet"/>
+<script type="text/javascript" src="<?php echo base_url();?>assets/js/jquery.leanModal.min.js"></script>
+<link href="<?php echo base_url();?>assets/css/jquery.uls.css" rel="stylesheet"/>
+<link href="<?php echo base_url();?>assets/css/jquery.uls.grid.css" rel="stylesheet"/>
+<link href="<?php echo base_url();?>assets/css/jquery.uls.lcd.css" rel="stylesheet"/>
 <!-- Source -->
-<script src="<?php base_url();?>assets/js/jquery.uls.data.js"></script>
-<script src="<?php base_url();?>assets/js/jquery.uls.data.utils.js"></script>
-<script src="<?php base_url();?>assets/js/jquery.uls.lcd.js"></script>
-<script src="<?php base_url();?>assets/js/jquery.uls.languagefilter.js"></script>
-<script src="<?php base_url();?>assets/js/jquery.uls.regionfilter.js"></script>
-<script src="<?php base_url();?>assets/js/jquery.uls.core.js"></script>
+<script src="<?php echo base_url();?>assets/js/jquery.uls.data.js"></script>
+<script src="<?php echo base_url();?>assets/js/jquery.uls.data.utils.js"></script>
+<script src="<?php echo base_url();?>assets/js/jquery.uls.lcd.js"></script>
+<script src="<?php echo base_url();?>assets/js/jquery.uls.languagefilter.js"></script>
+<script src="<?php echo base_url();?>assets/js/jquery.uls.regionfilter.js"></script>
+<script src="<?php echo base_url();?>assets/js/jquery.uls.core.js"></script>
 <script>
 			$( document ).ready( function() {
 				$( '.uls-trigger' ).uls( {
