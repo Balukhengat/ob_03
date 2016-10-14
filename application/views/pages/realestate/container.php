@@ -1,5 +1,9 @@
-	<?php $realestate_info=$this->db->get('realestate')->result_array();
-	//print_r($realestate_info);
+	<?php 
+		$realestate_info = $this->db->select('*')
+				->from('realestate')
+				->join('real_img', 'realestate.realid = real_img.realid')
+				->get()->result_array();
+		//$realestate_info=$this->db->get('realestate')->result_array();
 	
 	?>
 	
@@ -7,7 +11,7 @@
 	<div class="w3layouts-breadcrumbs text-center">
 		<div class="container">
 			<span class="agile-breadcrumbs">
-			<a href="<?php base_url();?>"><i class="fa fa-home home_1"></i></a> / 
+			<a href="<?php echo base_url();?>index.php"><i class="fa fa-home home_1"></i></a> / 
 			
 			<span>Real Estate</span></span>
 		</div>
@@ -20,26 +24,23 @@
 				<div class="select-city-for-local-ads ads-list">
 					<label>Select your city to see local ads</label>
 						<select>
-												<optgroup label="Popular Cities">
-													<option selected style="display:none;color:#eee;">Select City</option>
-													<option>Pune</option>
-													<option>Mumbai</option>
-												</optgroup>
+							<option>Select</option>
+							<option>Pune</option>
+							<option>Mumbai</option>						
 			            </select>
 				</div>
 				<div class="browse-category ads-list">
-					<label>Browse Categories</label>
-					<select class="selectpicker show-tick" data-live-search="true">
-					  <option data-tokens="Real Estate">Real Estate</option>
-					  <option data-tokens="Tution">Tution</option>
-					  <option data-tokens="Hotel & Restaurents">Hotel & Restaurents</option>
-					  <option data-tokens="Travelling">Travelling</option>
-					  <option data-tokens="Automobiles">Automobiles</option>
+					<label>Rent / Purchase</label>
+					<select>
+					  <option data-tokens="Rent">Select</option>
+					  <option data-tokens="Rent">Rent</option>
+					  <option data-tokens="purchase">Purchase</option>
+					  <option data-tokens="any">Any</option>
 					  
 					</select>
 				</div>
 				<div class="search-product ads-list">
-					<label>Search for a specific product</label>
+					<label>Search By name</label>
 					<div class="search">
 						<div id="custom-search-input">
 						<div class="input-group">
@@ -60,18 +61,6 @@
 				<div class="agileinfo-ads-display col-md-9">
 					<div class="wrapper">					
 					<div class="bs-example bs-example-tabs" role="tabpanel" data-example-id="togglable-tabs">
-					  <ul id="myTab" class="nav nav-tabs nav-tabs-responsive" role="tablist">
-						<li role="presentation" class="active">
-						  <a href="#home" id="home-tab" role="tab" data-toggle="tab" aria-controls="home" aria-expanded="true">
-							<span class="text">All Ads</span>
-						  </a>
-						</li>
-						<li role="presentation" class="next">
-						  <a href="#profile" role="tab" id="profile-tab" data-toggle="tab" aria-controls="profile">
-							<span class="text">Ads with Photos</span>
-						  </a>
-						</li>
-					  </ul>
 					  <div id="myTabContent" class="tab-content">
 						<div role="tabpanel" class="tab-pane fade in active" id="home" aria-labelledby="home-tab">
 						   <div>
@@ -93,8 +82,10 @@
 									 </div>
 								<div class="clearfix"></div>
 							<ul class="list">
-							<?php foreach ($realestate_info as $row)
-							{?>
+							<?php 
+								foreach ($realestate_info as $row)
+								{
+							?>
 								<a href="<?php echo base_url();?>index.php/realestate/manage_view/<?php $row['realid'];?>">
 									<li>
 									<img src="<?php echo base_url();?>assets/images/r1.jpg" title="" alt="" />
@@ -113,7 +104,7 @@
 								<?php }?>
 							</ul>
 						</div>
-							</div>
+						</div>
 						</div>
 						<div role="tabpanel" class="tab-pane fade" id="profile" aria-labelledby="profile-tab">
 						 <div>
