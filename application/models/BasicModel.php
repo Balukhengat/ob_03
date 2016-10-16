@@ -8,14 +8,12 @@ class BasicModel extends CI_Model{
 		$city = $data['city'];
 		$type = $data['type'];
 		$price = $data['price'];
-		
-		$this->db->select('*')
-				 ->where('city',$city)
-				 ->where('type',$type)
-				 ->where('price',$price)
-				 ->from('realestate');
-		$result = $this->db->get()->result_array();
-		
+		$where="city='$city' AND type='$type' AND 	price <='$price'";
+		$this->db->select('*');
+		$this->db->where($where);
+		$this->db->from('realestate');
+		return $this->db->get()->result_array();
+	
 	}
 	
 }

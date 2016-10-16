@@ -89,7 +89,7 @@
 									 </div>
 								<div class="clearfix"></div>
 							<ul class="list">
-							<?php 
+							<?php  if($datas==null){
 								foreach ($realestate_info as $row)
 								{
 							?>
@@ -108,7 +108,26 @@
 									<div class="clearfix"></div>
 									</li> 
 								</a>
-								<?php }?>
+								<?php } } else { 
+									foreach ($datas as $row1)
+								{?>
+								<a href="<?php echo base_url();?>index.php/realestate/manage_view/<?php echo $row1['realid'];?>">
+									<li>
+									<img src="<?php echo base_url();?>assets/images/r1.jpg" title="" alt="" />
+									<section class="list-left">
+									<h5 class="title"><?php echo $row1['title']?></h5>
+									<span class="adprice">RS. <?php echo $row1['price']?>/-</span>
+									<p class="catpath">Real Estate » <?php echo $row1['type']?></p>
+									</section>
+									<section class="list-right">
+									<span class="date"><?php echo $row1['date']?></span>
+									<span class="cityname"><?php echo $row1['city']?></span>
+									</section>
+									<div class="clearfix"></div>
+									</li> 
+								</a>
+								<?php }}?>
+								
 							</ul>
 						</div>
 						</div>

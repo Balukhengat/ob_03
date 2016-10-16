@@ -6,6 +6,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		}
 		public function real(){
 			$category['template'] = "realestate";
+			$category['datas']="";
 			$this->load->view('pages/mainpage',$category);
 		}
 		public function manage_view($realid)
@@ -20,6 +21,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			$data['price'] = $this->input->post('price');
 			
 			$result['datas'] = $this->BasicModel->real_search($data);
+			
 			$result['template'] = "realestate";
 			$this->load->view('pages/mainpage',$result);
 		}
