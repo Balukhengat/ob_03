@@ -368,6 +368,16 @@ i.fa.fa-language,i.fa.fa-globe {
     background-size: cover;
     padding-top: 215px;
 }
+.aslider {
+	position: relative;
+	padding: 0;
+	width: 100%;
+    min-height: 500px;
+  
+    text-align: center;
+    background-size: cover;
+    padding-top: 215px;
+}
 
 .rslides {
 	position: relative;
@@ -4579,6 +4589,10 @@ label {
 		min-height: 475px;
 		padding-top: 205px;
 	}
+	.aslider {
+		min-height: 475px;
+		padding-top: 205px;
+	}
 }
 @media (max-width: 1280px){
 	.main-banner {
@@ -5313,6 +5327,10 @@ label {
 	}
 	.slider {
 		min-height: 275px;
+		padding-top: 115px;
+	}
+	.bxslider{
+	min-height: 275px;
 		padding-top: 115px;
 	}
 	a.w3layouts-explore-all {

@@ -1,9 +1,10 @@
 	<?php 
-		$realestate_info = $this->db->select('*')
+	/*	$realestate_info = $this->db->select('*')
 				->from('realestate')
 				->join('real_img', 'realestate.realid = real_img.realid')
 				->get()->result_array();
-		//$realestate_info=$this->db->get('realestate')->result_array();
+				*/
+		$realestate_info=$this->db->get('realestate')->result_array();
 	
 	?>
 	
@@ -86,12 +87,12 @@
 								foreach ($realestate_info as $row)
 								{
 							?>
-								<a href="<?php echo base_url();?>index.php/realestate/manage_view/<?php $row['realid'];?>">
+								<a href="<?php echo base_url();?>index.php/realestate/manage_view/<?php echo $row['realid'];?>">
 									<li>
 									<img src="<?php echo base_url();?>assets/images/r1.jpg" title="" alt="" />
 									<section class="list-left">
 									<h5 class="title"><?php echo $row['title']?></h5>
-									<span class="adprice"><?php echo $row['price']?></span>
+									<span class="adprice">RS. <?php echo $row['price']?>/-</span>
 									<p class="catpath">Real Estate » <?php echo $row['type']?></p>
 									</section>
 									<section class="list-right">
