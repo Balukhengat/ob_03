@@ -22,9 +22,11 @@
 	<div class="total-ads main-grid-border">
 		<div class="container">
 			<div class="select-box">
+																					<!-- @ SEARCH -->
+			<form method="post" id="search" action="<?php echo base_url();?>index.php/Realestate/search">
 				<div class="select-city-for-local-ads ads-list">
 					<label>Select your city to see local ads</label>
-						<select>
+						<select id="city" name="city">	
 							<option>Select</option>
 							<option>Pune</option>
 							<option>Mumbai</option>						
@@ -32,7 +34,7 @@
 				</div>
 				<div class="browse-category ads-list">
 					<label>Rent / Purchase</label>
-					<select>
+					<select id="type" name="type">
 					  <option data-tokens="Rent">Select</option>
 					  <option data-tokens="Rent">Rent</option>
 					  <option data-tokens="purchase">Purchase</option>
@@ -40,21 +42,25 @@
 					  
 					</select>
 				</div>
-				<div class="search-product ads-list">
-					<label>Search By name</label>
-					<div class="search">
-						<div id="custom-search-input">
-						<div class="input-group">
-							<input type="text" class="form-control input-lg" placeholder="Search Your Dream House" />
-							<span class="input-group-btn">
-								<button class="btn btn-info btn-lg" type="button">
-									<i class="glyphicon glyphicon-search"></i>
-								</button>
-							</span>
-						</div>
-					</div>
-					</div>
+				<div class="select-city-for-local-ads ads-list">
+					<label>Select Price</label>
+					<select id="price" name="price">
+					  <option value="0">Select</option>
+					  <option value="5000">0 to 5000</option>
+					  <option value="10000">5000 to 10000</option>
+					  <option value="50000">10000 to 50000</option>
+					  <option value="100000">50,000 to 1 lakh</option>
+					  <option value="500000">1 lakh to 5 lakh</option>
+					  <option value="1000000">5 lakh to 10 lakh</option>
+					  <option value="5000000">10 lakh to 50 lakh</option>
+					  <option value="5000001">50 lakh and above</option>
+					</select>	
 				</div>
+				<div class="search-product ads-list">
+					<label>&nbsp;</label>
+					<button class="btn btn-block btn-info">Search</button>
+				</div>
+				</form>
 				<div class="clearfix"></div>
 			</div>
 			<div class="ads-grid">
