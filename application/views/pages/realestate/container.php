@@ -58,7 +58,7 @@
 				</div>
 				<div class="search-product ads-list">
 					<label>&nbsp;</label>
-					<button class="btn btn-block btn-info">Search</button>
+					<button class="btn btn-block btn-danger">Search</button>
 				</div>
 				</form>
 				<div class="clearfix"></div>
@@ -195,51 +195,7 @@
 				</div>
 				
 				
-				<div class="side-bar col-md-3" >
-					<div class="search-hotel">
-					<h3 class="agileits-sear-head">Name contains</h3>
-					<form>
-						<input type="text" value="Product name..." onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Product name...';}" required="">
-						<input type="submit" value=" ">
-					</form>
-				</div>
-				
-				<div class="range">
-					<h3 class="agileits-sear-head">Price range</h3>
-							<ul class="dropdown-menu6">
-								<li>
-									                
-									<div id="slider-range"></div>							
-										<input type="text" id="amount" style="border: 0; color: #ffffff; font-weight: normal;" />
-									</li>			
-							</ul>
-							<!---->
-							<script type="text/javascript" src="js/jquery-ui.js"></script>
-							<script type='text/javascript'>//<![CDATA[ 
-							$(window).load(function(){
-							 $( "#slider-range" ).slider({
-										range: true,
-										min: 0,
-										max: 9000,
-										values: [ 50, 6000 ],
-										slide: function( event, ui ) {  $( "#amount" ).val( "$" + ui.values[ 0 ] + " - $" + ui.values[ 1 ] );
-										}
-							 });
-							$( "#amount" ).val( "$" + $( "#slider-range" ).slider( "values", 0 ) + " - $" + $( "#slider-range" ).slider( "values", 1 ) );
-
-							});//]]>  
-
-							</script>
-							
-				</div>
-				<div class="w3-brand-select">
-					<h3 class="agileits-sear-head">Category</h3>
-					  <select class="selectpicker" data-live-search="">
-					  <option data-tokens="All">All</option>
-					  <option data-tokens="Rent">Rent</option>
-					  <option data-tokens="Sale">Sale</option>
-					</select>
-				</div>
+				<div class="side-bar col-md-3">
 				<div class="w3ls-featured-ads">	
 					<h2 class="sear-head fer">Featured Ads</h2>
 					<div class="w3l-featured-ad">

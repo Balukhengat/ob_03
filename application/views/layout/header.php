@@ -43,20 +43,11 @@
 		<div class="container">
 			<div class="agile-its-header">
 				<div class="logo">
-					<h1><a href="<?php echo base_url();?>"><span>Offers</span>Bull <img src="<?php echo base_url()?>assets/images/logo.png" width="110" height="65"></a></h1>
+					<h1><a href="<?php echo base_url();?>"> Offers Bull <img src="<?php echo base_url()?>assets/images/bulllogo.png" width="100" height="50"></a></h1>
 				</div>
 				<div class="agileits_search">
 					<form action="#" method="post">
 						<input name="Search" type="text" placeholder="Get the best offers" required="" />
-						<select id="agileinfo_search" name="agileinfo_search" required="">
-							<option value="">All Categories</option>
-							<option value="Mobiles">Real Estate</option>
-							<option value="Electronics & Appliances">Tution</option>
-							<option value="Cars">Hotels & Restaurents</option>
-							<option value="Bikes">Travelling</option>
-							<option value="Furnitures">Automobiles</option>
-							
-						</select>
 						<button type="submit" class="btn btn-default" aria-label="Left Align">
 							<i class="fa fa-search" aria-hidden="true"> </i>
 						</button>
