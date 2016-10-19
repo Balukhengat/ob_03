@@ -1,3 +1,12 @@
+<?php 
+	$realestate_latest = $this->db->query("SELECT * from realestate ORDER BY date DESC LIMIT 4");
+	$automobile_latest = $this->db->query("SELECT * from automobile ORDER BY date DESC LIMIT 4");
+	$hotel_latest = $this->db->query("SELECT * from hotel ORDER BY date DESC LIMIT 4");
+	$travelling_latest = $this->db->query("SELECT * from travelling ORDER BY date DESC LIMIT 4");
+	$tution_latest = $this->db->query("SELECT * from tution ORDER BY date DESC LIMIT 4");
+
+		
+?>
 <!-- content-starts-here -->
 		<div class="main-content">
 			<div class="w3-categories">
@@ -6,131 +15,82 @@
 					<div class="agile-trend-ads">
 							<ul id="flexiselDemo3">
 								<li>
+								
+								<?php 
+									//realestate
+									foreach ($realestate_latest->result_array() as $row){
+										
+									
+								?>
 									<div class="col-md-3 biseller-column">
 										<a href="single.html">
-											<img src="assets/images/p1.jpg" alt="" />
-											<span class="price">&#36; 450</span>
+											<img src="assets/images/r4.jpg" alt="" />
 										</a> 
 										<div class="w3-ad-info">
-											<h5>There are many variations of passages</h5>
-											<span>1 hour ago</span>
+											<h5><?php echo $row['title']?></h5>
+											<h5><?php echo $row['name']?></h5>
+											<span><?php $date = $row['date'];echo time_elapsed_string($date);?></span>
 										</div>
 									</div>
-									<div class="col-md-3 biseller-column">
-										<a href="single.html">
-											<img src="assets/images/p2.jpg" alt="" />
-											<span class="price">&#36; 399</span>
-										</a> 
-										<div class="w3-ad-info">
-											<h5>Lorem Ipsum is simply dummy</h5>
-											<span>3 hour ago</span>
-										</div>
-									</div>
-									<div class="col-md-3 biseller-column">
-										<a href="single.html">
-											<img src="assets/images/p3.jpg" alt="" />
-											<span class="price">&#36; 199</span>
-										</a> 
-										<div class="w3-ad-info">
-											<h5>It is a long established fact that a reader</h5>
-											<span>8 hour ago</span>
-										</div>
-									</div>
-									<div class="col-md-3 biseller-column">
-										<a href="single.html">
-											<img src="assets/images/p4.jpg" alt="" />
-											<span class="price">&#36; 159</span>
-										</a> 
-										<div class="w3-ad-info">
-											<h5>passage of Lorem Ipsum you need to be</h5>
-											<span>19 hour ago</span>
-										</div>
-									</div>
+								<?php 
+									}
+								?>	
 								</li>
 								<li>
+								
+								<?php 
+									//automobile
+									foreach ($automobile_latest->result_array() as $row){
+										
+									
+								?>
 									<div class="col-md-3 biseller-column">
 										<a href="single.html">
-											<img src="assets/images/p5.jpg" alt="" />
-											<span class="price">&#36; 1599</span>
+											<img src="assets/images/c6.jpg" alt="" />
 										</a> 
 										<div class="w3-ad-info">
-											<h5>There are many variations of passages</h5>
-											<span>1 hour ago</span>
+											<h5><?php echo $row['title']?></h5>
+											<h5><?php echo $row['name']?></h5>
+											<span><?php $date = $row['date'];echo time_elapsed_string($date);?></span>
 										</div>
 									</div>
-									<div class="col-md-3 biseller-column">
-										<a href="single.html">
-											<img src="assets/images/p6.jpg" alt="" />
-											<span class="price">&#36; 1099</span>
-										</a> 
-										<div class="w3-ad-info">
-											<h5>passage of Lorem Ipsum you need to be</h5>
-											<span>1 day ago</span>
-										</div>
-									</div>
-									<div class="col-md-3 biseller-column">
-										<a href="single.html">
-											<img src="assets/images/p7.jpg" alt="" />
-											<span class="price">&#36; 109</span>
-										</a> 
-										<div class="w3-ad-info">
-											<h5>It is a long established fact that a reader</h5>
-											<span>9 hour ago</span>
-										</div>
-									</div>
-									<div class="col-md-3 biseller-column">
-										<a href="single.html">
-											<img src="assets/images/p8.jpg" alt="" />
-											<span class="price">&#36; 189</span>
-										</a> 
-										<div class="w3-ad-info">
-											<h5>Lorem Ipsum is simply dummy</h5>
-											<span>3 hour ago</span>
-										</div>
-									</div>
+								<?php 
+									}
+								?>	
 								</li>
 								<li>
+								
+								<?php 
+									//hotel
+									foreach ($hotel_latest->result_array() as $row){
+										
+									
+								?>
 									<div class="col-md-3 biseller-column">
 										<a href="single.html">
-											<img src="assets/images/p9.jpg" alt="" />
-											<span class="price">&#36; 2599</span>
+											<img src="assets/images/ad2.jpg" alt="" />
 										</a> 
 										<div class="w3-ad-info">
-											<h5>Lorem Ipsum is simply dummy</h5>
-											<span>3 hour ago</span>
+											<h5><?php echo $row['title']?></h5>
+											<h5><?php echo $row['name']?></h5>
+											<span><?php $date = $row['date'];echo time_elapsed_string($date);?></span>
+											
 										</div>
 									</div>
-									<div class="col-md-3 biseller-column">
-										<a href="single.html">
-											<img src="assets/images/p10.jpg" alt="" />
-											<span class="price">&#36; 3999</span>
-										</a> 
-										<div class="w3-ad-info">
-											<h5>It is a long established fact that a reader</h5>
-											<span>9 hour ago</span>
-										</div>
-									</div>
-									<div class="col-md-3 biseller-column">
-										<a href="single.html">
-											<img src="assets/images/p11.jpg" alt="" />
-											<span class="price">&#36; 2699</span>
-										</a> 
-										<div class="w3-ad-info">
-											<h5>passage of Lorem Ipsum you need to be</h5>
-											<span>1 day ago</span>
-										</div>
-									</div>
-									<div class="col-md-3 biseller-column">
-										<a href="single.html">
-											<img src="assets/images/p12.jpg" alt="" />
-											<span class="price">&#36; 899</span>
-										</a> 
-										<div class="w3-ad-info">
-											<h5>There are many variations of passages</h5>
-											<span>1 hour ago</span>
-										</div>
-									</div>
+								<?php 
+									}
+								?>	
 								</li>
+								<?php 
+								/*
+								 * 		REMOVED 2 CATEGORIES LATEST FIELDS
+								 * 			
+								 * 		
+								 * 
+								 * 
+								 */
+								
+								?>
 						</ul>
 					</div>
 					
@@ -374,3 +334,34 @@
 			</div>
 			<!-- //mobile app -->
 		</div>
+		<?php 
+		function time_elapsed_string($datetime, $full = false) {
+			date_default_timezone_set('Asia/Kolkata');
+			$now = new DateTime;
+			$ago = new DateTime($datetime);
+			$diff = $now->diff($ago);
+		
+			$diff->w = floor($diff->d / 7);
+			$diff->d -= $diff->w * 7;
+		
+			$string = array(
+					'y' => 'year',
+					'm' => 'month',
+					'w' => 'week',
+					'd' => 'day',
+					'h' => 'hour',
+					'i' => 'minute',
+					's' => 'second',
+			);
+			foreach ($string as $k => &$v) {
+				if ($diff->$k) {
+					$v = $diff->$k . ' ' . $v . ($diff->$k > 1 ? 's' : '');
+				} else {
+					unset($string[$k]);
+				}
+			}
+		
+			if (!$full) $string = array_slice($string, 0, 1);
+			return $string ? implode(', ', $string) . ' ago' : 'just now';
+		}
+		?>

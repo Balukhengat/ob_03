@@ -1,7 +1,6 @@
 <!-- header -->
 	<header>
 		<div class="w3ls-header"><!--header-one--> 
-			
 			<div class="w3ls-header-right">
 				<ul>
 					<li class="dropdown head-dpdn">
@@ -35,11 +34,15 @@
 					<li class="dropdown head-dpdn">
 						<a href="<?php echo base_url();?>index.php/help"><i class="fa fa-question-circle" aria-hidden="true"></i> Help</a>
 					</li>
+					
 				</ul>
 			</div>
 			
+			
+			
 			<div class="clearfix"> </div> 
 		</div>
+		
 		<div class="container">
 			<div class="agile-its-header">
 				<div class="logo">
@@ -57,5 +60,6 @@
 				<div class="clearfix"></div>
 			</div>
 		</div>
+				
 	</header>
 	<!-- //header -->

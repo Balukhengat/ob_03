@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 14, 2016 at 04:14 PM
+-- Generation Time: Oct 19, 2016 at 02:50 PM
 -- Server version: 5.7.9
 -- PHP Version: 5.6.16
 
@@ -35,7 +35,7 @@ CREATE TABLE IF NOT EXISTS `adminlogin` (
   `ip` varchar(255) DEFAULT NULL,
   `useragent` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `adminlogin`
@@ -63,21 +63,22 @@ CREATE TABLE IF NOT EXISTS `automobile` (
   `city` varchar(255) DEFAULT NULL,
   `area` varchar(255) DEFAULT NULL,
   `date` datetime DEFAULT NULL,
-  `img1` varchar(255) DEFAULT NULL,
   `lattitude` varchar(255) DEFAULT NULL,
   `longitude` varchar(255) DEFAULT NULL,
   `tags` varchar(255) DEFAULT NULL,
+  `offer` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`autoid`)
-) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `automobile`
 --
 
-INSERT INTO `automobile` (`autoid`, `name`, `title`, `type`, `address`, `description`, `mobile`, `email`, `city`, `area`, `date`, `img1`, `lattitude`, `longitude`, `tags`) VALUES
-(1, 'abhijit auto', 'Car service', '', '', 'We provide best car services.', '', '', '', '', '2016-09-29 06:51:48', NULL, '', '', ''),
-(3, 'bvalu', 'fasdf', 'sdf', 'asdfasdfa', '', '', '', '', '', '2016-09-29 07:07:26', NULL, '', '', ''),
-(5, 'Honey', 'Honeys car wash', 'Car washing center', 'Kadegaon, Sangli', 'We provide best car wash in cheep rate...', '9876543211', 'Honey@carwash.com', 'Kadegaon', '', '2016-09-29 07:17:40', NULL, '', '', 'Car wash, honey, car services');
+INSERT INTO `automobile` (`autoid`, `name`, `title`, `type`, `address`, `description`, `mobile`, `email`, `city`, `area`, `date`, `lattitude`, `longitude`, `tags`, `offer`) VALUES
+(1, 'shree car services', 'best car service providers in pune', 'car', 'Pune', 'car repair, car services, car wash , car paint', '9898989898', 'shreecar@gmail.com', 'pune', 'hadapsar', '2016-10-04 14:28:08', NULL, NULL, 'car service', 'car servicing just in Rs: 500'),
+(2, 'Agustin Car Care ', 'Bosch car service\r\n1 review', 'car', 'Baner - Pashan Link Rd, Baner, Pune, Maharashtra 411045', 'Car Service Station', '9422036327', NULL, 'Pune', 'Baner', '2016-10-19 16:17:41', NULL, NULL, 'car service', ''),
+(6, 'R K auto', 'R. K. Auto Services', 'car', '1034, Annapurna Model Colony, Sahasrabuddhe Rd, Model Colony, Shivajinagar, Pune, Maharashtra 411016', 'Car Service Station', '020 2565 6640', NULL, 'Pune', 'Shivajinagar', '2016-10-19 16:19:43', NULL, NULL, 'car', NULL),
+(7, '3M Car Care', 'Car wash', 'car', 'Shop No 2, Iriz Building, Below Calsoft, Pashan Baner Link Road, Pashan, Pune, Maharashtra 411021', 'car wash', '91589 66624', NULL, 'Pune', 'pashan', '2016-10-19 16:22:07', NULL, NULL, 'car wash', NULL);
 
 -- --------------------------------------------------------
 
@@ -93,17 +94,6 @@ CREATE TABLE IF NOT EXISTS `automobile_img` (
   PRIMARY KEY (`id`),
   KEY `autoid` (`autoid`)
 ) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `automobile_img`
---
-
-INSERT INTO `automobile_img` (`id`, `path`, `autoid`) VALUES
-(1, 'uploads/automobile/29-Sep-16/1-06-51-56-0-Youtube-PNG-Clipart.png', 1),
-(2, 'uploads/automobile/29-Sep-16/2-07-06-50-0-19323130-fruits-and-vegetables-background.jpg', 2),
-(3, 'uploads/automobile/29-Sep-16/3-07-09-08-0-concrete wall.jpg 1.jpg', 3),
-(4, 'uploads/automobile/29-Sep-16/4-07-17-13-0-Civil.jpg', 4),
-(5, 'uploads/automobile/29-Sep-16/5-07-18-05-0-3D-android-with-backpack.jpg', 5);
 
 -- --------------------------------------------------------
 
@@ -126,24 +116,22 @@ CREATE TABLE IF NOT EXISTS `hotel` (
   `city` varchar(255) DEFAULT NULL,
   `area` varchar(255) DEFAULT NULL,
   `date` datetime DEFAULT NULL,
-  `img1` varchar(255) DEFAULT NULL,
-  `img2` varchar(255) DEFAULT NULL,
-  `img3` varchar(255) DEFAULT NULL,
-  `img4` varchar(255) DEFAULT NULL,
   `lattitude` varchar(255) DEFAULT NULL,
   `longitude` varchar(255) DEFAULT NULL,
   `tags` varchar(255) DEFAULT NULL,
+  `offer` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`hotelid`)
-) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `hotel`
 --
 
-INSERT INTO `hotel` (`hotelid`, `name`, `title`, `type`, `address`, `price`, `description`, `mobile`, `email`, `amenities`, `city`, `area`, `date`, `img1`, `img2`, `img3`, `img4`, `lattitude`, `longitude`, `tags`) VALUES
-(1, 'hotel', 'hotel ', '', '', '', '', '', '', '', '', '', '2016-09-28 11:25:01', NULL, NULL, NULL, NULL, '', '', ''),
-(4, 'asdfasd', 'asdfdf', '', '', '', '', '', '', '', '', '', '2016-09-28 11:50:54', NULL, NULL, NULL, NULL, '', '', ''),
-(3, 'hotel 2', 'asdfsdf', '', '', '', '', '', '', '', '', '', '2016-09-28 11:39:41', NULL, NULL, NULL, NULL, '', '', '');
+INSERT INTO `hotel` (`hotelid`, `name`, `title`, `type`, `address`, `price`, `description`, `mobile`, `email`, `amenities`, `city`, `area`, `date`, `lattitude`, `longitude`, `tags`, `offer`) VALUES
+(5, 'Sayaji Hotel, Pune', 'Sayaji Hotel, Pune', 'hotel', '135 / 136, Mumbai-Banglore Bypass Hwy,, (Off Hinjewadi) Wakad, Pimpri-Chinchwad, Maharashtra 411057', NULL, NULL, '9876543212', NULL, 'Off the AH47 highway, this contemporary hotel with a glass and concrete exterior is 8 km from Balaji Mandir temple and 25 km from Pune Airport.\r\nThe relaxed rooms and suites feature free Wi-Fi, stocked minibars, fruit baskets, and tea and coffeemaking facilities, as well as flat-screen TVs and computers. Suites add lounges with massage chairs. Butler service is offered.\r\nEach floor is themed and has its own reception, staff and lounge. Freebies include breakfast, welcome drinks, parking and an airport shuttle. There are also 2 restaurants, plus an outdoor rooftop pool with a bar. Gym access, a spa and a steam room are available for a surcharge.', 'Pimpri', 'wakad', '2016-10-19 16:26:29', NULL, NULL, 'hotel', NULL),
+(6, 'Pancard Clubs, Pune', 'Pancard Clubs, Pune', 'hotel', '8/1, Baner Hills, Baner, Baner Gaon, Baner, Pune, Maharashtra 411045', NULL, NULL, '020 6725 1111', NULL, 'Laid-back hotel offering international dining, plus a buzzy nightclub with a revolving dance floor.', 'Pune', 'Baner', '2016-10-19 16:28:00', NULL, NULL, 'hotel', NULL),
+(7, 'Hotel Aundh Retreat', 'Hotel Aundh Retreat', 'hotel', 'Aundh Dp Road, Behind Kaka Halwai, Aundh, Raagdari Society, Aundh, Pune, Maharashtra 411007', NULL, NULL, '020 4122 2201', NULL, 'Reasonable rates and friendly staff', 'Pune', 'Aundh', '2016-10-19 16:29:16', NULL, NULL, 'hotel', NULL),
+(8, 'Gordon House Hotel', 'Gordon House Hotel', 'hotel', '132, Ganeshkhind Rd, Premnagar, Ashok Nagar, Premnagar, Ashok Nagar, Pune, Maharashtra 411016', NULL, NULL, '020 6604 4244', NULL, 'nice and best in less cost', 'Pune', 'Ashoknagar', '2016-10-19 16:30:44', NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -159,15 +147,6 @@ CREATE TABLE IF NOT EXISTS `hotel_img` (
   PRIMARY KEY (`id`),
   KEY `hotelid` (`hotelid`)
 ) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `hotel_img`
---
-
-INSERT INTO `hotel_img` (`id`, `path`, `hotelid`) VALUES
-(1, 'uploads/hotel/28-Sep-16/2-11-26-46-0-Civil.jpg', 2),
-(2, 'uploads/hotel/28-Sep-16/3-11-39-46-0-a.jpg', 3),
-(3, 'uploads/hotel/28-Sep-16/4-11-51-26-0-Youtube-PNG-Clipart.png', 4);
 
 -- --------------------------------------------------------
 
@@ -191,26 +170,22 @@ CREATE TABLE IF NOT EXISTS `realestate` (
   `city` varchar(255) DEFAULT NULL,
   `area` varchar(255) DEFAULT NULL,
   `date` datetime DEFAULT NULL,
-  `img1` varchar(255) DEFAULT NULL,
-  `img2` varchar(255) DEFAULT NULL,
-  `img3` varchar(255) DEFAULT NULL,
-  `img4` varchar(255) DEFAULT NULL,
   `lattitude` varchar(255) DEFAULT NULL,
   `longitude` varchar(255) DEFAULT NULL,
   `tags` varchar(255) DEFAULT NULL,
+  `offer` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`realid`)
-) ENGINE=MyISAM AUTO_INCREMENT=30 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `realestate`
 --
 
-INSERT INTO `realestate` (`realid`, `name`, `title`, `type`, `address`, `builtup`, `price`, `description`, `mobile`, `email`, `amenities`, `city`, `area`, `date`, `img1`, `img2`, `img3`, `img4`, `lattitude`, `longitude`, `tags`) VALUES
-(29, 'hotel', 'hotel ', '', '', '', '', '', '43333333', '', '', '', '', '2016-09-28 11:22:37', NULL, NULL, NULL, NULL, '', '', ''),
-(21, 'honey', 'row house near Narhe', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', '2016-09-26 08:54:56', NULL, NULL, NULL, NULL, 'a', 'a', 'a'),
-(22, 'abs', '2BHK Flats (Just 5 left hurry up)', 'a', 'Pimpri- chinchavad', 'a', 'a', 'a', 'a', 'abhijitkumbhar@offersbull.com', 'a', 'a', 'a', '2016-09-27 04:46:27', NULL, NULL, NULL, NULL, 'a', 'a', 'a'),
-(23, 'rahul', 'Row house near Karve road', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', '2016-09-27 07:35:46', NULL, NULL, NULL, NULL, 'a', 'a', 'a'),
-(24, 'balu', '1 BHK Flat, Karvenagar', 'a', 'a', 'a', 'a', 'a', '98888888', 'a', 'a', 'a', 'a', '2016-09-27 08:18:35', NULL, NULL, NULL, NULL, 'a', 'a', 'a');
+INSERT INTO `realestate` (`realid`, `name`, `title`, `type`, `address`, `builtup`, `price`, `description`, `mobile`, `email`, `amenities`, `city`, `area`, `date`, `lattitude`, `longitude`, `tags`, `offer`) VALUES
+(1, 'rahul', 'Room in Hadapasar', 'rent', 'Pune, Hadapasar', '200', '5000', 'Nice room ', '9898987654', 'rahulsrooms@gmail.com', 'fan,ac', 'pune', 'hadapsar', '2016-10-16 16:05:59', NULL, NULL, 'room', NULL),
+(2, 'hemant', '1 BHK flat', 'rent', 'Pune, KarveNagar', '650', '10000', 'Nice Flat at low cost', '9876765434', 'hemantsflat@gmail.com', 'Bus Stop', 'pune', 'Karvenagar', '2016-10-08 16:09:02', NULL, NULL, 'flat', NULL),
+(3, 'abhijit', '2 BHK flat', 'purchase', 'Pimpri, Morwadi', '800', '8000000', 'New luxarious flat', '9181928190', 'absflat@flats.com', 'National Highway 5KM, Pune airport 20 Km', 'Pimpri', 'Morwadi', '2016-10-19 14:38:25', NULL, NULL, 'flat', NULL),
+(4, 'Ashiyana Real Estate', 'Real Estate Agency', 'purchase', 'S No 53, Karve Nagar, Opposite Karve Social Inst, Hingane Home Colony, Karve Nagar, Pune, ', NULL, NULL, NULL, '020 2545 4934', NULL, NULL, 'Pune', 'Karvenagar', '2016-10-19 16:37:18', NULL, NULL, 'flat', NULL);
 
 -- --------------------------------------------------------
 
@@ -225,26 +200,7 @@ CREATE TABLE IF NOT EXISTS `real_img` (
   `realid` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `real_id` (`realid`)
-) ENGINE=MyISAM AUTO_INCREMENT=17 DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `real_img`
---
-
-INSERT INTO `real_img` (`id`, `path`, `realid`) VALUES
-(3, 'uploads/realestate/27-Sep-16/22-12-56-29-0-1.png', 22),
-(4, 'uploads/realestate/27-Sep-16/22-12-56-29-1-2.png', 22),
-(5, 'uploads/realestate/27-Sep-16/22-12-56-29-2-3.png', 22),
-(6, 'uploads/realestate/27-Sep-16/22-12-56-29-3-4.png', 22),
-(7, 'uploads/realestate/27-Sep-16/22-12-58-50-0-logo.png', 22),
-(8, 'uploads/realestate/27-Sep-16/22-01-03-04-0-gradient-black-background-wallpaper-2.jpg', 22),
-(9, 'uploads/realestate/27-Sep-16/23-01-06-03-0-beechlawn-organic-farm-text-logo1.png', 23),
-(10, 'uploads/realestate/27-Sep-16/24-01-48-58-0-concrete wall.jpg 1.jpg', 24),
-(11, 'uploads/realestate/27-Sep-16/25-05-04-16-0-a.jpg', 25),
-(12, 'uploads/realestate/27-Sep-16/26-05-09-00-0-a.jpg', 26),
-(13, 'uploads/realestate/27-Sep-16/27-05-49-44-0-a.jpg', 27),
-(14, 'uploads/realestate/27-Sep-16/28-05-51-15-0-a.jpg', 28),
-(16, 'uploads/realestate/28-Sep-16/29-11-22-54-0-', 29);
+) ENGINE=MyISAM AUTO_INCREMENT=18 DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -268,17 +224,19 @@ CREATE TABLE IF NOT EXISTS `travelling` (
   `time` varchar(255) DEFAULT NULL,
   `date` datetime DEFAULT NULL,
   `tags` varchar(255) DEFAULT NULL,
+  `offer` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`travelid`)
-) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `travelling`
 --
 
-INSERT INTO `travelling` (`travelid`, `name`, `title`, `address`, `price`, `description`, `mobile`, `email`, `city`, `area`, `dept_date`, `time`, `date`, `tags`) VALUES
-(1, 'abhijit', 'Mumbai to Pune', 'a', 'a', 'a', 'a', 'a', 'a', 'a', '2015-02-10', 'a', '2011-02-02 00:00:00', 'a'),
-(5, 'asdfasd', 'asdfasd', '', '', '', '', '', '', '', '2016-09-29', '', '2016-09-29 06:29:18', ''),
-(4, 'balu', 'Pune to Kolhapur', 'asdf', '', '', '', '', '', '', '2016-09-08', '', '2016-09-29 05:20:40', '');
+INSERT INTO `travelling` (`travelid`, `name`, `title`, `address`, `price`, `description`, `mobile`, `email`, `city`, `area`, `dept_date`, `time`, `date`, `tags`, `offer`) VALUES
+(6, 'Prasanna Travels', 'Prasanna Travels', 'Paud Rd, Bhusari Colony, Kothrud, Pune, Maharashtra 411038', NULL, 'we provide best travelling experience in less rates', '095756 52281', NULL, 'Pune', 'Kothrud', '2016-10-19', '6 pm', '2016-10-19 16:40:52', 'pune', NULL),
+(7, 'Cox and Kings Ltd.', 'Travel Agency', NULL, NULL, 'travel agency', '020 6530 3081', NULL, 'Pune', 'Baner', NULL, NULL, NULL, NULL, NULL),
+(8, 'Shreenath Tours And Travels', 'Shreenath Tours And Travels Pune - Kolhapur Daily', 'Parihar Chowk, Aundh, Hotel Shreenath Palace, Aundh, Sindh Society, Ward No. 8, Sadhu Vasvani Nagar, Aundh, Pune, Maharashtra 411007', NULL, 'Pune - Kolhapur', '93710 46368', NULL, 'Pune', 'Aundh', NULL, '8 am', NULL, 'pune, kolhapur', NULL),
+(9, 'MD travels', 'Travelling agency', 'Pune', NULL, 'Pune - Mumbai | Pune - Kolhapur', '8337377383', NULL, 'Pune', 'Bawadhan', NULL, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -294,14 +252,6 @@ CREATE TABLE IF NOT EXISTS `travelling_img` (
   PRIMARY KEY (`id`),
   KEY `travelid` (`travelid`)
 ) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `travelling_img`
---
-
-INSERT INTO `travelling_img` (`id`, `path`, `travelid`) VALUES
-(1, 'uploads/travelling/29-Sep-16/3-04-59-01-0-Civil.jpg', 3),
-(2, 'uploads/travelling/29-Sep-16/4-05-25-07-0-19323130-fruits-and-vegetables-background.jpg', 4);
 
 -- --------------------------------------------------------
 
@@ -323,23 +273,22 @@ CREATE TABLE IF NOT EXISTS `tution` (
   `city` varchar(255) DEFAULT NULL,
   `area` varchar(255) DEFAULT NULL,
   `date` datetime DEFAULT NULL,
-  `img1` varchar(255) DEFAULT NULL,
-  `img2` varchar(255) DEFAULT NULL,
   `lattitude` varchar(255) DEFAULT NULL,
   `longitude` varchar(255) DEFAULT NULL,
   `tags` varchar(255) DEFAULT NULL,
+  `offer` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`tutid`)
-) ENGINE=MyISAM AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `tution`
 --
 
-INSERT INTO `tution` (`tutid`, `name`, `title`, `type`, `address`, `price`, `description`, `mobile`, `email`, `city`, `area`, `date`, `img1`, `img2`, `lattitude`, `longitude`, `tags`) VALUES
-(7, 'rrrrrrrr', 'wefdfdsff', '', '', '', '', '3847582347', '', '', '', '2016-09-28 10:37:39', NULL, NULL, '', '', ''),
-(6, 'ddddd', '', '', '', '', '', '', '', '', '', NULL, NULL, NULL, '', '', ''),
-(3, 'alksjdf', 'jlskjdfasdf', 'rent', 'asdfasdf', '454544', '', 'asdfsdf', '', '', '', NULL, NULL, NULL, '', '', ''),
-(4, 'asdfasd', 'asdfasd', 'df', 'fsdfdsf', 'ddf', '', '', '', '', '', NULL, NULL, NULL, '', '', '');
+INSERT INTO `tution` (`tutid`, `name`, `title`, `type`, `address`, `price`, `description`, `mobile`, `email`, `city`, `area`, `date`, `lattitude`, `longitude`, `tags`, `offer`) VALUES
+(8, 'Java By Kiran', 'Java and Selenium', '', 'No.53, Karve Road-Karve Nagar Bus Stop, Above Pragati Hardware, Sramik Vasahat, Karve Nagar, Pune, Maharashtra 411052', NULL, 'Best tution for java and seleniun', '88888 09416', 'kiranjava@tution.com', 'Pune', 'Karve Nagar', '2016-10-19 16:47:01', NULL, NULL, 'Java', NULL),
+(9, 'MindScripts Technologies', 'Java', NULL, '2nd Floor, Siddharth Hall, Karve Road, Near Ranka Jewellers, Behind HP Petrol Pump, Kothrud, Khilarewadi, Erandwane, Pune, Maharashtra 411004', NULL, 'We provide java tution plus placements too ? :(', '97645 60238', NULL, 'Pune', 'Kothrud', '2016-10-19 16:48:50', NULL, NULL, 'Java', NULL),
+(10, '7 Chords Music and Arts Academy', 'Guitar training institute', NULL, 'Sr. No.-163/2, Plot No-61, Sparkles Nursery School, Opposite DAV Public School,, Kotbagi Hospital Lane, Near Indus Ind Bank, Harmony Society, Ward No. 8, Wireless Colony, Aundh, Pune, Maharashtra 411007', NULL, 'Guitar training', '96895 63377 ', NULL, 'Pune', 'Aundh', '2016-10-19 16:50:24', NULL, NULL, 'Guitar', NULL),
+(11, 'Igniters Academy of Performing Arts', 'Singing class', NULL, '\r\nIgniters Academy of Performing Arts Office no. 22, 2nd Floor, Heritage Plaza, Near Morya Hospital,, Link Road, Chinchwad Gaon, Chinchwad, Pimpri-Chinchwad, Maharashtra 411033', NULL, 'Sing like pro', '96042 34779', NULL, 'Chinchwad', 'Chinchwad gaon', '2016-10-19 16:51:52', NULL, NULL, 'Singing', NULL);
 
 -- --------------------------------------------------------
 
@@ -356,17 +305,30 @@ CREATE TABLE IF NOT EXISTS `tut_img` (
   KEY `tutid` (`tutid`)
 ) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 
+-- --------------------------------------------------------
+
 --
--- Dumping data for table `tut_img`
+-- Table structure for table `users`
 --
 
-INSERT INTO `tut_img` (`id`, `path`, `tutid`) VALUES
-(1, 'uploads/tution/27-Sep-16/2-07-02-42-0-Youtube-PNG-Clipart.png', 2),
-(2, 'uploads/tution/27-Sep-16/3-08-51-40-0-uitWebandro.jpg', 3),
-(3, 'uploads/tution/27-Sep-16/4-08-53-14-0-uityoutube.jpg', 4),
-(4, 'uploads/tution/27-Sep-16/5-08-56-47-0-UIT.png', 5),
-(5, 'uploads/tution/28-Sep-16/6-10-34-01-0-Youtube-PNG-Clipart.png', 6),
-(6, 'uploads/tution/28-Sep-16/7-10-37-48-0-UIT.png', 7);
+DROP TABLE IF EXISTS `users`;
+CREATE TABLE IF NOT EXISTS `users` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `username` varchar(255) NOT NULL,
+  `mobile` longtext,
+  `email` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `status` bit(1) NOT NULL DEFAULT b'0',
+  `lastlogin` timestamp NOT NULL ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`id`, `username`, `mobile`, `email`, `password`, `status`, `lastlogin`) VALUES
+(1, 'abs', '9168277713', 'abhijitkumbhar001@gmail.com', 'abs', b'0', '2016-10-18 09:54:41');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

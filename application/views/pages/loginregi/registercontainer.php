@@ -3,12 +3,12 @@
 		<div id="agileits-sign-in-page" class="sign-in-wrapper">
 			<div class="agileinfo_signin">
 			<h3>Sign Up</h3>
-				<form action="#" method="post">
-					<input type="text" name="Name" placeholder="Your Name" required=""> 
-					<input type="email" name="Email" placeholder="Your Email" required=""> 
-					<input type="tel" name="tel" placeholder="Mobile" required=""> 
-					<input type="password" name="Password" placeholder="Password" required=""> 
-					<input type="password" name="Password" placeholder="Confirm Password" required=""> 
+				<form action="<?php base_url();?>User" method="post">
+					<input type="text" name="username" placeholder="Username" required=""> 
+					<input type="text" name="mobile" placeholder="Mobile" required="">
+					<input type="email" name="email" placeholder="Your Email" required=""> 
+					<input type="password" name="password" placeholder="Password" required=""> 
+					<input type="password" name="cpassword" placeholder="Confirm Password" required=""> 
 					<div class="signin-rit">
 						<span class="agree-checkbox">
 							<label class="checkbox"><input type="checkbox" name="checkbox">I agree to your <a class="w3layouts-t" href="terms.html" target="_blank">Terms of Use</a> and <a class="w3layouts-t" href="privacy.html" target="_blank">Privacy Policy</a></label>

@@ -10,7 +10,5 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			$category = "realestate";
 			$this->load->view('pages/mainpage',$category);
 		}
-		
-		
 	}
 ?>
