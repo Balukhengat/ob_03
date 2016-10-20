@@ -30,17 +30,18 @@
 							<address>
 								<ul class="location">
 									<li><span class="glyphicon glyphicon-map-marker"></span></li>
-									<li>CENTER FOR FINANCIAL ASSISTANCE TO DEPOSED NIGERIAN ROYALTY</li>
+									<li>Pune, India</li>
 								</ul>	
 								<div class="clearfix"> </div>
 								<ul class="location">
 									<li><span class="glyphicon glyphicon-earphone"></span></li>
-									<li>+0 561 111 235</li>
+									<li>+91 9689 02 7676</li>
 								</ul>	
 								<div class="clearfix"> </div>
 								<ul class="location">
 									<li><span class="glyphicon glyphicon-envelope"></span></li>
-									<li><a href="mailto:info@example.com">offersbullhelp@gmail.com</a></li>
+									<li><a href="">info@offursbull.com</a></li>
+									&emsp;&emsp;&emsp;<li><a href="">offersbullhelp@gmail.com</a></li>
 								</ul>						
 							</address>
 						</div>
@@ -51,15 +52,14 @@
 			<div class="agileits-footer-bottom text-center">
 			<div class="container">
 				<div class="w3-footer-logo">
-					<h1><a href="<?php echo base_url();?>index.php"><span>Offers</span>Bull</a></h1>
+					<h1><a href="<?php echo base_url();?>index.php"><img alt="Offers Bull" src="<?php echo base_url();?>assets/images/logo.png" width="150" height="100" class="img-responsive" style="margin-left: auto;margin-right: auto";></a></h1>
 				</div>
 				<div class="w3-footer-social-icons">
 					<ul>
 						<li><a class="facebook" href="#"><i class="fa fa-facebook" aria-hidden="true"></i><span>Facebook</span></a></li>
-						<li><a class="twitter" href="#"><i class="fa fa-twitter" aria-hidden="true"></i><span>Twitter</span></a></li>
-						<li><a class="flickr" href="#"><i class="fa fa-flickr" aria-hidden="true"></i><span>Flickr</span></a></li>
 						<li><a class="googleplus" href="#"><i class="fa fa-google-plus" aria-hidden="true"></i><span>Google+</span></a></li>
-						<li><a class="dribbble" href="#"><i class="fa fa-dribbble" aria-hidden="true"></i><span>Dribbble</span></a></li>
+						<li><a class="twitter" href="#"><i class="fa fa-twitter" aria-hidden="true"></i><span>Twitter</span></a></li>
+						<li><a class="flickr" href="#"><i class="fa fa-youtube" aria-hidden="true"></i><span>YouTube</span></a></li>
 					</ul>
 				</div>
 				<div class="copyrights">

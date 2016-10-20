@@ -99,9 +99,10 @@
 						</div>
 					</div>
 					<div class="interested text-center">
-						<h4>Interested in this Ad?<small> Contact the Seller!</small></h4>
-						<p><i class="glyphicon glyphicon-earphone"></i><?php echo $row['mobile'];?></p>
-						<p><i class="glyphicon glyphicon-earphone"></i><?php echo $row['email'];?></p>
+						<h4>Contact details</h4>
+						<hr>	
+						<p style="text-align: left;"><i class="glyphicon glyphicon-earphone"></i><?php echo $row['mobile'];?><br><br>
+						<i class="glyphicon glyphicon-earphone"></i><?php echo $row['email'];?></p>
 					</div>
 						<div class="tips">
 						<h4>Safety Tips for Buyers</h4>

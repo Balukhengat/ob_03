@@ -7,7 +7,6 @@
 		$realestate_info=$this->db->get('realestate')->result_array();
 	
 	?>
-	
 	<!-- breadcrumbs -->
 	<div class="w3layouts-breadcrumbs text-center">
 		<div class="container">

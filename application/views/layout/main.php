@@ -297,7 +297,7 @@
 			</div>
 			<!--partners-->
 			<div class="w3layouts-partners">
-				<h3><i class="fa fa-group" aria-hidden="true"></i> OUR CLIENTS <i class="fa fa-group" aria-hidden="true"></i></h3>
+				<h3><i class="fa fa-briefcase" aria-hidden="true"></i> OUR CLIENTS <i class="fa fa-briefcase" aria-hidden="true"></i></h3>
 					<div class="container">
 						<ul>
 							<li><a href="#"><img class="img-responsive" src="assets/images/p-1.png" alt=""></a></li>
@@ -310,7 +310,6 @@
 							<li><a href="#"><img class="img-responsive" src="assets/images/p-8.png" alt=""></a></li>
 							<li><a href="#"><img class="img-responsive" src="assets/images/p-9.png" alt=""></a></li>
 							<li><a href="#"><img class="img-responsive" src="assets/images/p-10.png" alt=""></a></li>	
-						</ul>
 					</div>
 				</div>	
 		<!--//partners-->	

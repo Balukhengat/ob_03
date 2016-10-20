@@ -46,7 +46,7 @@
 		<div class="container">
 			<div class="agile-its-header">
 				<div class="logo">
-					<h1><a href="<?php echo base_url();?>"> Offers Bull <img src="<?php echo base_url()?>assets/images/bulllogo.png" width="100" height="50"></a></h1>
+					<h1><a href="<?php echo base_url();?>"> <span style="color: black;">Offers</span> Bull <img src="<?php echo base_url()?>assets/images/bulllogo.png" width="100" height="50"></a></h1>
 				</div>
 				<div class="agileits_search">
 					<form action="#" method="post">
