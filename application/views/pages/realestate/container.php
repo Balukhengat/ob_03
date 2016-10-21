@@ -7,13 +7,15 @@
 		$realestate_info=$this->db->get('realestate')->result_array();
 	
 	?>
+	<?php $this->load->view('layout/category.php');?>
 	<!-- breadcrumbs -->
+	
 	<div class="w3layouts-breadcrumbs text-center">
 		<div class="container">
 			<span class="agile-breadcrumbs">
-			<a href="<?php echo base_url();?>index.php"><i class="fa fa-home home_1"></i></a> / 
-			
-			<span>Real Estate</span></span>
+				<a href="<?php echo base_url();?>index.php"><i class="fa fa-home home_1"></i></a> / 
+				<a href="<?php echo base_url();?>index.php"><span>Real Estate</span></a>
+			</span>
 		</div>
 	</div>
 	<!-- //breadcrumbs -->

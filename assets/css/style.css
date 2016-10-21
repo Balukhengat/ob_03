@@ -38,6 +38,10 @@ h1,h2,h3,h4,h5,h6{
 /*
 	FIXED nav bar
 */
+.postadbutton{
+	padding-top: 5px;
+}
+
 .fixed-nav-bar {
   position: fixed;
   top: 0;
@@ -181,9 +185,9 @@ header {
     float: left;
 }
 .agileits_search {
-    float: right;
+    float: left;
 	margin-top: 7px;
-	width: 65%;
+	width: 100%;
 }
 .logo a {
 	font-family: 'Ubuntu Condensed', sans-serif;
@@ -259,10 +263,10 @@ header {
 }
 .agileits_search form {
 	float:left;
-	width:75%;
+	width:100%;
 }
 .agileits_search input[type="text"] {
-    width: 66%;
+    width: 100%;
 }
 a.post-w3layouts-ad {
     text-decoration: none;
@@ -2269,7 +2273,7 @@ ul.location li:nth-child(2) {
 
 /*-- breadcrumbs --*/
 .w3layouts-breadcrumbs {
-	background:#0099e5;
+	background:#ff8989;
 	padding:11px 0;
 	text-align:left;
 }
@@ -2278,14 +2282,14 @@ span.agile-breadcrumbs {
     font-size: 15px;
 }
 span.agile-breadcrumbs a {
-	color:#d0eaf7;
+	color:#fff;
 	margin:0 5px;
 }
 span.agile-breadcrumbs a:hover {
 	color:#fff;
 }
 span.agile-breadcrumbs a i {
-    color: #d0eaf7;
+    color: #ffffff;
     font-size: 16px;
 	transition:0.5s all;
 	-webkit-transition:0.5s all;
@@ -5075,7 +5079,7 @@ label {
 		padding: 10px 15px;
 	}
 	.agileits_search input[type="text"] {
-		width: 58%;
+		width: 83%;
 		padding: 9px;
 	}
 	#agileinfo_search {
@@ -6745,7 +6749,7 @@ label {
 		margin-left: 0;
 	}
 	.agileits_search input[type="text"] {
-		width: 56%;
+		width: 83%;
 	}
 	.wthree-mobile-app form input[type="submit"] {
 		padding: 13px 0px;

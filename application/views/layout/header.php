@@ -44,20 +44,30 @@
 		</div>
 		
 		<div class="container">
+		<div class="row">
 			<div class="agile-its-header">
-				<div class="logo">
-					<h1><a href="<?php echo base_url();?>"> <span style="color: black;">Offers</span> Bull <img src="<?php echo base_url()?>assets/images/bulllogo.png" width="100" height="50"></a></h1>
-				</div>
-				<div class="agileits_search">
-					<form action="#" method="post">
-						<input name="Search" type="text" placeholder="Get the best offers" required="" />
-						<button type="submit" class="btn btn-default" aria-label="Left Align">
-							<i class="fa fa-search" aria-hidden="true"> </i>
-						</button>
-					</form>
-				<a class="post-w3layouts-ad" href="#">Post Free Ad</a>
+				<div class="col-xs-12 col-sm-12 col-lg-4 col-md 12">	
+					<div class="logo">
+						<h1><a href="<?php echo base_url();?>"> <span style="color: black;">Offers</span> Bull <img src="<?php echo base_url()?>assets/images/bulllogo.png" width="100" height="50"></a></h1>
+					</div>
 				</div>	
+				<div class="col-xs-12 col-sm-8 col-lg-6 col-md 8">
+					<div class="agileits_search">
+						<form action="#" method="post">
+							<input name="Search" type="text" placeholder="Get the best offers" required="" />
+							<button type="submit" class="btn btn-default" aria-label="Left Align">
+								<i class="fa fa-search" aria-hidden="true"> </i>
+							</button>
+						</form>
+					</div>
+				</div>	
+				<div class="col-xs-12 col-sm-4 col-lg-2 col-md 4">
+					<div class="postadbutton">
+						<button class="btn btn-success">Post Ads</button>
+					</div>	
+				</div>		
 				<div class="clearfix"></div>
+			</div>
 			</div>
 		</div>
 				
