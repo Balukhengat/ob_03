@@ -77,7 +77,6 @@
 						<h4><span class="w3layouts-agileinfo">City </span> : <?php echo $row['city'];?></h4>
 						<h4><span class="w3layouts-agileinfo">Facilities </span> : <?php echo $row['amenities'];?> </h4>
 						<h4><span class="w3layouts-agileinfo">Description</span> :<p><?php echo $row['description'];?></p><div class="clearfix"></div></h4>
-					
 					</div>
 				</div>
 				<div class="col-md-5 product-details-grid">

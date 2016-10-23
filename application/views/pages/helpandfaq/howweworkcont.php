@@ -12,7 +12,7 @@
 						<div class="col-md-3 work-section-grid" id="rect1">
 							<i class="fa fa-pencil-square-o"></i>
 							<h4>Post an Advertisement</h4>
-							<p>Get <a href="<?php echo base_url()?>index.php/register"><b>register</b></a> with <b>OffersBull</b> advertise your buisness here and wait till users reaches to you </p>
+							<p>Get <a href="<?php echo base_url()?>index.php/login/newuser"><b>register</b></a> with <b>OffersBull</b> advertise your buisness here and wait till users reaches to you </p>
 							<span class="arrow1"><img src="<?php echo base_url();?>assets/images/arrow1.png" alt="" /></span>
 						</div>
 						<div class="col-md-3 work-section-grid" id="rect2">

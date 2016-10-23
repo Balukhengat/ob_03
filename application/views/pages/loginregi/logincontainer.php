@@ -3,9 +3,9 @@
 		<div id="agileits-sign-in-page" class="sign-in-wrapper">
 			<div class="agileinfo_signin">
 			<h3>Sign In</h3>
-				<form action="#" method="post">
-					<input type="email" name="Your Email" placeholder="Your Email" required=""> 
-					<input type="password" name="Password" placeholder="Password" required=""> 
+				<form action="<?php echo base_url();?>index.php/login" method="post">
+					<input type="email" name="email" placeholder="Your Email" required=""> 
+					<input type="password" name="password" placeholder="Password" required=""> 
 					<input type="submit" value="Sign In">
 					<div class="forgot-grid">
 						<label class="checkbox"><input type="checkbox" name="checkbox">Remember me</label>
@@ -21,11 +21,8 @@
 									<div class="modal-header">
 										<button type="button" class="close" data-dismiss="modal">&times;</button>
 										<h3 class="w3ls-password">Get Password</h3>		
-										<p class="get-pw">Enter your email address below and we'll send you an email with instructions.</p>
-										<form action="#" method="post">
-											<input type="text" class="user" name="email" placeholder="Email" required="">
-											<input type="submit" value="Submit">
-										</form>
+										<p class="get-pw">Enter your email address below and we'll send you an email with instructions.</p>\
+										
 									</div>
 								</div>
 							</div>

@@ -3,7 +3,7 @@
 		<div id="agileits-sign-in-page" class="sign-in-wrapper">
 			<div class="agileinfo_signin">
 			<h3>Sign Up</h3>
-				<form action="<?php base_url();?>User" method="post">
+				<form action="<?php echo  base_url();?>index.php/login/registration" method="post">
 					<input type="text" name="username" placeholder="Username" required=""> 
 					<input type="text" name="mobile" placeholder="Mobile" required="">
 					<input type="email" name="email" placeholder="Your Email" required=""> 
