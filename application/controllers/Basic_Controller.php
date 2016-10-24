@@ -23,6 +23,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			$this->load->view('pages/profile/profile',$data);
 		}
 		public function user_realestate(){
+			$userid = $_SESSION['userid'];
+			$this->image_upload('real',$userid);
 			$data['pagename']="realestate.php";
 			$this->load->view('pages/profile/profile',$data);
 		}
@@ -64,5 +66,27 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			$category = "realestate";
 			$this->load->view('pages/mainpage',$category);
 		}
+		//image Uploading
+		function image_upload($path,$userid)
+		{
+			$config['upload_path']= './uploads/'.$path;
+			$config['file_name']=$userid . '.jpg';
+			$config['allowed_types']= 'jpg|png';
+			$config['max_size']= 100000;
+	//print_r($config);die();
+			$this->load->library('upload', $config);
+			//$this->upload->initialize($config);
+			if ( ! $this->upload->do_upload('image'))
+			{
+				$error = array('error' => $this->upload->display_errors());
+				//print_r($error);die();
+			}
+			else
+			{
+				$da = array('upload_data' => $this->upload->data());
+		
+			}
+		}
+		
 	}
 ?>

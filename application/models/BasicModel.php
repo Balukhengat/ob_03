@@ -4,6 +4,7 @@ class BasicModel extends CI_Model{
 	public function index(){
 		session_start();
 	}
+	
 	//Validate signin
 	public function validate_signin($data){
 		$success=$this->db->get_where('register',$data)->result_array();
