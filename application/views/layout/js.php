@@ -131,3 +131,17 @@
 			</script>
 			<!-- start-smoth-scrolling -->
 		<!-- //here ends scrolling icon -->
+		
+		<!-- Profile menu selector -->
+		<script type="text/javascript">
+			$(".well").mouseenter(
+			  function(){
+			    $(this).css('background-color','#d72c31');
+			  });
+			
+			 $(".well").mouseleave(
+			  function(){
+			    $(this).css('background-color','#f5f5f5');
+			  });
+		</script>
+		
