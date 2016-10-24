@@ -4,10 +4,10 @@
 			<div class="w3ls-header-right">
 				<ul>
 					<li class="dropdown head-dpdn">
-						<a href="<?php echo base_url();?>index.php/Login/login" aria-expanded="false"><i class="fa fa-user" aria-hidden="true"></i> Sign In</a>
+						<a href="<?php echo base_url();?>Login/login" aria-expanded="false"><i class="fa fa-user" aria-hidden="true"></i> Sign In</a>
 					</li>
 					<li class="dropdown head-dpdn">
-						<a href="<?php echo base_url();?>index.php/Login/newuser" aria-expanded="false"><i class="fa fa-user-plus" aria-hidden="true"></i> Register</a>
+						<a href="<?php echo base_url();?>Login/newuser" aria-expanded="false"><i class="fa fa-user-plus" aria-hidden="true"></i> Register</a>
 					</li>
 					
 					<li class="dropdown head-dpdn">
@@ -32,7 +32,7 @@
 						</div>
 					</li>
 					<li class="dropdown head-dpdn">
-						<a href="<?php echo base_url();?>index.php/help"><i class="fa fa-question-circle" aria-hidden="true"></i> Help</a>
+						<a href="<?php echo base_url();?>help"><i class="fa fa-question-circle" aria-hidden="true"></i> Help</a>
 					</li>
 					
 				</ul>

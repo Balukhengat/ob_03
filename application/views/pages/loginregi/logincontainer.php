@@ -3,9 +3,10 @@
 		<div id="agileits-sign-in-page" class="sign-in-wrapper">
 			<div class="agileinfo_signin">
 			<h3>Sign In</h3>
-				<form action="<?php echo base_url();?>index.php/login" method="post">
+				<form action="<?php echo base_url();?>login" method="post">
 					<input type="email" name="email" placeholder="Your Email" required=""> 
-					<input type="password" name="password" placeholder="Password" required=""> 
+					<input type="password" name="password" placeholder="Password" required="">
+					<div id="danger-alert" class="alert alert-danger"><?php echo $this->session->flashdata('message');?></div> 
 					<input type="submit" value="Sign In">
 					<div class="forgot-grid">
 						<label class="checkbox"><input type="checkbox" name="checkbox">Remember me</label>
@@ -31,8 +32,9 @@
 						<div class="clearfix"> </div>
 					</div>
 				</form>
-				<h6> Not a Member Yet? <a href="<?php echo base_url()?>index.php/register">Sign Up Now</a> </h6>
+				<h6> Not a Member Yet? <a href="<?php echo base_url()?>register">Sign Up Now</a> </h6>
 			</div>
 		</div>
 	</section>
+	
 	<!-- //sign in form -->

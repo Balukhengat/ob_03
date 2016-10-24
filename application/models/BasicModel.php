@@ -9,11 +9,12 @@ class BasicModel extends CI_Model{
 		$success=$this->db->get_where('register',$data)->result();
 		if(count($success) > 0)
 		{
-			$this->load->view('layout/index');
+			$this->session->set_flashdata('message','Sigin Successfully');
+			redirect(base_url().'Basic_Controller');
 		}
 		else{
 			$this->session->set_flashdata('message','Login_failed,invaid email_and_password');
-			$this->index();
+			redirect(base_url().'login/login');
 		}
 	}
 	//OTP email (SignIN)

@@ -10,18 +10,18 @@
 						<div class="col-md-3 wthree-footer-grid">
 							<h4 class="footer-head">Help</h4>
 							<ul>
-								<li><a href="<?php echo base_url();?>index.php/help/howwework"><i class="fa fa-long-arrow-right" aria-hidden="true"></i>How OffersBull Works</a></li>						
+								<li><a href="<?php echo base_url();?>help/howwework"><i class="fa fa-long-arrow-right" aria-hidden="true"></i>How OffersBull Works</a></li>						
 								<li><a href="sitemap.html"><i class="fa fa-long-arrow-right" aria-hidden="true"></i>Sitemap</a></li>
-								<li><a href="<?php echo base_url();?>index.php/help"><i class="fa fa-long-arrow-right" aria-hidden="true"></i>Feedback</a></li>
-								<li><a href="<?php echo base_url();?>index.php/contact"><i class="fa fa-long-arrow-right" aria-hidden="true"></i>Contact</a></li>
-								<li><a href="<?php echo base_url()?>index.php/help/faq"><i class="fa fa-long-arrow-right" aria-hidden="true"></i>FAQ's</a></li>
+								<li><a href="<?php echo base_url();?>help"><i class="fa fa-long-arrow-right" aria-hidden="true"></i>Feedback</a></li>
+								<li><a href="<?php echo base_url();?>contact"><i class="fa fa-long-arrow-right" aria-hidden="true"></i>Contact</a></li>
+								<li><a href="<?php echo base_url()?>help/faq"><i class="fa fa-long-arrow-right" aria-hidden="true"></i>FAQ's</a></li>
 							</ul>
 						</div>
 						<div class="col-md-3 wthree-footer-grid">
 							<h4 class="footer-head">Information</h4>
 							<ul>
-								<li><a href="<?php echo base_url()?>index.php/help/terms"><i class="fa fa-long-arrow-right" aria-hidden="true"></i>Terms and conditions</a></li>
-								<li><a href="<?php echo base_url()?>index.php/help/privacy"><i class="fa fa-long-arrow-right" aria-hidden="true"></i>Privacy Policy</a></li>
+								<li><a href="<?php echo base_url()?>help/terms"><i class="fa fa-long-arrow-right" aria-hidden="true"></i>Terms and conditions</a></li>
+								<li><a href="<?php echo base_url()?>help/privacy"><i class="fa fa-long-arrow-right" aria-hidden="true"></i>Privacy Policy</a></li>
 							</ul>
 						</div>
 						<div class="col-md-3 wthree-footer-grid">
@@ -52,7 +52,7 @@
 			<div class="agileits-footer-bottom text-center">
 			<div class="container">
 				<div class="w3-footer-logo">
-					<h1><a href="<?php echo base_url();?>index.php"><img alt="Offers Bull" src="<?php echo base_url();?>assets/images/logo.png" width="150" height="100" class="img-responsive" style="margin-left: auto;margin-right: auto";></a></h1>
+					<h1><a href="<?php echo base_url();?>"><img alt="Offers Bull" src="<?php echo base_url();?>assets/images/logo.png" width="150" height="100" class="img-responsive" style="margin-left: auto;margin-right: auto";></a></h1>
 				</div>
 				<div class="w3-footer-social-icons">
 					<ul>

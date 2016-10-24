@@ -54,7 +54,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				$this->db->where('email',$email);
 				$this->db->update('register');
 				//go to user profile with session
-				$this->load->view('layout/index');
+				redirect(base_url().'Basic_Controller');
 			}else{
 				$temp['pagename'] = 'otp.php'; 
 				$temp['email']=$email;
