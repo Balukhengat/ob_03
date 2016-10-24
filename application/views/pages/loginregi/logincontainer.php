@@ -6,7 +6,9 @@
 				<form action="<?php echo base_url();?>login" method="post">
 					<input type="email" name="email" placeholder="Your Email" required=""> 
 					<input type="password" name="password" placeholder="Password" required="">
-					<div id="danger-alert" class="alert alert-danger"><?php echo $this->session->flashdata('message');?></div> 
+						<?php if($this->session->flashdata('message')!=null){?>
+						<div id="danger-alert" class="alert alert-danger"><?php echo $this->session->flashdata('message');?></div> 
+						<?php }?>
 					<input type="submit" value="Sign In">
 					<div class="forgot-grid">
 						<label class="checkbox"><input type="checkbox" name="checkbox">Remember me</label>

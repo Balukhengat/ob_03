@@ -7,6 +7,8 @@
 <link rel="stylesheet" type="text/css" href="<?php base_url();?>assets/css/jquery-ui1.css">
 <link rel="stylesheet" href="<?php echo base_url();?>assets/css/font-awesome.min.css" /><!-- fontawesome-CSS -->
 <link rel="stylesheet" href="<?php echo base_url();?>assets/css/menu_sideslide.css" type="text/css" media="all"><!-- Navigation-CSS -->
+
+	
 <!-- meta tags -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -18,8 +20,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <link href='//fonts.googleapis.com/css?family=Ubuntu+Condensed' rel='stylesheet' type='text/css'>
 <link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
 <!--//fonts-->	
-
-
+<!-- Datatable JS -->
+<script src="cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
 <!-- switcher-grid and list alignment -->
 <script src="<?php echo base_url();?>assets/js/tabs.js"></script>
 <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/jquery.min.js"></script>

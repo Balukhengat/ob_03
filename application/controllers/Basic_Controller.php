@@ -6,9 +6,17 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		{
 			$this->load->view('layout/index');
 		}
+		public function user_logout(){
+			unset($_SESSION['userid']);
+			$this->session->set_flashdata('message','Successfully logout');
+			redirect(base_url().'login/login');
+		}
 		public function user_profile(){
-			$data['pagename']="myprofile.php";
-			$this->load->view('pages/profile/profile',$data);
+				$data['pagename']="myprofile.php";
+				$this->load->view('pages/profile/profile',$data);
+			
+			//$data['pagename']="myprofile.php";
+			//$this->load->view('pages/profile/profile',$data);
 		}
 		public function user_dashboard(){
 			$data['pagename']="dashboard.php";
@@ -39,13 +47,17 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			$this->load->view('pages/profile/profile',$data);
 		}
 		public function updateprofile(){
-			$this->form_validation->set_rules('mobile','Mobile','required|max-length[10]|numeric');
-			if($this->form_validation->run()){
-				$mobile= $this->input->post('mobile');
-				$this->db-set($mobile);
-				$this->db->update('register');
-			}else{
-		//		$this->load->
+			$this->form_validation->set_rules('mobile', 'Mobile', 'trim|required|exact_length[10]');
+			$this->form_validation->set_rules('address', 'Address', 'trim|required');
+			$this->form_validation->set_rules('city', 'city', 'trim|required');
+			if($this->form_validation->run()==FALSE){
+				$data['pagename']="myprofile.php";
+				$this->load->view('pages/profile/profile',$data);
+			}else
+			{
+					$this->BasicModel->updateprofile();
+				$this->session->set_flashdata('message','Data Updated Successfully');
+				redirect(base_url().'Basic_Controller/user_profile');
 			}
 		}
 		public function realestate(){

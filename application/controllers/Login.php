@@ -29,7 +29,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			$this->form_validation->set_rules('mobile', 'Mobile', 'trim|required|exact_length[10]');
 			$this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email');
 			$this->form_validation->set_rules('password', 'Password', 'trim|required|min_length[8]');
-			$this->form_validation->set_rules('cpassword', 'Confirm Password', 'trim|required|min_length[8]|matches[password]');
+			$this->form_validation->set_rules('cpassword', 'Confirm Password', 'trim|required|min_length[8]|matches[password]', array('matches' => 'Password does not match'));
     		if ($this->form_validation->run() == false) {
     			$data['pagename']="registercontainer.php";
     		 $this->load->view('pages/loginregi/login',$data);
@@ -70,7 +70,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				$this->db->where('email',$email);
 				$this->db->update('register');
 				//go to user profile with session
-				redirect(base_url().'Basic_Controller');
+				$this->session->set_flashdata('message','Successfully registered, Please login again');
+				redirect(base_url().'login/login');
 			}else{
 				$temp['pagename'] = 'otp.php'; 
 				$temp['email']=$email;
