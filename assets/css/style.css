@@ -1,3 +1,4 @@
+
 /*--
 Author: W3layouts
 Author URL: http://w3layouts.com
@@ -17,6 +18,12 @@ body a{
 	-ms-transition:0.5s all;
 	font-weight:400;
 	font-family: 'Open Sans', sans-serif;
+}
+/* Validation error*/
+.error{
+	 font-size: 11px;
+      color: red;
+   
 }
 input[type="button"],input[type="submit"]{
 	transition:0.5s all;
