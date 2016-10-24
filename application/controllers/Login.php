@@ -25,7 +25,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			$this->BasicModel->validate_signin($data);
 		}
 		public function registration()
-		{
+		{	$this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email');
+    		if ($this->form_validation->run() == false) {
+    		$bed_number_error = form_error('bed_number');
+    		echo $bed_number_error;
+    			} else {
+    		echo "true";
+    			}
 			$email=$this->input->post('email');
 			$data['username']=$this->input->post('username');
 			$data['mobile']=$this->input->post('mobile');
