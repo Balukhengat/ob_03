@@ -1,13 +1,16 @@
 <head>
 <title>OffersBull</title>
-<link rel="stylesheet" href="<?php echo base_url();?>assets/css/bootstrap.min.css"><!-- bootstrap-CSS -->
+<link rel="stylesheet" href="<?php echo base_url();?>assets/css/bootstrap.min.css">
+<link rel="stylesheet" href="<?php echo base_url();?>assets/js/bootstrap.js"><!-- bootstrap-CSS -->
 <link rel="stylesheet" href="<?php echo base_url();?>assets/css/bootstrap-select.css"><!-- bootstrap-select-CSS -->
 <link href="<?php echo base_url();?>assets/css/style.css" rel="stylesheet" type="text/css" media="all" /><!-- style.css -->
 <link rel="stylesheet" href="<?php echo base_url();?>assets/css/flexslider.css" type="text/css" media="screen" /><!-- flexslider-CSS -->
 <link rel="stylesheet" type="text/css" href="<?php base_url();?>assets/css/jquery-ui1.css">
 <link rel="stylesheet" href="<?php echo base_url();?>assets/css/font-awesome.min.css" /><!-- fontawesome-CSS -->
 <link rel="stylesheet" href="<?php echo base_url();?>assets/css/menu_sideslide.css" type="text/css" media="all"><!-- Navigation-CSS -->
-
+<link rel="stylesheet" href="http://cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css"> 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script src="http://cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css"></script>
 	
 <!-- meta tags -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -113,5 +116,9 @@ $(document).ready(function(){
         });
 });
 </script>
-
+<script>
+$(document).ready(function(){
+    $('#example').DataTable();
+});
+</script>
 </head>

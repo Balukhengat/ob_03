@@ -3,7 +3,7 @@
 			<div class="w3-categories">
 				<div class="container">
 					<div class="row">
-						 <div class="col-xs-3 col-sm-12 col-md-3 col-lg-3">
+						 <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
 							<div class="well" id="menuhover"><a href="<?php echo base_url();?>Basic_controller/user_profile">My profile</a></div>
 							<div class="well" id="menuhover1"><a href="<?php echo base_url();?>Basic_controller/user_dashboard">Dashboard</a></div>
 							<div class="well" id="menuhover2"><a href="<?php echo base_url();?>Basic_controller/user_realestate">RealEstate</a></div>
