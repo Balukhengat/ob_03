@@ -6,35 +6,35 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		{
 			$this->load->view('layout/index');
 		}
-		public function profile(){
+		public function user_profile(){
 			$data['pagename']="myprofile.php";
 			$this->load->view('pages/profile/profile',$data);
 		}
-		public function dashboard(){
+		public function user_dashboard(){
 			$data['pagename']="dashboard.php";
 			$this->load->view('pages/profile/profile',$data);
 		}
-		public function realestate(){
+		public function user_realestate(){
 			$data['pagename']="realestate.php";
 			$this->load->view('pages/profile/profile',$data);
 		}
-		public function tution(){
+		public function user_tution(){
 			$data['pagename']="tution.php";
 			$this->load->view('pages/profile/profile',$data);
 		}
-		public function hotel(){
+		public function user_hotel(){
 			$data['pagename']="hotel.php";
 			$this->load->view('pages/profile/profile',$data);
 		}
-		public function travelling(){
+		public function user_travelling(){
 			$data['pagename']="travelling.php";
 			$this->load->view('pages/profile/profile',$data);
 		}
-		public function automobile(){
+		public function user_automobile(){
 			$data['pagename']="automobile.php";
 			$this->load->view('pages/profile/profile',$data);
 		}
-		public function other(){
+		public function user_other(){
 			$data['pagename']="other.php";
 			$this->load->view('pages/profile/profile',$data);
 		}
