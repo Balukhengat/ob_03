@@ -11,7 +11,7 @@
       <tr>
         <td>John</td>
         <td>Doe</td>
-        <td><button class="btn btn-success btn-sm">Edit</button>&nbsp;<button class="btn btn-danger btn-sm">Delete</button></td>
+        <td><a href=""><button class="btn btn-success btn-sm">Edit</button></a>&nbsp;<a href=""><button class="btn btn-danger btn-sm">Delete</button></a></td>
       </tr>
       <tr>
         <td>John</td>
