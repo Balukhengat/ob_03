@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 25, 2016 at 03:47 AM
+-- Generation Time: Oct 25, 2016 at 04:10 AM
 -- Server version: 5.7.9
 -- PHP Version: 5.6.16
 
@@ -63,7 +63,7 @@ CREATE TABLE IF NOT EXISTS `automobile` (
   `city` varchar(255) DEFAULT NULL,
   `area` varchar(255) DEFAULT NULL,
   `date` datetime DEFAULT NULL,
-  `offerend` tinyint(4) DEFAULT NULL,
+  `offerend` datetime DEFAULT NULL,
   `category` tinyint(4) DEFAULT NULL,
   `userid` tinyint(4) DEFAULT NULL,
   PRIMARY KEY (`autoid`)
@@ -321,6 +321,9 @@ CREATE TABLE IF NOT EXISTS `travelling` (
   `city` varchar(255) DEFAULT NULL,
   `area` varchar(255) DEFAULT NULL,
   `date` datetime DEFAULT NULL,
+  `offerend` datetime DEFAULT NULL,
+  `category` tinyint(4) DEFAULT NULL,
+  `userid` tinyint(4) DEFAULT NULL,
   PRIMARY KEY (`travelid`)
 ) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 
@@ -328,10 +331,10 @@ CREATE TABLE IF NOT EXISTS `travelling` (
 -- Dumping data for table `travelling`
 --
 
-INSERT INTO `travelling` (`travelid`, `name`, `title`, `address`, `price`, `description`, `mobile`, `email`, `city`, `area`, `date`) VALUES
-(1, 'abhijit', 'Mumbai to Pune', 'a', 'a', 'a', 'a', 'a', 'a', 'a', '2011-02-02 00:00:00'),
-(5, 'asdfasd', 'Kolhaput to Solapur', '', '', '', '', '', '', '', '2016-09-29 06:29:18'),
-(4, 'balu', 'Pune to Kolhapur', 'asdf', '', '', '', '', '', '', '2016-09-29 05:20:40');
+INSERT INTO `travelling` (`travelid`, `name`, `title`, `address`, `price`, `description`, `mobile`, `email`, `city`, `area`, `date`, `offerend`, `category`, `userid`) VALUES
+(1, 'abhijit', 'Mumbai to Pune', 'a', 'a', 'a', 'a', 'a', 'a', 'a', '2011-02-02 00:00:00', NULL, NULL, NULL),
+(5, 'asdfasd', 'Kolhaput to Solapur', '', '', '', '', '', '', '', '2016-09-29 06:29:18', NULL, NULL, NULL),
+(4, 'balu', 'Pune to Kolhapur', 'asdf', '', '', '', '', '', '', '2016-09-29 05:20:40', NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
