@@ -2,7 +2,7 @@
 <form method="post" action="<?php echo base_url();?>Basic_Controller/user_realestate" enctype="multipart/form-data">
 	<div class="form-group">
 	  <label for="Name">Name:</label>
-	  <input type="text" class="form-control" id="name" name="name">
+	  <input type="text" class="form-control" id="name" name="name" disabled>
 	</div>
 	<div class="form-group">
 	  <label for="id">Title:</label>
@@ -33,11 +33,11 @@
 	</div>
 	<div class="form-group">
 	  <label for="Mobile">Mobile:</label>
-	  <input type="text" class="form-control" id="mobile" name="mobile">
+	  <input type="text" class="form-control" id="mobile" name="mobile" disabled>
 	</div>
 	<div class="form-group">
 	  <label for="email">Email:</label>
-	  <input type="text" class="form-control" id="email" name="email">
+	  <input type="text" class="form-control" id="email" name="email" disabled>
 	</div>
 	<div class="form-group">
 	  <label for="Facilities">Facilities</label>
@@ -52,8 +52,12 @@
 	  <input type="text" class="form-control" id="area" name="area">
 	</div>
 	<div class="form-group">
-	  <label for="Offerend">Offerend:</label>
-	  <input type="text" class="form-control" id="offerend" name="offerend">
+	  <label for="Offerend">Offer end date:</label>
+	  <input type="date" class="form-control" id="offerend" name="offerend">
+	</div>
+	<div class="form-group">
+	  <label for="Image">Image:</label>
+	  <input type="file" class="form-control" id="image" name="image[]">
 	</div>
 	<button type="submit" class="btn btn-success">Submit</button>
 </form>
