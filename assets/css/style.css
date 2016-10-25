@@ -1861,6 +1861,18 @@ span.price:after {
 	margin:50px 0 0 0;
 	outline:none;
 }
+.wthree-help input {
+	font-size: 16px;
+    color: #000;
+    width: 70%;
+    border: none;
+    padding: 16px;
+    border-bottom: solid 1px #0099e5;
+	height:50px;
+	margin-left:auto;
+	margin-right:auto;
+	outline:none;
+}
 .wthree-help form input[type="submit"] {
     font-size: 1em;
     color: #fff;

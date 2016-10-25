@@ -3,7 +3,10 @@
 		<div id="agileits-sign-in-page" class="sign-in-wrapper">
 			<div class="agileinfo_signin">
 			<h3>Sign Up</h3>
-				<form action="<?php echo  base_url();?>index.php/login/registration" method="post">
+				<form action="<?php echo  base_url();?>login/registration" method="post">
+					<?php if($this->session->flashdata('message')!=null){?>
+						<div id="danger-alert" class="alert alert-danger"><?php echo $this->session->flashdata('message');?></div> 
+						<?php }?>
 					<div class="error"><?php echo form_error('username'); ?></div>
 					<input type="text" name="username" placeholder="Username" required=""> 
 					<div class="error"><?php echo form_error('mobile'); ?></div>

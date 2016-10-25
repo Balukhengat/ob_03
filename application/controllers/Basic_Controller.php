@@ -73,13 +73,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			$config['file_name']=$userid . '.jpg';
 			$config['allowed_types']= 'jpg|png';
 			$config['max_size']= 100000;
-	//print_r($config);die();
 			$this->load->library('upload', $config);
-			//$this->upload->initialize($config);
 			if ( ! $this->upload->do_upload('image'))
 			{
 				$error = array('error' => $this->upload->display_errors());
-				//print_r($error);die();
 			}
 			else
 			{
