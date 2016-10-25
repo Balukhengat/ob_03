@@ -1,5 +1,6 @@
 <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
-<form method="post" action="<?php echo base_url();?>Basic_Controller/user_realestate" enctype="multipart/form-data">
+<?php $this->db->get_where('e');?>
+<form method="post" action="<?php echo base_url();?>Basic_Controller/user_tution" enctype="multipart/form-data">
 	<div class="form-group">
 	  <label for="Name">Name:</label>
 	  <input type="text" class="form-control" id="name" name="name" disabled>
