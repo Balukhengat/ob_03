@@ -22,14 +22,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			$data['pagename']="dashboard.php";
 			$this->load->view('pages/profile/profile',$data);
 		}
-		public function user_realestate(){
+		public function user_realestate($task=''){
+			if($task=='create'){
 			$userid = $_SESSION['userid'];
 			$this->form_validation->set_rules('name', 'Name', 'trim|required');
 			$this->form_validation->set_rules('title', 'Title', 'trim|required');
 			$this->form_validation->set_rules('type', 'Type', 'trim|required');
-			$this->form_validation->set_rules('address', 'Address', 'trim|required');
 			$this->form_validation->set_rules('builtup', 'Builtup', 'trim|required');
-			$this->form_validation->set_rules('price', 'Price', 'trim|required|numeric');
 			$this->form_validation->set_rules('address', 'Address', 'trim|required');
 			$this->form_validation->set_rules('description', 'Description', 'trim|required');
 			$this->form_validation->set_rules('price', 'Price', 'trim|required|numeric');
@@ -62,23 +61,22 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					$this->db->insert('realestate',$data);
 			//$this->image_upload('real',$userid);
 			$this->session->set_flashdata('message','Data Uploaded Successfully');
+			}}
 			$data['pagename']="realestate.php";
 			$this->load->view('pages/profile/profile',$data);
-			}
+			
 		}
-		public function user_tution(){
+		public function user_tution($task=''){
+			if($task=='create'){
 			$userid = $_SESSION['userid'];
-			$this->form_validation->set_rules('name', 'Name', 'trim|required');
 			$this->form_validation->set_rules('title', 'Title', 'trim|required');
-			$this->form_validation->set_rules('type', 'Type', 'trim|required');
 			$this->form_validation->set_rules('address', 'Address', 'trim|required');
 			$this->form_validation->set_rules('description', 'Description', 'trim|required');
-			$this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email');
-			$this->form_validation->set_rules('mobile', 'Mobile', 'trim|required|min_length[10]');
 			$this->form_validation->set_rules('city', 'City', 'trim|required');
 			$this->form_validation->set_rules('area', 'Area', 'trim|required');
 			$this->form_validation->set_rules('offerend', 'Offer End', 'trim|required');
 			if ($this->form_validation->run() == false) {
+		
 				$data['pagename']="tution.php";
 				$this->load->view('pages/profile/profile',$data);
 			} else {
@@ -92,28 +90,150 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				$data['area']=$this->input->post('area');
 				$data['date']=date('Y-m-d H:i:s');
 				$data['offerend']=$this->input->post('offerend');
-				$data['category']=0;
+				$data['category']=1;
 				$data['userid']=$userid;
 				$this->db->insert('tution',$data);
 				//$this->image_upload('real',$userid);
 				$this->session->set_flashdata('message','Data Uploaded Successfully');
+			}
+			}
 			$data['pagename']="tution.php";
 			$this->load->view('pages/profile/profile',$data);
+		
 		}
-		}
-		public function user_hotel(){
+		public function user_hotel($task=''){
+			if($task=='create'){
+				$userid = $_SESSION['userid'];
+				$this->form_validation->set_rules('title', 'Title', 'trim|required');
+				$this->form_validation->set_rules('type', 'Type', 'trim|required');
+				$this->form_validation->set_rules('address', 'Address', 'trim|required');
+				$this->form_validation->set_rules('price', 'Price', 'trim|required|numeric');
+				$this->form_validation->set_rules('description', 'Description', 'trim|required');
+				$this->form_validation->set_rules('facilities', 'Facility', 'trim|required');
+				$this->form_validation->set_rules('city', 'City', 'trim|required');
+				$this->form_validation->set_rules('area', 'Area', 'trim|required');
+				$this->form_validation->set_rules('offerend', 'Offer End', 'trim|required');
+				if ($this->form_validation->run() == false) {
+					$data['pagename']="hotel.php";
+					$this->load->view('pages/profile/profile',$data);
+				} else {
+					$data['name']=$this->input->post('name');
+					$data['title']=$this->input->post('title');
+					$data['type']=$this->input->post('type');
+					$data['address']=$this->input->post('address');
+					$data['price']=$this->input->post('price');
+					$data['description']=$this->input->post('description');
+					$data['mobile']=$this->input->post('mobile');
+					$data['email']=$this->input->post('email');
+					$data['amenities']=$this->input->post('facilities');
+					$data['city']=$this->input->post('city');
+					$data['area']=$this->input->post('area');
+					$data['date']=date('Y-m-d H:i:s');
+					$data['offerend']=$this->input->post('offerend');
+					$data['category']=2;
+					$data['userid']=$userid;
+					$this->db->insert('hotel',$data);
+					//$this->image_upload('real',$userid);
+					$this->session->set_flashdata('message','Data Uploaded Successfully');
+				}}
 			$data['pagename']="hotel.php";
 			$this->load->view('pages/profile/profile',$data);
 		}
-		public function user_travelling(){
+		public function user_travelling($task=''){
+			if($task=='create'){
+				$userid = $_SESSION['userid'];
+				$this->form_validation->set_rules('title', 'Title', 'trim|required');
+				$this->form_validation->set_rules('type', 'Type', 'trim|required');
+				$this->form_validation->set_rules('address', 'Address', 'trim|required');
+				$this->form_validation->set_rules('description', 'Description', 'trim|required');
+				$this->form_validation->set_rules('city', 'City', 'trim|required');
+				$this->form_validation->set_rules('area', 'Area', 'trim|required');
+				$this->form_validation->set_rules('offerend', 'Offer End', 'trim|required');
+				if ($this->form_validation->run() == false) {
+					$data['pagename']="travelling.php";
+					$this->load->view('pages/profile/profile',$data);
+				} else {
+					$data['name']=$this->input->post('name');
+					$data['title']=$this->input->post('title');
+					$data['address']=$this->input->post('address');
+					$data['price']=$this->input->post('price');
+					$data['description']=$this->input->post('description');
+					$data['mobile']=$this->input->post('mobile');
+					$data['email']=$this->input->post('email');
+					$data['city']=$this->input->post('city');
+					$data['area']=$this->input->post('area');
+					$data['date']=date('Y-m-d H:i:s');
+					$data['offerend']=$this->input->post('offerend');
+					$data['category']=3;
+					$data['userid']=$userid;
+					$this->db->insert('travelling',$data);
+					//$this->image_upload('real',$userid);
+					$this->session->set_flashdata('message','Data Uploaded Successfully');
+				}}
+					
 			$data['pagename']="travelling.php";
 			$this->load->view('pages/profile/profile',$data);
 		}
-		public function user_automobile(){
+		public function user_automobile($task=''){
+			if($task=='create'){
+				$userid = $_SESSION['userid'];
+				$this->form_validation->set_rules('title', 'Title', 'trim|required');
+				$this->form_validation->set_rules('address', 'Address', 'trim|required');
+				$this->form_validation->set_rules('description', 'Description', 'trim|required');
+				$this->form_validation->set_rules('city', 'City', 'trim|required');
+				$this->form_validation->set_rules('area', 'Area', 'trim|required');
+				$this->form_validation->set_rules('offerend', 'Offer End', 'trim|required');
+				if ($this->form_validation->run() == false) {
+					$data['pagename']="automobile.php";
+					$this->load->view('pages/profile/profile',$data);
+				} else {
+					$data['name']=$this->input->post('name');
+					$data['title']=$this->input->post('title');
+					$data['type']=$this->input->post('type');
+					$data['address']=$this->input->post('address');
+					$data['description']=$this->input->post('description');
+					$data['mobile']=$this->input->post('mobile');
+					$data['email']=$this->input->post('email');
+					$data['city']=$this->input->post('city');
+					$data['area']=$this->input->post('area');
+					$data['date']=date('Y-m-d H:i:s');
+					$data['offerend']=$this->input->post('offerend');
+					$data['category']=3;
+					$data['userid']=$userid;
+					$this->db->insert('automobile',$data);
+					//$this->image_upload('real',$userid);
+					$this->session->set_flashdata('message','Data Uploaded Successfully');
+				}}
+					
 			$data['pagename']="automobile.php";
 			$this->load->view('pages/profile/profile',$data);
 		}
-		public function user_other(){
+		public function user_other($task=''){
+			if($task=='create'){
+				$userid = $_SESSION['userid'];
+				$this->form_validation->set_rules('title', 'Title', 'trim|required');
+				$this->form_validation->set_rules('address', 'Address', 'trim|required');
+				$this->form_validation->set_rules('description', 'Description', 'trim|required');
+				$this->form_validation->set_rules('city', 'City', 'trim|required');
+				$this->form_validation->set_rules('area', 'Area', 'trim|required');
+				$this->form_validation->set_rules('offerend', 'Offer End', 'trim|required');
+				if ($this->form_validation->run() == false) {
+					$data['pagename']="automobile.php";
+					$this->load->view('pages/profile/profile',$data);
+				} else {
+					$data['name']=$this->input->post('name');
+					$data['title']=$this->input->post('title');
+					$data['type']=$this->input->post('type');
+					$data['address']=$this->input->post('address');
+					$data['description']=$this->input->post('description');
+					$data['mobile']=$this->input->post('mobile');
+					$data['email']=$this->input->post('email');
+					$data['city']=$this->input->post('city');
+					$data['area']=$this->input->post('area');
+					$data['date']=date('Y-m-d H:i:s');
+					$data['offerend']=$this->input->post('offerend');
+					$data['category']=3;
+					$data['userid']=$userid;
 			$data['pagename']="other.php";
 			$this->load->view('pages/profile/profile',$data);
 		}

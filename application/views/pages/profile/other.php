@@ -25,10 +25,6 @@
 	  <input type="text" class="form-control" id="email" name="email" disabled>
 	</div>
 	<div class="form-group">
-	  <label for="Facilities">Facilities</label>
-	  <input type="text" class="form-control" id="facilities" name="facilities">
-	</div>
-	<div class="form-group">
 	  <label for="City">City:</label>
 	  <input type="text" class="form-control" id="city" name="city">
 	</div>

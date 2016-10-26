@@ -1,12 +1,17 @@
 <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
-<form method="post" action="<?php echo base_url();?>Basic_Controller/user_realestate" enctype="multipart/form-data">
+<?php 
+$userid = $_SESSION['userid'];
+$realestate_info=$this->db->get_where('register',array('reg_id'=>$userid))->result_array();
+foreach ($realestate_info as $row){
+?>
+<form method="post" action="<?php echo base_url();?>Basic_Controller/user_realestate/create" enctype="multipart/form-data">
 	<div class="form-group">
 	<?php if($this->session->flashdata('message')!=null){?>
 	<div id="danger-alert" class="alert alert-danger"><?php echo $this->session->flashdata('message');?></div> 
 	<?php }?>
 	  <label for="Name">Name:</label>
 	  <div class="error"><?php echo form_error('name'); ?></div>
-	  <input type="text" class="form-control" id="name" name="name">
+	  <input type="text" class="form-control" id="name" name="name"  value="<?php echo $row['username']?>" readonly>
 	</div>
 	<div class="form-group">
 	  <label for="id">Title:</label>
@@ -44,12 +49,12 @@
 	<div class="form-group">
 	  <label for="Mobile">Mobile:</label>
 	  <div class="error"><?php echo form_error('mobile'); ?></div>
-	  <input type="text" class="form-control" id="mobile" name="mobile" >
+	  <input type="text" class="form-control" id="mobile" name="mobile"  value="<?php echo $row['mobile']?>" readonly>
 	</div>
 	<div class="form-group">
 	  <label for="email">Email:</label>
 	  <div class="error"><?php echo form_error('email'); ?></div>
-	  <input type="text" class="form-control" id="email" name="email" >
+	  <input type="text" class="form-control" id="email" name="email"  value="<?php echo $row['email']?>" readonly>
 	</div>
 	<div class="form-group">
 	  <label for="Facilities">Facilities</label>
@@ -76,5 +81,6 @@
 	  <input type="file" class="form-control" id="image" multiple="multiple" name="image[]">
 	</div>
 	<button type="submit" class="btn btn-success">Submit</button>
+	<?php }?>
 </form>
 </div>
