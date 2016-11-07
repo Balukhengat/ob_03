@@ -237,6 +237,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			$data['pagename']="other.php";
 			$this->load->view('pages/profile/profile',$data);
 		}
+			}}
 		public function updateprofile(){
 			$this->form_validation->set_rules('mobile', 'Mobile', 'trim|required|exact_length[10]');
 			$this->form_validation->set_rules('address', 'Address', 'trim|required');
