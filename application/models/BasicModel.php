@@ -13,6 +13,7 @@ class BasicModel extends CI_Model{
 			foreach ($success as $row){
 				$userid = $row['reg_id'];
 			}
+// 			$this->session->set_userdata($userid);
 			$_SESSION['userid']=$userid;
 			$this->session->set_flashdata('message','Sigin Successfully');
 			redirect(base_url().'Basic_Controller/user_profile');

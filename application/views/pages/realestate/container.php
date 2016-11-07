@@ -1,10 +1,6 @@
 	<?php 
-	/*	$realestate_info = $this->db->select('*')
-				->from('realestate')
-				->join('real_img', 'realestate.realid = real_img.realid')
-				->get()->result_array();
-				*/
-		$realestate_info=$this->db->get('realestate')->result_array();
+//pagination per page 5 and segment
+	$query= $this->db->get('realestate',5,$this->uri->segment(3));
 	
 	?>
 	<?php $this->load->view('layout/category.php');?>
@@ -73,11 +69,7 @@
 						<div role="tabpanel" class="tab-pane fade in active" id="home" aria-labelledby="home-tab">
 						   <div>
 												<div id="container">
-								<div class="view-controls-list" id="viewcontrols">
-									<label>view :</label>
-									<a class="gridview"><i class="glyphicon glyphicon-th"></i></a>
-									<a class="listview active"><i class="glyphicon glyphicon-th-list"></i></a>
-								</div>
+								
 								<div class="sort">
 								   <div class="sort-by">
 										<label>Sort By : </label>
@@ -91,43 +83,43 @@
 								<div class="clearfix"></div>
 							<ul class="list">
 							<?php  if($datas==null){
-								foreach ($realestate_info as $row)
+								foreach ($query->result() as $row)
 								{
 							?>
-								<a href="<?php echo base_url();?>index.php/realestate/manage_view/<?php echo $row['realid'];?>">
+								<a href="<?php echo base_url();?>index.php/realestate/manage_view/<?php echo $row->realid;?>">
 									<li>
 									<img src="<?php echo base_url();?>assets/images/r1.jpg" title="" alt="" />
 									<section class="list-left">
-									<h5 class="title"><?php echo $row['title']?></h5>
-									<span class="adprice">RS. <?php echo $row['price']?>/-</span>
-									<p class="catpath">Real Estate » <?php echo $row['type']?></p>
+									<h5 class="title"><?php echo $row->title?></h5>
+									<span class="adprice">RS. <?php echo $row->price?>/-</span>
+									<p class="catpath">Real Estate » <?php echo $row->type?></p>
 									</section>
 									<section class="list-right">
-									<span class="date"><?php echo $row['date']?></span>
-									<span class="cityname"><?php echo $row['city']?></span>
+									<span class="date"><?php echo $row->date?></span>
+									<span class="cityname"><?php echo $row->city?></span>
 									</section>
 									<div class="clearfix"></div>
 									</li> 
 								</a>
-								<?php } } else { 
-									foreach ($datas as $row1)
-								{?>
-								<a href="<?php echo base_url();?>index.php/realestate/manage_view/<?php echo $row1['realid'];?>">
+								<?php } //} else { 
+									//foreach ($datas as $row1)
+								//{?>
+								<!-- <a href="<?php //echo base_url();?>index.php/realestate/manage_view/<?php //echo $row1['realid'];?>">
 									<li>
-									<img src="<?php echo base_url();?>assets/images/r1.jpg" title="" alt="" />
+									<img src="<?php //echo base_url();?>assets/images/r1.jpg" title="" alt="" />
 									<section class="list-left">
-									<h5 class="title"><?php echo $row1['title']?></h5>
-									<span class="adprice">RS. <?php echo $row1['price']?>/-</span>
-									<p class="catpath">Real Estate » <?php echo $row1['type']?></p>
+									<h5 class="title"><?php //echo $row1['title']?></h5>
+									<span class="adprice">RS. <?php //echo $row1['price']?>/-</span>
+									<p class="catpath">Real Estate » <?php //echo $row1['type']?></p>
 									</section>
 									<section class="list-right">
-									<span class="date"><?php echo $row1['date']?></span>
-									<span class="cityname"><?php echo $row1['city']?></span>
+									<span class="date"><?php //echo $row1['date']?></span>
+									<span class="cityname"><?php //echo $row1['city']?></span>
 									</section>
 									<div class="clearfix"></div>
 									</li> 
 								</a>
-								<?php }}?>
+								<?php }//}?> -->
 								
 							</ul>
 						</div>
@@ -136,11 +128,7 @@
 						<div role="tabpanel" class="tab-pane fade" id="profile" aria-labelledby="profile-tab">
 						 <div>
 												<div id="container">
-								<div class="view-controls-list" id="viewcontrols">
-									<label>view :</label>
-									<a class="gridview"><i class="glyphicon glyphicon-th"></i></a>
-									<a class="listview active"><i class="glyphicon glyphicon-th-list"></i></a>
-								</div>
+								
 								<div class="sort">
 								   <div class="sort-by">
 										<label>Sort By : </label>
@@ -152,44 +140,12 @@
 									   </div>
 									 </div>
 								<div class="clearfix"></div>
-							<ul class="list">
-								<?php foreach ($realestate_info as $row)
-							{?>
-								<a href="single.html">
-									<li>
-									<img src="<?php echo base_url();?>assets/images/r1.jpg" title="" alt="" />
-									<section class="list-left">
-									<h5 class="title"><?php echo $row['title']?></h5>
-									<span class="adprice"><?php echo $row['price']?></span>
-									<p class="catpath">Real Estate » <?php echo $row['type']?></p>
-									</section>
-									<section class="list-right">
-									<span class="date"><?php echo $row['date']?></span>
-									<span class="cityname"><?php echo $row['city']?></span>
-									</section>
-									<div class="clearfix"></div>
-									</li> 
-								</a>
-								<?php }?>
-								
-								<div class="clearfix"></div>
-								
-							</ul>
 						</div>
 							</div>
 						</div>
-						<ul class="pagination pagination-sm">
-							<li><a href="#">Prev</a></li>
-							<li><a href="#">1</a></li>
-							<li><a href="#">2</a></li>
-							<li><a href="#">3</a></li>
-							<li><a href="#">4</a></li>
-							<li><a href="#">5</a></li>
-							<li><a href="#">6</a></li>
-							<li><a href="#">7</a></li>
-							<li><a href="#">8</a></li>
-							<li><a href="#">Next</a></li>
-						</ul>
+						<div class="pagination pagination-sm ">
+							<?php echo $this->pagination->create_links();?>
+						</div>
 					  </div>
 					</div>
 				</div>
