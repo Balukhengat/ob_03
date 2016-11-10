@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 25, 2016 at 04:10 AM
+-- Generation Time: Nov 10, 2016 at 08:34 AM
 -- Server version: 5.7.9
 -- PHP Version: 5.6.16
 
@@ -67,7 +67,7 @@ CREATE TABLE IF NOT EXISTS `automobile` (
   `category` tinyint(4) DEFAULT NULL,
   `userid` tinyint(4) DEFAULT NULL,
   PRIMARY KEY (`autoid`)
-) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `automobile`
@@ -76,7 +76,10 @@ CREATE TABLE IF NOT EXISTS `automobile` (
 INSERT INTO `automobile` (`autoid`, `name`, `title`, `type`, `address`, `description`, `mobile`, `email`, `city`, `area`, `date`, `offerend`, `category`, `userid`) VALUES
 (1, 'abhijit auto', 'Car service', '', '', 'We provide best car services.', '', '', '', '', '2016-09-29 06:51:48', NULL, NULL, NULL),
 (3, 'bvalu', 'fasdf', 'sdf', 'asdfasdfa', '', '', '', '', '', '2016-09-29 07:07:26', NULL, NULL, NULL),
-(5, 'Honey', 'Honeys car wash', 'Car washing center', 'Kadegaon, Sangli', 'We provide best car wash in cheep rate...', '9876543211', 'Honey@carwash.com', 'Kadegaon', '', '2016-09-29 07:17:40', NULL, NULL, NULL);
+(5, 'Honey', 'Honeys car wash', 'Car washing center', 'Kadegaon, Sangli', 'We provide best car wash in cheep rate...', '9876543211', 'Honey@carwash.com', 'Kadegaon', '', '2016-09-29 07:17:40', NULL, NULL, NULL),
+(6, 'abhijit', 'Auto Service center in pune', 'Service Center', 'Pune, Mulshi', 'Best auto service center', '9637430435', 'abhijitkumbhar001@gmail.com', 'Pune', 'Mulshi', '2016-11-10 05:39:59', '2016-11-12 00:00:00', 3, 18),
+(7, 'abhijit', 'Auto Service center in pune', 'Service Center', 'Pune, Mulshi', 'Best auto service center', '9637430435', 'abhijitkumbhar001@gmail.com', 'Pune', 'Mulshi', '2016-11-10 05:40:13', '2016-11-12 00:00:00', 3, 18),
+(8, 'abhijit', 'Balus Car repair', 'Service Center', 'Khadaki', 'aksjdfj', '9637430435', 'abhijitkumbhar001@gmail.com', 'Khadaki', 'Khadaki', '2016-11-10 06:14:39', '2016-11-11 00:00:00', 3, 18);
 
 -- --------------------------------------------------------
 
@@ -144,7 +147,7 @@ CREATE TABLE IF NOT EXISTS `hotel` (
   `category` tinyint(4) DEFAULT NULL,
   `userid` tinyint(4) DEFAULT NULL,
   PRIMARY KEY (`hotelid`)
-) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `hotel`
@@ -153,7 +156,8 @@ CREATE TABLE IF NOT EXISTS `hotel` (
 INSERT INTO `hotel` (`hotelid`, `name`, `title`, `type`, `address`, `price`, `description`, `mobile`, `email`, `amenities`, `city`, `area`, `date`, `offerend`, `category`, `userid`) VALUES
 (1, 'hotel', 'hotel ', '', '', '', '', '', '', '', '', '', '2016-09-28 11:25:01', NULL, NULL, NULL),
 (4, 'asdfasd', 'asdfdf', '', '', '', '', '', '', '', '', '', '2016-09-28 11:50:54', NULL, NULL, NULL),
-(3, 'hotel 2', 'asdfsdf', '', '', '', '', '', '', '', '', '', '2016-09-28 11:39:41', NULL, NULL, NULL);
+(3, 'hotel 2', 'asdfsdf', '', '', '', '', '', '', '', '', '', '2016-09-28 11:39:41', NULL, NULL, NULL),
+(5, 'abhijit', 'Hotel Abs', 'Hotel', 'fasfasf', '23233', 'asfa', '9637430435', 'abhijitkumbhar001@gmail.com', 'sfasdfs', 'Karad', 'Karad', '2016-11-10 05:47:51', '2016-11-11 00:00:00', 2, 18);
 
 -- --------------------------------------------------------
 
@@ -200,8 +204,16 @@ CREATE TABLE IF NOT EXISTS `other` (
   `offerend` datetime DEFAULT NULL,
   `category` tinyint(4) DEFAULT NULL,
   `userid` tinyint(4) DEFAULT NULL,
+  `date` datetime DEFAULT NULL,
   PRIMARY KEY (`otherid`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `other`
+--
+
+INSERT INTO `other` (`otherid`, `name`, `title`, `address`, `description`, `mobile`, `email`, `amenities`, `city`, `area`, `offerend`, `category`, `userid`, `date`) VALUES
+(1, 'other', 'other', 'pune', 'asdf', '993939393', 'as', 's', 'asdf', 'asdf', '2016-11-08 13:11:20', NULL, NULL, '2016-11-08 13:10:52');
 
 -- --------------------------------------------------------
 
@@ -229,7 +241,7 @@ CREATE TABLE IF NOT EXISTS `realestate` (
   `category` tinyint(4) DEFAULT NULL,
   `userid` tinyint(4) DEFAULT NULL,
   PRIMARY KEY (`realid`)
-) ENGINE=MyISAM AUTO_INCREMENT=30 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=65 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `realestate`
@@ -237,7 +249,17 @@ CREATE TABLE IF NOT EXISTS `realestate` (
 
 INSERT INTO `realestate` (`realid`, `name`, `title`, `type`, `address`, `builtup`, `price`, `description`, `mobile`, `email`, `amenities`, `city`, `area`, `date`, `offerend`, `category`, `userid`) VALUES
 (2, 'abs', 'house on rent', 'rent', 'pimpri', '2000', '1000', 'good house', '9634530435', 'abs@gmail.com', 'all facilities', 'pune', 'morewadi', '2016-06-12 07:07:21', '2016-10-25 03:16:50', 0, NULL),
-(1, 'Balu', 'Own house', 'rent', 'HIngne Khurd', '1025', '7000', 'good house', '9637430435', 'balu.khengat@gmail.com', 'all facilities', 'pune', 'vithalwadi', '2016-10-10 09:08:30', NULL, NULL, NULL);
+(1, 'Balu', 'Own house', 'rent', 'HIngne Khurd', '1025', '7000', 'good house', '9637430435', 'balu.khengat@gmail.com', 'all facilities', 'pune', 'vithalwadi', '2016-10-10 09:08:30', NULL, NULL, NULL),
+(50, 'abhijit', 'Real Estate', 'Rent', 'Pune Hadapsar', '3000 Sq.Ft', '12000', 'Nice and All good facilities near', '9637430435', 'abhijitkumbhar001@gmail.com', 'nice', 'Pune', 'Hadapsar', '2016-11-10 02:46:23', '2016-11-11 18:30:00', 0, 18),
+(56, 'abhijit', '', 'Sell', '', '', '', '', '9168277713', 'abhijitkumbhar001@gmail.com', '', '', '', '2016-11-10 08:02:29', '0000-00-00 00:00:00', 0, 18),
+(57, 'abhijit', '', 'Sell', '', '', '', '', '9168277713', 'abhijitkumbhar001@gmail.com', '', '', '', '2016-11-10 08:04:29', '0000-00-00 00:00:00', 0, 18),
+(58, 'abhijit', '', 'Sell', '', '', '', '', '9168277713', 'abhijitkumbhar001@gmail.com', '', '', '', '2016-11-10 08:05:13', '0000-00-00 00:00:00', 0, 18),
+(59, 'abhijit', '', 'Sell', '', '', '', '', '9168277713', 'abhijitkumbhar001@gmail.com', '', '', '', '2016-11-10 08:05:24', '0000-00-00 00:00:00', 0, 18),
+(60, 'abhijit', '', 'Sell', '', '', '', '', '9168277713', 'abhijitkumbhar001@gmail.com', '', '', '', '2016-11-10 08:06:11', '0000-00-00 00:00:00', 0, 18),
+(61, 'abhijit', '', 'Sell', '', '', '', '', '9168277713', 'abhijitkumbhar001@gmail.com', '', '', '', '2016-11-10 08:06:19', '0000-00-00 00:00:00', 0, 18),
+(62, 'abhijit', '', 'Sell', '', '', '', '', '9168277713', 'abhijitkumbhar001@gmail.com', '', '', '', '2016-11-10 08:09:41', '0000-00-00 00:00:00', 0, 18),
+(63, 'abhijit', '', 'Sell', '', '', '', '', '9168277713', 'abhijitkumbhar001@gmail.com', '', '', '', '2016-11-10 08:10:29', '0000-00-00 00:00:00', 0, 18),
+(64, 'abhijit', '', 'Sell', '', '', '', '', '9168277713', 'abhijitkumbhar001@gmail.com', '', '', '', '2016-11-10 08:10:55', '0000-00-00 00:00:00', 0, 18);
 
 -- --------------------------------------------------------
 
@@ -298,7 +320,7 @@ CREATE TABLE IF NOT EXISTS `register` (
 --
 
 INSERT INTO `register` (`reg_id`, `username`, `mobile`, `email`, `password`, `otp`, `status`, `address`, `city`) VALUES
-(18, 'abhijit', '9637430435', 'abhijitkumbhar001@gmail.com', '33a485cb146e1153c69b588c671ab474f2e5b800', NULL, 1, 'Karad, Maharashtra', 'Karad'),
+(18, 'abhijit', '9168277713', 'abhijitkumbhar001@gmail.com', '33a485cb146e1153c69b588c671ab474f2e5b800', NULL, 1, 'Karad, Maharashtra', 'Karad'),
 (22, 'balu', '9637430435', 'balu.khengat@gmail.com', '33a485cb146e1153c69b588c671ab474f2e5b800', NULL, 1, 'Khadaki', 'Ahmadnagar'),
 (23, 'rahul', '9637430435', 'gilbilerahul@rediffmail.com', '33a485cb146e1153c69b588c671ab474f2e5b800', NULL, 1, NULL, NULL);
 
