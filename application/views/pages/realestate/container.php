@@ -1,6 +1,8 @@
-	<?php 
+	<?php
 //pagination per page 5 and segment
-	$query= $this->db->get('realestate',5,$this->uri->segment(3));
+	if($datas==null){
+		$query= $this->db->get('realestate',5,$this->uri->segment(3));
+	}
 	
 	?>
 	<?php $this->load->view('layout/category.php');?>
@@ -20,7 +22,7 @@
 		<div class="container">
 			<div class="select-box">
 																					<!-- @ SEARCH -->
-			<form method="post" id="search" action="<?php echo base_url();?>index.php/Realestate/search">
+			<form method="post" id="search" name="search" action="<?php echo base_url();?>Realestate/search">
 				<div class="select-city-for-local-ads ads-list">
 					<label>Select your city to see local ads</label>
 						<select id="city" name="city">	
@@ -42,20 +44,17 @@
 				<div class="select-city-for-local-ads ads-list">
 					<label>Select Price</label>
 					<select id="price" name="price">
-					  <option value="0">Select</option>
-					  <option value="5000">0 to 5000</option>
-					  <option value="10000">5000 to 10000</option>
-					  <option value="50000">10000 to 50000</option>
-					  <option value="100000">50,000 to 1 lakh</option>
-					  <option value="500000">1 lakh to 5 lakh</option>
-					  <option value="1000000">5 lakh to 10 lakh</option>
-					  <option value="5000000">10 lakh to 50 lakh</option>
-					  <option value="5000001">50 lakh and above</option>
+					  <option value="">Select</option>
+					  <option value="0">0 to 10,000</option>
+					  <option value="1">10,000 to 50,000</option>
+					  <option value="2">50,000 to 1 lakh</option>
+					  <option value="3">1 lakh to 50 lakh</option>
+					  <option value="4">50 lakh and above</option>
 					</select>	
 				</div>
 				<div class="search-product ads-list">
 					<label>&nbsp;</label>
-					<button class="btn btn-block btn-danger">Search</button>
+					<button name="submit" class="btn btn-block btn-danger">Search</button>
 				</div>
 				</form>
 				<div class="clearfix"></div>
@@ -101,25 +100,25 @@
 									<div class="clearfix"></div>
 									</li> 
 								</a>
-								<?php } //} else { 
-									//foreach ($datas as $row1)
-								//{?>
-								<!-- <a href="<?php //echo base_url();?>index.php/realestate/manage_view/<?php //echo $row1['realid'];?>">
+								<?php } } else { 
+									foreach ($datas as $row1)
+								{?>
+								<a href="<?php echo base_url();?>index.php/realestate/manage_view/<?php echo $row1['realid'];?>">
 									<li>
-									<img src="<?php //echo base_url();?>assets/images/r1.jpg" title="" alt="" />
+									<img src="<?php echo base_url();?>assets/images/r1.jpg" title="" alt="" />
 									<section class="list-left">
-									<h5 class="title"><?php //echo $row1['title']?></h5>
-									<span class="adprice">RS. <?php //echo $row1['price']?>/-</span>
-									<p class="catpath">Real Estate » <?php //echo $row1['type']?></p>
+									<h5 class="title"><?php echo $row1['title']?></h5>
+									<span class="adprice">RS. <?php echo $row1['price']?>/-</span>
+									<p class="catpath">Real Estate » <?php echo $row1['type']?></p>
 									</section>
 									<section class="list-right">
-									<span class="date"><?php //echo $row1['date']?></span>
-									<span class="cityname"><?php //echo $row1['city']?></span>
+									<span class="date"><?php echo $row1['date']?></span>
+									<span class="cityname"><?php echo $row1['city']?></span>
 									</section>
 									<div class="clearfix"></div>
 									</li> 
 								</a>
-								<?php }//}?> -->
+								<?php }}?> 
 								
 							</ul>
 						</div>
@@ -144,7 +143,7 @@
 							</div>
 						</div>
 						<div class="pagination pagination-sm ">
-							<?php echo $this->pagination->create_links();?>
+							<?php if($datas==null){ echo $this->pagination->create_links();}?>
 						</div>
 					  </div>
 					</div>

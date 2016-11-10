@@ -68,11 +68,28 @@ class BasicModel extends CI_Model{
 		$city = $data['city'];
 		$type = $data['type'];
 		$price = $data['price'];
-		$where="city='$city' AND type='$type' AND 	price <='$price'";
-		$this->db->select('*');
-		$this->db->where($where);
-		$this->db->from('realestate');
-		return $this->db->get()->result_array();
+		if($price==0){
+			$str="select * from realestate where city='$city' and type='$type' and price BETWEEN 0 AND 9999";
+		}elseif ($price==1){
+			$str="select * from realestate where city='$city' and type='$type' and price BETWEEN 10000 AND 49999";
+		}
+		elseif ($price==2){
+			$str="select * from realestate where city='$city' and type='$type' and price BETWEEN 50000 AND 99999";
+		}
+		elseif ($price==3){
+			$str="select * from realestate where city='$city' and type='$type' and price BETWEEN 100000 AND 4999999";
+		}
+		else{
+			$str="select * from realestate where city='$city' and type='$type' and price >=5000000";
+		}
+		//$query="select * from realestate where city='$city' and type='$type' and price '$str'";
+		//echo $str;die();
+// 		$where="city='$city' AND type='$type' AND 	price '$str'";
+// 		$this->db->select('*');
+// 		$this->db->where("city='$city' AND type='$type' AND 	price <=$price");
+// 		$this->db->from('realestate');
+		
+		return $this->db->query($str)->result_array();
 	}
 }
 ?>

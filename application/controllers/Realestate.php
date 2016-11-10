@@ -6,7 +6,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		}
 		public function real(){
 			$category['template'] = "realestate";
-			$category['datas']="";
+			$category['datas']=null;
 			
 			//pagination
 			$this->load->library('pagination');
@@ -44,13 +44,40 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			$this->load->view('pages/realestate/realestate_view',$id);
 		}
 		public function search()
-		{
+		{	
+			
 			$data['city'] = $this->input->post('city');
 			$data['type'] = $this->input->post('type');
 			$data['price'] = $this->input->post('price');
 			
 			$result['datas'] = $this->BasicModel->real_search($data);
-			
+			//pagination if query returns empty results
+			$this->load->library('pagination');
+			$config = array();
+			$config["base_url"] = base_url()."Realestate/real";
+			$config["per_page"] = 5;
+			$config["num_links"] = 5;
+			$config["total_rows"] = $this->db->get('realestate')->num_rows();
+			// bootstraping
+			$config["full_tag_open"] = '<ul class="pagination">';
+			$config["full_tag_close"] = '</ul>';
+			$config["first_link"] = "&laquo;";
+			$config["first_tag_open"] = "<li>";
+			$config["first_tag_close"] = "</li>";
+			$config["last_link"] = "&raquo;";
+			$config["last_tag_open"] = "<li>";
+			$config["last_tag_close"] = "</li>";
+			$config['next_link'] = '&gt;';
+			$config['next_tag_open'] = '<li>';
+			$config['next_tag_close'] = '<li>';
+			$config['prev_link'] = '&lt;';
+			$config['prev_tag_open'] = '<li>';
+			$config['prev_tag_close'] = '<li>';
+			$config['cur_tag_open'] = '<li class="active"><a href="#">';
+			$config['cur_tag_close'] = '</a></li>';
+			$config['num_tag_open'] = '<li>';
+			$config['num_tag_close'] = '</li>';
+			$this->pagination->initialize($config);
 			$result['template'] = "realestate";
 			$this->load->view('pages/mainpage',$result);
 		}
