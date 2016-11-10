@@ -1676,7 +1676,7 @@ a:hover, a:focus {
 }
 .nbs-flexisel-ul {
 	position: relative;
-	width: 9999px;
+	width: 99999px;
 	margin: 0px;
 	padding: 0px;
 	list-style-type: none;

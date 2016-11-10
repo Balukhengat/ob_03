@@ -4,8 +4,7 @@
 	$hotel_latest = $this->db->query("SELECT * from hotel ORDER BY date DESC LIMIT 4");
 	$travelling_latest = $this->db->query("SELECT * from travelling ORDER BY date DESC LIMIT 4");
 	$tution_latest = $this->db->query("SELECT * from tution ORDER BY date DESC LIMIT 4");
-
-		
+	$other_latest = $this->db->query("SELECT * from other ORDER BY date DESC LIMIT 4");
 ?>
 <!-- content-starts-here -->
 		<div class="main-content">
@@ -37,7 +36,6 @@
 								?>	
 								</li>
 								<li>
-								
 								<?php 
 									//automobile
 									foreach ($automobile_latest->result_array() as $row){
@@ -81,24 +79,88 @@
 									}
 								?>	
 								</li>
-								<?php 
-								/*
-								 * 		REMOVED 2 CATEGORIES LATEST FIELDS
-								 * 			
-								 * 		
-								 * 
-								 * 
-								 */
+								<li>
 								
+								<?php 
+									//Travelling
+									foreach ($travelling_latest->result_array() as $row){
+										
+									
 								?>
+									<div class="col-md-3 biseller-column">
+										<a href="single.html">
+											<img src="assets/images/ad2.jpg" alt="" />
+										</a> 
+										<div class="w3-ad-info">
+											<h5><?php echo $row['title']?></h5>
+											<h5><?php echo $row['name']?></h5>
+											<span><?php $date = $row['date'];echo time_elapsed_string($date);?></span>
+											
+										</div>
+									</div>
+								<?php 
+									}
+								?>	
+								</li>
+								<li>
+								
+								<?php 
+									//Tution
+									foreach ($tution_latest->result_array() as $row){
+										
+									
+								?>
+									<div class="col-md-3 biseller-column">
+										<a href="single.html">
+											<img src="assets/images/ad2.jpg" alt="" />
+										</a> 
+										<div class="w3-ad-info">
+											<h5><?php echo $row['title']?></h5>
+											<h5><?php echo $row['name']?></h5>
+											<span><?php $date = $row['date'];echo time_elapsed_string($date);?></span>
+											
+										</div>
+									</div>
+								<?php 
+									}
+								?>	
+								</li>
+								<li>
+								
+								<?php 
+									//Other
+									foreach ($other_latest->result_array() as $row){
+										
+									
+								?>
+									<div class="col-md-3 biseller-column">
+										<a href="single.html">
+											<img src="assets/images/ad2.jpg" alt="" />
+										</a> 
+										<div class="w3-ad-info">
+											<h5><?php echo $row['title']?></h5>
+											<h5><?php echo $row['name']?></h5>
+											<span><?php $date = $row['date'];echo time_elapsed_string($date);?></span>
+											
+										</div>
+									</div>
+								<?php 
+									}
+								?>	
+								</li>
 						</ul>
 					</div>
 					
 					<!-- ADVERTISEMENT BANNER -->
-					
+					<!-- 
+					//
+					//	PLACE ADSENCE HERE
+					//
 					<div style="padding-top: 40px;">
 						<img class="img-responsive" style="margin-left: auto;margin-right: auto;" alt="adds" src="<?php echo base_url();?>assets/images/adbanner.jpg" width="800" height="60">
 					</div>	
+					 -->
+					
 				</div>
 					<div class="clearfix"></div>
 				</div>
@@ -205,7 +267,7 @@
 				<!-- slider -->
 				<div class="agile-trend-ads">
 					<h2><i class="fa fa-line-chart" aria-hidden="true"></i> Trending <i class="fa fa-line-chart" aria-hidden="true"></i></h2>
-							<ul id="flexiselDemo3">
+							<ul id="">
 								<li>
 									<div class="col-md-3 biseller-column">
 										<a href="single.html">

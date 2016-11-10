@@ -25,23 +25,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		public function user_realestate($task=''){
 			if($task=='create'){
 			$userid = $_SESSION['userid'];
-			$this->form_validation->set_rules('name', 'Name', 'trim|required');
-			$this->form_validation->set_rules('title', 'Title', 'trim|required');
-			$this->form_validation->set_rules('type', 'Type', 'trim|required');
-			$this->form_validation->set_rules('builtup', 'Builtup', 'trim|required');
-			$this->form_validation->set_rules('address', 'Address', 'trim|required');
-			$this->form_validation->set_rules('description', 'Description', 'trim|required');
-			$this->form_validation->set_rules('price', 'Price', 'trim|required|numeric');
-			$this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email');
-			$this->form_validation->set_rules('mobile', 'Mobile', 'trim|required|min_length[10]');
-			$this->form_validation->set_rules('facilities', 'Facility', 'trim|required');
-			$this->form_validation->set_rules('city', 'City', 'trim|required');
-			$this->form_validation->set_rules('area', 'Area', 'trim|required');
-			$this->form_validation->set_rules('offerend', 'Offer End', 'trim|required');
-			if ($this->form_validation->run() == false) {
-				$data['pagename']="realestate.php";
-				$this->load->view('pages/profile/profile',$data);
-			} else {
 				$data['name']=$this->input->post('name');
 				$data['title']=$this->input->post('title');
 				$data['type']=$this->input->post('type');
@@ -61,7 +44,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					$this->db->insert('realestate',$data);
 			//$this->image_upload('real',$userid);
 			$this->session->set_flashdata('message','Data Uploaded Successfully');
-			}}
+			}
 			$data['pagename']="realestate.php";
 			$this->load->view('pages/profile/profile',$data);
 			
@@ -239,18 +222,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		}
 			}}
 		public function updateprofile(){
-			$this->form_validation->set_rules('mobile', 'Mobile', 'trim|required|exact_length[10]');
-			$this->form_validation->set_rules('address', 'Address', 'trim|required');
-			$this->form_validation->set_rules('city', 'city', 'trim|required');
-			if($this->form_validation->run()==FALSE){
-				$data['pagename']="myprofile.php";
-				$this->load->view('pages/profile/profile',$data);
-			}else
-			{
-					$this->BasicModel->updateprofile();
+				$this->BasicModel->updateprofile();
 				$this->session->set_flashdata('message','Data Updated Successfully');
 				redirect(base_url().'Basic_Controller/user_profile');
-			}
 		}
 		public function realestate(){
 			$category = "realestate";

@@ -1,43 +1,70 @@
-<div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
+<div class="col-md-9">
 <?php 
 	$userid = $_SESSION['userid'];
 	$profile_info = $this->db->get_where('register',array('reg_id'=>$userid))->result_array();
 	foreach ($profile_info as $row){
 ?>	
-<form method="post" action="<?php echo base_url();?>Basic_Controller/updateprofile">
-	<div class="form-group">
-	<?php if($this->session->flashdata('message')!=null){?>
-				<div id="danger-alert" class="alert alert-danger"><?php echo $this->session->flashdata('message');?></div>
-	<?php }?>
-	  <label for="id">Offers Bull User ID:</label>
-	  <input type="text" class="form-control" id="id" value="<?php echo $row['reg_id']?>" disabled>
+<form id="profile" method="post" action="<?php echo base_url();?>Basic_Controller/updateprofile">
+		<?php if($this->session->flashdata('message')!=null){?>
+			<div class="col-md-12">
+						<div id="danger-alert" class="alert alert-danger"><?php echo $this->session->flashdata('message');?></div>
+			</div>	
+		<?php }?>
+	<div class="col-md-6">
+		<div class="form-group">
+		  <label for="id">Offers Bull User ID:</label>
+		  <input type="text" class="form-control" id="id" value="<?php echo $row['reg_id']?>" disabled>
+		</div>
 	</div>
-	<div class="form-group">
-	  <label for="username">Name:</label>
-	  <input type="text" class="form-control" id="username" value="<?php echo $row['username']?>" disabled>
+	<div class="col-md-6">
+		<div class="form-group">
+		  <label for="username">Name:</label>
+		  <input type="text" class="form-control" id="username" value="<?php echo $row['username']?>" disabled>
+		</div>
+	</div>	
+	<div class="col-md-6">
+		<div class="form-group">
+		  <label for="emailid">Email ID:</label>
+		  <input type="email" class="form-control" id="emailid" value="<?php echo $row['email']?>" disabled>
+		</div>
+	</div>	
+	<div class="col-md-6">
+		<div class="form-group">
+		  <label for="mobile">Mobile No:</label>
+		  <div class="error"><?php echo form_error('mobile'); ?></div>
+		  <input type="text" class="form-control" name="mobile" id="mobile" value="<?php echo $row['mobile']?>">
+		</div>
+		<span class="error" id="mobile_error"></span>
 	</div>
-	<div class="form-group">
-	  <label for="emailid">Email ID:</label>
-	  <input type="email" class="form-control" id="emailid" value="<?php echo $row['email']?>" disabled>
+	<div class="col-md-6">	
+		<div class="form-group">
+		  <label for="city">City:</label>
+		  <div class="error"><?php echo form_error('city'); ?></div>
+		  <input type="text" class="form-control" name="city" id="city" value="<?php echo $row['city']?>">
+		  <span class="error" id="city_error"></span>
+		</div>
+	</div>	
+	<div class="col-md-6">	
+		<div class="form-group">
+		  <label for="address">Address:</label>
+		  <div class="error"><?php echo form_error('address'); ?></div>
+		  <textarea class="form-control" name="address" id="address"><?php echo $row['address']?></textarea>
+		  <span class="error" id="address_error"></span>
+		</div>
 	</div>
-	<div class="form-group">
-	  <label for="mobile">Mobile No:</label>
-	  <div class="error"><?php echo form_error('mobile'); ?></div>
-	  <input type="text" class="form-control" name="mobile" id="mobile" value="<?php echo $row['mobile']?>">
-	</div>
-	<div class="form-group">
-	  <label for="address">Address:</label>
-	  <div class="error"><?php echo form_error('address'); ?></div>
-	  <textarea class="form-control" name="address" id="address"><?php echo $row['address']?></textarea>
-	</div>
-	<div class="form-group">
-	  <label for="city">City:</label>
-	  <div class="error"><?php echo form_error('city'); ?></div>
-	  <input type="text" class="form-control" name="city" id="city" value="<?php echo $row['city']?>">
-	</div>
-	<button type="submit" class="btn btn-success">Update profile</button>
+	
+	<div class="col-md-9">
+		<input type="submit" class="btn btn-success" value="Update profile">
+	</div>	
 </form>
 <?php
 }
 ?>
 </div>
+<div class="col-md-3">
+	<h3>ADSENSE CODE GOES HERE</h3>
+</div>
+<script type="text/javascript" src="<?php echo base_url();?>assets/js/jquery.min.js">
+</script>
+<script type="text/javascript" lang="javascript" src="<?php echo base_url();?>assets/js/validation.js">
+</script>
