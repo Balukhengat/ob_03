@@ -1,7 +1,7 @@
 	<?php
 //pagination per page 5 and segment
 	if($datas==null){
-		$query= $this->db->get('realestate',5,$this->uri->segment(3));
+		$query= $this->db->get('hotel',5,$this->uri->segment(3));
 	}
 	
 	?>
@@ -12,7 +12,7 @@
 		<div class="container">
 			<span class="agile-breadcrumbs">
 				<a href="<?php echo base_url();?>index.php"><i class="fa fa-home home_1"></i></a> / 
-				<a href="<?php echo base_url();?>index.php"><span>Real Estate</span></a>
+				<a href="<?php echo base_url();?>index.php"><span>Hotels & Restaurents</span></a>
 			</span>
 		</div>
 	</div>
@@ -22,7 +22,7 @@
 		<div class="container">
 			<div class="select-box">
 																					<!-- @ SEARCH -->
-			<form method="post" id="search" name="search" action="<?php echo base_url();?>Realestate/search">
+			<form method="post" id="search" name="search" action="<?php echo base_url();?>Hotel/search">
 				<div class="select-city-for-local-ads ads-list">
 					<label>Select your city to see local ads</label>
 						<select id="city" name="city">	
@@ -32,13 +32,11 @@
 			            </select>
 				</div>
 				<div class="browse-category ads-list">
-					<label>Rent / Purchase</label>
+					<label>Hotel / lodging</label>
 					<select id="type" name="type">
 					  <option data-tokens="Rent">Select</option>
-					  <option data-tokens="Rent">Rent</option>
-					  <option data-tokens="purchase">Purchase</option>
-					  <option data-tokens="any">Any</option>
-					  
+					  <option data-tokens="Rent">Hotel</option>
+					  <option data-tokens="purchase">lodging</option>
 					</select>
 				</div>
 				<div class="select-city-for-local-ads ads-list">
@@ -85,13 +83,13 @@
 								foreach ($query->result() as $row)
 								{
 							?>
-								<a href="<?php echo base_url();?>realestate/manage_view/<?php echo $row->realid;?>">
+								<a href="<?php echo base_url();?>Hotel/manage_view/<?php echo $row->hotelid;?>">
 									<li>
 									<img src="<?php echo base_url();?>assets/images/r1.jpg" title="" alt="" />
 									<section class="list-left">
 									<h5 class="title"><?php echo $row->title?></h5>
 									<span class="adprice">RS. <?php echo $row->price?>/-</span>
-									<p class="catpath">Real Estate » <?php echo $row->type?></p>
+									<p class="catpath">Hotels» <?php echo $row->type?></p>
 									</section>
 									<section class="list-right">
 									<span class="date"><?php echo $row->date?></span>
@@ -103,13 +101,13 @@
 								<?php } } else { 
 									foreach ($datas as $row1)
 								{?>
-								<a href="<?php echo base_url();?>realestate/manage_view/<?php echo $row1['realid'];?>">
+								<a href="<?php echo base_url();?>Hotel/manage_view/<?php echo $row1['hotelid'];?>">
 									<li>
 									<img src="<?php echo base_url();?>assets/images/r1.jpg" title="" alt="" />
 									<section class="list-left">
 									<h5 class="title"><?php echo $row1['title']?></h5>
 									<span class="adprice">RS. <?php echo $row1['price']?>/-</span>
-									<p class="catpath">Real Estate » <?php echo $row1['type']?></p>
+									<p class="catpath">Hotels» <?php echo $row1['type']?></p>
 									</section>
 									<section class="list-right">
 									<span class="date"><?php echo $row1['date']?></span>

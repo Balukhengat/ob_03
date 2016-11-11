@@ -91,5 +91,44 @@ class BasicModel extends CI_Model{
 		
 		return $this->db->query($str)->result_array();
 	}
+	public function tution_search($data){
+		$city = $data['city'];
+		$type = $data['type'];
+			$str="select * from tution where city='$city' and title='$type'";
+		return $this->db->query($str)->result_array();
+	}
+	public function hotel_search($data){
+		$city = $data['city'];
+		$type = $data['type'];
+		$price = $data['price'];
+		if($price==0){
+			$str="select * from hotel where city='$city' and type='$type' and price BETWEEN 0 AND 9999";
+		}elseif ($price==1){
+			$str="select * from hotel where city='$city' and type='$type' and price BETWEEN 10000 AND 49999";
+		}
+		elseif ($price==2){
+			$str="select * from hotel where city='$city' and type='$type' and price BETWEEN 50000 AND 99999";
+		}
+		elseif ($price==3){
+			$str="select * from hotel where city='$city' and type='$type' and price BETWEEN 100000 AND 4999999";
+		}
+		else{
+			$str="select * from hotel where city='$city' and type='$type' and price >=5000000";
+		}
+		return $this->db->query($str)->result_array();
+	}
+	public function automobile_search($data){
+		$city = $data['city'];
+		$type = $data['type'];
+		$str="select * from automobile where city='$city' and type='$type'";
+		return $this->db->query($str)->result_array();
+	}
+	public function travelling_search($data){
+		$city = $data['city'];
+		$type = $data['type'];
+		$title=$city.' to '.$type;
+		$str="select * from travelling	 where title='$title'";
+		return $this->db->query($str)->result_array();
+	}
 }
 ?>

@@ -1,5 +1,5 @@
 <html>
-<?php 	$tution_info=$this->db->get_where('tution',array('tutid'=>$tutid))->result_array();
+<?php 	$automobile_info=$this->db->get_where('automobile',array('autoid'=>$autoid))->result_array();
 	
 		$this->load->view('layout/head');
 	?>
@@ -12,20 +12,20 @@
 			<span class="agile-breadcrumbs">
 			<a href="<?php echo base_url();?>"><i class="fa fa-home home_1"></i></a> / 
 			<a href="all-classifieds.html">All Ads</a> / 
-			<a href="">Tution</a> / 
+			<a href="">Automobile</a> / 
 			</span>
 		</div>
 	</div>
 	<!-- //breadcrumbs -->
 	<!--single-page-->
 	<div class="single-page main-grid-border">
-	<?php foreach ($tution_info as $row){?>
+	<?php foreach ($automobile_info as $row){?>
 		<div class="container">
 			<div class="product-desc">
 				<div class="col-md-7 product-view">
 				
-					<h2><?php echo $row['name'];?></h2>
-					<p> <i class="glyphicon glyphicon-map-marker"></i>Post on</a>| <?php echo $row['date'];?>, Application id:OB-00<?php echo $row['tutid']; ?></p>
+					<h2><?php echo $row['title'];?></h2>
+					<p> <i class="glyphicon glyphicon-map-marker"></i>Post on</a>| <?php echo $row['date'];?>, Application id:OB-00<?php echo $row['autoid']; ?></p>
 					<div class="rslides">
 			<ul class="rslides" id="slider">
 				<li>
@@ -71,22 +71,27 @@
 					</script>
 					<!-- //FlexSlider -->
 					<div class="product-details">
-						<h4><span class="w3layouts-agileinfo">Institue Name </span> : <a href="#"><?php echo $row['name'];?></a><div class="clearfix"></div></h4>
+						<h4><span class="w3layouts-agileinfo">Name </span> : <a href="#"><?php echo $row['name'];?></a><div class="clearfix"></div></h4>
 						<h4><span class="w3layouts-agileinfo">Address </span> : <?php echo $row['address'];?></h4>
-						<h4><span class="w3layouts-agileinfo">Course </span> : <?php echo $row['title'];?> </h4>
+						<h4><span class="w3layouts-agileinfo">City </span> : <?php echo $row['city'];?></h4>
 						<h4><span class="w3layouts-agileinfo">Description</span> :<p><?php echo $row['description'];?></p><div class="clearfix"></div></h4>
 					</div>
 				</div>
 				<div class="col-md-5 product-details-grid">
 					<div class="item-price">
 						<div class="product-price">
-							<p class="p-price">Loation</p>
+							<p class="p-price">Location</p>
 							<h3 class="rate"><?php echo $row['area'];?></h3>
 							<div class="clearfix"></div>
 						</div>
 						<div class="condition">
-							<p class="p-price">city</p>
-							<h4><?php echo $row['city']?></h4>
+							<p class="p-price">Title</p>
+							<h4><?php echo $row['title'];?></h4>
+							<div class="clearfix"></div>
+						</div>
+						<div class="itemtype">
+							<p class="p-price">Automobile Type</p>
+							<h4><?php echo $row['type'];?></h4>
 							<div class="clearfix"></div>
 						</div>
 					</div>

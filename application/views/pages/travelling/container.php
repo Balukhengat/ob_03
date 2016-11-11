@@ -1,7 +1,7 @@
 	<?php
 //pagination per page 5 and segment
 	if($datas==null){
-		$query= $this->db->get('realestate',5,$this->uri->segment(3));
+		$query= $this->db->get('travelling',5,$this->uri->segment(3));
 	}
 	
 	?>
@@ -12,19 +12,19 @@
 		<div class="container">
 			<span class="agile-breadcrumbs">
 				<a href="<?php echo base_url();?>index.php"><i class="fa fa-home home_1"></i></a> / 
-				<a href="<?php echo base_url();?>index.php"><span>Real Estate</span></a>
+				<a href="<?php echo base_url();?>index.php"><span>Travelling</span></a>
 			</span>
 		</div>
 	</div>
 	<!-- //breadcrumbs -->
-	<!-- Real estates -->
+	<!-- Travelling -->
 	<div class="total-ads main-grid-border">
 		<div class="container">
 			<div class="select-box">
 																					<!-- @ SEARCH -->
-			<form method="post" id="search" name="search" action="<?php echo base_url();?>Realestate/search">
+			<form method="post" id="search" name="search" action="<?php echo base_url();?>Travelling/search">
 				<div class="select-city-for-local-ads ads-list">
-					<label>Select your city to see local ads</label>
+					<label>Select your city to pick up</label>
 						<select id="city" name="city">	
 							<option>Select</option>
 							<option>Pune</option>
@@ -32,25 +32,12 @@
 			            </select>
 				</div>
 				<div class="browse-category ads-list">
-					<label>Rent / Purchase</label>
+					<label>TO</label>
 					<select id="type" name="type">
 					  <option data-tokens="Rent">Select</option>
-					  <option data-tokens="Rent">Rent</option>
-					  <option data-tokens="purchase">Purchase</option>
-					  <option data-tokens="any">Any</option>
-					  
+					  <option data-tokens="Rent">Pune</option>
+					  <option data-tokens="purchase">Mumbai</option>
 					</select>
-				</div>
-				<div class="select-city-for-local-ads ads-list">
-					<label>Select Price</label>
-					<select id="price" name="price">
-					  <option value="">Select</option>
-					  <option value="0">0 to 10,000</option>
-					  <option value="1">10,000 to 50,000</option>
-					  <option value="2">50,000 to 1 lakh</option>
-					  <option value="3">1 lakh to 50 lakh</option>
-					  <option value="4">50 lakh and above</option>
-					</select>	
 				</div>
 				<div class="search-product ads-list">
 					<label>&nbsp;</label>
@@ -59,6 +46,10 @@
 				</form>
 				<div class="clearfix"></div>
 			</div>
+			<?php if($this->session->flashdata('message')!=null){?>
+			 <div class="col-md-9">
+		<div id="danger-alert" class="alert alert-danger"><?php echo $this->session->flashdata('message');?></div>
+	</div>	 <?php }?>
 			<div class="ads-grid">
 				
 				<div class="agileinfo-ads-display col-md-9">
@@ -72,30 +63,29 @@
 								<div class="sort">
 								   <div class="sort-by">
 										<label>Sort By : </label>
-										<select>
-														<option value="">Most recent</option>
-														<option value="">Price: Rs Low to High</option>
-														<option value="">Price: Rs High to Low</option>
+										<select id="sort" name="sort">
+														<option value="AES">Price: Rs Low to High</option>
+														<option value="DESC">Price: Rs High to Low</option>
 										</select>
 									   </div>
 									 </div>
 								<div class="clearfix"></div>
-							<ul class="list">
+							<ul id="result" class="list">
 							<?php  if($datas==null){
 								foreach ($query->result() as $row)
 								{
 							?>
-								<a href="<?php echo base_url();?>realestate/manage_view/<?php echo $row->realid;?>">
+								<a href="<?php echo base_url();?>Travelling/manage_view/<?php echo $row->travelid;?>">
 									<li>
 									<img src="<?php echo base_url();?>assets/images/r1.jpg" title="" alt="" />
 									<section class="list-left">
-									<h5 class="title"><?php echo $row->title?></h5>
-									<span class="adprice">RS. <?php echo $row->price?>/-</span>
-									<p class="catpath">Real Estate » <?php echo $row->type?></p>
+									<h5  class="title"><?php echo $row->title?></h5>
+									<span  class="adprice">RS.<?php echo $row->price?>/-</span>
+									<p  class="catpath">Travelling» <?php echo $row->name?></p>
 									</section>
 									<section class="list-right">
-									<span class="date"><?php echo $row->date?></span>
-									<span class="cityname"><?php echo $row->city?></span>
+									<span  class="date"><?php echo $row->date?></span>
+									<span  class="cityname"><?php echo $row->city?></span>
 									</section>
 									<div class="clearfix"></div>
 									</li> 
@@ -103,17 +93,17 @@
 								<?php } } else { 
 									foreach ($datas as $row1)
 								{?>
-								<a href="<?php echo base_url();?>realestate/manage_view/<?php echo $row1['realid'];?>">
+								<a href="<?php echo base_url();?>Travelling/manage_view/<?php echo $row1['travelid'];?>">
 									<li>
 									<img src="<?php echo base_url();?>assets/images/r1.jpg" title="" alt="" />
 									<section class="list-left">
-									<h5 class="title"><?php echo $row1['title']?></h5>
-									<span class="adprice">RS. <?php echo $row1['price']?>/-</span>
-									<p class="catpath">Real Estate » <?php echo $row1['type']?></p>
+									<h5 class="title"><?php echo $row->title?></h5>
+									<span  class="adprice">RS.<?php echo $row->price?>/-</span>
+									<p  class="catpath">Travelling» <?php echo $row->name?></p>
 									</section>
 									<section class="list-right">
-									<span class="date"><?php echo $row1['date']?></span>
-									<span class="cityname"><?php echo $row1['city']?></span>
+									<span  class="date"><?php echo $row->date?></span>
+									<span  class="cityname"><?php echo $row->city?></span>
 									</section>
 									<div class="clearfix"></div>
 									</li> 
@@ -121,27 +111,27 @@
 								<?php }}?> 
 								
 							</ul>
+							<ul id="result1" class="list">
+							<a href="<?php echo base_url();?>Travelling/manage_view/<?php echo $row->travelid;?>">
+									<li>
+									<img src="<?php echo base_url();?>assets/images/r1.jpg" title="" alt="" />
+									<section class="list-left">
+									<h5 id="title" class="title"></h5>
+									<span id="price" class="adprice">RS./-</span>
+									<p id="name" class="catpath">Travelling»</p>
+									</section>
+									<section class="list-right">
+									<span id="date" class="date"></span>
+									<span id="city" class="cityname"></span>
+									</section>
+									<div id="data" class="clearfix"></div>
+									</li> 
+								</a>
+							</ul>
 						</div>
 						</div>
 						</div>
-						<div role="tabpanel" class="tab-pane fade" id="profile" aria-labelledby="profile-tab">
-						 <div>
-												<div id="container">
-								
-								<div class="sort">
-								   <div class="sort-by">
-										<label>Sort By : </label>
-										<select>
-														<option value="">Most recent</option>
-														<option value="">Price: Rs Low to High</option>
-														<option value="">Price: Rs High to Low</option>
-										</select>
-									   </div>
-									 </div>
-								<div class="clearfix"></div>
-						</div>
-							</div>
-						</div>
+						
 						<div class="pagination pagination-sm ">
 							<?php if($datas==null){ echo $this->pagination->create_links();}?>
 						</div>
@@ -196,4 +186,40 @@
 			</div>
 		</div>	
 	</div>
-	<!-- // Real estates -->
+	<!-- // travelling -->
+	
+<script type="text/javascript" src="<?php echo base_url();?>assets/js/jquery.min.js">
+</script>
+<script type="text/javascript">
+$(function(){
+	jQuery("#result1").hide();
+	$("#sort").change(function(){
+		var val=$("#sort").val();
+		var url="<?php echo base_url();?>"+"Travelling/sort/"+val;
+		alert(url);
+		 $.ajax({
+	        	method:"POST",
+	        	url:url,
+	        	data:{val:val},
+	        	success:function(response)
+	        	{
+	        		if(response!=null)
+	        		{
+	        				jQuery("#result").hide();
+		        			jQuery("#result1").show();
+		        			jQuery("#title").html(response.title);
+		        			jQuery("#price").html(response.price);
+		        			jQuery("#name").html(response.name);
+		        			jQuery("#date").html(response.date);
+		        			jQuery("#city").html(response.city);
+		        		alert(response);
+	        		}
+	        		else
+	        		{
+	        			alert(title);
+	        		}
+	        	}	
+	        });
+	});
+ });
+</script>
