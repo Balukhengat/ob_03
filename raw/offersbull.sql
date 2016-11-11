@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 10, 2016 at 08:34 AM
+-- Generation Time: Nov 11, 2016 at 06:44 PM
 -- Server version: 5.7.9
 -- PHP Version: 5.6.16
 
@@ -135,7 +135,7 @@ CREATE TABLE IF NOT EXISTS `hotel` (
   `title` varchar(255) DEFAULT NULL,
   `type` varchar(255) DEFAULT NULL,
   `address` text,
-  `price` varchar(255) DEFAULT NULL,
+  `price` int(255) DEFAULT NULL,
   `description` text,
   `mobile` varchar(255) DEFAULT NULL,
   `email` varchar(255) DEFAULT NULL,
@@ -154,10 +154,10 @@ CREATE TABLE IF NOT EXISTS `hotel` (
 --
 
 INSERT INTO `hotel` (`hotelid`, `name`, `title`, `type`, `address`, `price`, `description`, `mobile`, `email`, `amenities`, `city`, `area`, `date`, `offerend`, `category`, `userid`) VALUES
-(1, 'hotel', 'hotel ', '', '', '', '', '', '', '', '', '', '2016-09-28 11:25:01', NULL, NULL, NULL),
-(4, 'asdfasd', 'asdfdf', '', '', '', '', '', '', '', '', '', '2016-09-28 11:50:54', NULL, NULL, NULL),
-(3, 'hotel 2', 'asdfsdf', '', '', '', '', '', '', '', '', '', '2016-09-28 11:39:41', NULL, NULL, NULL),
-(5, 'abhijit', 'Hotel Abs', 'Hotel', 'fasfasf', '23233', 'asfa', '9637430435', 'abhijitkumbhar001@gmail.com', 'sfasdfs', 'Karad', 'Karad', '2016-11-10 05:47:51', '2016-11-11 00:00:00', 2, 18);
+(1, 'hotel', 'hotel ', 'lodging', '', 7000, '', '', '', '', 'pune', '', '2016-09-28 11:25:01', NULL, NULL, NULL),
+(4, 'asdfasd', 'asdfdf', '', '', 3232, '', '', '', '', 'mumbai', '', '2016-09-28 11:50:54', NULL, NULL, NULL),
+(3, 'hotel 2', 'asdfsdf', '', '', 322, '', '', '', '', '', '', '2016-09-28 11:39:41', NULL, NULL, NULL),
+(5, 'abhijit', 'Hotel Abs', 'Hotel', 'fasfasf', 23233, 'asfa', '9637430435', 'abhijitkumbhar001@gmail.com', 'sfasdfs', 'Karad', 'Karad', '2016-11-10 05:47:51', '2016-11-11 00:00:00', 2, 18);
 
 -- --------------------------------------------------------
 
@@ -229,7 +229,7 @@ CREATE TABLE IF NOT EXISTS `realestate` (
   `type` varchar(255) DEFAULT NULL,
   `address` text,
   `builtup` varchar(255) DEFAULT NULL,
-  `price` varchar(255) DEFAULT NULL,
+  `price` int(255) DEFAULT NULL,
   `description` text,
   `mobile` varchar(255) DEFAULT NULL,
   `email` varchar(255) DEFAULT NULL,
@@ -248,18 +248,9 @@ CREATE TABLE IF NOT EXISTS `realestate` (
 --
 
 INSERT INTO `realestate` (`realid`, `name`, `title`, `type`, `address`, `builtup`, `price`, `description`, `mobile`, `email`, `amenities`, `city`, `area`, `date`, `offerend`, `category`, `userid`) VALUES
-(2, 'abs', 'house on rent', 'rent', 'pimpri', '2000', '1000', 'good house', '9634530435', 'abs@gmail.com', 'all facilities', 'pune', 'morewadi', '2016-06-12 07:07:21', '2016-10-25 03:16:50', 0, NULL),
-(1, 'Balu', 'Own house', 'rent', 'HIngne Khurd', '1025', '7000', 'good house', '9637430435', 'balu.khengat@gmail.com', 'all facilities', 'pune', 'vithalwadi', '2016-10-10 09:08:30', NULL, NULL, NULL),
-(50, 'abhijit', 'Real Estate', 'Rent', 'Pune Hadapsar', '3000 Sq.Ft', '12000', 'Nice and All good facilities near', '9637430435', 'abhijitkumbhar001@gmail.com', 'nice', 'Pune', 'Hadapsar', '2016-11-10 02:46:23', '2016-11-11 18:30:00', 0, 18),
-(56, 'abhijit', '', 'Sell', '', '', '', '', '9168277713', 'abhijitkumbhar001@gmail.com', '', '', '', '2016-11-10 08:02:29', '0000-00-00 00:00:00', 0, 18),
-(57, 'abhijit', '', 'Sell', '', '', '', '', '9168277713', 'abhijitkumbhar001@gmail.com', '', '', '', '2016-11-10 08:04:29', '0000-00-00 00:00:00', 0, 18),
-(58, 'abhijit', '', 'Sell', '', '', '', '', '9168277713', 'abhijitkumbhar001@gmail.com', '', '', '', '2016-11-10 08:05:13', '0000-00-00 00:00:00', 0, 18),
-(59, 'abhijit', '', 'Sell', '', '', '', '', '9168277713', 'abhijitkumbhar001@gmail.com', '', '', '', '2016-11-10 08:05:24', '0000-00-00 00:00:00', 0, 18),
-(60, 'abhijit', '', 'Sell', '', '', '', '', '9168277713', 'abhijitkumbhar001@gmail.com', '', '', '', '2016-11-10 08:06:11', '0000-00-00 00:00:00', 0, 18),
-(61, 'abhijit', '', 'Sell', '', '', '', '', '9168277713', 'abhijitkumbhar001@gmail.com', '', '', '', '2016-11-10 08:06:19', '0000-00-00 00:00:00', 0, 18),
-(62, 'abhijit', '', 'Sell', '', '', '', '', '9168277713', 'abhijitkumbhar001@gmail.com', '', '', '', '2016-11-10 08:09:41', '0000-00-00 00:00:00', 0, 18),
-(63, 'abhijit', '', 'Sell', '', '', '', '', '9168277713', 'abhijitkumbhar001@gmail.com', '', '', '', '2016-11-10 08:10:29', '0000-00-00 00:00:00', 0, 18),
-(64, 'abhijit', '', 'Sell', '', '', '', '', '9168277713', 'abhijitkumbhar001@gmail.com', '', '', '', '2016-11-10 08:10:55', '0000-00-00 00:00:00', 0, 18);
+(2, 'abs', 'house on rent', 'rent', 'pimpri', '2000', 1000, 'good house', '9634530435', 'abs@gmail.com', 'all facilities', 'pune', 'morewadi', '2016-06-12 07:07:21', '2016-10-25 03:16:50', 0, NULL),
+(1, 'Balu', 'Own house', 'rent', 'HIngne Khurd', '1025', 7000, 'good house', '9637430435', 'balu.khengat@gmail.com', 'all facilities', 'pune', 'vithalwadi', '2016-10-10 09:08:30', NULL, NULL, NULL),
+(50, 'abhijit', 'Real Estate', 'Rent', 'Pune Hadapsar', '3000 Sq.Ft', 12000, 'Nice and All good facilities near', '9637430435', 'abhijitkumbhar001@gmail.com', 'nice', 'Pune', 'Hadapsar', '2016-11-10 02:46:23', '2016-11-11 18:30:00', 0, 18);
 
 -- --------------------------------------------------------
 
@@ -336,7 +327,7 @@ CREATE TABLE IF NOT EXISTS `travelling` (
   `name` varchar(255) DEFAULT NULL,
   `title` varchar(255) DEFAULT NULL,
   `address` text,
-  `price` varchar(255) DEFAULT NULL,
+  `price` int(11) DEFAULT NULL,
   `description` text,
   `mobile` varchar(255) DEFAULT NULL,
   `email` varchar(255) DEFAULT NULL,
@@ -354,9 +345,9 @@ CREATE TABLE IF NOT EXISTS `travelling` (
 --
 
 INSERT INTO `travelling` (`travelid`, `name`, `title`, `address`, `price`, `description`, `mobile`, `email`, `city`, `area`, `date`, `offerend`, `category`, `userid`) VALUES
-(1, 'abhijit', 'Mumbai to Pune', 'a', 'a', 'a', 'a', 'a', 'a', 'a', '2011-02-02 00:00:00', NULL, NULL, NULL),
-(5, 'asdfasd', 'Kolhaput to Solapur', '', '', '', '', '', '', '', '2016-09-29 06:29:18', NULL, NULL, NULL),
-(4, 'balu', 'Pune to Kolhapur', 'asdf', '', '', '', '', '', '', '2016-09-29 05:20:40', NULL, NULL, NULL);
+(1, 'abhijit', 'Mumbai to Pune', 'a', 700, 'a', 'a', 'a', 'a', 'a', '2011-02-02 00:00:00', NULL, NULL, NULL),
+(5, 'asdfasd', 'Kolhaput to Solapur', '', 1000, '', '', '', '', '', '2016-09-29 06:29:18', NULL, NULL, NULL),
+(4, 'balu', 'Pune to Kolhapur', 'asdf', 600, '', '', '', '', '', '2016-09-29 05:20:40', NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -410,8 +401,8 @@ CREATE TABLE IF NOT EXISTS `tution` (
 --
 
 INSERT INTO `tution` (`tutid`, `name`, `title`, `address`, `description`, `mobile`, `email`, `city`, `area`, `date`, `offerend`, `category`, `userid`) VALUES
-(3, 'Profound', 'JAVA/.NET/TESTING', 'pune', 'Training And placement Institute', '9637430435', 'pro@gmail.com', 'pune', '', '2016-10-17 00:00:00', NULL, NULL, NULL),
-(4, 'Mind Script', 'JAVA/.NET/TESTING', 'pune', 'Training And Placement Institute', '7276616826', 'mind@gmail.com', 'pune', '', '2016-10-26 00:00:00', NULL, NULL, NULL);
+(3, 'Profound', 'JAVA/.NET/TESTING', 'pune', 'Training And placement Institute', '9637430435', 'pro@gmail.com', 'pune', 'kothrud', '2016-10-17 00:00:00', NULL, NULL, NULL),
+(4, 'Mind Script', 'php', 'pune', 'Training And Placement Institute', '7276616826', 'mind@gmail.com', 'pune', 'pimpri', '2016-10-26 00:00:00', NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
