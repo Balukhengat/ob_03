@@ -14,23 +14,20 @@
 					<div class="agile-trend-ads">
 							<ul id="flexiselDemo3">
 								<li>
-								
 								<?php 
 									//realestate
 									foreach ($realestate_latest->result_array() as $row){
-										
-									
 								?>
+							<a href="<?php echo base_url();?>Realestate/manage_view/<?php echo $row['realid'];?>">
 									<div class="col-md-3 biseller-column">
-										<a href="single.html">
 											<img src="assets/images/r4.jpg" alt="" />
-										</a> 
 										<div class="w3-ad-info">
 											<h5><?php echo $row['title']?></h5>
 											<h5><?php echo $row['name']?></h5>
 											<span><?php $date = $row['date'];echo time_elapsed_string($date);?></span>
 										</div>
 									</div>
+									</a>
 								<?php 
 									}
 								?>	
@@ -39,19 +36,18 @@
 								<?php 
 									//automobile
 									foreach ($automobile_latest->result_array() as $row){
-										
-									
 								?>
+						<a href="<?php echo base_url();?>Automobile/manage_view/<?php echo $row['autoid'];?>">
+								
 									<div class="col-md-3 biseller-column">
-										<a href="single.html">
 											<img src="assets/images/c6.jpg" alt="" />
-										</a> 
 										<div class="w3-ad-info">
 											<h5><?php echo $row['title']?></h5>
 											<h5><?php echo $row['name']?></h5>
 											<span><?php $date = $row['date'];echo time_elapsed_string($date);?></span>
 										</div>
 									</div>
+									</a>
 								<?php 
 									}
 								?>	
@@ -61,13 +57,11 @@
 								<?php 
 									//hotel
 									foreach ($hotel_latest->result_array() as $row){
-										
-									
 								?>
+								<a href="<?php echo base_url();?>Hotel/manage_view/<?php echo $row['hotelid'];?>">
+								
 									<div class="col-md-3 biseller-column">
-										<a href="single.html">
 											<img src="assets/images/ad2.jpg" alt="" />
-										</a> 
 										<div class="w3-ad-info">
 											<h5><?php echo $row['title']?></h5>
 											<h5><?php echo $row['name']?></h5>
@@ -75,6 +69,7 @@
 											
 										</div>
 									</div>
+									</a>
 								<?php 
 									}
 								?>	
@@ -84,13 +79,11 @@
 								<?php 
 									//Travelling
 									foreach ($travelling_latest->result_array() as $row){
-										
-									
 								?>
+						<a href="<?php echo base_url();?>Travelling/manage_view/<?php echo $row['travelid'];?>">
+								
 									<div class="col-md-3 biseller-column">
-										<a href="single.html">
 											<img src="assets/images/ad2.jpg" alt="" />
-										</a> 
 										<div class="w3-ad-info">
 											<h5><?php echo $row['title']?></h5>
 											<h5><?php echo $row['name']?></h5>
@@ -98,6 +91,7 @@
 											
 										</div>
 									</div>
+									</a>
 								<?php 
 									}
 								?>	
@@ -107,13 +101,10 @@
 								<?php 
 									//Tution
 									foreach ($tution_latest->result_array() as $row){
-										
-									
 								?>
+								<a href="<?php echo base_url();?>Tutions/manage_view/<?php echo $row['tutid'];?>">
 									<div class="col-md-3 biseller-column">
-										<a href="single.html">
 											<img src="assets/images/ad2.jpg" alt="" />
-										</a> 
 										<div class="w3-ad-info">
 											<h5><?php echo $row['title']?></h5>
 											<h5><?php echo $row['name']?></h5>
@@ -121,6 +112,7 @@
 											
 										</div>
 									</div>
+									</a>
 								<?php 
 									}
 								?>	
@@ -130,13 +122,9 @@
 								<?php 
 									//Other
 									foreach ($other_latest->result_array() as $row){
-										
-									
 								?>
 									<div class="col-md-3 biseller-column">
-										<a href="single.html">
 											<img src="assets/images/ad2.jpg" alt="" />
-										</a> 
 										<div class="w3-ad-info">
 											<h5><?php echo $row['title']?></h5>
 											<h5><?php echo $row['name']?></h5>

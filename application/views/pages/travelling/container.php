@@ -120,6 +120,7 @@
 									<span id="price" class="adprice">RS./-</span>
 									<p id="name" class="catpath">Travelling»</p>
 									</section>
+									<div id="data"></div>
 									<section class="list-right">
 									<span id="date" class="date"></span>
 									<span id="city" class="cityname"></span>
@@ -198,21 +199,23 @@ $(function(){
 		var url="<?php echo base_url();?>"+"Travelling/sort/"+val;
 		alert(url);
 		 $.ajax({
-	        	method:"POST",
+	        	type:"POST",
 	        	url:url,
 	        	data:{val:val},
 	        	success:function(response)
-	        	{
+	        	{ //var arr=response.split(":");
 	        		if(response!=null)
-	        		{
-	        				jQuery("#result").hide();
-		        			jQuery("#result1").show();
+	        		{ 
+	        			jQuery("#result").hide();
+	        			jQuery("#result1").show();
+	        			   
 		        			jQuery("#title").html(response.title);
 		        			jQuery("#price").html(response.price);
 		        			jQuery("#name").html(response.name);
 		        			jQuery("#date").html(response.date);
 		        			jQuery("#city").html(response.city);
-		        		alert(response);
+		        		//alert(response);
+		        			alert(response["title"]);
 	        		}
 	        		else
 	        		{
