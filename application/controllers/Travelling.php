@@ -48,7 +48,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			
 			$data['city'] = $this->input->post('city');
 			$data['type'] = $this->input->post('type');
+			if($data['city'] == $data['type']){
 			$this->session->set_flashdata('message','Pickup and Destination must be different.');
+			}
 			$result['datas'] = $this->BasicModel->travelling_search($data);
 			//pagination if query returns empty results
 			$this->load->library('pagination');

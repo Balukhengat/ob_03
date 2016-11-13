@@ -97,13 +97,13 @@
 									<li>
 									<img src="<?php echo base_url();?>assets/images/r1.jpg" title="" alt="" />
 									<section class="list-left">
-									<h5 class="title"><?php echo $row->title?></h5>
-									<span  class="adprice">RS.<?php echo $row->price?>/-</span>
-									<p  class="catpath">Travelling» <?php echo $row->name?></p>
+									<h5 class="title"><?php echo $row1['title']?></h5>
+									<span  class="adprice">RS.<?php echo $row1['price']?>/-</span>
+									<p  class="catpath">Travelling» <?php echo $row1['name']?></p>
 									</section>
 									<section class="list-right">
-									<span  class="date"><?php echo $row->date?></span>
-									<span  class="cityname"><?php echo $row->city?></span>
+									<span  class="date"><?php echo $row1['date']?></span>
+									<span  class="cityname"><?php echo $row1['city']?></span>
 									</section>
 									<div class="clearfix"></div>
 									</li> 
@@ -112,7 +112,7 @@
 								
 							</ul>
 							<ul id="result1" class="list">
-							<a href="<?php echo base_url();?>Travelling/manage_view/<?php echo $row->travelid;?>">
+							<a href="<?php echo base_url();?>Travelling/manage_view/<?php // echo $row['travelid'];?>">
 									<li>
 									<img src="<?php echo base_url();?>assets/images/r1.jpg" title="" alt="" />
 									<section class="list-left">
