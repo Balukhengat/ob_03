@@ -44,14 +44,17 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			$this->load->view('pages/travelling/travelling_view',$id);
 		}
 		public function search()
-		{	
+		{	//$result['datas']="";
 			
 			$data['city'] = $this->input->post('city');
 			$data['type'] = $this->input->post('type');
-			if($data['city'] == $data['type']){
-			$this->session->set_flashdata('message','Pickup and Destination must be different.');
-			}
+// 			if($data['city'] == $data['type']){
+// 			$this->session->set_flashdata('message','Pickup and Destination must be different.');
+// 			}//else{
 			$result['datas'] = $this->BasicModel->travelling_search($data);
+// 			if($result['datas']==NULL){
+// 			$this->session->set_flashdata('message','Data not found, Please check related data.');
+// 			}
 			//pagination if query returns empty results
 			$this->load->library('pagination');
 			$config = array();
@@ -79,8 +82,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			$config['num_tag_open'] = '<li>';
 			$config['num_tag_close'] = '</li>';
 			$this->pagination->initialize($config);
+			//}
 			$result['template'] = "travelling";
 			$this->load->view('pages/mainpage',$result);
+			
 		}
 		public function sort($val){
 		
