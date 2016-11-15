@@ -63,6 +63,9 @@ class BasicModel extends CI_Model{
 		$this->db->where('reg_id',$userid);
 		$this->db->update('register');
 	}
+	/* ************************************************************
+	 * 					REALESTATE
+	 *************************************************************/
 	public function insert_user_realestate($realid){
 		$userid = $_SESSION['userid'];
 		$data['name']=$this->input->post('name');
@@ -104,7 +107,200 @@ class BasicModel extends CI_Model{
 			$this->db->where('realid',$realid);
 			$this->db->update('realestate',$data);
 	}
-	//REal estate search
+	/* ************************************************************
+	 * 					TUTION
+	 *************************************************************/
+	public function insert_user_tution($tutid){
+		$userid = $_SESSION['userid'];
+		$data['name']=$this->input->post('name');
+		$data['title']=$this->input->post('title');
+		$data['address']=$this->input->post('address');
+		$data['description']=$this->input->post('description');
+		$data['mobile']=$this->input->post('mobile');
+		$data['email']=$this->input->post('email');
+		$data['city']=$this->input->post('city');
+		$data['area']=$this->input->post('area');
+		$data['date']=date('Y-m-d H:i:s');
+		$data['offerend']=$this->input->post('offerend');
+		$data['category']=1;
+		$data['userid']=$userid;
+		$this->db->insert('tution',$data);
+	}
+	public function update_user_tution($tutid){
+		$data['name'] = $this->input->post('name');
+		$data['title'] = $this->input->post('title');
+		$data['address'] = $this->input->post('address');
+		$data['description'] = $this->input->post('description');
+		$data['mobile'] = $this->input->post('mobile');
+		$data['email'] = $this->input->post('email');
+		$data['city'] = $this->input->post('city');
+		$data['area'] = $this->input->post('area');
+		$data['date'] = date('Y-m-d H:i:s');
+		$data['offerend'] = $this->input->post('offerend');
+		$data['category'] = 1;
+		$data['userid'] = $_SESSION['userid'];
+		$this->db->where('userid',$data['userid']);
+		$this->db->where('tutid',$tutid);
+		$this->db->update('tution',$data);
+	}
+	/* ************************************************************
+	 * 					HOTEL
+	 *************************************************************/
+	public function insert_user_hotel($hotelid){
+		$userid = $_SESSION['userid'];
+		$data['name']=$this->input->post('name');
+		$data['title']=$this->input->post('title');
+		$data['type']=$this->input->post('type');
+		$data['price']=$this->input->post('price');
+		$data['address']=$this->input->post('address');
+		$data['description']=$this->input->post('description');
+		$data['mobile']=$this->input->post('mobile');
+		$data['email']=$this->input->post('email');
+		$data['amenities']=$this->input->post('facilities');
+		$data['city']=$this->input->post('city');
+		$data['area']=$this->input->post('area');
+		$data['date']=date('Y-m-d H:i:s');
+		$data['offerend']=$this->input->post('offerend');
+		$data['category']=2;
+		$data['userid']=$userid;
+		$this->db->insert('hotel',$data);
+	}
+	public function update_user_hotel($hotelid){
+		$data['name'] = $this->input->post('name');
+		$data['title'] = $this->input->post('title');
+		$data['type']=$this->input->post('type');
+		$data['price']=$this->input->post('price');
+		$data['address'] = $this->input->post('address');
+		$data['description'] = $this->input->post('description');
+		$data['mobile'] = $this->input->post('mobile');
+		$data['email'] = $this->input->post('email');
+		$data['amenities']=$this->input->post('facilities');
+		$data['city'] = $this->input->post('city');
+		$data['area'] = $this->input->post('area');
+		$data['date'] = date('Y-m-d H:i:s');
+		$data['offerend'] = $this->input->post('offerend');
+		$data['category'] = 2;
+		$data['userid'] = $_SESSION['userid'];
+		$this->db->where('userid',$data['userid']);
+		$this->db->where('hotelid',$hotelid);
+		$this->db->update('hotel',$data);
+	}
+	/* ************************************************************
+	 * 					TRAVELLING
+	 *************************************************************/
+	public function insert_user_travelling($travelid){
+		$userid = $_SESSION['userid'];
+		$data['name']=$this->input->post('name');
+		$data['title']=$this->input->post('title');
+		$data['address']=$this->input->post('address');
+		$data['price']=$this->input->post('price');
+		$data['description']=$this->input->post('description');
+		$data['mobile']=$this->input->post('mobile');
+		$data['email']=$this->input->post('email');
+		$data['city']=$this->input->post('city');
+		$data['area']=$this->input->post('area');
+		$data['date']=date('Y-m-d H:i:s');
+		$data['offerend']=$this->input->post('offerend');
+		$data['category']=3;
+		$data['userid']=$userid;
+		$this->db->insert('travelling',$data);
+	}
+	public function update_user_travelling($travelid){
+		$data['name'] = $this->input->post('name');
+		$data['title'] = $this->input->post('title');
+		$data['address'] = $this->input->post('address');
+		$data['price'] = $this->input->post('price');
+		$data['description'] = $this->input->post('description');
+		$data['mobile'] = $this->input->post('mobile');
+		$data['email'] = $this->input->post('email');
+		$data['city'] = $this->input->post('city');
+		$data['area'] = $this->input->post('area');
+		$data['date'] = date('Y-m-d H:i:s');
+		$data['offerend'] = $this->input->post('offerend');
+		$data['category'] = 3;
+		$data['userid'] = $_SESSION['userid'];
+		$this->db->where('userid',$data['userid']);
+		$this->db->where('travelid',$travelid);
+		$this->db->update('travelling',$data);
+	}
+	/* ************************************************************
+	 * 					AUTOMOBILE
+	 *************************************************************/
+	public function insert_user_automobile($autoid){
+		$userid = $_SESSION['userid'];
+		$data['name']=$this->input->post('name');
+		$data['title']=$this->input->post('title');
+		$data['type']=$this->input->post('type');
+		$data['address']=$this->input->post('address');
+		$data['description']=$this->input->post('description');
+		$data['mobile']=$this->input->post('mobile');
+		$data['email']=$this->input->post('email');
+		$data['city']=$this->input->post('city');
+		$data['area']=$this->input->post('area');
+		$data['date']=date('Y-m-d H:i:s');
+		$data['offerend']=$this->input->post('offerend');
+		$data['category']=4;
+		$data['userid']=$userid;
+		$this->db->insert('automobile',$data);
+	}
+	public function update_user_automobile($autoid){
+		$data['name'] = $this->input->post('name');
+		$data['title'] = $this->input->post('title');
+		$data['type'] = $this->input->post('type');
+		$data['address'] = $this->input->post('address');
+		$data['description'] = $this->input->post('description');
+		$data['mobile'] = $this->input->post('mobile');
+		$data['email'] = $this->input->post('email');
+		$data['city'] = $this->input->post('city');
+		$data['area'] = $this->input->post('area');
+		$data['date'] = date('Y-m-d H:i:s');
+		$data['offerend'] = $this->input->post('offerend');
+		$data['category'] = 0;
+		$data['userid'] = $_SESSION['userid'];
+		$this->db->where('userid',$data['userid']);
+		$this->db->where('autoid',$autoid);
+		$this->db->update('automobile',$data);
+	}
+	/* ************************************************************
+	 * 					OTHER
+	 *************************************************************/
+	public function insert_user_other($otherid){
+		$userid = $_SESSION['userid'];
+		$data['name']=$this->input->post('name');
+		$data['title']=$this->input->post('title');
+		$data['address']=$this->input->post('address');
+		$data['description']=$this->input->post('description');
+		$data['mobile']=$this->input->post('mobile');
+		$data['email']=$this->input->post('email');
+		$data['city']=$this->input->post('city');
+		$data['area']=$this->input->post('area');
+		$data['date']=date('Y-m-d H:i:s');
+		$data['offerend']=$this->input->post('offerend');
+		$data['category']=5;
+		$data['userid']=$userid;
+		$this->db->insert('other',$data);
+	}
+	public function update_user_other($otherid){
+		$data['name'] = $this->input->post('name');
+		$data['title'] = $this->input->post('title');
+		$data['address'] = $this->input->post('address');
+		$data['description'] = $this->input->post('description');
+		$data['mobile'] = $this->input->post('mobile');
+		$data['email'] = $this->input->post('email');
+		$data['city'] = $this->input->post('city');
+		$data['area'] = $this->input->post('area');
+		$data['date'] = date('Y-m-d H:i:s');
+		$data['offerend'] = $this->input->post('offerend');
+		$data['category'] = 5;
+		$data['userid'] = $_SESSION['userid'];
+		$this->db->where('userid',$data['userid']);
+		$this->db->where('otherid',$otherid);
+		$this->db->update('other',$data);
+	}
+	
+	/* ************************************************************
+	 * 					ALL SEARCHES
+	 *************************************************************/
 	public function real_search($data){
 		$city = $data['city'];
 		$type = $data['type'];

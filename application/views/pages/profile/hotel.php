@@ -1,4 +1,8 @@
 <div class="col-md-12">
+<div class="col-md-9">
+	<a href="<?php echo base_url();?>Basic_Controller/user_hotel"><button class="btn btn-success">Add</button></a>
+	<a href="<?php echo base_url();?>Basic_Controller/user_hotel_view"><button class="btn btn-success">View</button></a>
+</div>
 <?php  
 $userid = $_SESSION['userid'];
 $hotel_info=$this->db->get_where('register',array('reg_id'=>$userid))->result_array();

@@ -15,6 +15,7 @@ foreach ($realestate_info as $row){
 		<div id="danger-alert" class="alert alert-danger"><?php echo $this->session->flashdata('message');?></div>
 	</div>
 	<?php }?>
+	<br>
 	<div class="col-md-6">
 	<div class="form-group">
 	  <label for="Name">Name</label><span style="color: red;">*</span>

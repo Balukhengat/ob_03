@@ -14,27 +14,23 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		public function user_profile(){
 				$data['pagename']="myprofile.php";
 				$this->load->view('pages/profile/profile',$data);
-			
-			//$data['pagename']="myprofile.php";
-			//$this->load->view('pages/profile/profile',$data);
 		}
-		public function user_dashboard(){
-			$data['pagename']="dashboard.php";
-			$this->load->view('pages/profile/profile',$data);
-		}
+		/* ************************************************************
+		 * 					REALESTATE
+		 *************************************************************/
 		public function user_realestate($task='',$realid=''){
 			if($task=='create'){
 				$this->BasicModel->insert_user_realestate($realid);
 				//$this->image_upload('real',$userid);
-			$this->session->set_flashdata('message','Data Uploaded Successfully');
-			redirect(base_url() . 'Basic_Controller/user_realestate');
+				$this->session->set_flashdata('message','Data Uploaded Successfully');
+				redirect(base_url() . 'Basic_Controller/user_realestate');
 			}
 			if($task=='update'){
-			$this->BasicModel->update_user_realestate($realid);
-			//$this->image_upload('real',$userid);
-			$this->session->set_flashdata('message','Data Updated Successfully');
-			//$data['pagename']="realestate_view.php";
-			redirect(base_url() . 'Basic_Controller/user_realestate');
+				$this->BasicModel->update_user_realestate($realid);
+				//$this->image_upload('real',$userid);
+				$this->session->set_flashdata('message','Data Updated Successfully');
+				//$data['pagename']="realestate_view.php";
+				redirect(base_url() . 'Basic_Controller/user_realestate_view');
 			}
 			if($task=='delete'){
 				$userid = $_SESSION['userid'];
@@ -62,178 +58,222 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			$data['pagename']="edit_realestate.php";
 			$this->load->view('pages/profile/profile',$data);
 		}
-		public function user_tution($task=''){
+		/* ************************************************************
+		 *		 					TUTION
+		 *************************************************************/
+		public function user_tution($task='',$tutid=''){
 			if($task=='create'){
-			$userid = $_SESSION['userid'];
-			$this->form_validation->set_rules('title', 'Title', 'trim|required');
-			$this->form_validation->set_rules('address', 'Address', 'trim|required');
-			$this->form_validation->set_rules('description', 'Description', 'trim|required');
-			$this->form_validation->set_rules('city', 'City', 'trim|required');
-			$this->form_validation->set_rules('area', 'Area', 'trim|required');
-			$this->form_validation->set_rules('offerend', 'Offer End', 'trim|required');
-			if ($this->form_validation->run() == false) {
-		
-				$data['pagename']="tution.php";
-				$this->load->view('pages/profile/profile',$data);
-			} else {
-				$data['name']=$this->input->post('name');
-				$data['title']=$this->input->post('title');
-				$data['address']=$this->input->post('address');
-				$data['description']=$this->input->post('description');
-				$data['mobile']=$this->input->post('mobile');
-				$data['email']=$this->input->post('email');
-				$data['city']=$this->input->post('city');
-				$data['area']=$this->input->post('area');
-				$data['date']=date('Y-m-d H:i:s');
-				$data['offerend']=$this->input->post('offerend');
-				$data['category']=1;
-				$data['userid']=$userid;
-				$this->db->insert('tution',$data);
+				$this->BasicModel->insert_user_tution($tutid);
 				//$this->image_upload('real',$userid);
 				$this->session->set_flashdata('message','Data Uploaded Successfully');
+				redirect(base_url() . 'Basic_Controller/user_tution');
 			}
+			if($task=='update'){
+				$this->BasicModel->update_user_tution($tutid);
+				//$this->image_upload('real',$userid);
+				$this->session->set_flashdata('message','Data Updated Successfully');
+				//$data['pagename']="realestate_view.php";
+				redirect(base_url() . 'Basic_Controller/user_tution_view');
+			}
+			if($task=='delete'){
+				$userid = $_SESSION['userid'];
+				$query = "DELETE FROM tution WHERE tutid='$tutid' and userid='$userid'";
+				$this->db->query($query);
+				if($this->db->affected_rows()){
+					$this->session->set_flashdata('message','Record deleted !');
+				}else{
+					$this->session->set_flashdata('message','Record not found');
+				}
+				redirect(base_url() . 'Basic_Controller/user_tution_view');
+				//$data['pagename']="realestate_view.php";
 			}
 			$data['pagename']="tution.php";
 			$this->load->view('pages/profile/profile',$data);
-		
 		}
-		public function user_hotel($task=''){
+		public function user_tution_view(){
+			$data['pagename']="tution_view.php";
+			$this->load->view('pages/profile/profile',$data);
+		}
+		public function user_tution_edit($tutid){
+			$userid = $_SESSION['userid'];
+			$data['tutid'] = $tutid;
+			$data['pagename']="edit_tution.php";
+			$this->load->view('pages/profile/profile',$data);
+		}
+		/* ************************************************************
+		 *		 					HOTEL
+		 *************************************************************/
+		public function user_hotel($task='',$hotelid=''){
 			if($task=='create'){
+				$this->BasicModel->insert_user_hotel($hotelid);
+				//$this->image_upload('real',$userid);
+				$this->session->set_flashdata('message','Data Uploaded Successfully');
+				redirect(base_url() . 'Basic_Controller/user_hotel');
+			}
+			if($task=='update'){
+				$this->BasicModel->update_user_hotel($hotelid);
+				//$this->image_upload('real',$userid);
+				$this->session->set_flashdata('message','Data Updated Successfully');
+				//$data['pagename']="realestate_view.php";
+				redirect(base_url() . 'Basic_Controller/user_hotel_view');
+			}
+			if($task=='delete'){
 				$userid = $_SESSION['userid'];
-				$this->form_validation->set_rules('title', 'Title', 'trim|required');
-				$this->form_validation->set_rules('type', 'Type', 'trim|required');
-				$this->form_validation->set_rules('address', 'Address', 'trim|required');
-				$this->form_validation->set_rules('price', 'Price', 'trim|required|numeric');
-				$this->form_validation->set_rules('description', 'Description', 'trim|required');
-				$this->form_validation->set_rules('facilities', 'Facility', 'trim|required');
-				$this->form_validation->set_rules('city', 'City', 'trim|required');
-				$this->form_validation->set_rules('area', 'Area', 'trim|required');
-				$this->form_validation->set_rules('offerend', 'Offer End', 'trim|required');
-				if ($this->form_validation->run() == false) {
-					$data['pagename']="hotel.php";
-					$this->load->view('pages/profile/profile',$data);
-				} else {
-					$data['name']=$this->input->post('name');
-					$data['title']=$this->input->post('title');
-					$data['type']=$this->input->post('type');
-					$data['address']=$this->input->post('address');
-					$data['price']=$this->input->post('price');
-					$data['description']=$this->input->post('description');
-					$data['mobile']=$this->input->post('mobile');
-					$data['email']=$this->input->post('email');
-					$data['amenities']=$this->input->post('facilities');
-					$data['city']=$this->input->post('city');
-					$data['area']=$this->input->post('area');
-					$data['date']=date('Y-m-d H:i:s');
-					$data['offerend']=$this->input->post('offerend');
-					$data['category']=2;
-					$data['userid']=$userid;
-					$this->db->insert('hotel',$data);
-					//$this->image_upload('real',$userid);
-					$this->session->set_flashdata('message','Data Uploaded Successfully');
-				}}
+				$query = "DELETE FROM hotel WHERE hotelid='$hotelid' and userid='$userid'";
+				$this->db->query($query);
+				if($this->db->affected_rows()){
+					$this->session->set_flashdata('message','Record deleted !');
+				}else{
+					$this->session->set_flashdata('message','Record not found');
+				}
+				redirect(base_url() . 'Basic_Controller/user_hotel_view');
+				//$data['pagename']="realestate_view.php";
+			}
 			$data['pagename']="hotel.php";
 			$this->load->view('pages/profile/profile',$data);
 		}
-		public function user_travelling($task=''){
-			if($task=='create'){
-				$userid = $_SESSION['userid'];
-				$this->form_validation->set_rules('title', 'Title', 'trim|required');
-				$this->form_validation->set_rules('type', 'Type', 'trim|required');
-				$this->form_validation->set_rules('address', 'Address', 'trim|required');
-				$this->form_validation->set_rules('description', 'Description', 'trim|required');
-				$this->form_validation->set_rules('city', 'City', 'trim|required');
-				$this->form_validation->set_rules('area', 'Area', 'trim|required');
-				$this->form_validation->set_rules('offerend', 'Offer End', 'trim|required');
-				if ($this->form_validation->run() == false) {
-					$data['pagename']="travelling.php";
-					$this->load->view('pages/profile/profile',$data);
-				} else {
-					$data['name']=$this->input->post('name');
-					$data['title']=$this->input->post('title');
-					$data['address']=$this->input->post('address');
-					$data['price']=$this->input->post('price');
-					$data['description']=$this->input->post('description');
-					$data['mobile']=$this->input->post('mobile');
-					$data['email']=$this->input->post('email');
-					$data['city']=$this->input->post('city');
-					$data['area']=$this->input->post('area');
-					$data['date']=date('Y-m-d H:i:s');
-					$data['offerend']=$this->input->post('offerend');
-					$data['category']=3;
-					$data['userid']=$userid;
-					$this->db->insert('travelling',$data);
-					//$this->image_upload('real',$userid);
-					$this->session->set_flashdata('message','Data Uploaded Successfully');
-				}}
-					
-			$data['pagename']="travelling.php";
+		public function user_hotel_view(){
+			$data['pagename']="hotel_view.php";
 			$this->load->view('pages/profile/profile',$data);
 		}
-		public function user_automobile($task=''){
+		public function user_hotel_edit($hotelid){
+			$userid = $_SESSION['userid'];
+			$data['hotelid'] = $hotelid;
+			$data['pagename']="edit_hotel.php";
+			$this->load->view('pages/profile/profile',$data);
+		}
+		/* ************************************************************
+		 * 					Travelling
+		 *************************************************************/
+		public function user_travelling($task='',$travelid=''){
 			if($task=='create'){
+				$this->BasicModel->insert_user_travelling($travelid);
+				//$this->image_upload('real',$userid);
+				$this->session->set_flashdata('message','Data Uploaded Successfully');
+				redirect(base_url() . 'Basic_Controller/user_travelling_view');
+			}
+			if($task=='update'){
+				$this->BasicModel->update_user_travelling($travelid);
+				//$this->image_upload('real',$userid);
+				$this->session->set_flashdata('message','Data Updated Successfully');
+				//$data['pagename']="realestate_view.php";
+				redirect(base_url() . 'Basic_Controller/user_travelling_view');
+			}
+			if($task=='delete'){
 				$userid = $_SESSION['userid'];
-				$this->form_validation->set_rules('title', 'Title', 'trim|required');
-				$this->form_validation->set_rules('address', 'Address', 'trim|required');
-				$this->form_validation->set_rules('description', 'Description', 'trim|required');
-				$this->form_validation->set_rules('city', 'City', 'trim|required');
-				$this->form_validation->set_rules('area', 'Area', 'trim|required');
-				$this->form_validation->set_rules('offerend', 'Offer End', 'trim|required');
-				if ($this->form_validation->run() == false) {
-					$data['pagename']="automobile.php";
-					$this->load->view('pages/profile/profile',$data);
-				} else {
-					$data['name']=$this->input->post('name');
-					$data['title']=$this->input->post('title');
-					$data['type']=$this->input->post('type');
-					$data['address']=$this->input->post('address');
-					$data['description']=$this->input->post('description');
-					$data['mobile']=$this->input->post('mobile');
-					$data['email']=$this->input->post('email');
-					$data['city']=$this->input->post('city');
-					$data['area']=$this->input->post('area');
-					$data['date']=date('Y-m-d H:i:s');
-					$data['offerend']=$this->input->post('offerend');
-					$data['category']=3;
-					$data['userid']=$userid;
-					$this->db->insert('automobile',$data);
-					//$this->image_upload('real',$userid);
-					$this->session->set_flashdata('message','Data Uploaded Successfully');
-				}}
-					
+				$query = "DELETE FROM travelling WHERE travelid='$travelid' and userid='$userid'";
+				$this->db->query($query);
+				if($this->db->affected_rows()){
+					$this->session->set_flashdata('message','Record deleted !');
+				}else{
+					$this->session->set_flashdata('message','Record not found');
+				}
+				redirect(base_url() . 'Basic_Controller/user_travelling_view');
+				//$data['pagename']="realestate_view.php";
+			}
+			$data['pagename']="travelling.php";
+			$this->load->view('pages/profile/profile',$data);
+				
+		}
+		public function user_travelling_view(){
+			$data['pagename']="travelling_view.php";
+			$this->load->view('pages/profile/profile',$data);
+		}
+		public function user_travelling_edit($travelid){
+			$userid = $_SESSION['userid'];
+			$data['travelid'] = $travelid;
+			$data['pagename']="edit_travelling.php";
+			$this->load->view('pages/profile/profile',$data);
+		}
+		/* ************************************************************
+		 * 					AUTOMOBILES
+		 *************************************************************/
+		public function user_automobile($task='',$autoid=''){
+			if($task=='create'){
+				$this->BasicModel->insert_user_automobile($autoid);
+				//$this->image_upload('real',$userid);
+				$this->session->set_flashdata('message','Data Uploaded Successfully');
+				redirect(base_url() . 'Basic_Controller/user_automobile_view');
+			}
+			if($task=='update'){
+				$this->BasicModel->update_user_automobile($autoid);
+				//$this->image_upload('real',$userid);
+				$this->session->set_flashdata('message','Data Updated Successfully');
+				//$data['pagename']="realestate_view.php";
+				redirect(base_url() . 'Basic_Controller/user_automobile_view');
+			}
+			if($task=='delete'){
+				$userid = $_SESSION['userid'];
+				$query = "DELETE FROM automobile WHERE autoid='$autoid' and userid='$userid'";
+				$this->db->query($query);
+				if($this->db->affected_rows()){
+					$this->session->set_flashdata('message','Record deleted !');
+				}else{
+					$this->session->set_flashdata('message','Record not found');
+				}
+				redirect(base_url() . 'Basic_Controller/user_automobile_view');
+				//$data['pagename']="realestate_view.php";
+			}
 			$data['pagename']="automobile.php";
 			$this->load->view('pages/profile/profile',$data);
 		}
-		public function user_other($task=''){
-			if($task=='create'){
-				$userid = $_SESSION['userid'];
-				$this->form_validation->set_rules('title', 'Title', 'trim|required');
-				$this->form_validation->set_rules('address', 'Address', 'trim|required');
-				$this->form_validation->set_rules('description', 'Description', 'trim|required');
-				$this->form_validation->set_rules('city', 'City', 'trim|required');
-				$this->form_validation->set_rules('area', 'Area', 'trim|required');
-				$this->form_validation->set_rules('offerend', 'Offer End', 'trim|required');
-				if ($this->form_validation->run() == false) {
-					$data['pagename']="automobile.php";
-					$this->load->view('pages/profile/profile',$data);
-				} else {
-					$data['name']=$this->input->post('name');
-					$data['title']=$this->input->post('title');
-					$data['type']=$this->input->post('type');
-					$data['address']=$this->input->post('address');
-					$data['description']=$this->input->post('description');
-					$data['mobile']=$this->input->post('mobile');
-					$data['email']=$this->input->post('email');
-					$data['city']=$this->input->post('city');
-					$data['area']=$this->input->post('area');
-					$data['date']=date('Y-m-d H:i:s');
-					$data['offerend']=$this->input->post('offerend');
-					$data['category']=3;
-					$data['userid']=$userid;
-			$data['pagename']="other.php";
+		public function user_automobile_view(){
+			$data['pagename']="automobile_view.php";
 			$this->load->view('pages/profile/profile',$data);
 		}
-			}}
+		public function user_automobile_edit($autoid){
+			$userid = $_SESSION['userid'];
+			$data['autoid'] = $autoid;
+			$data['pagename']="edit_automobile.php";
+			$this->load->view('pages/profile/profile',$data);
+		}
+		
+		/* ************************************************************
+		 * 					OTHER
+		 *************************************************************/
+		public function user_other($task='',$otherid=''){
+			if($task=='create'){
+				$this->BasicModel->insert_user_other($otherid);
+				//$this->image_upload('real',$userid);
+				$this->session->set_flashdata('message','Data Uploaded Successfully');
+				redirect(base_url() . 'Basic_Controller/user_other');
+			}
+			if($task=='update'){
+				$this->BasicModel->update_user_other($otherid);
+				//$this->image_upload('real',$userid);
+				$this->session->set_flashdata('message','Data Updated Successfully');
+				//$data['pagename']="realestate_view.php";
+				redirect(base_url() . 'Basic_Controller/user_other_view');
+			}
+			if($task=='delete'){
+				$userid = $_SESSION['userid'];
+				$query = "DELETE FROM other WHERE otherid='$otherid' and userid='$userid'";
+				$this->db->query($query);
+				if($this->db->affected_rows()){
+					$this->session->set_flashdata('message','Record deleted !');
+				}else{
+					$this->session->set_flashdata('message','Record not found');
+				}
+				redirect(base_url() . 'Basic_Controller/user_other');
+				//$data['pagename']="realestate_view.php";
+			}
+			$data['pagename']="other.php";
+			$this->load->view('pages/profile/profile',$data);
+				
+		}
+		public function user_other_view(){
+			$data['pagename']="other_view.php";
+			$this->load->view('pages/profile/profile',$data);
+		}
+		public function user_other_edit($otherid){
+			$userid = $_SESSION['userid'];
+			$data['otherid'] = $otherid;
+			$data['pagename']="edit_other.php";
+			$this->load->view('pages/profile/profile',$data);
+		}
+		/* ************************************************************
+		 * 					PROFILE
+		 *************************************************************/
 		public function updateprofile(){
 				$this->BasicModel->updateprofile();
 				$this->session->set_flashdata('message','Data Updated Successfully');

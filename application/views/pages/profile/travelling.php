@@ -4,6 +4,10 @@ $userid = $_SESSION['userid'];
 $travelling_info=$this->db->get_where('register',array('reg_id'=>$userid))->result_array();
 foreach ($travelling_info as $row){
 ?>
+<div class="col-md-9">
+	<a href="<?php echo base_url();?>Basic_Controller/user_travelling"><button class="btn btn-success">Add</button></a>
+	<a href="<?php echo base_url();?>Basic_Controller/user_travelling_view"><button class="btn btn-success">View</button></a>
+</div>
 <form method="post" action="<?php echo base_url();?>Basic_Controller/user_travelling/create" enctype="multipart/form-data">
 	<div class="col-md-9">
 	<?php if($this->session->flashdata('message')!=null){?>
