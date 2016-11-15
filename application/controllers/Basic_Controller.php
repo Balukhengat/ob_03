@@ -22,28 +22,31 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			$data['pagename']="dashboard.php";
 			$this->load->view('pages/profile/profile',$data);
 		}
-		public function user_realestate($task=''){
+		public function user_realestate($task='',$realid=''){
 			if($task=='create'){
-			$userid = $_SESSION['userid'];
-				$data['name']=$this->input->post('name');
-				$data['title']=$this->input->post('title');
-				$data['type']=$this->input->post('type');
-				$data['address']=$this->input->post('address');
-				$data['builtup']=$this->input->post('builtup');
-				$data['price']=$this->input->post('price');
-				$data['description']=$this->input->post('description');
-				$data['mobile']=$this->input->post('mobile');
-				$data['email']=$this->input->post('email');
-				$data['amenities']=$this->input->post('facilities');
-				$data['city']=$this->input->post('city');
-				$data['area']=$this->input->post('area');
-				$data['date']=date('Y-m-d H:i:s');
-				$data['offerend']=$this->input->post('offerend');	
-				$data['category']=0;
-				$data['userid']=$userid;
-					$this->db->insert('realestate',$data);
-			//$this->image_upload('real',$userid);
+				$this->BasicModel->insert_user_realestate($realid);
+				//$this->image_upload('real',$userid);
 			$this->session->set_flashdata('message','Data Uploaded Successfully');
+			redirect(base_url() . 'Basic_Controller/user_realestate');
+			}
+			if($task=='update'){
+			$this->BasicModel->update_user_realestate($realid);
+			//$this->image_upload('real',$userid);
+			$this->session->set_flashdata('message','Data Updated Successfully');
+			//$data['pagename']="realestate_view.php";
+			redirect(base_url() . 'Basic_Controller/user_realestate');
+			}
+			if($task=='delete'){
+				$userid = $_SESSION['userid'];
+				$query = "DELETE FROM realestate WHERE realid='$realid' and userid='$userid'";
+				$this->db->query($query);
+				if($this->db->affected_rows()){
+					$this->session->set_flashdata('message','Record deleted !');
+				}else{
+					$this->session->set_flashdata('message','Record not found');
+				}
+				redirect(base_url() . 'Basic_Controller/user_realestate');
+				//$data['pagename']="realestate_view.php";
 			}
 			$data['pagename']="realestate.php";
 			$this->load->view('pages/profile/profile',$data);
@@ -53,31 +56,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			$data['pagename']="realestate_view.php";
 			$this->load->view('pages/profile/profile',$data);
 		}
-		public function user_realestate_edit($real){
+		public function user_realestate_edit($realid){
 			$userid = $_SESSION['userid'];
-			$data['realid'] = $real;
+			$data['realid'] = $realid;
 			$data['pagename']="edit_realestate.php";
 			$this->load->view('pages/profile/profile',$data);
-		}
-		public function user_realestate_delete($real){
-			$realid = $real;
-			$userid = $_SESSION['userid'];
-			$query = "DELETE FROM realestate WHERE realid='$realid' and userid='$userid'";
-			$this->db->query($query);
-			if($this->db->affected_rows()){
-				$this->session->set_flashdata('message','Record deleted !');
-			}else{
-				$this->session->set_flashdata('message','Record not found');
-			}
-			$data['pagename']="realestate_view.php";
-			$this->load->view('pages/profile/profile',$data);
-		}
-		public function user_realestate_update(){
-			$name = $this->input->post('name');
-			echo $name;
-			$this->BasicModel->update_user_realestate();
-			//$this->image_upload('real',$userid);
-			$this->session->set_flashdata('message','Data Uploaded Successfully');
 		}
 		public function user_tution($task=''){
 			if($task=='create'){

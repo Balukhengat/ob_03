@@ -49,7 +49,7 @@
 			<?php if($this->session->flashdata('message')!=null){?>
 			 <div class="col-md-9">
 		<div id="danger-alert" class="alert alert-danger"><?php echo $this->session->flashdata('message');?></div>
-	</div>	 <?php }?>
+	</div>	 <?php  unset($_SESSION['message']);  }?>
 			<div class="ads-grid">
 				
 				<div class="agileinfo-ads-display col-md-9">

@@ -18,26 +18,27 @@
 		$data['pagename']="realestate_view.php";
 		$this->load->view('pages/profile/profile',$data);
 	}
+	//print_r($realedit);die();
 	foreach ($realedit->result_array() as $row){
 ?>
-<form method="post" action="<?php echo base_url();?>Basic_Controller/user_realestate_update" enctype="multipart/form-data">
+<form method="post" action="<?php echo base_url();?>Basic_Controller/user_realestate/update/<?php echo $row['realid'];?>" enctype="multipart/form-data">
 	<div class="col-md-6">
 	<input type="hidden" name="realid" value="<?php echo $row['realid'];?>">
 	<div class="form-group">
 	  <label for="Name">Name:</label>
-	  <input type="text" class="form-control" id="name" name="name" value="<?php echo $row['name'];?>" disabled>
+	  <input type="text" class="form-control" id="name" name="name" value="<?php echo $row['name'];?>" readonly>
 	</div>
 	</div>
 	<div class="col-md-6">
 	<div class="form-group">
 	  <label for="id">Title:</label>
-	  <input type="text" class="form-control" id="title" title="title" value="<?php echo $row['title'];?>">
+	  <input type="text" class="form-control" id="title" name="title" value="<?php echo $row['title'];?>">
 	</div>
 	</div>
 	<div class="col-md-6">
 	<div class="form-group">
 	  <label for="Type">Type:</label>
-	  <select class="form-control">
+	  <select name="type" id="type" class="form-control">
 	  	<option>Sell</option>
 	  	<option>Rent</option>
 	  </select>
@@ -76,13 +77,13 @@
 	<div class="col-md-6">
 	<div class="form-group">
 	  <label for="Mobile">Mobile:</label>
-	  <input type="text" class="form-control" id="mobile" name="mobile" value="<?php echo $row['mobile'];?>" disabled>
+	  <input type="text" class="form-control" id="mobile" name="mobile" value="<?php echo $row['mobile'];?>" readonly>
 	</div>
 	</div>
 	<div class="col-md-6">
 	<div class="form-group">
 	  <label for="email">Email:</label>
-	  <input type="text" class="form-control" id="email" name="email" value="<?php echo $row['mobile'];?>" disabled>
+	  <input type="text" class="form-control" id="email" name="email" value="<?php echo $row['email'];?>" readonly>
 	</div>
 	</div>
 	<div class="col-md-6">

@@ -35,7 +35,7 @@ $realestate_data = $this->db->order_by('date','desc')->get_where('realestate',ar
         	?>
         </td>
         <td><a href="<?php echo base_url();?>Basic_Controller/user_realestate_edit/<?php echo $row['realid'];?>"><button class="btn btn-success">Edit</button></a></td>
-        <td><a href="<?php echo base_url();?>Basic_Controller/user_realestate_delete/<?php echo $row['realid'];?>"><button class="btn btn-danger">Delete</button></a></td>
+        <td><a href="<?php echo base_url();?>Basic_Controller/user_realestate/delete/<?php echo $row['realid'];?>"><button class="btn btn-danger">Delete</button></a></td>
       </tr>
       <?php }?>
     </tbody>
