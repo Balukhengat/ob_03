@@ -49,6 +49,36 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			$this->load->view('pages/profile/profile',$data);
 			
 		}
+		public function user_realestate_view(){
+			$data['pagename']="realestate_view.php";
+			$this->load->view('pages/profile/profile',$data);
+		}
+		public function user_realestate_edit($real){
+			$userid = $_SESSION['userid'];
+			$data['realid'] = $real;
+			$data['pagename']="edit_realestate.php";
+			$this->load->view('pages/profile/profile',$data);
+		}
+		public function user_realestate_delete($real){
+			$realid = $real;
+			$userid = $_SESSION['userid'];
+			$query = "DELETE FROM realestate WHERE realid='$realid' and userid='$userid'";
+			$this->db->query($query);
+			if($this->db->affected_rows()){
+				$this->session->set_flashdata('message','Record deleted !');
+			}else{
+				$this->session->set_flashdata('message','Record not found');
+			}
+			$data['pagename']="realestate_view.php";
+			$this->load->view('pages/profile/profile',$data);
+		}
+		public function user_realestate_update(){
+			$name = $this->input->post('name');
+			echo $name;
+			$this->BasicModel->update_user_realestate();
+			//$this->image_upload('real',$userid);
+			$this->session->set_flashdata('message','Data Uploaded Successfully');
+		}
 		public function user_tution($task=''){
 			if($task=='create'){
 			$userid = $_SESSION['userid'];

@@ -63,6 +63,45 @@ class BasicModel extends CI_Model{
 		$this->db->where('reg_id',$userid);
 		$this->db->update('register');
 	}
+	public function update_user_realestate(){
+			$realid = $this->input->post('realid');
+			$name = $this->input->post('name');
+			$title = $this->input->post('title');
+			$type = $this->input->post('type');
+			$address = $this->input->post('address');
+			$builtup = $this->input->post('builtup');
+			$price = $this->input->post('price');
+			$description = $this->input->post('description');
+			$mobile = $this->input->post('mobile');
+			$email = $this->input->post('email');
+			$amenities = $this->input->post('facilities');
+			$city = $this->input->post('city');
+			$area = $this->input->post('area');
+// 			$date = date('Y-m-d H:i:s');
+			$offerend = $this->input->post('offerend');	
+// 			$category = 0;
+			$userid = $_SESSION['userid'];
+			echo $realid;
+			exit();
+			$this->db->set('name',$name);
+			$this->db->set('title',$title);
+			$this->db->set('type',$type);
+			$this->db->set('address',$address);
+			$this->db->set('mobile',$builtup);
+			$this->db->set('price',$price);
+			$this->db->set('description',$description);
+			$this->db->set('mobile',$mobile);
+			$this->db->set('email',$email);
+			$this->db->set('amenities',$amenities);
+			$this->db->set('city',$city);
+			$this->db->set('area',$area);
+			$this->db->set('offerend',$offerend);
+			
+			$this->db->where('userid',$userid);
+			$this->db->where('realid',$realid);
+			$this->db->update('realestate');
+			echo "done";
+	}
 	//REal estate search
 	public function real_search($data){
 		$city = $data['city'];

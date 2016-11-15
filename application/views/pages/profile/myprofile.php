@@ -7,7 +7,7 @@
 <form id="profile" method="post" action="<?php echo base_url();?>Basic_Controller/updateprofile">
 		<?php if($this->session->flashdata('message')!=null){?>
 			<div class="col-md-12">
-						<div id="danger-alert" class="alert alert-danger"><?php echo $this->session->flashdata('message');?></div>
+				<div id="danger-alert" class="alert alert-danger"><?php echo $this->session->flashdata('message');?></div>
 			</div>	
 		<?php }?>
 	<div class="col-md-6">

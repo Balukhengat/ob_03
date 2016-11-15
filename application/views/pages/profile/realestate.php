@@ -4,11 +4,16 @@ $userid = $_SESSION['userid'];
 $realestate_info=$this->db->get_where('register',array('reg_id'=>$userid))->result_array();
 foreach ($realestate_info as $row){
 ?>
+<div class="col-md-9">
+	<a href="<?php echo base_url();?>Basic_Controller/user_realestate"><button class="btn btn-success">Add</button></a>
+	<a href="<?php echo base_url();?>Basic_Controller/user_realestate_view"><button class="btn btn-success">View</button></a>
+</div>
 <form method="post" action="<?php echo base_url();?>Basic_Controller/user_realestate/create" enctype="multipart/form-data">
 	<?php if($this->session->flashdata('message')!=null){?>
 	<div class="col-md-9">
+	<br>
 		<div id="danger-alert" class="alert alert-danger"><?php echo $this->session->flashdata('message');?></div>
-	</div>	 
+	</div>
 	<?php }?>
 	<div class="col-md-6">
 	<div class="form-group">

@@ -4,7 +4,7 @@ $(function(){
 	$("#type_error").hide();
 	$("#address_error").hide();
 	$("#builtup_error").hide();
-	$("#price_error").hide();
+	//$("#price_error").hide();
 	$("#description_error").hide();
 	$("#mobile_error").hide();
 	$("#email_error").hide();
@@ -16,7 +16,7 @@ $(function(){
 	var error_type=false;
 	var error_address=false;
 	var error_builtup=false;
-	var error_price=false;
+	//var error_price=false;
 	var error_description=false;
 	var error_mobile=false;
 	var error_email=false;
@@ -36,9 +36,9 @@ $(function(){
 	$("#builtup").focusout(function(){
 		check_builtup();
 	});
-	$("#price").focusout(function(){
-		check_price();
-	});
+//	$("#price").focusout(function(){
+//		check_price();
+//	});
 	$("#description").focusout(function(){
 		check_description();
 	});
@@ -98,16 +98,16 @@ $(function(){
 			$("#builtup_error").hide();
 		}
 	}
-	function check_price(){
-		var length=$("#price").val().length;
-		if(length<=3){
-			$("#price_error").html("Please enter price");
-			$("#price_error").show();
-			error_price=true;
-		}else{
-			$("#price_error").hide();
-		}
-	}
+//	function check_price(){
+//		var length=$("#price").val().length;
+//		if(length<=3){
+//			$("#price_error").html("Please enter price");
+//			$("#price_error").show();
+//			error_price=true;
+//		}else{
+//			$("#price_error").hide();
+//		}
+//	}
 	function check_description(){
 		var length=$("#description").val().length;
 		if(length<=3){
