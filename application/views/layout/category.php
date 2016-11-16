@@ -1,4 +1,4 @@
-<div class="category-header">
+<div class="w3ls-category-bar">
 	<div class="row">
 	<div class="category-header-right">
 	<ul>

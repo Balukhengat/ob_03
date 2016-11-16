@@ -19,7 +19,7 @@
 									foreach ($realestate_latest->result_array() as $row){
 								?>
 							<a href="<?php echo base_url();?>Realestate/manage_view/<?php echo $row['realid'];?>">
-									<div class="col-md-3 biseller-column">
+									<div class="col-md-3 col-sm-3 col-xs-6">
 											<img src="assets/images/r4.jpg" alt="" />
 										<div class="w3-ad-info">
 											<h5><?php echo $row['title']?></h5>
@@ -39,7 +39,7 @@
 								?>
 						<a href="<?php echo base_url();?>Automobile/manage_view/<?php echo $row['autoid'];?>">
 								
-									<div class="col-md-3 biseller-column">
+									<div class="col-md-3 col-sm-3 col-xs-6">
 											<img src="assets/images/c6.jpg" alt="" />
 										<div class="w3-ad-info">
 											<h5><?php echo $row['title']?></h5>
@@ -60,7 +60,7 @@
 								?>
 								<a href="<?php echo base_url();?>Hotel/manage_view/<?php echo $row['hotelid'];?>">
 								
-									<div class="col-md-3 biseller-column">
+									<div class="col-md-3 col-sm-3 col-xs-6">
 											<img src="assets/images/ad2.jpg" alt="" />
 										<div class="w3-ad-info">
 											<h5><?php echo $row['title']?></h5>
@@ -82,7 +82,7 @@
 								?>
 						<a href="<?php echo base_url();?>Travelling/manage_view/<?php echo $row['travelid'];?>">
 								
-									<div class="col-md-3 biseller-column">
+									<div class="col-md-3 col-sm-3 col-xs-6">
 											<img src="assets/images/ad2.jpg" alt="" />
 										<div class="w3-ad-info">
 											<h5><?php echo $row['title']?></h5>
@@ -103,7 +103,7 @@
 									foreach ($tution_latest->result_array() as $row){
 								?>
 								<a href="<?php echo base_url();?>Tutions/manage_view/<?php echo $row['tutid'];?>">
-									<div class="col-md-3 biseller-column">
+									<div class="col-md-3 col-sm-3 col-xs-6">
 											<img src="assets/images/ad2.jpg" alt="" />
 										<div class="w3-ad-info">
 											<h5><?php echo $row['title']?></h5>
@@ -123,7 +123,7 @@
 									//Other
 									foreach ($other_latest->result_array() as $row){
 								?>
-									<div class="col-md-3 biseller-column">
+									<div class="col-md-3 col-sm-3 col-xs-6">
 											<img src="assets/images/ad2.jpg" alt="" />
 										<div class="w3-ad-info">
 											<h5><?php echo $row['title']?></h5>
@@ -257,7 +257,7 @@
 					<h2><i class="fa fa-line-chart" aria-hidden="true"></i> Trending <i class="fa fa-line-chart" aria-hidden="true"></i></h2>
 							<ul id="">
 								<li>
-									<div class="col-md-3 biseller-column">
+									<div class="col-md-3 col-sm-3 col-xs-6">
 										<a href="single.html">
 											<img src="assets/images/p1.jpg" alt="" />
 											<span class="price">&#36; 450</span>
@@ -267,7 +267,7 @@
 											<span>1 hour ago</span>
 										</div>
 									</div>
-									<div class="col-md-3 biseller-column">
+									<div class="col-md-3 col-sm-3 col-xs-6">
 										<a href="single.html">
 											<img src="assets/images/p2.jpg" alt="" />
 											<span class="price">&#36; 399</span>
@@ -277,7 +277,7 @@
 											<span>3 hour ago</span>
 										</div>
 									</div>
-									<div class="col-md-3 biseller-column">
+									<div class="col-md-3 col-sm-3 col-xs-6">
 										<a href="single.html">
 											<img src="assets/images/p3.jpg" alt="" />
 											<span class="price">&#36; 199</span>
@@ -287,7 +287,7 @@
 											<span>8 hour ago</span>
 										</div>
 									</div>
-									<div class="col-md-3 biseller-column">
+									<div class="col-md-3 col-sm-3 col-xs-6">
 										<a href="single.html">
 											<img src="assets/images/p4.jpg" alt="" />
 											<span class="price">&#36; 159</span>
@@ -299,7 +299,7 @@
 									</div>
 								</li>
 								<li>
-									<div class="col-md-3 biseller-column">
+									<div class="col-md-3 col-sm-3 col-xs-6">
 										<a href="single.html">
 											<img src="assets/images/p5.jpg" alt="" />
 											<span class="price">&#36; 1599</span>
@@ -309,7 +309,7 @@
 											<span>1 hour ago</span>
 										</div>
 									</div>
-									<div class="col-md-3 biseller-column">
+									<div class="col-md-3 col-sm-3 col-xs-6">
 										<a href="single.html">
 											<img src="assets/images/p6.jpg" alt="" />
 											<span class="price">&#36; 1099</span>
@@ -319,7 +319,7 @@
 											<span>1 day ago</span>
 										</div>
 									</div>
-									<div class="col-md-3 biseller-column">
+									<div class="col-md-3 col-sm-3 col-xs-6">
 										<a href="single.html">
 											<img src="assets/images/p7.jpg" alt="" />
 											<span class="price">&#36; 109</span>
@@ -329,7 +329,7 @@
 											<span>9 hour ago</span>
 										</div>
 									</div>
-									<div class="col-md-3 biseller-column">
+									<div class="col-md-3 col-sm-3 col-xs-6">
 										<a href="single.html">
 											<img src="assets/images/p8.jpg" alt="" />
 											<span class="price">&#36; 189</span>
@@ -373,7 +373,6 @@
 						<h3>Offers BUll</h3><h3><span>WE PROVIDE YOU THE BEST DEAL HIGH QUALITY SERVICE. OUR AIM IS YOUR COMPLETE SATISFACTION.</span></h3>
 						<p>add text</p><div class="agileits-dwld-app">
 							<h6>Download The App : 
-								
 								<a href="#"><i class="fa fa-android"></i></a><p>Coming Soon...</p>
 							</h6>
 						</div>
@@ -382,7 +381,6 @@
 				</div>
 			</div>
 			<!-- //mobile app -->
-		</div>
 		<?php 
 		function time_elapsed_string($datetime, $full = false) {
 			date_default_timezone_set('Asia/Kolkata');

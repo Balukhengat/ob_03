@@ -11,6 +11,14 @@
 <link rel="stylesheet" href="http://cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css"> 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 <script src="http://cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css"></script>
+
+<!-- Magnification -->
+<link href="<?php echo base_url();?>assets/magnification/css/mag.css" rel="stylesheet">
+<link href="<?php echo base_url();?>assets/magnification/theme/default.css" rel="stylesheet">
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.12/jquery.mousewheel.js"></script>
+<script src="<?php echo base_url();?>assets/magnification/js/jquery.event.drag.js"></script>
+<script src="<?php echo base_url();?>assets/magnification/js/mag.js"></script>
+<script src="<?php echo base_url();?>assets/magnification/js/mag-jquery.js"></script>
 	
 <!-- meta tags -->
 <meta name="viewport" content="width=device-width, initial-scale=1">

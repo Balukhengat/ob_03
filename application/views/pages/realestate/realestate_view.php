@@ -56,6 +56,18 @@
 				</li>
 			</ul>
 		</div>
+<!--
+	*************	Image magnification 
+  -->	
+	<div mag-thumb="inner">
+	  <img src="<?php echo base_url();?>assets/images/slider/slider1.jpg" width="400" height="400" />
+	</div>
+	<script>
+		$host = $('[mag-thumb="inner"]');
+		$host.mag();
+	</script>
+	
+<!--  -->	
 					
 					<!-- FlexSlider -->
 					  <script defer src="<?php base_url();?>assets/js/jquery.flexslider.js"></script>

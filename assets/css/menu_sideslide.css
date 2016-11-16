@@ -258,7 +258,7 @@
 		overflow-y: visible;
 	}
 	.menu-button {
-		margin: 9px 0;
+		margin: 35px 0;
 	}
 }
 @media (max-width: 768px){
@@ -288,6 +288,6 @@
 }
 @media (max-width: 414px){
 	.menu-button {
-		top: 75px;
+		top: 30px;
 	}
 }
