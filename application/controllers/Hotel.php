@@ -7,7 +7,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		public function hotres(){
 			$category['template'] = "hotel";
 			$category['datas']=null;
-			
+			$category['msearch']=null;
 			//pagination
 			$this->load->library('pagination');
 			$config = array();
@@ -49,7 +49,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			$data['city'] = $this->input->post('city');
 			$data['type'] = $this->input->post('type');
 			$data['price'] = $this->input->post('price');
-			
+			$result['msearch']=null;
 			$result['datas'] = $this->BasicModel->hotel_search($data);
 			//pagination if query returns empty results
 			$this->load->library('pagination');

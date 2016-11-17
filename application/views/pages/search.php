@@ -1,10 +1,9 @@
 	<?php
-	$query=array();
 //pagination per page 5 and segment
-	if($datas==null && $msearch==null){
-		$query= $this->db->get('realestate',5,$this->uri->segment(3))->result();
+	if($datas==null){
+		$query= $this->db->get('realestate',5,$this->uri->segment(3));
 	}
-	//print_r($msearch);die();
+	
 	?>
 	<?php $this->load->view('layout/category.php');?>
 	<!-- breadcrumbs -->
@@ -82,8 +81,8 @@
 									 </div>
 								<div class="clearfix"></div>
 							<ul class="list">
-							<?php  if($datas==null && $msearch==null){
-								foreach ($query as $row)
+							<?php  if($datas==null){
+								foreach ($query->result() as $row)
 								{
 							?>
 								<a href="<?php echo base_url();?>realestate/manage_view/<?php echo $row->realid;?>">
@@ -101,7 +100,7 @@
 									<div class="clearfix"></div>
 									</li> 
 								</a>
-								<?php } } elseif ($msearch==null) { 
+								<?php } } else { 
 									foreach ($datas as $row1)
 								{?>
 								<a href="<?php echo base_url();?>realestate/manage_view/<?php echo $row1['realid'];?>">
@@ -119,26 +118,8 @@
 									<div class="clearfix"></div>
 									</li> 
 								</a>
-								<?php }}else{
-									foreach ($msearch as $row2){
-								?> 
-									<a href="<?php echo base_url();?>realestate/manage_view/<?php echo $row2['realid'];?>">
-											<li>
-											<img src="<?php echo base_url();?>assets/images/r1.jpg" title="" alt="" />
-											<section class="list-left">
-											<h5 class="title"><?php echo $row2['title'];?></h5>
-																		<span class="adprice">RS. <?php echo $row2['price']?>/-</span>
-																		<p class="catpath">Real Estate » <?php echo $row2['type']?></p>
-																		</section>
-																		<section class="list-right">
-																		<span class="date"><?php echo $row2['date']?></span>
-																		<span class="cityname"><?php echo $row2['city']?></span>
-																		</section>
-																		<div class="clearfix"></div>
-																		</li> 
-																	</a>
+								<?php }}?> 
 								
-								<?php }}?>
 							</ul>
 						</div>
 						</div>
@@ -162,7 +143,7 @@
 							</div>
 						</div>
 						<div class="pagination pagination-sm ">
-							<?php if($datas==null && $msearch==null){ echo $this->pagination->create_links();}?>
+							<?php if($datas==null){ echo $this->pagination->create_links();}?>
 						</div>
 					  </div>
 					</div>
@@ -215,4 +196,4 @@
 			</div>
 		</div>	
 	</div>
-	<!-- // Real estates -->
+	<!-- // Main Search -->

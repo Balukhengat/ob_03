@@ -7,7 +7,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		public function travel(){
 			$category['template'] = "travelling";
 			$category['datas']=null;
-			
+			$category['msearch']=null;
 			//pagination
 			$this->load->library('pagination');
 			$config = array();
@@ -48,7 +48,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			
 			$data['city'] = $this->input->post('city');
 			$data['type'] = $this->input->post('type');
-			
+			$result['msearch']=null;
  			if($data['city'] == $data['type']){
 			$this->session->set_flashdata('message','Pickup and Destination must be different.');
 			}else{

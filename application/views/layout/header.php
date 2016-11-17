@@ -65,8 +65,16 @@
 				</div>	
 				<div class="col-xs-8 col-sm-10 col-lg-6 col-md 6">
 					<div class="agileits_search">
-						<form action="#" method="post">
-							<input name="Search" type="text" placeholder="Get the best offers" required="" />
+						<form action="<?php echo base_url();?>Login/mainsearch" method="post">
+							<input name="Search" type="text" placeholder="Get the best offers" required />
+							<select id="agileinfo_search" name="category" required>
+							<option value="">All Categories</option>
+							<option value="realestate">Real Estates</option>
+							<option value="tution">Tutions</option>
+							<option value="hotel">Hotels & Restaurents </option>
+							<option value="travelling">Travelling</option>
+							<option value="automobile">Automobiles</option>
+						</select>
 							<button type="submit" class="btn btn-default" aria-label="Left Align">
 								<i class="fa fa-search" aria-hidden="true"> </i>
 							</button>

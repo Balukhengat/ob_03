@@ -7,7 +7,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		public function tution(){
 			$category['template'] = "tution";
 			$category['datas']=null;
-			
+			$category['msearch']=null;
 			//pagination
 			$this->load->library('pagination');
 			$config = array();
@@ -48,7 +48,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			
 			$data['city'] = $this->input->post('city');
 			$data['type'] = $this->input->post('type');
-			
+			$result['msearch']=null;
 			$result['datas'] = $this->BasicModel->tution_search($data);
 			//pagination if query returns empty results
 			$this->load->library('pagination');

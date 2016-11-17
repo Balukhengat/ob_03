@@ -7,7 +7,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		public function auto(){
 			$category['template'] = "automobile";
 			$category['datas']=null;
-			
+			$category['msearch']=null;
 			//pagination
 			$this->load->library('pagination');
 			$config = array();
@@ -48,6 +48,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			
 			$data['city'] = $this->input->post('city');
 			$data['type'] = $this->input->post('type');
+			$result['msearch']=null;
 			$result['datas'] = $this->BasicModel->automobile_search($data);
 			//pagination if query returns empty results
 			$this->load->library('pagination');

@@ -1,7 +1,8 @@
 	<?php
+	$query=array();
 //pagination per page 5 and segment
-	if($datas==null){
-		$query= $this->db->get('travelling',5,$this->uri->segment(3));
+	if($datas==null && $msearch==null){
+		$query= $this->db->get('travelling',5,$this->uri->segment(3))->result();
 	}
 	
 	?>
@@ -71,8 +72,8 @@
 									 </div>
 								<div class="clearfix"></div>
 							<ul id="result" class="list">
-							<?php  if($datas==null){
-								foreach ($query->result() as $row)
+							<?php   if($datas==null && $msearch==null){
+								foreach ($query as $row)
 								{
 							?>
 								<a href="<?php echo base_url();?>Travelling/manage_view/<?php echo $row->travelid;?>">
@@ -90,7 +91,7 @@
 									<div class="clearfix"></div>
 									</li> 
 								</a>
-								<?php } } else { 
+								<?php } } elseif ($msearch==null) {
 									foreach ($datas as $row1)
 								{?>
 								<a href="<?php echo base_url();?>Travelling/manage_view/<?php echo $row1['travelid'];?>">
@@ -108,7 +109,26 @@
 									<div class="clearfix"></div>
 									</li> 
 								</a>
-								<?php }}?> 
+								<?php }}else{
+									foreach ($msearch as $row2){
+								?> 
+									<a href="<?php echo base_url();?>Travelling/manage_view/<?php echo $row2['travelid'];?>">
+											<li>
+											<img src="<?php echo base_url();?>assets/images/r1.jpg" title="" alt="" />
+											<section class="list-left">
+											<h5 class="title"><?php echo $row2['title'];?></h5>
+																		<span class="adprice">RS. <?php echo $row2['price']?>/-</span>
+																		<p class="catpath">Travelling » <?php echo $row2['name']?></p>
+																		</section>
+																		<section class="list-right">
+																		<span class="date"><?php echo $row2['date']?></span>
+																		<span class="cityname"><?php echo $row2['city']?></span>
+																		</section>
+																		<div class="clearfix"></div>
+																		</li> 
+																	</a>
+								
+								<?php }}?>
 								
 							</ul>
 							<ul id="result1" class="list">
@@ -134,7 +154,7 @@
 						</div>
 						
 						<div class="pagination pagination-sm ">
-							<?php if($datas==null){ echo $this->pagination->create_links();}?>
+							<?php if($datas==null && $msearch==null){ echo $this->pagination->create_links();}?>
 						</div>
 					  </div>
 					</div>

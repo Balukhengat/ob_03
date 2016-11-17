@@ -367,5 +367,31 @@ class BasicModel extends CI_Model{
 		$str="select * from travelling	 where title='$title'";
 		return $this->db->query($str)->result_array();
 	}
+	/* ************************************************************
+	 * 					Main SEARCHES
+	 *************************************************************/
+	public function main_search(){
+		$data=$this->input->post('Search');
+		$category=$this->input->post('category');
+		//$data=explode(" ",$data);
+		if($category=="tution" || $category=="travelling"){
+			$this->db->select('*');
+			$this->db->from($category);
+			//	$this->db->or_from('tution');
+			$this->db->like('title',$data);
+			$this->db->or_like('city',$data);
+			return $this->db->get()->result_array();
+		}else{
+		$this->db->select('*');
+		$this->db->from($category);
+		//	$this->db->or_from('tution');
+		$this->db->like('title',$data);
+		$this->db->or_like('type',$data);
+		$this->db->or_like('city',$data);
+		return $this->db->get()->result_array();
+		}
+		
+	}
+	
 }
 ?>
