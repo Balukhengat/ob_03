@@ -20,8 +20,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		 *************************************************************/
 		public function user_realestate($task='',$realid=''){
 			if($task=='create'){
+				$userid=$_SESSION['userid'];
 				$this->BasicModel->insert_user_realestate($realid);
-				//$this->image_upload('real',$userid);
+				$this->image_upload('real',$userid);
 				$this->session->set_flashdata('message','Data Uploaded Successfully');
 				redirect(base_url() . 'Basic_Controller/user_realestate');
 			}
@@ -284,14 +285,25 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			$this->load->view('pages/mainpage',$category);
 		}
 		//image Uploading
+		/*
 		function image_upload($path,$userid)
-		{
+		{	
+				$filesCount = count($_FILES['image']['name']);
+				print_r($filesCount);
+				for($i = 0; $i < $filesCount; $i++){
+					$_FILES['img']['name'] = $_FILES['image']['name'][$i];
+					$_FILES['img']['type'] = $_FILES['image']['type'][$i];
+					$_FILES['img']['tmp_name'] = $_FILES['image']['tmp_name'][$i];
+					$_FILES['img']['error'] = $_FILES['image']['error'][$i];
+					$_FILES['img']['size'] = $_FILES['image']['size'][$i];
+					print_r($_FILES['image']['tmp_name'][$i]);
 			$config['upload_path']= './uploads/'.$path;
-			$config['file_name']=$userid . '.jpg';
+			$config['file_name']=$userid .$i. '.jpg';
 			$config['allowed_types']= 'jpg|png';
-			$config['max_size']= 100000;
+			$config['max_size']= 2048;
 			$this->load->library('upload', $config);
-			if ( ! $this->upload->do_upload('image'))
+			$this->upload->initialize($config);
+			if ( ! $this->upload->do_upload('img'))
 			{
 				$error = array('error' => $this->upload->display_errors());
 			}
@@ -300,7 +312,73 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				$da = array('upload_data' => $this->upload->data());
 		
 			}
-		}
+				}//}
+		}*/
+		function image_upload($path,$userid)
+		{
+			$base_path='./uploads/'.$path;
+			chdir($base_path);
+			if(!file_exists($userid))
+			{
+				$date=date('Y-m-d_H-i-s');
+				mkdir($userid);
+				chdir($userid);
+				echo getcwd();
+				$new_path=$base_path.'/'.$userid;
+				echo $new_path;die();
+				$filesCount = count($_FILES['image']['name']);
+				for($i = 0; $i < $filesCount; $i++)
+				{
+					$_FILES['img']['name'] = $_FILES['image']['name'][$i];
+					$_FILES['img']['type'] = $_FILES['image']['type'][$i];
+					$_FILES['img']['tmp_name'] = $_FILES['image']['tmp_name'][$i];
+					$_FILES['img']['error'] = $_FILES['image']['error'][$i];
+					$_FILES['img']['size'] = $_FILES['image']['size'][$i];
+					$config['upload_path']= $new_path;
+					$config['file_name']=$date.'_'.$i. '.jpg';
+					$config['allowed_types']= 'jpg|png';
+					$config['max_size']= 2048;
+					$this->load->library('upload', $config);
+					$this->upload->initialize($config);
+					if ( ! $this->upload->do_upload('img'))
+					{
+						$error = array('error' => $this->upload->display_errors());
+					}
+					else
+					{
+						$da = array('upload_data' => $this->upload->data());
 		
+					}
+				}// end for
+			}///end if
+			else{
+				chdir($userid);
+				$new_path=$base_path.'/'.$userid.'/';
+				$filesCount = count($_FILES['image']['name']);
+				for($i = 0; $i < $filesCount; $i++)
+				{
+					$_FILES['img']['name'] = $_FILES['image']['name'][$i];
+					$_FILES['img']['type'] = $_FILES['image']['type'][$i];
+					$_FILES['img']['tmp_name'] = $_FILES['image']['tmp_name'][$i];
+					$_FILES['img']['error'] = $_FILES['image']['error'][$i];
+					$_FILES['img']['size'] = $_FILES['image']['size'][$i];
+					$config['upload_path']= $new_path;
+					$config['file_name']=$date.'_'.$i. '.jpg';
+					$config['allowed_types']= 'jpg|png';
+					$config['max_size']= 2048;
+					$this->load->library('upload', $config);
+					$this->upload->initialize($config);
+					if ( ! $this->upload->do_upload('img'))
+					{
+						$error = array('error' => $this->upload->display_errors());
+					}
+					else
+					{
+						$da = array('upload_data' => $this->upload->data());
+		
+					}
+				}
+			}//EOF else
+		}
 	}
 ?>
