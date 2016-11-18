@@ -306,7 +306,8 @@ class BasicModel extends CI_Model{
 		$type = $data['type'];
 		$price = $data['price'];
 		if($price==0){
-			$str="select * from realestate where city='$city' and type='$type' and price BETWEEN 0 AND 9999";
+		$str="SELECT * FROM realestate WHERE realestate.city = '$city' AND realestate.type = '$type' AND realestate.price BETWEEN 0 AND 9999";
+
 		}elseif ($price==1){
 			$str="select * from realestate where city='$city' and type='$type' and price BETWEEN 10000 AND 49999";
 		}

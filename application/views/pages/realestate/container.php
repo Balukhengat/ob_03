@@ -35,11 +35,10 @@
 				<div class="browse-category ads-list">
 					<label>Rent / Purchase</label>
 					<select id="type" name="type">
-					  <option data-tokens="Rent">Select</option>
-					  <option data-tokens="Rent">Rent</option>
-					  <option data-tokens="purchase">Purchase</option>
-					  <option data-tokens="any">Any</option>
-					  
+					  <option>Select</option>
+					  <option>Rent</option>
+					  <option>Sell</option>
+					  <option>Any</option>
 					</select>
 				</div>
 				<div class="select-city-for-local-ads ads-list">
