@@ -64,8 +64,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		 *************************************************************/
 		public function user_tution($task='',$tutid=''){
 			if($task=='create'){
+				$userid=$_SESSION['userid'];
 				$this->BasicModel->insert_user_tution($tutid);
-				//$this->image_upload('real',$userid);
+				$this->image_upload('tution',$userid);
 				$this->session->set_flashdata('message','Data Uploaded Successfully');
 				redirect(base_url() . 'Basic_Controller/user_tution');
 			}
@@ -106,8 +107,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		 *************************************************************/
 		public function user_hotel($task='',$hotelid=''){
 			if($task=='create'){
+				$userid=$_SESSION['userid'];
 				$this->BasicModel->insert_user_hotel($hotelid);
-				//$this->image_upload('real',$userid);
+				$this->image_upload('hotel',$userid);
 				$this->session->set_flashdata('message','Data Uploaded Successfully');
 				redirect(base_url() . 'Basic_Controller/user_hotel');
 			}
@@ -148,8 +150,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		 *************************************************************/
 		public function user_travelling($task='',$travelid=''){
 			if($task=='create'){
+				$userid=$_SESSION['userid'];
 				$this->BasicModel->insert_user_travelling($travelid);
-				//$this->image_upload('real',$userid);
+				$this->image_upload('travelling',$userid);
 				$this->session->set_flashdata('message','Data Uploaded Successfully');
 				redirect(base_url() . 'Basic_Controller/user_travelling_view');
 			}
@@ -191,8 +194,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		 *************************************************************/
 		public function user_automobile($task='',$autoid=''){
 			if($task=='create'){
+				$userid=$_SESSION['userid'];
 				$this->BasicModel->insert_user_automobile($autoid);
-				//$this->image_upload('real',$userid);
+				$this->image_upload('automobile',$userid);
 				$this->session->set_flashdata('message','Data Uploaded Successfully');
 				redirect(base_url() . 'Basic_Controller/user_automobile_view');
 			}
@@ -234,8 +238,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		 *************************************************************/
 		public function user_other($task='',$otherid=''){
 			if($task=='create'){
+				$userid=$_SESSION['userid'];
 				$this->BasicModel->insert_user_other($otherid);
-				//$this->image_upload('real',$userid);
+				$this->image_upload('other',$userid);
 				$this->session->set_flashdata('message','Data Uploaded Successfully');
 				redirect(base_url() . 'Basic_Controller/user_other');
 			}
@@ -284,62 +289,80 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			$category = "realestate";
 			$this->load->view('pages/mainpage',$category);
 		}
-		//image Uploading
-		/*
+		/* ************************************************************
+		 * 					IMAGE UPLOAD
+		 *************************************************************/
 		function image_upload($path,$userid)
-		{	
+		{
+			
+			//	CATEGORY WISE DATABASE TABLE AND TABLE-CONATAINTS
+			//REALESTATE
+			if($path=="real"){
+				$category_data = array(
+					'category_id' =>'realid',
+					'category_table'=>'realestate',	
+					'category_img_table'=>'real_img'
+				);
+			//TUTION	
+			}elseif ($path=="tution"){
+				$category_data = array(
+					'category_id' =>'tutid',
+					'category_table'=>'tution',	
+					'category_img_table'=>'tut_img'
+				);
+			//HOTEL
+			}elseif ($path=="hotel"){
+				$category_data = array(
+					'category_id' =>'hotelid',
+					'category_table'=>'hotel',	
+					'category_img_table'=>'hotel_img'
+				);
+			//TRAVELLING	
+			}elseif ($path=="travelling"){
+				$category_data = array(
+					'category_id' =>'travelid',
+					'category_table'=>'travelling',	
+					'category_img_table'=>'travelling_img'
+				);
+			//AUTOMOBILE	
+			}elseif ($path=="automobile"){
+				$category_data = array(
+					'category_id' =>'autoid',
+					'category_table'=>'automobile',	
+					'category_img_table'=>'automobile_img'
+				);
+			//OTHER	
+			}elseif ($path="other"){
+				$category_data = array(
+					'category_id' =>'otherid',
+					'category_table'=>'other',	
+					'category_img_table'=>'other_img'
+				);
+			}
+			//IMAGE UPLOAD STARTS HERE 
+			$basepath = "uploads/".$path;
+			chdir($basepath);
+			if(!file_exists($userid)){
+				mkdir($userid);
+				chdir($userid);
 				$filesCount = count($_FILES['image']['name']);
-				print_r($filesCount);
 				for($i = 0; $i < $filesCount; $i++){
 					$_FILES['img']['name'] = $_FILES['image']['name'][$i];
 					$_FILES['img']['type'] = $_FILES['image']['type'][$i];
 					$_FILES['img']['tmp_name'] = $_FILES['image']['tmp_name'][$i];
 					$_FILES['img']['error'] = $_FILES['image']['error'][$i];
 					$_FILES['img']['size'] = $_FILES['image']['size'][$i];
-					print_r($_FILES['image']['tmp_name'][$i]);
-			$config['upload_path']= './uploads/'.$path;
-			$config['file_name']=$userid .$i. '.jpg';
-			$config['allowed_types']= 'jpg|png';
-			$config['max_size']= 2048;
-			$this->load->library('upload', $config);
-			$this->upload->initialize($config);
-			if ( ! $this->upload->do_upload('img'))
-			{
-				$error = array('error' => $this->upload->display_errors());
-			}
-			else
-			{
-				$da = array('upload_data' => $this->upload->data());
-		
-			}
-				}//}
-		}*/
-		function image_upload($path,$userid)
-		{
-			$base_path='./uploads/'.$path;
-			chdir($base_path);
-			if(!file_exists($userid))
-			{
-				$date=date('Y-m-d_H-i-s');
-				mkdir($userid);
-				chdir($userid);
-				echo getcwd();
-				$new_path=$base_path.'/'.$userid;
-				echo $new_path;die();
-				$filesCount = count($_FILES['image']['name']);
-				for($i = 0; $i < $filesCount; $i++)
-				{
-					$_FILES['img']['name'] = $_FILES['image']['name'][$i];
-					$_FILES['img']['type'] = $_FILES['image']['type'][$i];
-					$_FILES['img']['tmp_name'] = $_FILES['image']['tmp_name'][$i];
-					$_FILES['img']['error'] = $_FILES['image']['error'][$i];
-					$_FILES['img']['size'] = $_FILES['image']['size'][$i];
-					$config['upload_path']= $new_path;
-					$config['file_name']=$date.'_'.$i. '.jpg';
+					
+					date_default_timezone_set('Asia/Kolkata');
+					$timestamp = date("Y-m-d_H-i-s_");
+					$config['upload_path']=  FCPATH.$basepath."/".$userid."/";
+					$config['file_name']=$timestamp.$i.'.jpg';
 					$config['allowed_types']= 'jpg|png';
 					$config['max_size']= 2048;
+					
 					$this->load->library('upload', $config);
 					$this->upload->initialize($config);
+					
 					if ( ! $this->upload->do_upload('img'))
 					{
 						$error = array('error' => $this->upload->display_errors());
@@ -347,38 +370,66 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					else
 					{
 						$da = array('upload_data' => $this->upload->data());
-		
-					}
-				}// end for
-			}///end if
-			else{
-				chdir($userid);
-				$new_path=$base_path.'/'.$userid.'/';
-				$filesCount = count($_FILES['image']['name']);
-				for($i = 0; $i < $filesCount; $i++)
-				{
-					$_FILES['img']['name'] = $_FILES['image']['name'][$i];
-					$_FILES['img']['type'] = $_FILES['image']['type'][$i];
-					$_FILES['img']['tmp_name'] = $_FILES['image']['tmp_name'][$i];
-					$_FILES['img']['error'] = $_FILES['image']['error'][$i];
-					$_FILES['img']['size'] = $_FILES['image']['size'][$i];
-					$config['upload_path']= $new_path;
-					$config['file_name']=$date.'_'.$i. '.jpg';
-					$config['allowed_types']= 'jpg|png';
-					$config['max_size']= 2048;
-					$this->load->library('upload', $config);
-					$this->upload->initialize($config);
-					if ( ! $this->upload->do_upload('img'))
-					{
-						$error = array('error' => $this->upload->display_errors());
-					}
-					else
-					{
-						$da = array('upload_data' => $this->upload->data());
-		
+						$image_path = $basepath."/".$userid."/".$config['file_name'];
+						
+						$category_id = $category_data['category_id'];
+						$category_table = $category_data['category_table'];
+						$category_img_table = $category_data['category_img_table'];
+						
+						$query = $this->db->query("SELECT $category_id from $category_table where userid='$userid' ORDER BY date DESC LIMIT 1");
+						$row = $query->row();
+						$cat_id =  $row->$category_id;
+						$pathdata = array(
+							'path'=>$image_path,
+							$category_id=>$cat_id,	
+						);
+						$this->db->insert($category_img_table,$pathdata);
 					}
 				}
-			}//EOF else
-		}
+			}else{	//IF userid folder already exist
+				chdir($userid);
+				$filesCount = count($_FILES['image']['name']);
+				for($i = 0; $i < $filesCount; $i++){
+					$_FILES['img']['name'] = $_FILES['image']['name'][$i];
+					$_FILES['img']['type'] = $_FILES['image']['type'][$i];
+					$_FILES['img']['tmp_name'] = $_FILES['image']['tmp_name'][$i];
+					$_FILES['img']['error'] = $_FILES['image']['error'][$i];
+					$_FILES['img']['size'] = $_FILES['image']['size'][$i];
+						
+					date_default_timezone_set('Asia/Kolkata');
+					$timestamp = date("Y-m-d_H-i-s_");
+					$config['upload_path']=  FCPATH.$basepath."/".$userid."/";
+					$config['file_name']=$timestamp.$i.'.jpg';
+					$config['allowed_types']= 'jpg|png';
+					$config['max_size']= 2048;
+						
+					$this->load->library('upload', $config);
+					$this->upload->initialize($config);
+						
+					if ( ! $this->upload->do_upload('img'))
+					{
+						$error = array('error' => $this->upload->display_errors());
+					}
+					else
+					{
+						$da = array('upload_data' => $this->upload->data());
+						$image_path = $basepath."/".$userid."/".$config['file_name'];
+						
+						$category_id = $category_data['category_id'];
+						$category_table = $category_data['category_table'];
+						$category_img_table = $category_data['category_img_table'];
+						
+						$query = $this->db->query("SELECT $category_id from $category_table where userid='$userid' ORDER BY date DESC LIMIT 1");
+						$row = $query->row();
+						$cat_id =  $row->$category_id;
+						$pathdata = array(
+							'path'=>$image_path,
+							$category_id=>$cat_id,	
+						);
+						$this->db->insert($category_img_table,$pathdata);
+					}
+				}
+			}
+		}//Eof Image_upload
 	}
 ?>

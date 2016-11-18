@@ -1,4 +1,5 @@
-<?php 
+<?php
+date_default_timezone_set('Asia/Kolkata');
 	$realestate_latest = $this->db->query("SELECT * from realestate ORDER BY date DESC LIMIT 4");
 	$automobile_latest = $this->db->query("SELECT * from automobile ORDER BY date DESC LIMIT 4");
 	$hotel_latest = $this->db->query("SELECT * from hotel ORDER BY date DESC LIMIT 4");

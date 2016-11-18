@@ -11,7 +11,7 @@
 <link rel="stylesheet" href="http://cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css"> 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 <script src="http://cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css"></script>
-
+<link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
 <!-- Magnification -->
 <link href="<?php echo base_url();?>assets/magnification/css/mag.css" rel="stylesheet">
 <link href="<?php echo base_url();?>assets/magnification/theme/default.css" rel="stylesheet">

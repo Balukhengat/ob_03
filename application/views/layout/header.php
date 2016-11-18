@@ -54,40 +54,33 @@
 		</div>
 		
 		<div class="container">
-		<div class="row">
-			<div class="agile-its-header">
-				<div class="col-xs-12 col-sm-12 col-lg-4 col-md 4">	
-				<div style="margin-left: 0px;margin-right: 0px;">
-					<div class="logo">
-						<h1><a href="<?php echo base_url();?>"> <span style="color: black;">Offers</span> Bull <img class="responsive" src="<?php echo base_url()?>assets/images/bulllogo.png" width="100" height="50"></a></h1>
+			<div class="row">
+				<div class="col-xs-12 col-sm-12 col-lg-4 col-md 12">	
+					<div style="margin-left: 0px;margin-right: 0px;">
+						<div class="logo">
+							<h1><a href="<?php echo base_url();?>"> <span style="color: black;">OFFERS</span> BULL <img class="responsive" style="padding-left:0px;padding-right: 0px;" src="<?php echo base_url()?>assets/images/bulllogo.png" width="100" height="50"></a></h1>
+						</div>
 					</div>
-				</div>
 				</div>	
-				<div class="col-xs-8 col-sm-10 col-lg-6 col-md 6">
-					<div class="agileits_search">
+				<div class="col-xs-12 col-sm-12 col-lg-8 col-md 12">
+						<div class="agileits_search">
 						<form action="<?php echo base_url();?>Login/mainsearch" method="post">
-							<input name="Search" type="text" placeholder="Get the best offers" required />
-							<select id="agileinfo_search" name="category" required>
-							<option value="">All Categories</option>
-							<option value="realestate">Real Estates</option>
-							<option value="tution">Tutions</option>
-							<option value="hotel">Hotels & Restaurents </option>
-							<option value="travelling">Travelling</option>
-							<option value="automobile">Automobiles</option>
-						</select>
+							<input class="agileinfo_search-input" name="Search" type="text" placeholder="Get the best offers" required />
+							<select class="agileinfo_search-select" name="category" required>
+								<option value="">All Categories</option>
+								<option value="realestate">Real Estates</option>
+								<option value="tution">Tutions</option>
+								<option value="hotel">Hotels & Restaurents </option>
+								<option value="travelling">Travelling</option>
+								<option value="automobile">Automobiles</option>
+							</select>
 							<button type="submit" class="btn btn-default" aria-label="Left Align">
 								<i class="fa fa-search" aria-hidden="true"> </i>
 							</button>
 						</form>
 					</div>
 				</div>	
-				<div class="col-xs-4 col-sm-2 col-lg-2 col-md 2">
-					<div class="postadbutton">
-						<button class="btn btn-success">Post Ads</button>
-					</div>	
-				</div>		
-				<div class="clearfix"></div>
-			</div>
+			<div class="clearfix"></div>
 			</div>
 		</div>
 				
