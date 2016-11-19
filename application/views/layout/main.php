@@ -1,16 +1,16 @@
 <?php
 date_default_timezone_set('Asia/Kolkata');
-	$realestate_latest = $this->db->query("SELECT * from realestate ORDER BY date DESC LIMIT 4");
-	$automobile_latest = $this->db->query("SELECT * from automobile ORDER BY date DESC LIMIT 4");
-	$hotel_latest = $this->db->query("SELECT * from hotel ORDER BY date DESC LIMIT 4");
-	$travelling_latest = $this->db->query("SELECT * from travelling ORDER BY date DESC LIMIT 4");
-	$tution_latest = $this->db->query("SELECT * from tution ORDER BY date DESC LIMIT 4");
-	$other_latest = $this->db->query("SELECT * from other ORDER BY date DESC LIMIT 4");
+	$realestate_latest = $this->db->query("SELECT * FROM realestate INNER JOIN real_img ON realestate.realid = real_img.realid ORDER BY date DESC LIMIT 4");
+	$automobile_latest = $this->db->query("SELECT * FROM automobile INNER JOIN automobile_img ON automobile.autoid = automobile_img.autoid ORDER BY date DESC LIMIT 4");
+	$hotel_latest = $this->db->query("SELECT * FROM hotel INNER JOIN hotel_img ON hotel.hotelid = hotel_img.hotelid ORDER BY date DESC LIMIT 4");
+	$travelling_latest = $this->db->query("SELECT * FROM travelling INNER JOIN travelling_img ON travelling.travelid = travelling_img.travelid ORDER BY date DESC LIMIT 4");
+	$tution_latest = $this->db->query("SELECT * FROM tution INNER JOIN tut_img ON tution.tutid = tut_img.tutid ORDER BY date DESC LIMIT 4");
+	//$other_latest = $this->db->query("SELECT * FROM other INNER JOIN other_img ON other.otherid = other_img.otherid ORDER BY date DESC LIMIT 4");
 ?>
 <!-- content-starts-here -->
 		<div class="main-content">
 			<div class="w3-categories">
-				<h3><i class="fa fa-tags" aria-hidden="true"></i> Recent Offers <i class="fa fa-tags" aria-hidden="true"></i></h3>
+				<h3><i class="fa fa-tags" aria-hidden="true"></i> Latest Post <i class="fa fa-tags" aria-hidden="true"></i></h3>
 				<div class="container">
 					<div class="agile-trend-ads">
 							<ul id="flexiselDemo3">
@@ -19,13 +19,10 @@ date_default_timezone_set('Asia/Kolkata');
 									//realestate
 									foreach ($realestate_latest->result_array() as $row){
 										$realid = $row['realid'];
-										$getImage = $this->db->query("SELECT * FROM real_img WHERE realid='$realid' LIMIT 1");
-										$rowImageRow = $getImage->row();
-										$imagePath = $rowImageRow->path;
 								?>
 										<a href="<?php echo base_url();?>Realestate/manage_view/<?php echo $row['realid'];?>">
 											<div class="col-md-3 col-sm-3 col-xs-6">
-												<img src="<?php echo base_url().$imagePath?>" class="img-responsive" alt="<?php echo $row['title'];?>"/>
+												<img src="<?php echo base_url().$row['path'];?>" class="img-responsive" alt="<?php echo $row['title'];?>"/>
 												<div class="w3-ad-info">
 													<h5><?php echo $row['title']?></h5>
 													<h5><?php echo $row['name']?></h5>
@@ -42,13 +39,10 @@ date_default_timezone_set('Asia/Kolkata');
 									//Tution
 									foreach ($tution_latest->result_array() as $row){
 										$tutid = $row['tutid'];
-										$getImage = $this->db->query("SELECT * FROM tut_img WHERE tutid='$tutid' LIMIT 1");
-										$rowImageRow = $getImage->row();
-										$imagePath = $rowImageRow->path;
 								?>
-										<a href="<?php echo base_url();?>Tution/manage_view/<?php echo $row['tutid'];?>">
+										<a href="<?php echo base_url();?>tutions/manage_view/<?php echo $row['tutid'];?>">
 											<div class="col-md-3 col-sm-3 col-xs-6">
-												<img src="<?php echo base_url().$imagePath?>" class="img-responsive" alt="<?php echo $row['title'];?>"/>
+												<img src="<?php echo base_url();echo $row['path']?>" class="img-responsive" alt="<?php echo $row['title'];?>"/>
 												<div class="w3-ad-info">
 													<h5><?php echo $row['title']?></h5>
 													<h5><?php echo $row['name']?></h5>
@@ -66,13 +60,10 @@ date_default_timezone_set('Asia/Kolkata');
 									//Hotel
 									foreach ($hotel_latest->result_array() as $row){
 										$hotelid = $row['hotelid'];
-										$getImage = $this->db->query("SELECT * FROM hotel_img WHERE hotelid='$hotelid' LIMIT 1");
-										$rowImageRow = $getImage->row();
-										$imagePath = $rowImageRow->path;
 								?>
 										<a href="<?php echo base_url();?>Hotel/manage_view/<?php echo $row['hotelid'];?>">
 											<div class="col-md-3 col-sm-3 col-xs-6">
-												<img src="<?php echo base_url().$imagePath?>" class="img-responsive" alt="<?php echo $row['title'];?>"/>
+												<img src="<?php echo base_url();echo $row['path']?>" class="img-responsive" alt="<?php echo $row['title'];?>"/>
 												<div class="w3-ad-info">
 													<h5><?php echo $row['title']?></h5>
 													<h5><?php echo $row['name']?></h5>
@@ -90,13 +81,10 @@ date_default_timezone_set('Asia/Kolkata');
 									//Travelling
 									foreach ($travelling_latest->result_array() as $row){
 										$travelid = $row['travelid'];
-										$getImage = $this->db->query("SELECT * FROM travelling_img WHERE travelid='$travelid' LIMIT 1");
-										$rowImageRow = $getImage->row();
-										$imagePath = $rowImageRow->path;
 								?>
 										<a href="<?php echo base_url();?>Travelling/manage_view/<?php echo $row['travelid'];?>">
 											<div class="col-md-3 col-sm-3 col-xs-6">
-												<img src="<?php echo base_url().$imagePath?>" class="img-responsive" alt="<?php echo $row['title'];?>"/>
+												<img src="<?php echo base_url();echo $row['path']?>" class="img-responsive" alt="<?php echo $row['title'];?>"/>
 												<div class="w3-ad-info">
 													<h5><?php echo $row['title']?></h5>
 													<h5><?php echo $row['name']?></h5>
@@ -114,13 +102,10 @@ date_default_timezone_set('Asia/Kolkata');
 									//Automobile
 									foreach ($automobile_latest->result_array() as $row){
 										$autoid = $row['autoid'];
-										$getImage = $this->db->query("SELECT * FROM automobile_img WHERE autoid='$autoid' LIMIT 1");
-										$rowImageRow = $getImage->row();
-										$imagePath = $rowImageRow->path;
 								?>
 										<a href="<?php echo base_url();?>Automobile/manage_view/<?php echo $row['autoid'];?>">
 											<div class="col-md-3 col-sm-3 col-xs-6">
-												<img src="<?php echo base_url().$imagePath?>" class="img-responsive" alt="<?php echo $row['title'];?>"/>
+												<img src="<?php echo base_url();echo $row['path']?>" class="img-responsive" alt="<?php echo $row['title'];?>"/>
 												<div class="w3-ad-info">
 													<h5><?php echo $row['title']?></h5>
 													<h5><?php echo $row['name']?></h5>
@@ -253,96 +238,105 @@ date_default_timezone_set('Asia/Kolkata');
 			<!-- trending-ads -->									
 			<div class="trending-ads">
 				<div class="container">
-				<!-- slider -->
 				<div class="agile-trend-ads">
-					<h2><i class="fa fa-line-chart" aria-hidden="true"></i> Trending <i class="fa fa-line-chart" aria-hidden="true"></i></h2>
-							<ul id="">
-								<li>
-									<div class="col-md-3 col-sm-3 col-xs-6">
-										<a href="single.html">
-											<img src="assets/images/p1.jpg" alt="" />
-											<span class="price">&#36; 450</span>
-										</a> 
-										<div class="w3-ad-info">
-											<h5>There are many variations of passages</h5>
-											<span>1 hour ago</span>
-										</div>
+					<h2><i class="fa fa-line-chart" aria-hidden="true"></i> Some more <i class="fa fa-line-chart" aria-hidden="true"></i></h2>
+						<ul id="realestate">
+							<li>
+							<?php $random_post_realestate = $this->db->query("SELECT realestate.realid, realestate.`name`, realestate.title, realestate.type, realestate.address, realestate.builtup, realestate.price, realestate.description, realestate.mobile, realestate.email, realestate.amenities, realestate.city, realestate.area, realestate.date, realestate.offerend, realestate.category, realestate.userid, real_img.path, real_img.id FROM realestate INNER JOIN real_img ON realestate.realid = real_img.realid GROUP BY realid ORDER BY RAND() LIMIT 4");?>
+							<?php foreach ($random_post_realestate->result() as $random_realestate){?>
+								<div class="col-md-3 col-sm-3 col-xs-6 col-lg-3">
+									<a href="<?php echo base_url();?>Realestate/manage_view/<?php echo $random_realestate->realid;?>">
+										<img src="<?php echo base_url();echo $random_realestate->path;?>" alt="<?php echo $random_realestate->title;?>" />
+									</a> 
+									<div class="w3-ad-info">
+										<h5><?php echo $random_realestate->title;?></h5>
+										<span><?php $date = $row['date'];echo time_elapsed_string($date);?></span>
 									</div>
-									<div class="col-md-3 col-sm-3 col-xs-6">
-										<a href="single.html">
-											<img src="assets/images/p2.jpg" alt="" />
-											<span class="price">&#36; 399</span>
-										</a> 
-										<div class="w3-ad-info">
-											<h5>Lorem Ipsum is simply dummy</h5>
-											<span>3 hour ago</span>
-										</div>
-									</div>
-									<div class="col-md-3 col-sm-3 col-xs-6">
-										<a href="single.html">
-											<img src="assets/images/p3.jpg" alt="" />
-											<span class="price">&#36; 199</span>
-										</a> 
-										<div class="w3-ad-info">
-											<h5>It is a long established fact that a reader</h5>
-											<span>8 hour ago</span>
-										</div>
-									</div>
-									<div class="col-md-3 col-sm-3 col-xs-6">
-										<a href="single.html">
-											<img src="assets/images/p4.jpg" alt="" />
-											<span class="price">&#36; 159</span>
-										</a> 
-										<div class="w3-ad-info">
-											<h5>passage of Lorem Ipsum you need to be</h5>
-											<span>19 hour ago</span>
-										</div>
-									</div>
-								</li>
-								<li>
-									<div class="col-md-3 col-sm-3 col-xs-6">
-										<a href="single.html">
-											<img src="assets/images/p5.jpg" alt="" />
-											<span class="price">&#36; 1599</span>
-										</a> 
-										<div class="w3-ad-info">
-											<h5>There are many variations of passages</h5>
-											<span>1 hour ago</span>
-										</div>
-									</div>
-									<div class="col-md-3 col-sm-3 col-xs-6">
-										<a href="single.html">
-											<img src="assets/images/p6.jpg" alt="" />
-											<span class="price">&#36; 1099</span>
-										</a> 
-										<div class="w3-ad-info">
-											<h5>passage of Lorem Ipsum you need to be</h5>
-											<span>1 day ago</span>
-										</div>
-									</div>
-									<div class="col-md-3 col-sm-3 col-xs-6">
-										<a href="single.html">
-											<img src="assets/images/p7.jpg" alt="" />
-											<span class="price">&#36; 109</span>
-										</a> 
-										<div class="w3-ad-info">
-											<h5>It is a long established fact that a reader</h5>
-											<span>9 hour ago</span>
-										</div>
-									</div>
-									<div class="col-md-3 col-sm-3 col-xs-6">
-										<a href="single.html">
-											<img src="assets/images/p8.jpg" alt="" />
-											<span class="price">&#36; 189</span>
-										</a> 
-										<div class="w3-ad-info">
-											<h5>Lorem Ipsum is simply dummy</h5>
-											<span>3 hour ago</span>
-										</div>
-									</div>
-								</li>
+								</div>
+							<?php }?>
+							</li>
 						</ul>
-					</div>   
+				</div>
+			</div>
+			<div class="container">
+				<div class="agile-trend-ads">
+						<ul id="tution">
+							<li>
+							<?php $random_post_tution = $this->db->query("SELECT * FROM tution INNER JOIN tut_img ON tution.tutid = tut_img.tutid GROUP BY tution.tutid ORDER BY RAND() LIMIT 4");?>
+							<?php foreach ($random_post_tution->result() as $random_tution){?>
+								<div class="col-md-3 col-sm-3 col-xs-6 col-lg-3">
+									<a href="<?php echo base_url();?>tutions/manage_view/<?php echo $random_tution->tutid;?>">
+										<img src="<?php echo base_url();echo $random_tution->path;?>" alt="<?php echo $random_tution->title;?>" />
+									</a> 
+									<div class="w3-ad-info">
+										<h5><?php echo $random_tution->title;?></h5>
+										<span><?php $date = $row['date'];echo time_elapsed_string($date);?></span>
+									</div>
+								</div>
+							<?php }?>
+							</li>
+						</ul>
+				</div>
+			</div>
+			<div class="container">
+				<div class="agile-trend-ads">
+						<ul id="hotel">
+							<li>
+							<?php $random_post_hotel = $this->db->query("SELECT * FROM hotel INNER JOIN hotel_img ON hotel.hotelid = hotel_img.hotelid GROUP BY hotel.hotelid ORDER BY RAND() LIMIT 4");?>
+							<?php foreach ($random_post_hotel->result() as $random_hotel){?>
+								<div class="col-md-3 col-sm-3 col-xs-6 col-lg-3">
+									<a href="<?php echo base_url();?>Hotel/manage_view/<?php echo $random_hotel->hotelid;?>">
+										<img src="<?php echo base_url();echo $random_hotel->path;?>" alt="<?php echo $random_hotel->title;?>" />
+									</a> 
+									<div class="w3-ad-info">
+										<h5><?php echo $random_hotel->title;?></h5>
+										<span><?php $date = $row['date'];echo time_elapsed_string($date);?></span>
+									</div>
+								</div>
+							<?php }?>
+							</li>
+						</ul>
+				</div>
+			</div>
+			<div class="container">
+				<div class="agile-trend-ads">
+						<ul id="travelling">
+							<li>
+							<?php $random_post_travelling = $this->db->query("SELECT * FROM travelling INNER JOIN travelling_img ON travelling.travelid = travelling_img.travelid GROUP BY travelling.travelid ORDER BY RAND() LIMIT 4");?>
+							<?php foreach ($random_post_travelling->result() as $random_travelling){?>
+								<div class="col-md-3 col-sm-3 col-xs-6 col-lg-3">
+									<a href="<?php echo base_url();?>Travelling/manage_view/<?php echo $random_travelling->travelid;?>">
+										<img src="<?php echo base_url();echo $random_travelling->path;?>" alt="<?php echo $random_travelling->title;?>" />
+									</a> 
+									<div class="w3-ad-info">
+										<h5><?php echo $random_travelling->title;?></h5>
+										<span><?php $date = $row['date'];echo time_elapsed_string($date);?></span>
+									</div>
+								</div>
+							<?php }?>
+							</li>
+						</ul>
+				</div>
+			</div>
+			<div class="container">
+				<div class="agile-trend-ads">
+						<ul id="automoblie">
+							<li>
+							<?php $random_post_automobile = $this->db->query("SELECT * FROM automobile INNER JOIN automobile_img ON automobile.autoid = automobile_img.autoid GROUP BY automobile.autoid ORDER BY RAND() LIMIT 4");?>
+							<?php foreach ($random_post_automobile->result() as $random_automobile){?>
+								<div class="col-md-3 col-sm-3 col-xs-6 col-lg-3">
+									<a href="<?php echo base_url();?>Automobile/manage_view/<?php echo $random_automobile->autoid;?>">
+										<img src="<?php echo base_url();echo $random_automobile->path;?>" alt="<?php echo $random_automobile->title;?>" />
+									</a> 
+									<div class="w3-ad-info">
+										<h5><?php echo $random_automobile->title;?></h5>
+										<span><?php $date = $row['date'];echo time_elapsed_string($date);?></span>
+									</div>
+								</div>
+							<?php }?>
+							</li>
+						</ul>
+				</div>
 			</div>
 			<!-- //slider -->				
 			</div>
