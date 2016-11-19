@@ -18,37 +18,44 @@ date_default_timezone_set('Asia/Kolkata');
 								<?php 
 									//realestate
 									foreach ($realestate_latest->result_array() as $row){
+										$realid = $row['realid'];
+										$getImage = $this->db->query("SELECT * FROM real_img WHERE realid='$realid' LIMIT 1");
+										$rowImageRow = $getImage->row();
+										$imagePath = $rowImageRow->path;
 								?>
-							<a href="<?php echo base_url();?>Realestate/manage_view/<?php echo $row['realid'];?>">
-									<div class="col-md-3 col-sm-3 col-xs-6">
-											<img src="assets/images/r4.jpg" alt="" />
-										<div class="w3-ad-info">
-											<h5><?php echo $row['title']?></h5>
-											<h5><?php echo $row['name']?></h5>
-											<span><?php $date = $row['date'];echo time_elapsed_string($date);?></span>
-										</div>
-									</div>
-									</a>
+										<a href="<?php echo base_url();?>Realestate/manage_view/<?php echo $row['realid'];?>">
+											<div class="col-md-3 col-sm-3 col-xs-6">
+												<img src="<?php echo base_url().$imagePath?>" class="img-responsive" alt="<?php echo $row['title'];?>"/>
+												<div class="w3-ad-info">
+													<h5><?php echo $row['title']?></h5>
+													<h5><?php echo $row['name']?></h5>
+													<span><?php $date = $row['date'];echo time_elapsed_string($date);?></span>
+												</div>
+											</div>
+										</a>
 								<?php 
 									}
 								?>	
 								</li>
 								<li>
 								<?php 
-									//automobile
-									foreach ($automobile_latest->result_array() as $row){
+									//Tution
+									foreach ($tution_latest->result_array() as $row){
+										$tutid = $row['tutid'];
+										$getImage = $this->db->query("SELECT * FROM tut_img WHERE tutid='$tutid' LIMIT 1");
+										$rowImageRow = $getImage->row();
+										$imagePath = $rowImageRow->path;
 								?>
-						<a href="<?php echo base_url();?>Automobile/manage_view/<?php echo $row['autoid'];?>">
-								
-									<div class="col-md-3 col-sm-3 col-xs-6">
-											<img src="assets/images/c6.jpg" alt="" />
-										<div class="w3-ad-info">
-											<h5><?php echo $row['title']?></h5>
-											<h5><?php echo $row['name']?></h5>
-											<span><?php $date = $row['date'];echo time_elapsed_string($date);?></span>
-										</div>
-									</div>
-									</a>
+										<a href="<?php echo base_url();?>Tution/manage_view/<?php echo $row['tutid'];?>">
+											<div class="col-md-3 col-sm-3 col-xs-6">
+												<img src="<?php echo base_url().$imagePath?>" class="img-responsive" alt="<?php echo $row['title'];?>"/>
+												<div class="w3-ad-info">
+													<h5><?php echo $row['title']?></h5>
+													<h5><?php echo $row['name']?></h5>
+													<span><?php $date = $row['date'];echo time_elapsed_string($date);?></span>
+												</div>
+											</div>
+										</a>
 								<?php 
 									}
 								?>	
@@ -56,21 +63,23 @@ date_default_timezone_set('Asia/Kolkata');
 								<li>
 								
 								<?php 
-									//hotel
+									//Hotel
 									foreach ($hotel_latest->result_array() as $row){
+										$hotelid = $row['hotelid'];
+										$getImage = $this->db->query("SELECT * FROM hotel_img WHERE hotelid='$hotelid' LIMIT 1");
+										$rowImageRow = $getImage->row();
+										$imagePath = $rowImageRow->path;
 								?>
-								<a href="<?php echo base_url();?>Hotel/manage_view/<?php echo $row['hotelid'];?>">
-								
-									<div class="col-md-3 col-sm-3 col-xs-6">
-											<img src="assets/images/ad2.jpg" alt="" />
-										<div class="w3-ad-info">
-											<h5><?php echo $row['title']?></h5>
-											<h5><?php echo $row['name']?></h5>
-											<span><?php $date = $row['date'];echo time_elapsed_string($date);?></span>
-											
-										</div>
-									</div>
-									</a>
+										<a href="<?php echo base_url();?>Hotel/manage_view/<?php echo $row['hotelid'];?>">
+											<div class="col-md-3 col-sm-3 col-xs-6">
+												<img src="<?php echo base_url().$imagePath?>" class="img-responsive" alt="<?php echo $row['title'];?>"/>
+												<div class="w3-ad-info">
+													<h5><?php echo $row['title']?></h5>
+													<h5><?php echo $row['name']?></h5>
+													<span><?php $date = $row['date'];echo time_elapsed_string($date);?></span>
+												</div>
+											</div>
+										</a>
 								<?php 
 									}
 								?>	
@@ -80,19 +89,21 @@ date_default_timezone_set('Asia/Kolkata');
 								<?php 
 									//Travelling
 									foreach ($travelling_latest->result_array() as $row){
+										$travelid = $row['travelid'];
+										$getImage = $this->db->query("SELECT * FROM travelling_img WHERE travelid='$travelid' LIMIT 1");
+										$rowImageRow = $getImage->row();
+										$imagePath = $rowImageRow->path;
 								?>
-						<a href="<?php echo base_url();?>Travelling/manage_view/<?php echo $row['travelid'];?>">
-								
-									<div class="col-md-3 col-sm-3 col-xs-6">
-											<img src="assets/images/ad2.jpg" alt="" />
-										<div class="w3-ad-info">
-											<h5><?php echo $row['title']?></h5>
-											<h5><?php echo $row['name']?></h5>
-											<span><?php $date = $row['date'];echo time_elapsed_string($date);?></span>
-											
-										</div>
-									</div>
-									</a>
+										<a href="<?php echo base_url();?>Travelling/manage_view/<?php echo $row['travelid'];?>">
+											<div class="col-md-3 col-sm-3 col-xs-6">
+												<img src="<?php echo base_url().$imagePath?>" class="img-responsive" alt="<?php echo $row['title'];?>"/>
+												<div class="w3-ad-info">
+													<h5><?php echo $row['title']?></h5>
+													<h5><?php echo $row['name']?></h5>
+													<span><?php $date = $row['date'];echo time_elapsed_string($date);?></span>
+												</div>
+											</div>
+										</a>
 								<?php 
 									}
 								?>	
@@ -100,20 +111,23 @@ date_default_timezone_set('Asia/Kolkata');
 								<li>
 								
 								<?php 
-									//Tution
-									foreach ($tution_latest->result_array() as $row){
+									//Automobile
+									foreach ($automobile_latest->result_array() as $row){
+										$autoid = $row['autoid'];
+										$getImage = $this->db->query("SELECT * FROM automobile_img WHERE autoid='$autoid' LIMIT 1");
+										$rowImageRow = $getImage->row();
+										$imagePath = $rowImageRow->path;
 								?>
-								<a href="<?php echo base_url();?>Tutions/manage_view/<?php echo $row['tutid'];?>">
-									<div class="col-md-3 col-sm-3 col-xs-6">
-											<img src="assets/images/ad2.jpg" alt="" />
-										<div class="w3-ad-info">
-											<h5><?php echo $row['title']?></h5>
-											<h5><?php echo $row['name']?></h5>
-											<span><?php $date = $row['date'];echo time_elapsed_string($date);?></span>
-											
-										</div>
-									</div>
-									</a>
+										<a href="<?php echo base_url();?>Automobile/manage_view/<?php echo $row['autoid'];?>">
+											<div class="col-md-3 col-sm-3 col-xs-6">
+												<img src="<?php echo base_url().$imagePath?>" class="img-responsive" alt="<?php echo $row['title'];?>"/>
+												<div class="w3-ad-info">
+													<h5><?php echo $row['title']?></h5>
+													<h5><?php echo $row['name']?></h5>
+													<span><?php $date = $row['date'];echo time_elapsed_string($date);?></span>
+												</div>
+											</div>
+										</a>
 								<?php 
 									}
 								?>	
@@ -121,22 +135,8 @@ date_default_timezone_set('Asia/Kolkata');
 								<li>
 								
 								<?php 
-									//Other
-									foreach ($other_latest->result_array() as $row){
-								?>
-									<div class="col-md-3 col-sm-3 col-xs-6">
-											<img src="assets/images/ad2.jpg" alt="" />
-										<div class="w3-ad-info">
-											<h5><?php echo $row['title']?></h5>
-											<h5><?php echo $row['name']?></h5>
-											<span><?php $date = $row['date'];echo time_elapsed_string($date);?></span>
-											
-										</div>
-									</div>
-								<?php 
-									}
-								?>	
-								</li>
+									//OTHER
+ 								?>	
 						</ul>
 					</div>
 					

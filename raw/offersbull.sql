@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 11, 2016 at 06:44 PM
+-- Generation Time: Nov 19, 2016 at 05:10 AM
 -- Server version: 5.7.9
 -- PHP Version: 5.6.16
 
@@ -67,19 +67,17 @@ CREATE TABLE IF NOT EXISTS `automobile` (
   `category` tinyint(4) DEFAULT NULL,
   `userid` tinyint(4) DEFAULT NULL,
   PRIMARY KEY (`autoid`)
-) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=15 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `automobile`
 --
 
 INSERT INTO `automobile` (`autoid`, `name`, `title`, `type`, `address`, `description`, `mobile`, `email`, `city`, `area`, `date`, `offerend`, `category`, `userid`) VALUES
-(1, 'abhijit auto', 'Car service', '', '', 'We provide best car services.', '', '', '', '', '2016-09-29 06:51:48', NULL, NULL, NULL),
-(3, 'bvalu', 'fasdf', 'sdf', 'asdfasdfa', '', '', '', '', '', '2016-09-29 07:07:26', NULL, NULL, NULL),
-(5, 'Honey', 'Honeys car wash', 'Car washing center', 'Kadegaon, Sangli', 'We provide best car wash in cheep rate...', '9876543211', 'Honey@carwash.com', 'Kadegaon', '', '2016-09-29 07:17:40', NULL, NULL, NULL),
-(6, 'abhijit', 'Auto Service center in pune', 'Service Center', 'Pune, Mulshi', 'Best auto service center', '9637430435', 'abhijitkumbhar001@gmail.com', 'Pune', 'Mulshi', '2016-11-10 05:39:59', '2016-11-12 00:00:00', 3, 18),
-(7, 'abhijit', 'Auto Service center in pune', 'Service Center', 'Pune, Mulshi', 'Best auto service center', '9637430435', 'abhijitkumbhar001@gmail.com', 'Pune', 'Mulshi', '2016-11-10 05:40:13', '2016-11-12 00:00:00', 3, 18),
-(8, 'abhijit', 'Balus Car repair', 'Service Center', 'Khadaki', 'aksjdfj', '9637430435', 'abhijitkumbhar001@gmail.com', 'Khadaki', 'Khadaki', '2016-11-10 06:14:39', '2016-11-11 00:00:00', 3, 18);
+(11, 'abhijit', ' Where does it come from?', 'Service Center', 'Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.', 'Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.', '9168277713', 'abhijitkumbhar001@gmail.com', ' Where does it come from?', ' Where does it come from?', '2016-11-18 15:16:57', '0000-00-00 00:00:00', 4, 24),
+(12, 'abhijit', 'What is Lorem Ipsum?', 'Showroom', 'Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.', 'Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.', '9168277713', 'abhijitkumbhar001@gmail.com', 'What is Lorem Ipsum?', 'What is Lorem Ipsum?', '2016-11-18 15:17:48', '0000-00-00 00:00:00', 4, 24),
+(13, 'abhijit', 'What is Lorem Ipsum?', 'Showroom', 'Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.', 'Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.', '9168277713', 'abhijitkumbhar001@gmail.com', 'What is Lorem Ipsum?', 'Where does it come from?', '2016-11-18 15:18:53', '0000-00-00 00:00:00', 4, 24),
+(14, 'abhijit', 'What is Lorem Ipsum?', 'Showroom', 'Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.', 'Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.', '9168277713', 'abhijitkumbhar001@gmail.com', 'werwer', 'Where does it come from?', '2016-11-18 15:19:43', '0000-00-00 00:00:00', 4, 24);
 
 -- --------------------------------------------------------
 
@@ -94,18 +92,17 @@ CREATE TABLE IF NOT EXISTS `automobile_img` (
   `autoid` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `autoid` (`autoid`)
-) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `automobile_img`
 --
 
 INSERT INTO `automobile_img` (`id`, `path`, `autoid`) VALUES
-(1, 'uploads/automobile/29-Sep-16/1-06-51-56-0-Youtube-PNG-Clipart.png', 1),
-(2, 'uploads/automobile/29-Sep-16/2-07-06-50-0-19323130-fruits-and-vegetables-background.jpg', 2),
-(3, 'uploads/automobile/29-Sep-16/3-07-09-08-0-concrete wall.jpg 1.jpg', 3),
-(4, 'uploads/automobile/29-Sep-16/4-07-17-13-0-Civil.jpg', 4),
-(5, 'uploads/automobile/29-Sep-16/5-07-18-05-0-3D-android-with-backpack.jpg', 5);
+(6, 'uploads/automobile/24/2016-11-18_20-46-57_0.jpg', 11),
+(7, 'uploads/automobile/24/2016-11-18_20-47-48_0.jpg', 12),
+(8, 'uploads/automobile/24/2016-11-18_20-48-53_0.jpg', 13),
+(9, 'uploads/automobile/24/2016-11-18_20-49-43_0.jpg', 14);
 
 -- --------------------------------------------------------
 
@@ -135,7 +132,7 @@ CREATE TABLE IF NOT EXISTS `hotel` (
   `title` varchar(255) DEFAULT NULL,
   `type` varchar(255) DEFAULT NULL,
   `address` text,
-  `price` int(255) DEFAULT NULL,
+  `price` varchar(255) DEFAULT NULL,
   `description` text,
   `mobile` varchar(255) DEFAULT NULL,
   `email` varchar(255) DEFAULT NULL,
@@ -147,17 +144,17 @@ CREATE TABLE IF NOT EXISTS `hotel` (
   `category` tinyint(4) DEFAULT NULL,
   `userid` tinyint(4) DEFAULT NULL,
   PRIMARY KEY (`hotelid`)
-) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `hotel`
 --
 
 INSERT INTO `hotel` (`hotelid`, `name`, `title`, `type`, `address`, `price`, `description`, `mobile`, `email`, `amenities`, `city`, `area`, `date`, `offerend`, `category`, `userid`) VALUES
-(1, 'hotel', 'hotel ', 'lodging', '', 7000, '', '', '', '', 'pune', '', '2016-09-28 11:25:01', NULL, NULL, NULL),
-(4, 'asdfasd', 'asdfdf', '', '', 3232, '', '', '', '', 'mumbai', '', '2016-09-28 11:50:54', NULL, NULL, NULL),
-(3, 'hotel 2', 'asdfsdf', '', '', 322, '', '', '', '', '', '', '2016-09-28 11:39:41', NULL, NULL, NULL),
-(5, 'abhijit', 'Hotel Abs', 'Hotel', 'fasfasf', 23233, 'asfa', '9637430435', 'abhijitkumbhar001@gmail.com', 'sfasdfs', 'Karad', 'Karad', '2016-11-10 05:47:51', '2016-11-11 00:00:00', 2, 18);
+(9, 'abhijit', 'Joy Hotel', 'Hotel', 'Hadapsar, Pune', '', 'Enjoy 5 Strar leaving in Pune city', '9168277713', 'abhijitkumbhar001@gmail.com', 'Awesome ', 'Pune', 'Hadapsar', '2016-11-18 10:12:57', '0000-00-00 00:00:00', 2, 24),
+(10, 'abhijit', 'Hotel JOY', 'Hotel', 'Chakan', '', 'Best hotel to stay', '9168277713', 'abhijitkumbhar001@gmail.com', 'NICE', 'Chakan', 'Chakan', '2016-11-18 10:14:58', '0000-00-00 00:00:00', 2, 24),
+(11, 'abhijit', 'Where does it come from?', 'Hotel', 'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don''t look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn''t anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.', '', 'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don''t look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn''t anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.', '9168277713', 'abhijitkumbhar001@gmail.com', 'Where does it come from?', 'Where does it come from?', 'Where does it come from?', '2016-11-18 15:14:49', '0000-00-00 00:00:00', 2, 24),
+(12, 'abhijit', ' Where does it come from?', 'Hotel', 'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don''t look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn''t anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.', '2300', 'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don''t look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn''t anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.', '9168277713', 'abhijitkumbhar001@gmail.com', 'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don''t look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn''t anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.', ' Where does it come from?', ' Where does it come from?', '2016-11-18 15:15:51', '0000-00-00 00:00:00', 2, 24);
 
 -- --------------------------------------------------------
 
@@ -172,16 +169,17 @@ CREATE TABLE IF NOT EXISTS `hotel_img` (
   `hotelid` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `hotelid` (`hotelid`)
-) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `hotel_img`
 --
 
 INSERT INTO `hotel_img` (`id`, `path`, `hotelid`) VALUES
-(1, 'uploads/hotel/28-Sep-16/2-11-26-46-0-Civil.jpg', 2),
-(2, 'uploads/hotel/28-Sep-16/3-11-39-46-0-a.jpg', 3),
-(3, 'uploads/hotel/28-Sep-16/4-11-51-26-0-Youtube-PNG-Clipart.png', 4);
+(4, 'uploads/hotel/24/2016-11-18_15-42-57_0.jpg', 9),
+(5, 'uploads/hotel/24/2016-11-18_15-44-58_0.jpg', 10),
+(6, 'uploads/hotel/24/2016-11-18_20-44-49_0.jpg', 11),
+(7, 'uploads/hotel/24/2016-11-18_20-45-51_0.jpg', 12);
 
 -- --------------------------------------------------------
 
@@ -198,7 +196,6 @@ CREATE TABLE IF NOT EXISTS `other` (
   `description` longtext,
   `mobile` varchar(255) DEFAULT NULL,
   `email` varchar(255) DEFAULT NULL,
-  `amenities` longtext,
   `city` longtext,
   `area` longtext,
   `offerend` datetime DEFAULT NULL,
@@ -206,14 +203,14 @@ CREATE TABLE IF NOT EXISTS `other` (
   `userid` tinyint(4) DEFAULT NULL,
   `date` datetime DEFAULT NULL,
   PRIMARY KEY (`otherid`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `other`
 --
 
-INSERT INTO `other` (`otherid`, `name`, `title`, `address`, `description`, `mobile`, `email`, `amenities`, `city`, `area`, `offerend`, `category`, `userid`, `date`) VALUES
-(1, 'other', 'other', 'pune', 'asdf', '993939393', 'as', 's', 'asdf', 'asdf', '2016-11-08 13:11:20', NULL, NULL, '2016-11-08 13:10:52');
+INSERT INTO `other` (`otherid`, `name`, `title`, `address`, `description`, `mobile`, `email`, `city`, `area`, `offerend`, `category`, `userid`, `date`) VALUES
+(4, 'abhijit', 'What is Lorem Ipsum?', 'Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.', 'Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.', '9168277713', 'abhijitkumbhar001@gmail.com', 'Where does it come from?', 'Where does it come from?', '0000-00-00 00:00:00', 5, 24, '2016-11-18 15:20:04');
 
 -- --------------------------------------------------------
 
@@ -229,7 +226,7 @@ CREATE TABLE IF NOT EXISTS `realestate` (
   `type` varchar(255) DEFAULT NULL,
   `address` text,
   `builtup` varchar(255) DEFAULT NULL,
-  `price` int(255) DEFAULT NULL,
+  `price` varchar(255) DEFAULT NULL,
   `description` text,
   `mobile` varchar(255) DEFAULT NULL,
   `email` varchar(255) DEFAULT NULL,
@@ -241,16 +238,17 @@ CREATE TABLE IF NOT EXISTS `realestate` (
   `category` tinyint(4) DEFAULT NULL,
   `userid` tinyint(4) DEFAULT NULL,
   PRIMARY KEY (`realid`)
-) ENGINE=MyISAM AUTO_INCREMENT=65 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=202 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `realestate`
 --
 
 INSERT INTO `realestate` (`realid`, `name`, `title`, `type`, `address`, `builtup`, `price`, `description`, `mobile`, `email`, `amenities`, `city`, `area`, `date`, `offerend`, `category`, `userid`) VALUES
-(2, 'abs', 'house on rent', 'rent', 'pimpri', '2000', 1000, 'good house', '9634530435', 'abs@gmail.com', 'all facilities', 'pune', 'morewadi', '2016-06-12 07:07:21', '2016-10-25 03:16:50', 0, NULL),
-(1, 'Balu', 'Own house', 'rent', 'HIngne Khurd', '1025', 7000, 'good house', '9637430435', 'balu.khengat@gmail.com', 'all facilities', 'pune', 'vithalwadi', '2016-10-10 09:08:30', NULL, NULL, NULL),
-(50, 'abhijit', 'Real Estate', 'Rent', 'Pune Hadapsar', '3000 Sq.Ft', 12000, 'Nice and All good facilities near', '9637430435', 'abhijitkumbhar001@gmail.com', 'nice', 'Pune', 'Hadapsar', '2016-11-10 02:46:23', '2016-11-11 18:30:00', 0, 18);
+(197, 'abhijit', 'Home to sell in Morewadi, Pimpri', 'Sell', 'Morwadi, Pimpri', '4000', '20000000', 'Nice home, And awesome location, Beautiful environment ', '9168277713', 'abhijitkumbhar001@gmail.com', 'Just Awesome !!!', 'Pimpri-Chinchwad', 'Morwadi', '2016-11-18 09:54:08', '0000-00-00 00:00:00', 0, 24),
+(199, 'abhijit', 'Row houses on rent', 'Rent', 'Lawasa, Pune', '2500', '8000', 'Best row houses, Enjoy the trip and experience the beauty of Lawasa', '9168277713', 'abhijitkumbhar001@gmail.com', 'Just awesome', 'Lawasa', 'Lawasa', '2016-11-18 10:01:12', '0000-00-00 00:00:00', 0, 24),
+(200, 'abhijit', 'What is Lorem Ipsum?', 'Sell', 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using ''Content here, content here'', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for ''lorem ipsum'' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).\r\n\r\n', '3330', '2222222', 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using ''Content here, content here'', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for ''lorem ipsum'' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).\r\n\r\n', '9168277713', 'abhijitkumbhar001@gmail.com', 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using ''Content here, content here'', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for ''lorem ipsum'' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).\r\n\r\n', 'What is Lorem Ipsum?', 'What is Lorem Ipsum?', '2016-11-18 15:08:06', '0000-00-00 00:00:00', 0, 24),
+(201, 'abhijit', 'Why do we use it?', 'Sell', 'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don''t look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn''t anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.', '2000', '33322', 'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don''t look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn''t anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.', '9168277713', 'abhijitkumbhar001@gmail.com', 'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don''t look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn''t anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.', 'Why do we use it?', 'Why do we use it?', '2016-11-18 15:08:54', '0000-00-00 00:00:00', 0, 24);
 
 -- --------------------------------------------------------
 
@@ -265,26 +263,19 @@ CREATE TABLE IF NOT EXISTS `real_img` (
   `realid` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `real_id` (`realid`)
-) ENGINE=MyISAM AUTO_INCREMENT=17 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=46 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `real_img`
 --
 
 INSERT INTO `real_img` (`id`, `path`, `realid`) VALUES
-(3, 'uploads/realestate/27-Sep-16/22-12-56-29-0-1.png', 1),
-(4, 'uploads/realestate/27-Sep-16/22-12-56-29-1-2.png', 1),
-(5, 'uploads/realestate/27-Sep-16/22-12-56-29-2-3.png', 2),
-(6, 'uploads/realestate/27-Sep-16/22-12-56-29-3-4.png', 22),
-(7, 'uploads/realestate/27-Sep-16/22-12-58-50-0-logo.png', 22),
-(8, 'uploads/realestate/27-Sep-16/22-01-03-04-0-gradient-black-background-wallpaper-2.jpg', 22),
-(9, 'uploads/realestate/27-Sep-16/23-01-06-03-0-beechlawn-organic-farm-text-logo1.png', 23),
-(10, 'uploads/realestate/27-Sep-16/24-01-48-58-0-concrete wall.jpg 1.jpg', 24),
-(11, 'uploads/realestate/27-Sep-16/25-05-04-16-0-a.jpg', 25),
-(12, 'uploads/realestate/27-Sep-16/26-05-09-00-0-a.jpg', 26),
-(13, 'uploads/realestate/27-Sep-16/27-05-49-44-0-a.jpg', 27),
-(14, 'uploads/realestate/27-Sep-16/28-05-51-15-0-a.jpg', 28),
-(16, 'uploads/realestate/28-Sep-16/29-11-22-54-0-', 29);
+(40, 'uploads/real/24/2016-11-18_15-24-08_0.jpg', 197),
+(41, 'uploads/real/24/2016-11-18_15-24-08_1.jpg', 197),
+(42, 'uploads/real/24/2016-11-18_15-31-12_0.jpg', 199),
+(43, 'uploads/real/24/2016-11-18_15-31-12_1.jpg', 199),
+(44, 'uploads/real/24/2016-11-18_20-38-06_0.jpg', 200),
+(45, 'uploads/real/24/2016-11-18_20-38-54_0.jpg', 201);
 
 -- --------------------------------------------------------
 
@@ -304,16 +295,14 @@ CREATE TABLE IF NOT EXISTS `register` (
   `address` longtext CHARACTER SET utf8 COLLATE utf8_unicode_ci,
   `city` longtext CHARACTER SET utf8 COLLATE utf8_unicode_ci,
   PRIMARY KEY (`reg_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=24 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=25 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `register`
 --
 
 INSERT INTO `register` (`reg_id`, `username`, `mobile`, `email`, `password`, `otp`, `status`, `address`, `city`) VALUES
-(18, 'abhijit', '9168277713', 'abhijitkumbhar001@gmail.com', '33a485cb146e1153c69b588c671ab474f2e5b800', NULL, 1, 'Karad, Maharashtra', 'Karad'),
-(22, 'balu', '9637430435', 'balu.khengat@gmail.com', '33a485cb146e1153c69b588c671ab474f2e5b800', NULL, 1, 'Khadaki', 'Ahmadnagar'),
-(23, 'rahul', '9637430435', 'gilbilerahul@rediffmail.com', '33a485cb146e1153c69b588c671ab474f2e5b800', NULL, 1, NULL, NULL);
+(24, 'abhijit', '9168277713', 'abhijitkumbhar001@gmail.com', '33a485cb146e1153c69b588c671ab474f2e5b800', NULL, 1, 'Morwadi, Pimpri', 'Pimpri-Chinchwad');
 
 -- --------------------------------------------------------
 
@@ -327,7 +316,7 @@ CREATE TABLE IF NOT EXISTS `travelling` (
   `name` varchar(255) DEFAULT NULL,
   `title` varchar(255) DEFAULT NULL,
   `address` text,
-  `price` int(11) DEFAULT NULL,
+  `price` varchar(255) DEFAULT NULL,
   `description` text,
   `mobile` varchar(255) DEFAULT NULL,
   `email` varchar(255) DEFAULT NULL,
@@ -338,16 +327,17 @@ CREATE TABLE IF NOT EXISTS `travelling` (
   `category` tinyint(4) DEFAULT NULL,
   `userid` tinyint(4) DEFAULT NULL,
   PRIMARY KEY (`travelid`)
-) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=15 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `travelling`
 --
 
 INSERT INTO `travelling` (`travelid`, `name`, `title`, `address`, `price`, `description`, `mobile`, `email`, `city`, `area`, `date`, `offerend`, `category`, `userid`) VALUES
-(1, 'abhijit', 'Mumbai to Pune', 'a', 700, 'a', 'a', 'a', 'a', 'a', '2011-02-02 00:00:00', NULL, NULL, NULL),
-(5, 'asdfasd', 'Kolhaput to Solapur', '', 1000, '', '', '', '', '', '2016-09-29 06:29:18', NULL, NULL, NULL),
-(4, 'balu', 'Pune to Kolhapur', 'asdf', 600, '', '', '', '', '', '2016-09-29 05:20:40', NULL, NULL, NULL);
+(11, 'abhijit', 'Pune to Kolhaput', 'Kharadi', '', '', '9168277713', 'abhijitkumbhar001@gmail.com', 'Pune', 'Kharadi', '2016-11-18 14:57:27', '0000-00-00 00:00:00', 3, 24),
+(12, 'abhijit', 'TrimiNits Travellers', 'Pune', '', 'We are the best travell agency in pune area \r\n> Just Rs 8/- per 1 Km', '9168277713', 'abhijitkumbhar001@gmail.com', 'Pune', 'Pune', '2016-11-18 14:58:46', '0000-00-00 00:00:00', 3, 24),
+(13, 'abhijit', 'Minolsa Airlines', 'Travel and Fly to hell', '', '', '9168277713', 'abhijitkumbhar001@gmail.com', 'Kolhapur', 'RK Nagae', '2016-11-18 14:59:39', '0000-00-00 00:00:00', 3, 24),
+(14, 'abhijit', 'Zeena World', 'Zeena World, Karad', '', '', '9168277713', 'abhijitkumbhar001@gmail.com', 'Karad', 'Karad', '2016-11-18 15:01:41', '0000-00-00 00:00:00', 3, 24);
 
 -- --------------------------------------------------------
 
@@ -362,15 +352,17 @@ CREATE TABLE IF NOT EXISTS `travelling_img` (
   `travelid` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `travelid` (`travelid`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `travelling_img`
 --
 
 INSERT INTO `travelling_img` (`id`, `path`, `travelid`) VALUES
-(1, 'uploads/travelling/29-Sep-16/3-04-59-01-0-Civil.jpg', 3),
-(2, 'uploads/travelling/29-Sep-16/4-05-25-07-0-19323130-fruits-and-vegetables-background.jpg', 4);
+(3, 'uploads/travelling/24/2016-11-18_20-27-27_0.jpg', 11),
+(4, 'uploads/travelling/24/2016-11-18_20-28-46_0.jpg', 12),
+(5, 'uploads/travelling/24/2016-11-18_20-29-39_0.jpg', 13),
+(6, 'uploads/travelling/24/2016-11-18_20-31-41_0.jpg', 14);
 
 -- --------------------------------------------------------
 
@@ -394,15 +386,17 @@ CREATE TABLE IF NOT EXISTS `tution` (
   `category` tinyint(4) DEFAULT NULL,
   `userid` tinyint(4) DEFAULT NULL,
   PRIMARY KEY (`tutid`)
-) ENGINE=MyISAM AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=19 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `tution`
 --
 
 INSERT INTO `tution` (`tutid`, `name`, `title`, `address`, `description`, `mobile`, `email`, `city`, `area`, `date`, `offerend`, `category`, `userid`) VALUES
-(3, 'Profound', 'JAVA/.NET/TESTING', 'pune', 'Training And placement Institute', '9637430435', 'pro@gmail.com', 'pune', 'kothrud', '2016-10-17 00:00:00', NULL, NULL, NULL),
-(4, 'Mind Script', 'php', 'pune', 'Training And Placement Institute', '7276616826', 'mind@gmail.com', 'pune', 'pimpri', '2016-10-26 00:00:00', NULL, NULL, NULL);
+(16, 'abhijit', 'MPSC Classes', 'Karad ', 'Best\r\n100+ selected from our class', '9168277713', 'abhijitkumbhar001@gmail.com', 'Karad', 'Karad', '2016-11-18 15:03:18', '0000-00-00 00:00:00', 1, 24),
+(15, 'abhijit', 'JAVA tution', 'Karve Road', 'Best Java tutions', '9168277713', 'abhijitkumbhar001@gmail.com', 'Pune', 'Karvenagar', '2016-11-18 10:07:39', '0000-00-00 00:00:00', 1, 24),
+(17, 'abhijit', 'Where does it come from?', 'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don''t look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn''t anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.', 'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don''t look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn''t anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.', '9168277713', 'abhijitkumbhar001@gmail.com', 'Where does it come from?', 'Where does it come from?', '2016-11-18 15:09:59', '0000-00-00 00:00:00', 1, 24),
+(18, 'abhijit', 'Where does it come', 'The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.', 'The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.', '9168277713', 'abhijitkumbhar001@gmail.com', 'Where does it come from?', 'Where does it come from?', '2016-11-18 15:10:24', '0000-00-00 00:00:00', 1, 24);
 
 -- --------------------------------------------------------
 
@@ -417,19 +411,17 @@ CREATE TABLE IF NOT EXISTS `tut_img` (
   `tutid` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `tutid` (`tutid`)
-) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=14 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `tut_img`
 --
 
 INSERT INTO `tut_img` (`id`, `path`, `tutid`) VALUES
-(1, 'uploads/tution/27-Sep-16/2-07-02-42-0-Youtube-PNG-Clipart.png', 2),
-(2, 'uploads/tution/27-Sep-16/3-08-51-40-0-uitWebandro.jpg', 3),
-(3, 'uploads/tution/27-Sep-16/4-08-53-14-0-uityoutube.jpg', 4),
-(4, 'uploads/tution/27-Sep-16/5-08-56-47-0-UIT.png', 5),
-(5, 'uploads/tution/28-Sep-16/6-10-34-01-0-Youtube-PNG-Clipart.png', 6),
-(6, 'uploads/tution/28-Sep-16/7-10-37-48-0-UIT.png', 7);
+(10, 'uploads/tution/24/2016-11-18_15-37-39_0.jpg', 15),
+(11, 'uploads/tution/24/2016-11-18_20-33-18_0.jpg', 16),
+(12, 'uploads/tution/24/2016-11-18_20-39-59_0.jpg', 17),
+(13, 'uploads/tution/24/2016-11-18_20-40-59_0.jpg', 18);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
