@@ -25,6 +25,14 @@
 				<div class="col-md-7 product-view">
 					<h2><?php echo $row['title'];?></h2>
 					<p> <i class="glyphicon glyphicon-map-marker"></i>Posted on | <?php echo $date = $row['date'];?> | Post id : <?php echo $row['realid']; ?></p>
+<!-- SLIEDER -->
+		<div id="slides">
+			<img src="<?php echo base_url()?>/assets/images/account-bg.jpg" width="500" height="400" class="img-responsive">
+			<img src="<?php echo base_url()?>/assets/images/r10.jpg" width="500" height="400" class="img-responsive">
+			<a href="#" class="slidesjs-previous slidesjs-navigation"><img src="<?php echo base_url();?>assets/images/slider-arrow-left.png"></a>
+      		<a href="#" class="slidesjs-next slidesjs-navigation"><img src="<?php echo base_url();?>assets/images/slider-arrow-right.png"></a>
+		</div>
+<!-- EOF SLIEDER -->		
 		<div class="product-details">
 			<hr>
 			<h4><span class="w3layouts-agileinfo">Posted By </span> : <a href="#"><?php echo $row['name'];?></a></h4>
@@ -66,8 +74,8 @@
 			<i class="glyphicon glyphicon-earphone"></i><?php echo $row['email'];?></p>
 		</div>
 		<div class="tips">
-		<h4>Photos</h4>
-				<img src="<?php echo base_url()?>/assets/images/account-bg.jpg" width="500" height="400" class="img-responsive">
+		<h4>Advertisement</h4>
+				Adsence goes here
 		</div>
 	</div>
 			<div class="clearfix"></div>
@@ -82,3 +90,132 @@
 	</body>
 
 </html>
+<style>
+    #slides {
+      display: none
+    }
+
+    .container {
+      margin: 0 auto
+    }
+
+    /* For tablets & smart phones */
+    @media (max-width: 767px) {
+      body {
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+      .container {
+        width: auto
+      }
+    }
+
+    /* For smartphones */
+    @media (max-width: 480px) {
+      .container {
+        width: auto
+      }
+    }
+
+    /* For smaller displays like laptops */
+    @media (min-width: 768px) and (max-width: 979px) {
+      .container {
+        width: 724px
+      }
+    }
+
+    /* For larger displays */
+    @media (min-width: 1200px) {
+      .container {
+        width: 1170px
+      }
+    }
+  </style>
+  <script src="<?php echo base_url();?>assets/js/jquery.slides.min.js"></script>
+  <script>
+    $(function() {
+      $('#slides').slidesjs({
+        width: 940,
+        height: 528,
+        navigation: false
+      });
+    });
+  </script>
+  <style>
+    #slides {
+      display: none
+    }
+
+    #slides .slidesjs-navigation {
+      margin-top:3px;
+    }
+
+    #slides .slidesjs-previous {
+      margin-right: 5px;
+      float: left;
+    }
+
+    #slides .slidesjs-next {
+      margin-right: 5px;
+      float: left;
+    }
+
+    .slidesjs-pagination {
+      margin: 6px 0 0;
+      float: right;
+      list-style: none;
+    }
+
+    .slidesjs-pagination li {
+      float: left;
+      margin: 0 1px;
+    }
+
+    .slidesjs-pagination li a {
+      display: block;
+      width: 13px;
+      height: 0;
+      padding-top: 13px;
+      background-image: url(img/pagination.png);
+      background-position: 0 0;
+      float: left;
+      overflow: hidden;
+    }
+
+    .slidesjs-pagination li a.active,
+    .slidesjs-pagination li a:hover.active {
+      background-position: 0 -13px
+    }
+
+    .slidesjs-pagination li a:hover {
+      background-position: 0 -26px
+    }
+
+    #slides a:link,
+    #slides a:visited {
+      color: #333
+    }
+
+    #slides a:hover,
+    #slides a:active {
+      color: #9e2020
+    }
+
+    .navbar {
+      overflow: hidden
+    }
+  </style>
+  
+  <!-- ZOOOMING OF IMAGE ON HOVER-->
+  <script src='<?php echo base_url();?>assets/js/jquery.zoom.js'></script>
+	<script>
+		$(document).ready(function(){
+			$('#ex1').zoom();
+			$('#ex2').zoom({ on:'grab' });
+			$('#ex3').zoom({ on:'click' });			 
+			$('#ex4').zoom({ on:'toggle' });
+		});
+	</script>
+<!-- 	<span class='zoom' id='ex1'> -->
+<!-- 					<img src="" width="500" height="400" class="img-responsive"> -->
+<!-- 	</span>	 -->
