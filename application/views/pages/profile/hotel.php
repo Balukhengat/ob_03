@@ -1,3 +1,4 @@
+<?php if(isset($_SESSION['userid'])){?>
 <div class="col-md-12">
 <div class="col-md-9">
 	<a href="<?php echo base_url();?>Basic_Controller/user_hotel"><button class="btn btn-success">Add</button></a>
@@ -107,3 +108,4 @@ foreach ($hotel_info as $row){
 </script>
 <script type="text/javascript" lang="javascript" src="<?php echo base_url();?>assets/js/validation.js">
 </script>
+<?php }else{redirect(base_url().'Login/login');}?>

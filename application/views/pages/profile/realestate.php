@@ -1,4 +1,4 @@
-<div class="col-md-9">
+<?php if(isset($_SESSION['userid'])){?><div class="col-md-9">
 <?php 
 $userid = $_SESSION['userid'];
 $realestate_info=$this->db->get_where('register',array('reg_id'=>$userid))->result_array();
@@ -116,3 +116,4 @@ foreach ($realestate_info as $row){
 </script>
 <script type="text/javascript" lang="javascript" src="<?php echo base_url();?>assets/js/validation.js">
 </script>
+<?php }else{redirect(base_url().'Login/login');}?>

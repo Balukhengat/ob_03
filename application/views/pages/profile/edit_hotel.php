@@ -1,3 +1,4 @@
+<?php if(isset($_SESSION['userid'])){?>
 <div class="col-md-9">
 <div class="col-md-12">
 	<a href="<?php echo base_url();?>Basic_Controller/user_hotel"><button class="btn btn-success">Add</button></a>
@@ -21,7 +22,7 @@
 	//print_r($realedit);die();
 	foreach ($hoteledit->result_array() as $row){
 ?>
-<form method="post" action="<?php echo base_url();?>Basic_Controller/user_hotel/update/<?php echo $row['hotelid'];?>" enctype="multipart/form-data">
+<form id=hotel_form method="post" action="<?php echo base_url();?>Basic_Controller/user_hotel/update/<?php echo $row['hotelid'];?>" enctype="multipart/form-data">
 	<div class="col-md-6">
 	<input type="hidden" name="tutid" value="<?php echo $row['hotelid'];?>">
 	<div class="form-group">
@@ -31,7 +32,7 @@
 	</div>
 	<div class="col-md-6">
 	<div class="form-group">
-	  <label for="id">Title:</label>
+	  <label for="id">Title:</label><span style="color: red;">*</span>  <span class="error" id="title_error"></span>
 	  <input type="text" class="form-control" id="title" name="title" value="<?php echo $row['title'];?>">
 	</div>
 	</div>
@@ -46,19 +47,19 @@
 	</div>
 	<div class="col-md-6">
 	<div class="form-group">
-	  <label for="price">Price:</label>
+	  <label for="price">Price:</label><span style="color: red;">*</span>  <span class="error" id="price_error"></span>
 	  <input type="text" class="form-control" id="price" name="price" value="<?php echo $row['price'];?>">
 	</div>
 	</div>
 	<div class="col-md-6">
 	<div class="form-group">
-	  <label for="Address">Address:</label>
+	  <label for="Address">Address:</label><span style="color: red;">*</span>  <span class="error" id="address_error"></span>
 	  <textarea class="form-control" id="address" name="address"><?php echo $row['address'];?></textarea>
 	</div>
 	</div>
 	<div class="col-md-6">
 	<div class="form-group">
-	  <label for="Description">Description:</label>
+	  <label for="Description">Description:</label><span style="color: red;">*</span>  <span class="error" id="description_error"></span>
 	  <textarea class="form-control" id="description" name="description"><?php echo $row['description'];?></textarea>
 	</div>
 	</div>
@@ -76,19 +77,19 @@
 	</div>
 	<div class="col-md-6">
 	<div class="form-group">
-	  <label for="Facilities">Facilities</label>
+	  <label for="Facilities">Facilities</label><span style="color: red;">*</span>  <span class="error" id="facilities_error"></span>
 	  <textarea class="form-control" id="facilities" name="facilities" ><?php echo $row['amenities'];?></textarea>
 	</div>
 	</div>
 	<div class="col-md-6">
 	<div class="form-group">
-	  <label for="City">City:</label>
+	  <label for="City">City:</label><span style="color: red;">*</span>  <span class="error" id="city_error"></span>
 	  <input type="text" class="form-control" id="city" name="city" value="<?php echo $row['city'];?>">
 	</div>
 	</div>
 	<div class="col-md-6">
 	<div class="form-group">
-	  <label for="Area">Area:</label>
+	  <label for="Area">Area:</label><span style="color: red;">*</span>  <span class="error" id="area_error"></span>
 	  <input type="text" class="form-control" id="area" name="area" value="<?php echo $row['area'];?>">
 	</div>
 	</div>
@@ -113,3 +114,8 @@
 <div class="col-md-3">
 	<h3>ADSENSE CODE GOES HERE</h3>
 </div>
+<script type="text/javascript" src="<?php echo base_url();?>assets/js/jquery.min.js">
+</script>
+<script type="text/javascript" lang="javascript" src="<?php echo base_url();?>assets/js/validation.js">
+</script>
+<?php }else{redirect(base_url().'Login/login');}?>

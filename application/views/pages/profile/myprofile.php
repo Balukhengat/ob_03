@@ -1,3 +1,4 @@
+<?php if(isset($_SESSION['userid'])){?>
 <div class="col-md-9">
 <?php 
 	$userid = $_SESSION['userid'];
@@ -68,3 +69,4 @@
 </script>
 <script type="text/javascript" lang="javascript" src="<?php echo base_url();?>assets/js/validation.js">
 </script>
+<?php }else{redirect(base_url().'Login/login');}?>

@@ -1,3 +1,4 @@
+<?php if(isset($_SESSION['userid'])){?>
 <div class="col-md-9">
 <?php 
 $userid = $_SESSION['userid'];
@@ -88,3 +89,8 @@ foreach ($tution_info as $row){
 <div class="col-md-3">
 	<h3>ADSENSE CODE GOES HERE</h3>
 </div>
+<script type="text/javascript" src="<?php echo base_url();?>assets/js/jquery.min.js">
+</script>
+<script type="text/javascript" lang="javascript" src="<?php echo base_url();?>assets/js/validation.js">
+</script>
+<?php }else{redirect(base_url().'Login/login');}?>

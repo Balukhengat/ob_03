@@ -1,3 +1,4 @@
+<?php if(isset($_SESSION['userid'])){?>
 <div class="col-md-9">
 <?php 
 $userid = $_SESSION['userid'];
@@ -10,7 +11,7 @@ $realestate_data = $this->db->order_by('date','desc')->get_where('tution',array(
 <?php if($this->session->flashdata('message')!=null){?>
 			<div class="col-md-12">
 			<br>
-						<div id="danger-alert" class="alert alert-danger"><?php echo $this->session->flashdata('message');?></div>
+			<div id="danger-alert" class="alert alert-danger"><?php echo $this->session->flashdata('message');?></div>
 			</div>	
 <?php }?>
  <table class="table table-hover">
@@ -48,3 +49,4 @@ $realestate_data = $this->db->order_by('date','desc')->get_where('tution',array(
 </script>
 <script type="text/javascript" lang="javascript" src="<?php echo base_url();?>assets/js/validation.js">
 </script>
+<?php }else{redirect(base_url().'Login/login');}?>
