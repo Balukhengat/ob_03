@@ -13,7 +13,7 @@ foreach ($travelling_info as $row){
 		<div id="danger-alert" class="alert alert-danger"><?php echo $this->session->flashdata('message');?></div>
 	</div>	 
 	<?php }?>
-<form method="post" action="<?php echo base_url();?>Basic_Controller/user_automobile/create" enctype="multipart/form-data">
+<form id=auto_form method="post" action="<?php echo base_url();?>Basic_Controller/user_automobile/create" enctype="multipart/form-data">
 	<div class="col-md-6">
 	<div class="form-group">
 	  <label for="Name">Name:</label>
@@ -22,15 +22,13 @@ foreach ($travelling_info as $row){
 	</div>
 	<div class="col-md-6">
 	<div class="form-group">
-	  <label for="id">Title:</label>
-	   <div class="error"><?php echo form_error('title'); ?></div>
+	  <label for="id">Title:</label><span style="color: red;">*</span>  <span class="error" id="title_error"></span>
 	  <input type="text" class="form-control" id="title" name="title">
 	</div>
 	</div>
 	<div class="col-md-6">
 	<div class="form-group">
 	  <label for="Type">Type:</label>
-	   <div class="error"><?php echo form_error('type'); ?></div>
 	  <select name="type" class="form-control">
 	  	<option>Showroom</option>
 	  	<option>Service Center</option>
@@ -39,14 +37,13 @@ foreach ($travelling_info as $row){
 	</div>
 	<div class="col-md-6">
 	<div class="form-group">
-	  <label for="Address">Address:</label>
-	   <div class="error"><?php echo form_error('address'); ?></div>
+	  <label for="Address">Address:</label><span style="color: red;">*</span>  <span class="error" id="address_error"></span>
 	  <textarea class="form-control" id="address" name="address"></textarea>
 	</div>
 	</div>
 	<div class="col-md-12">
 	<div class="form-group">
-	  <label for="Description">Description:</label>
+	  <label for="Description">Description:</label><span style="color: red;">*</span>  <span class="error" id="description_error"></span>
 	   <div class="error"><?php echo form_error('description'); ?></div>
 	  <textarea class="form-control" id="description" name="description"></textarea>
 	</div>
@@ -65,22 +62,19 @@ foreach ($travelling_info as $row){
 	</div>
 	<div class="col-md-6">
 	<div class="form-group">
-	  <label for="City">City:</label>
-	   <div class="error"><?php echo form_error('city'); ?></div>
+	  <label for="City">City:</label><span style="color: red;">*</span>  <span class="error" id="city_error"></span>
 	  <input type="text" class="form-control" id="city" name="city">
 	</div>
 	</div>
 	<div class="col-md-6">
 	<div class="form-group">
-	  <label for="Area">Area:</label>
-	   <div class="error"><?php echo form_error('area'); ?></div>
+	  <label for="Area">Area:</label><span style="color: red;">*</span>  <span class="error" id="area_error"></span>
 	  <input type="text" class="form-control" id="area" name="area">
 	</div>
 	</div>
 	<div class="col-md-6">
 	<div class="form-group">
 	  <label for="Offerend">Offer end date:</label>
-	   <div class="error"><?php echo form_error('offerend'); ?></div>
 	  <input type="date" class="form-control" id="offerend" name="offerend">
 	</div>
 	</div>
@@ -99,3 +93,7 @@ foreach ($travelling_info as $row){
 <div class="col-md-3">
 	<h3>ADSENSE CODE GOES HERE</h3>
 </div>
+<script type="text/javascript" src="<?php echo base_url();?>assets/js/jquery.min.js">
+</script>
+<script type="text/javascript" lang="javascript" src="<?php echo base_url();?>assets/js/validation.js">
+</script>

@@ -4,7 +4,6 @@ $(function(){
 	$("#type_error").hide();
 	$("#address_error").hide();
 	$("#builtup_error").hide();
-	//$("#price_error").hide();
 	$("#description_error").hide();
 	$("#mobile_error").hide();
 	$("#email_error").hide();
@@ -16,7 +15,6 @@ $(function(){
 	var error_type=false;
 	var error_address=false;
 	var error_builtup=false;
-	//var error_price=false;
 	var error_description=false;
 	var error_mobile=false;
 	var error_email=false;
@@ -36,9 +34,6 @@ $(function(){
 	$("#builtup").focusout(function(){
 		check_builtup();
 	});
-//	$("#price").focusout(function(){
-//		check_price();
-//	});
 	$("#description").focusout(function(){
 		check_description();
 	});
@@ -89,25 +84,17 @@ $(function(){
 		}
 	}
 	function check_builtup(){
+		var pattern = new RegExp('[0-9]');
 		var length=$("#builtup").val().length;
-		if(length<=3){
+		if(pattern.test($("#builtup").val()) && length>3){
+			$("#builtup_error").hide();
+			
+		}else{
 			$("#builtup_error").html("Please enter builtup");
 			$("#builtup_error").show();
 			error_builtup=true;
-		}else{
-			$("#builtup_error").hide();
 		}
 	}
-//	function check_price(){
-//		var length=$("#price").val().length;
-//		if(length<=3){
-//			$("#price_error").html("Please enter price");
-//			$("#price_error").show();
-//			error_price=true;
-//		}else{
-//			$("#price_error").hide();
-//		}
-//	}
 	function check_description(){
 		var length=$("#description").val().length;
 		if(length<=3){
@@ -152,10 +139,11 @@ $(function(){
 		 error_address=false;
 		 error_city=false;
 		 error_mobile=false;
-		 
+		 error_builtup=false;
 		 check_address();
 		 check_city();
 		 check_mobile();
+		 check_builtup();
 		 if(
 			 error_address==false &&
 			 error_city==false &&
@@ -166,36 +154,115 @@ $(function(){
 			 return false;
 		 }
 	});
+	//realestate form submition
 	$("#real_form").submit(function(){
 		error_title=false;
-		 error_type=false;
-		 error_address=false;
-		 error_builtup=false;
-		 error_price=false;
-		 error_description=false;
-		 error_facilities=false;
-		 error_city=false;
-		 error_area=false;
-		 
+		error_address=false;
+		error_description=false;
+		error_facilities=false;
+		error_city=false;
+		error_area=false;
+		error_builtup=false;
 		 check_title();
-		 check_type();
 		 check_address();
-		 check_builtup();
-		 check_price();
 		 check_description();
 		 check_facilities();
 		 check_city();
 		 check_area();
-		 if(error_title==false &&
-		     error_type==false &&
-			 error_address==false &&
-			 error_builtup==false &&
-			 error_price==false &&
-			 error_description==false && 
-			 error_facilities==false &&
-			 error_city==false &&
-			 error_area==false
-		 ){
+		 check_builtup();
+		 if(error_title==false && error_address==false && error_description==false && error_facilities==false && error_city==false && error_area==false && error_builtup==false){
+			 return true;
+		 }else{
+			 return false;
+		 }
+	});
+	//Tution form
+	$("#tut_form").submit(function(){
+		error_title=false;
+		error_address=false;
+		error_description=false;
+		error_city=false;
+		error_area=false;
+		 check_title();
+		 check_address();
+		 check_description();
+		 check_city();
+		 check_area();
+		 if(error_title==false && error_address==false && error_description==false &&  error_city==false && error_area==false ){
+			 return true;
+		 }else{
+			 return false;
+		 }
+	});
+	//Hotel form
+	$("#hotel_form").submit(function(){
+		error_title=false;
+		error_address=false;
+		error_description=false;
+		error_city=false;
+		error_area=false;
+		error_facilities=false;
+		 check_title();
+		 check_address();
+		 check_description();
+		 check_facilities();
+		 check_city();
+		 check_area();
+		 if(error_title==false && error_address==false && error_description==false &&  error_city==false && error_area==false && error_facilities==false){
+			 return true;
+		 }else{
+			 return false;
+		 }
+	});
+	//Travellig form
+	$("#travel_form").submit(function(){
+		error_title=false;
+		error_address=false;
+		error_description=false;
+		error_city=false;
+		error_area=false;
+		 check_title();
+		 check_address();
+		 check_description();
+		 check_city();
+		 check_area();
+		 if(error_title==false && error_address==false && error_description==false &&  error_city==false && error_area==false){
+			 return true;
+		 }else{
+			 return false;
+		 }
+	});
+	//Automobile form
+	$("#auto_form").submit(function(){
+		error_title=false;
+		error_address=false;
+		error_description=false;
+		error_city=false;
+		error_area=false;
+		 check_title();
+		 check_address();
+		 check_description();
+		 check_city();
+		 check_area();
+		 if(error_title==false && error_address==false && error_description==false &&  error_city==false && error_area==false){
+			 return true;
+		 }else{
+			 return false;
+		 }
+	});
+	//Other Form
+	$("#other_form").submit(function(){
+		error_title=false;
+		error_address=false;
+		error_description=false;
+		error_city=false;
+		error_area=false;
+		 check_title();
+		 check_address();
+		 check_description();
+		 check_city();
+		 check_area();
+		 if(error_title==false && error_address==false && error_description==false &&  error_city==false && error_area==false){
 			 return true;
 		 }else{
 			 return false;
