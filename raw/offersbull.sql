@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 19, 2016 at 05:10 AM
+-- Generation Time: Nov 23, 2016 at 02:00 PM
 -- Server version: 5.7.9
 -- PHP Version: 5.6.16
 
@@ -31,6 +31,7 @@ CREATE TABLE IF NOT EXISTS `adminlogin` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `username` varchar(255) DEFAULT NULL,
   `password` varchar(255) DEFAULT NULL,
+  `name` varchar(255) DEFAULT NULL,
   `lastlogin` varchar(255) DEFAULT NULL,
   `ip` varchar(255) DEFAULT NULL,
   `useragent` varchar(255) DEFAULT NULL,
@@ -41,8 +42,9 @@ CREATE TABLE IF NOT EXISTS `adminlogin` (
 -- Dumping data for table `adminlogin`
 --
 
-INSERT INTO `adminlogin` (`id`, `username`, `password`, `lastlogin`, `ip`, `useragent`) VALUES
-(1, 'rahul', 'rahul', NULL, NULL, NULL);
+INSERT INTO `adminlogin` (`id`, `username`, `password`, `name`, `lastlogin`, `ip`, `useragent`) VALUES
+(0, 'rahul', 'rahul', 'rahul', NULL, NULL, NULL),
+(1, 'abs@gmail.com', '33a485cb146e1153c69b588c671ab474f2e5b800', 'abs', NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -238,17 +240,24 @@ CREATE TABLE IF NOT EXISTS `realestate` (
   `category` tinyint(4) DEFAULT NULL,
   `userid` tinyint(4) DEFAULT NULL,
   PRIMARY KEY (`realid`)
-) ENGINE=MyISAM AUTO_INCREMENT=202 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=37 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `realestate`
 --
 
 INSERT INTO `realestate` (`realid`, `name`, `title`, `type`, `address`, `builtup`, `price`, `description`, `mobile`, `email`, `amenities`, `city`, `area`, `date`, `offerend`, `category`, `userid`) VALUES
-(197, 'abhijit', 'Home to sell in Morewadi, Pimpri', 'Sell', 'Morwadi, Pimpri', '4000', '20000000', 'Nice home, And awesome location, Beautiful environment ', '9168277713', 'abhijitkumbhar001@gmail.com', 'Just Awesome !!!', 'Pimpri-Chinchwad', 'Morwadi', '2016-11-18 09:54:08', '0000-00-00 00:00:00', 0, 24),
-(199, 'abhijit', 'Row houses on rent', 'Rent', 'Lawasa, Pune', '2500', '8000', 'Best row houses, Enjoy the trip and experience the beauty of Lawasa', '9168277713', 'abhijitkumbhar001@gmail.com', 'Just awesome', 'Lawasa', 'Lawasa', '2016-11-18 10:01:12', '0000-00-00 00:00:00', 0, 24),
-(200, 'abhijit', 'What is Lorem Ipsum?', 'Sell', 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using ''Content here, content here'', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for ''lorem ipsum'' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).\r\n\r\n', '3330', '2222222', 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using ''Content here, content here'', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for ''lorem ipsum'' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).\r\n\r\n', '9168277713', 'abhijitkumbhar001@gmail.com', 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using ''Content here, content here'', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for ''lorem ipsum'' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).\r\n\r\n', 'What is Lorem Ipsum?', 'What is Lorem Ipsum?', '2016-11-18 15:08:06', '0000-00-00 00:00:00', 0, 24),
-(201, 'abhijit', 'Why do we use it?', 'Sell', 'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don''t look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn''t anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.', '2000', '33322', 'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don''t look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn''t anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.', '9168277713', 'abhijitkumbhar001@gmail.com', 'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don''t look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn''t anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.', 'Why do we use it?', 'Why do we use it?', '2016-11-18 15:08:54', '0000-00-00 00:00:00', 0, 24);
+(25, 'Balu', 'Flat to rent', NULL, 'Pune', '', '', 'Nice flat', '48484848484', 'asdf', NULL, 'Pune', 'asdf', '2016-11-23 06:59:55', NULL, 0, 0),
+(22, 'abhijit', 'Home to sell in pune', NULL, 'Kharadi, Pune', '2000', '', 'Nice and awesome home', '9168277713', 'abhijitkumbhar001@gmail.com', NULL, 'Pune', 'Kharadi', '2016-11-23 06:36:25', NULL, 0, 0),
+(26, 'lkasdjf', 'kjsddfljasdf', NULL, 'ksdjf', 'asd', 'asdf', 'asdfa', 'dsfda', 'sff', NULL, 'asdfa', 'asdf', '2016-11-23 07:07:06', NULL, 0, 0),
+(27, 'asdf', 'sqw', NULL, 'dwww', 'ee', '', 'eee', 'ee', 'eeee', NULL, 'asdf', 'eeeeee', '2016-11-23 07:08:10', NULL, 0, 0),
+(28, 'asd', 'aaaaaaaaaa', NULL, 'aaaaaaaaaa', '', '', 'aaaaaaaaaa', 'aaaaaaaaaa', 'aaaaaaaaaa', NULL, 'aaaaaaaaaa', 'aaaaaaaaaa', '2016-11-23 07:10:03', NULL, 0, 0),
+(29, 'asdfsfd', 'sdfd', NULL, 'sdfs', '', '', 'sdf', 'sdf', 'sdf', NULL, 'sdf', 'sdf', '2016-11-23 07:12:19', NULL, 0, 0),
+(30, 'abhijit', 'asdf', NULL, 'sdfdf', 'df', 'dfd', 'fdfdf', 'dfdf', 'ffffffffs', NULL, 'sssss', 'ssss', '2016-11-23 07:26:55', NULL, 0, 0),
+(31, 'asdf', 'sdfd', NULL, 'fddfdffd', 'fdffdf', '', 'dfdf', 'fdfd', 'fdfdfdfd', NULL, 'fdfdfd', 'dffdf', '2016-11-23 07:33:46', NULL, 0, 0),
+(32, 'asdf', 'dddd', NULL, 'dddddd', '', '', 'dddd', 'ddd', 'ddd', NULL, 'ddd', 'ddd', '2016-11-23 07:34:38', NULL, 0, 0),
+(33, 'asdfsfdd', 'dd', NULL, 'ddddd', '', '', 'dddd', 'dfdfddf', 'dfdf', NULL, 'dfdfd', 'fdffd', '2016-11-23 07:35:20', NULL, 0, 0),
+(36, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2016-11-23 12:17:00', NULL, 0, NULL);
 
 -- --------------------------------------------------------
 
@@ -263,7 +272,7 @@ CREATE TABLE IF NOT EXISTS `real_img` (
   `realid` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `real_id` (`realid`)
-) ENGINE=MyISAM AUTO_INCREMENT=46 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=64 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `real_img`
@@ -275,7 +284,25 @@ INSERT INTO `real_img` (`id`, `path`, `realid`) VALUES
 (42, 'uploads/real/24/2016-11-18_15-31-12_0.jpg', 199),
 (43, 'uploads/real/24/2016-11-18_15-31-12_1.jpg', 199),
 (44, 'uploads/real/24/2016-11-18_20-38-06_0.jpg', 200),
-(45, 'uploads/real/24/2016-11-18_20-38-54_0.jpg', 201);
+(45, 'uploads/real/24/2016-11-18_20-38-54_0.jpg', 201),
+(46, 'uploads/real/101/2016-11-23_09-44-36_0.jpg', 7),
+(47, 'uploads/real/0/2016-11-23_09-54-28_0.jpg', 17),
+(48, 'uploads/real/0/2016-11-23_09-54-28_1.jpg', 17),
+(49, 'uploads/real/0/2016-11-23_10-12-50_0.jpg', 20),
+(50, 'uploads/real/0/2016-11-23_10-26-41_0.jpg', 21),
+(51, 'uploads/real/0/2016-11-23_10-28-35_0.jpg', 23),
+(52, 'uploads/real/101/2016-11-23_10-49-58_0.jpg', 24),
+(53, 'uploads/real/0/2016-11-23_12-29-55_0.jpg', 25),
+(54, 'uploads/real/0/2016-11-23_12-37-06_0.jpg', 26),
+(55, 'uploads/real/0/2016-11-23_12-38-10_0.jpg', 27),
+(56, 'uploads/real/0/2016-11-23_12-40-03_0.jpg', 28),
+(57, 'uploads/real/0/2016-11-23_12-42-19_0.jpg', 29),
+(58, 'uploads/real/0/2016-11-23_12-56-55_0.jpg', 30),
+(59, 'uploads/real/0/2016-11-23_13-03-46_0.jpg', 31),
+(60, 'uploads/real/0/2016-11-23_13-04-38_0.jpg', 32),
+(61, 'uploads/real/0/2016-11-23_13-05-20_0.jpg', 33),
+(62, 'uploads/real/0/2016-11-23_13-05-43_0.jpg', 34),
+(63, 'uploads/real/0/2016-11-23_13-08-51_0.jpg', 35);
 
 -- --------------------------------------------------------
 
@@ -295,14 +322,16 @@ CREATE TABLE IF NOT EXISTS `register` (
   `address` longtext CHARACTER SET utf8 COLLATE utf8_unicode_ci,
   `city` longtext CHARACTER SET utf8 COLLATE utf8_unicode_ci,
   PRIMARY KEY (`reg_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=25 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=103 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `register`
 --
 
 INSERT INTO `register` (`reg_id`, `username`, `mobile`, `email`, `password`, `otp`, `status`, `address`, `city`) VALUES
-(24, 'abhijit', '9168277713', 'abhijitkumbhar001@gmail.com', '33a485cb146e1153c69b588c671ab474f2e5b800', NULL, 1, 'Morwadi, Pimpri', 'Pimpri-Chinchwad');
+(0, 'abs', '9168277713', 'abhijitkumbhar001@gmail.com', '33a485cb146e1153c69b588c671ab474f2e5b800', NULL, 1, 'Karad', 'Karad'),
+(101, 'balu', NULL, 'balu@gmail.com', '33a485cb146e1153c69b588c671ab474f2e5b800', NULL, 1, 'Khadaki', 'Nagar'),
+(1, 'rahul', '9876543210', 'rahul@gmail.com', '33a485cb146e1153c69b588c671ab474f2e5b800', NULL, 1, 'Kolhapur', 'Kolhapur');
 
 -- --------------------------------------------------------
 
