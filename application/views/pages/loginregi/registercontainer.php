@@ -19,7 +19,7 @@
 					<input type="password" name="cpassword" placeholder="Confirm Password" required="">
 					<div class="signin-rit">
 						<span class="agree-checkbox">
-							<label class="checkbox"><input type="checkbox" name="checkbox" required="">I agree to your <a class="w3layouts-t" href="terms.html" target="_blank">Terms of Use</a> and <a class="w3layouts-t" href="privacy.html" target="_blank">Privacy Policy</a></label>
+							<label class="checkbox"><input type="checkbox" name="checkbox" required="">I agree to your <a class="w3layouts-t" href="<?php echo base_url();?>Help/terms" target="_blank">Terms of Use</a> and <a class="w3layouts-t" href="<?php echo base_url();?>Help/privacy" target="_blank">Privacy Policy</a></label>
 						</span>
 					</div>
 					<input type="submit" value="Sign Up">

@@ -1,20 +1,20 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-	class Hotel extends CI_Controller{
+	class Other extends CI_Controller{
 		public function index(){
 			
 		}
-		public function hotres(){
-			$category['template'] = "hotel";
+		public function others(){
+			$category['template'] = "other";
 			$category['datas']=null;
 			$category['msearch']=null;
 			//pagination
 			$this->load->library('pagination');
 			$config = array();
-			$config["base_url"] = base_url()."Hotel/hotel";
+			$config["base_url"] = base_url()."Other/others";
 			$config["per_page"] = 5;
 			$config["num_links"] = 5;
-			$config["total_rows"] = $this->db->get('hotel')->num_rows();
+			$config["total_rows"] = $this->db->get('other')->num_rows();
 			// bootstraping 
 			$config["full_tag_open"] = '<ul class="pagination">';
 			$config["full_tag_close"] = '</ul>';	
@@ -35,28 +35,28 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			$config['num_tag_open'] = '<li>';
 			$config['num_tag_close'] = '</li>';
 			$this->pagination->initialize($config);
+//			$data['query'] = $this->db->get('realestate',$config['per_page'],$this->uri->segment(3));
 			$this->load->view('pages/mainpage',$category);
 		}
-		public function manage_view($hotelid)
+		public function manage_view($otherid)
 		{
-		  $id['hotelid']=$hotelid;
-			$this->load->view('pages/hotel/hotel_view',$id);
+		  $id['otherid']=$otherid;
+			$this->load->view('pages/other/other_view',$id);
 		}
 		public function search()
 		{	
 			
 			$data['city'] = $this->input->post('city');
 			$data['type'] = $this->input->post('type');
-			$data['price'] = $this->input->post('price');
 			$result['msearch']=null;
-			$result['datas'] = $this->BasicModel->hotel_search($data);
+			$result['datas'] = $this->BasicModel->other_search($data);
 			//pagination if query returns empty results
 			$this->load->library('pagination');
 			$config = array();
-			$config["base_url"] = base_url()."Hotel/hotel";
+			$config["base_url"] = base_url()."Other/search";
 			$config["per_page"] = 5;
 			$config["num_links"] = 5;
-			$config["total_rows"] = $this->db->get('hotel')->num_rows();
+			$config["total_rows"] = $this->db->get('other')->num_rows();
 			// bootstraping
 			$config["full_tag_open"] = '<ul class="pagination">';
 			$config["full_tag_close"] = '</ul>';
@@ -77,7 +77,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			$config['num_tag_open'] = '<li>';
 			$config['num_tag_close'] = '</li>';
 			$this->pagination->initialize($config);
-			$result['template'] = "hotel";
+			$result['template'] = "other";
 			$this->load->view('pages/mainpage',$result);
 		}
 		

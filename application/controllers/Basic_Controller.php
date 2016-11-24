@@ -358,7 +358,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					$config['upload_path']=  FCPATH.$basepath."/".$userid."/";
 					$config['file_name']=$timestamp.$i.'.jpg';
 					$config['allowed_types']= 'jpg|png';
-					$config['max_size']= 2048;
+					$config['max_size']= 5120;
 					
 					$this->load->library('upload', $config);
 					$this->upload->initialize($config);
@@ -369,9 +369,21 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					}
 					else
 					{
-						$da = array('upload_data' => $this->upload->data());
+						$da =$this->upload->data();
+						$image_path =$basepath."/".$userid."/".$config['file_name'];
+						//echo $image_path;die();
+						$config['image_library'] = 'gd2';
+						$config['source_image'] =  $da['full_path'];
+						$config['create_thumb'] = FALSE;
+						$config['maintain_ratio'] = TRUE;
+						$config['quality']      = 100;
+						$config['width']         = 600;
+						$config['height']       = 350;
+						$this->image_lib->clear();
+						$this->load->library('image_lib', $config);
+						$this->image_lib->initialize($config);
+						$this->image_lib->resize();
 						$image_path = $basepath."/".$userid."/".$config['file_name'];
-						
 						$category_id = $category_data['category_id'];
 						$category_table = $category_data['category_table'];
 						$category_img_table = $category_data['category_img_table'];
@@ -401,7 +413,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					$config['upload_path']=  FCPATH.$basepath."/".$userid."/";
 					$config['file_name']=$timestamp.$i.'.jpg';
 					$config['allowed_types']= 'jpg|png';
-					$config['max_size']= 2048;
+					$config['max_size']= 5120;
 						
 					$this->load->library('upload', $config);
 					$this->upload->initialize($config);
@@ -409,22 +421,35 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					if ( ! $this->upload->do_upload('img'))
 					{
 						$error = array('error' => $this->upload->display_errors());
+						//print_r($error);die();
 					}
 					else
 					{
-						$da = array('upload_data' => $this->upload->data());
+						$da =$this->upload->data();
 						$image_path = $basepath."/".$userid."/".$config['file_name'];
-						
+						//echo $image_path;die();
+						$config['image_library'] = 'gd2';
+						$config['source_image'] =  $da['full_path'];
+						$config['create_thumb'] = FALSE;
+						$config['maintain_ratio'] = TRUE;
+						$config['quality']      = 100;
+						$config['width']         = 600;
+						$config['height']       = 350;
+						$this->image_lib->clear();
+						$this->load->library('image_lib', $config);
+						$this->image_lib->initialize($config);
+							
+						$this->image_lib->resize();
 						$category_id = $category_data['category_id'];
 						$category_table = $category_data['category_table'];
 						$category_img_table = $category_data['category_img_table'];
-						
 						$query = $this->db->query("SELECT $category_id from $category_table where userid='$userid' ORDER BY date DESC LIMIT 1");
 						$row = $query->row();
+						//print_r($row);die();
 						$cat_id =  $row->$category_id;
 						$pathdata = array(
 							'path'=>$image_path,
-							$category_id=>$cat_id,	
+							'realid'=>$cat_id,	
 						);
 						$this->db->insert($category_img_table,$pathdata);
 					}

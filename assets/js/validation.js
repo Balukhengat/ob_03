@@ -10,6 +10,7 @@ $(function(){
 	$("#facilities_error").hide();
 	$("#city_error").hide();
 	$("#area_error").hide();
+	$("#price_error").hide();
 	var error_name=false;
 	var error_title=false;
 	var error_type=false;
@@ -21,6 +22,7 @@ $(function(){
 	var error_facilities=false;
 	var error_city=false;
 	var error_area=false;
+	var error_price=false;
 	
 	$("#title").focusout(function(){
 		check_title();
@@ -71,6 +73,26 @@ $(function(){
 			error_title=true;
 		}else{
 			$("#title_error").hide();
+		}
+	}
+	function check_type(){
+		var length=$("#type").val().length;
+		if(length==0){
+			$("#type_error").html("Type Field is required");
+			$("#type_error").show();
+			error_type=true;
+		}else{
+			$("#type_error").hide();
+		}
+	}
+	function check_price(){
+		var length=$("#price").val().length;
+		if(length==0){
+			$("#price_error").html("Price Field is required");
+			$("#price_error").show();
+			error_price=true;
+		}else{
+			$("#price_error").hide();
 		}
 	}
 	function check_address(){
@@ -263,6 +285,20 @@ $(function(){
 		 check_city();
 		 check_area();
 		 if(error_title==false && error_address==false && error_description==false &&  error_city==false && error_area==false){
+			 return true;
+		 }else{
+			 return false;
+		 }
+	});
+	//Real Search
+	$("#real_search").submit(function(){
+		error_type=false;
+		error_price=false;
+		error_city=false;
+		 check_type();
+		 check_price();
+		 check_city();
+		 if(error_type==false && error_city==false && error_price==false){
 			 return true;
 		 }else{
 			 return false;

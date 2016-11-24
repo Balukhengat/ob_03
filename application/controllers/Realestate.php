@@ -45,19 +45,21 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		}
 		public function search()
 		{	
-			
+			$config = array();
+			$config["per_page"] = 5;
+			//$data1['page'] = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
 			$data['city'] = $this->input->post('city');
 			$data['type'] = $this->input->post('type');
 			$data['price'] = $this->input->post('price');
 			$result['msearch']=null;
 			$result['datas'] = $this->BasicModel->real_search($data);
+			//$sum=count($result['datas']);echo $sum;die();
+			//print_r($result['datas']);die();
 			//pagination if query returns empty results
-			$this->load->library('pagination');
-			$config = array();
-			$config["base_url"] = base_url()."Realestate/real";
-			$config["per_page"] = 5;
-			$config["num_links"] = 5;
-			$config["total_rows"] = $this->db->get('realestate')->num_rows();
+			$config["base_url"] = base_url()."Realestate/search";
+			$config["uri_segment"] = 3;
+			$config["total_rows"] = count($result['datas']);//$this->db->get('realestate')->num_rows();
+			$config["num_links"] = floor($config["total_rows"]/$config["per_page"]);
 			// bootstraping
 			$config["full_tag_open"] = '<ul class="pagination">';
 			$config["full_tag_close"] = '</ul>';
@@ -77,7 +79,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			$config['cur_tag_close'] = '</a></li>';
 			$config['num_tag_open'] = '<li>';
 			$config['num_tag_close'] = '</li>';
+			$this->load->library('pagination',$config);
 			$this->pagination->initialize($config);
+			$result['pagination'] = $this->pagination->create_links();
 			$result['template'] = "realestate";
 			$this->load->view('pages/mainpage',$result);
 		}

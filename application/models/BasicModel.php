@@ -326,8 +326,9 @@ class BasicModel extends CI_Model{
 // 		$this->db->select('*');
 // 		$this->db->where("city='$city' AND type='$type' AND 	price <=$price");
 // 		$this->db->from('realestate');
-		
-		return $this->db->query($str)->result_array();
+		//$this->db->where($str);
+		return $this->db->query($str)->result();
+	//return	$this->db->get('realestate',5,$this->uri->segment(3))->result();
 	}
 	public function tution_search($data){
 		$city = $data['city'];
@@ -368,6 +369,12 @@ class BasicModel extends CI_Model{
 		$str="select * from travelling	 where title='$title'";
 		return $this->db->query($str)->result_array();
 	}
+	public function other_search($data){
+		$city = $data['city'];
+		$type = $data['type'];
+		$str="select * from other where city='$city' and title='$type'";
+		return $this->db->query($str)->result_array();
+	}
 	/* ************************************************************
 	 * 					Main SEARCHES
 	 *************************************************************/
@@ -375,20 +382,21 @@ class BasicModel extends CI_Model{
 		$data=$this->input->post('Search');
 		$category=$this->input->post('category');
 		//$data=explode(" ",$data);
-		if($category=="tution" || $category=="travelling"){
+		if($category=="tution" || $category=="travelling" || $category=="other"){
 			$this->db->select('*');
 			$this->db->from($category);
-			//	$this->db->or_from('tution');
+			//	$this->db->or_from('tution');.
 			$this->db->like('title',$data);
 			$this->db->or_like('city',$data);
 			return $this->db->get()->result_array();
 		}else{
-		$this->db->select('*');
+		$this->db->select('*');	
 		$this->db->from($category);
 		//	$this->db->or_from('tution');
-		$this->db->like('title',$data);
-		$this->db->or_like('type',$data);
-		$this->db->or_like('city',$data);
+		$this->db->like('title',$data,'both');
+		$this->db->or_like('type',$data,'both');
+		$this->db->or_like('city',$data,'both');
+		$this->db->or_like('area',$data,'both');
 		return $this->db->get()->result_array();
 		}
 		

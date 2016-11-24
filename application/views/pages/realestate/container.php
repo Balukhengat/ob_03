@@ -8,12 +8,11 @@
 	?>
 	<?php $this->load->view('layout/category.php');?>
 	<!-- breadcrumbs -->
-	
 	<div class="w3layouts-breadcrumbs text-center">
 		<div class="container">
 			<span class="agile-breadcrumbs">
-				<a href="<?php echo base_url();?>index.php"><i class="fa fa-home home_1"></i></a> / 
-				<a href="<?php echo base_url();?>index.php"><span>Real Estate</span></a>
+				<a href="<?php echo base_url();?>"><i class="fa fa-home home_1"></i></a> / 
+				<a href="<?php echo base_url();?>Realestate/real"><span>Real Estate</span></a>
 			</span>
 		</div>
 	</div>
@@ -23,26 +22,28 @@
 		<div class="container">
 			<div class="select-box">
 																					<!-- @ SEARCH -->
-			<form method="post" id="search" name="search" action="<?php echo base_url();?>Realestate/search">
+			<form method="post" id=real_search name="search" action="<?php echo base_url();?>Realestate/search">
 				<div class="select-city-for-local-ads ads-list">
-					<label>Select your city to see local ads</label>
+					<label>Select your city</label><span style="color: red;">*</span> 
 						<select id="city" name="city">	
-							<option>Select</option>
+							<option value="">Select</option>
 							<option>Pune</option>
 							<option>Mumbai</option>						
 			            </select>
+			            <div><span class="error" id="city_error"></span></div>
 				</div>
 				<div class="browse-category ads-list">
-					<label>Rent / Purchase</label>
+					<label>Rent / Purchase</label><span style="color: red;">*</span>
 					<select id="type" name="type">
-					  <option>Select</option>
+					  <option value="">Select</option>
 					  <option>Rent</option>
 					  <option>Sell</option>
 					  <option>Any</option>
 					</select>
+					<div><span class="error" id="type_error"></span></div> 
 				</div>
 				<div class="select-city-for-local-ads ads-list">
-					<label>Select Price</label>
+					<label>Select Price</label><span style="color: red;">*</span>
 					<select id="price" name="price">
 					  <option value="">Select</option>
 					  <option value="0">0 to 10,000</option>
@@ -50,7 +51,8 @@
 					  <option value="2">50,000 to 1 lakh</option>
 					  <option value="3">1 lakh to 50 lakh</option>
 					  <option value="4">50 lakh and above</option>
-					</select>	
+					</select>
+					<div> <span class="error" id="price_error"></span></div>	
 				</div>
 				<div class="search-product ads-list">
 					<label>&nbsp;</label>
@@ -103,17 +105,17 @@
 								<?php } } elseif ($msearch==null) { 
 									foreach ($datas as $row1)
 								{?>
-								<a href="<?php echo base_url();?>realestate/manage_view/<?php echo $row1['realid'];?>">
+								<a href="<?php echo base_url();?>realestate/manage_view/<?php echo $row1->realid;?>">
 									<li>
 									<img src="<?php echo base_url();?>assets/images/r1.jpg" title="" alt="" />
 									<section class="list-left">
-									<h5 class="title"><?php echo $row1['title']?></h5>
-									<span class="adprice">RS. <?php echo $row1['price']?>/-</span>
-									<p class="catpath">Real Estate » <?php echo $row1['type']?></p>
+									<h5 class="title"><?php echo $row1->title?></h5>
+									<span class="adprice">RS. <?php echo $row1->price?>/-</span>
+									<p class="catpath">Real Estate » <?php echo $row1->type?></p>
 									</section>
 									<section class="list-right">
-									<span class="date"><?php echo $row1['date']?></span>
-									<span class="cityname"><?php echo $row1['city']?></span>
+									<span class="date"><?php echo $row1->date?></span>
+									<span class="cityname"><?php echo $row1->city?></span>
 									</section>
 									<div class="clearfix"></div>
 									</li> 
@@ -162,6 +164,7 @@
 						</div>
 						<div class="pagination pagination-sm ">
 							<?php if($datas==null && $msearch==null){ echo $this->pagination->create_links();}?>
+							<?php  if($query==null){ echo $this->pagination->create_links();}?>
 						</div>
 					  </div>
 					</div>
@@ -214,4 +217,8 @@
 			</div>
 		</div>	
 	</div>
+	<script type="text/javascript" src="<?php echo base_url();?>assets/js/jquery.min.js">
+</script>
+<script type="text/javascript" lang="javascript" src="<?php echo base_url();?>assets/js/validation.js">
+</script>
 	<!-- // Real estates -->

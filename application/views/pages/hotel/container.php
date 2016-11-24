@@ -161,7 +161,8 @@
 							</div>
 						</div>
 						<div class="pagination pagination-sm ">
-							<?php if($datas==null && $msearch==null){ echo $this->pagination->create_links();}?>
+						<?php if($datas==null && $msearch==null){ echo $this->pagination->create_links();}?>
+							<?php  if($query==null){ echo $this->pagination->create_links();}?>
 						</div>
 					  </div>
 					</div>

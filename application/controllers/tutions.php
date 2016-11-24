@@ -14,7 +14,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			$config["base_url"] = base_url()."Tutions/tution";
 			$config["per_page"] = 5;
 			$config["num_links"] = 5;
-			$config["total_rows"] = $this->db->get('realestate')->num_rows();
+			$config["total_rows"] = $this->db->get('tution')->num_rows();
 			// bootstraping 
 			$config["full_tag_open"] = '<ul class="pagination">';
 			$config["full_tag_close"] = '</ul>';	
@@ -56,7 +56,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			$config["base_url"] = base_url()."Tutions/tution";
 			$config["per_page"] = 5;
 			$config["num_links"] = 5;
-			$config["total_rows"] = $this->db->get('realestate')->num_rows();
+			$config["total_rows"] = $this->db->get('tution')->num_rows();
 			// bootstraping
 			$config["full_tag_open"] = '<ul class="pagination">';
 			$config["full_tag_close"] = '</ul>';

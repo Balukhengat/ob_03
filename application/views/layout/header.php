@@ -73,6 +73,7 @@
 								<option value="hotel">Hotels & Restaurents </option>
 								<option value="travelling">Travelling</option>
 								<option value="automobile">Automobiles</option>
+								<option value="other">Other</option>
 							</select>
 							<button type="submit" class="btn btn-default" aria-label="Left Align">
 								<i class="fa fa-search" aria-hidden="true"> </i>

@@ -80,19 +80,59 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			}
 			
 		}
+		public function forgotpage(){
+			$temp['pagename'] = 'forgot_pass.php';
+			//$temp['email']=$email;
+			$this->load->view('pages/loginregi/login.php',$temp);
+		}
+		public function forgot()
+		{
+			$email=$this->input->post('email');
+			$check=$this->db->get_where('register',array('email'=>$email))->row();
+			if(!$check){ 
+				$this->session->set_flashdata('message','Email NOt exits');
+				redirect(base_url().'login/forgotpage');
+				
+				}else{
+				$email_status = $this->BasicModel->email($email);
+				if($email_status){
+					$temp['pagename'] = 'otp.php';
+					$temp['email']=$email;
+					$this->load->view('pages/loginregi/login',$temp);
+				}
+			}
+		
+		}
 		public function mainsearch(){
 			$data=$this->input->post('Search');
 			$name=$this->input->post('category');
+			if($name=="realestate"){
+				$sub="real";
+			}elseif($name=="tution"){
+				$sub="tution";
+			} 
+			elseif($name=="hotel"){
+				$sub="hotres";
+			}
+			elseif($name=="travelling"){
+				$sub="travel";
+			}
+			elseif($name=="automobile"){
+				$sub="auto";
+			}
+			elseif($name=="other"){
+				$sub="others";
+			}
 			$category['msearch']=$this->BasicModel->main_search();
 			//print_r($category['msearch']);die();
 			$category['template'] =$name;
 			$category['datas']=null;
 			$this->load->library('pagination');
 			$config = array();
-			$config["base_url"] = base_url()."Realestate/real";
+			$config["base_url"] = base_url().$name."/".$sub;
 			$config["per_page"] = 5;
 			$config["num_links"] = 5;
-			$config["total_rows"] = $this->db->get('realestate')->num_rows();
+			$config["total_rows"] = $this->db->get($name)->num_rows();
 			// bootstraping
 			$config["full_tag_open"] = '<ul class="pagination">';
 			$config["full_tag_close"] = '</ul>';
