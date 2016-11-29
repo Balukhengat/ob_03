@@ -2,7 +2,7 @@
 	 <section>
 		<div id="agileits-sign-in-page" class="sign-in-wrapper">
 			<div id="signin" class="agileinfo_signin">
-			<h3>Sign In</h3>
+			<h3>Forgot Password</h3>
 				<form action="<?php echo base_url();?>login/forgot" method="post">
 					<input type="email" name="email" placeholder="Your Email" required=""> 
 						<?php if($this->session->flashdata('message')!=null){?>

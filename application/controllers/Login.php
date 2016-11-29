@@ -71,18 +71,19 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		
 				$this->db->update('register');
 				//go to user profile with session
+				$temp['pagename'] = 'changepassword.php';
 				$this->session->set_flashdata('message','Successfully registered, Please login again');
-				redirect(base_url().'login/login');
+				$this->load->view('pages/loginregi/login.php',$temp);
 			}else{
 				$temp['pagename'] = 'otp.php'; 
 				$temp['email']=$email;
+				$this->session->set_flashdata('message','Incorrect OTP');
 				$this->load->view('pages/loginregi/login.php',$temp);
 			}
 			
 		}
-		public function forgotpage(){
+		public function forgotpassword(){
 			$temp['pagename'] = 'forgot_pass.php';
-			//$temp['email']=$email;
 			$this->load->view('pages/loginregi/login.php',$temp);
 		}
 		public function forgot()
@@ -91,7 +92,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			$check=$this->db->get_where('register',array('email'=>$email))->row();
 			if(!$check){ 
 				$this->session->set_flashdata('message','Email NOt exits');
-				redirect(base_url().'login/forgotpage');
+				redirect(base_url().'login/forgotpassword');
 				
 				}else{
 				$email_status = $this->BasicModel->email($email);
@@ -103,6 +104,25 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			}
 		
 		}
+		public function changepassword($id="")
+		{
+			$pass=$this->input->post("password");
+			$confirmpass=$this->input->post("confirmpassword");
+			if($pass==$confirmpass){
+			 $this->db->set('password',sha1($pass));
+			 $this->db->where('reg_id',$id);
+			 $this->db->update('register');
+			 $this->session->set_flashdata('message','Password Changed Successfully');
+			 $temp['pagename'] = 'logincontainer.php';
+			 $this->load->view('pages/loginregi/login',$temp);
+			}else{
+				$this->session->set_flashdata('message','Password not matched');
+				$temp['pagename'] = 'changepassword.php';
+				$temp['email']=$email;
+				$this->load->view('pages/loginregi/login',$temp);
+			}
+		}
+		
 		public function mainsearch(){
 			$data=$this->input->post('Search');
 			$name=$this->input->post('category');
