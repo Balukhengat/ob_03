@@ -19,28 +19,6 @@
 						<a href="<?php echo base_url();?>Login/newuser" aria-expanded="false"><i class="fa fa-user-plus" aria-hidden="true"></i> Register</a>
 					</li>
 					<?php }?>
-					
-					<li class="dropdown head-dpdn">
-						<div class="header-right">			
-						<!-- ANDROID APP MODAL -->
-								<div class="agile-its-selectregion">
-									<button class="btn btn-primary" data-toggle="modal" data-target="#myModal">
-									<i class="fa fa-download" aria-hidden="true"></i>Download Mobile App </button>
-										<div class="modal fade" id="myModal" tabindex="-1" role="dialog"
-										aria-hidden="true">
-											<div class="modal-dialog modal-lg">
-												<div class="modal-content">
-													<div class="modal-header">
-														<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-															&times;</button>
-															<span style="color: green;">COMING SOON !</span>
-													</div>
-												</div>
-											</div>
-										</div>
-								</div>
-						</div>
-					</li>
 					<li class="dropdown head-dpdn">
 						<a href="<?php echo base_url();?>help"><i class="fa fa-question-circle" aria-hidden="true"></i> Help</a>
 					</li>

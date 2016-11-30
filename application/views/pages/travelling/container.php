@@ -224,19 +224,16 @@ $(function(){
 	        	url:url,
 	        	data:{val:val},
 	        	success:function(response)
-	        	{ //var arr=response.split(":");
+	        	{
 	        		if(response!=null)
 	        		{ 
 	        			jQuery("#result").hide();
 	        			jQuery("#result1").show();
-	        			   
-		        			jQuery("#title").html(response.title);
-		        			jQuery("#price").html(response.price);
-		        			jQuery("#name").html(response.name);
-		        			jQuery("#date").html(response.date);
-		        			jQuery("#city").html(response.city);
-		        		//alert(response);
-		        			alert(response["title"]);
+	        			for(var i=0;i<response.length;i++){
+		        			alert(json[i]);
+	        	            $('#title').append(json[i].title)
+	        	        }
+		        			alert(typeof[arr]);
 	        		}
 	        		else
 	        		{

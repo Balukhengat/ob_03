@@ -72,6 +72,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				$this->db->update('register');
 				//go to user profile with session
 				$temp['pagename'] = 'changepassword.php';
+				$temp['email'] = $email;
 				$this->session->set_flashdata('message','Successfully registered, Please login again');
 				$this->load->view('pages/loginregi/login.php',$temp);
 			}else{
@@ -89,6 +90,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		public function forgot()
 		{
 			$email=$this->input->post('email');
+			$_SESSION['email']=$email;
 			$check=$this->db->get_where('register',array('email'=>$email))->row();
 			if(!$check){ 
 				$this->session->set_flashdata('message','Email NOt exits');
@@ -112,6 +114,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			 $this->db->set('password',sha1($pass));
 			 $this->db->where('reg_id',$id);
 			 $this->db->update('register');
+			unset($_SESSION['email']);
 			 $this->session->set_flashdata('message','Password Changed Successfully');
 			 $temp['pagename'] = 'logincontainer.php';
 			 $this->load->view('pages/loginregi/login',$temp);
