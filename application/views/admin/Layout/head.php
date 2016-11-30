@@ -22,27 +22,6 @@
     <!-- Animation Css -->
     <link href="<?php echo base_url();?>assets_admin/plugins/animate-css/animate.css" rel="stylesheet" />
 
-	<!-- Colorpicker Css -->
-    <link href="<?php echo base_url();?>assets_admin/plugins/bootstrap-colorpicker/css/bootstrap-colorpicker.css" rel="stylesheet" />
-
-    <!-- Dropzone Css -->
-    <link href="<?php echo base_url();?>assets_admin/plugins/dropzone/dropzone.css" rel="stylesheet">
-
-    <!-- Multi Select Css -->
-    <link href="<?php echo base_url();?>assets_admin/plugins/multi-select/css/multi-select.css" rel="stylesheet">
-
-    <!-- Bootstrap Spinner Css -->
-    <link href="<?php echo base_url();?>assets_admin/plugins/jquery-spinner/css/bootstrap-spinner.css" rel="stylesheet">
-
-    <!-- Bootstrap Tagsinput Css -->
-    <link href="<?php echo base_url();?>assets_admin/plugins/bootstrap-tagsinput/bootstrap-tagsinput.css" rel="stylesheet">
-
-    <!-- Bootstrap Select Css -->
-    <link href="<?php echo base_url();?>assets_admin/plugins/bootstrap-select/css/bootstrap-select.css" rel="stylesheet" />
-
-    <!-- noUISlider Css -->
-    <link href="<?php echo base_url();?>assets_admin/plugins/nouislider/nouislider.min.css" rel="stylesheet" />
-	
     <!-- Morris Chart Css-->
     <link href="<?php echo base_url();?>assets_admin/plugins/morrisjs/morris.css" rel="stylesheet" />
 
@@ -53,5 +32,9 @@
     <link href="<?php echo base_url();?>assets_admin/css/themes/all-themes.css" rel="stylesheet" />
     
     <!-- JQuery DataTable Css -->
-    <link href="<?php echo base_url();?>assets_admin/plugins/jquery-datatable/skin/bootstrap/css/dataTables.bootstrap.css" rel="stylesheet">    
+    <link href="<?php echo base_url();?>assets_admin/plugins/jquery-datatable/skin/bootstrap/css/dataTables.bootstrap.css" rel="stylesheet">
+    
+    <!-- Dropzone Css -->
+    <link href="<?php echo base_url();?>assets_admin/plugins/dropzone/dropzone.css" rel="stylesheet">
+	
 </head>

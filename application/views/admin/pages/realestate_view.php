@@ -3,7 +3,7 @@
         <div class="block-header">
                 <h2>REALESTATE / View</h2>
             </div>
-<!-- Exportable Table -->
+            <!-- Exportable Table -->
             <div class="row clearfix">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="card">
@@ -12,16 +12,6 @@
                                 REALESTATE - DATA
                             </h2>
                             <ul class="header-dropdown m-r--5">
-                                <li class="dropdown">
-                                    <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                                        <i class="material-icons">more_vert</i>
-                                    </a>
-                                    <ul class="dropdown-menu pull-right">
-                                        <li><a href="javascript:void(0);">Action</a></li>
-                                        <li><a href="javascript:void(0);">Another action</a></li>
-                                        <li><a href="javascript:void(0);">Something else here</a></li>
-                                    </ul>
-                                </li>
                             </ul>
                         </div>
                         <div class="body">
@@ -31,9 +21,9 @@
                                         <th>Name</th>
                                         <th>Title</th>
                                         <th>Mobile</th>
-                                        <th>Email</th>
-                                        <th>City</th>
                                         <th>Date</th>
+                                        <th>Edit</th>
+                                        <th>Delete</th>
                                     </tr>
                                 </thead>
                                 <tfoot>
@@ -41,9 +31,9 @@
                                         <th>Name</th>
                                         <th>Title</th>
                                         <th>Mobile</th>
-                                        <th>Email</th>
-                                        <th>City</th>
                                         <th>Date</th>
+                                        <th>Edit</th>
+                                        <th>Delete</th>
                                     </tr>
                                 </tfoot>
                                 <tbody>
@@ -51,30 +41,53 @@
 	$userid = $_SESSION['adminid'];
 	$realestate_data = $this->db->order_by('date','desc')->get_where('realestate',array('userid' => $userid))->result_array();
 ?>                                
-                                    <tr>
                                      <?php foreach ($realestate_data as $row){?>
 								      <tr>
 								        <td><?php echo $row['name'];?></td>
-								        <td><?php echo $row['title'];?></td>
-								        <td><?php echo $row['mobile'];?></td>
-								        <td><?php echo $row['email'];?></td>
-								        <td><?php echo $row['city'];?></td>
-								        <td>
-								        	<?php 
-								        		$postdate =  $row['date'];
-								        		echo date("d F , Y",strtotime(str_replace('-','/', $postdate)));
-								        	?>
-								        </td>
-								        <td><a href="<?php echo base_url();?>Admin/realestate_edit/<?php echo $row['realid'];?>"><button class="btn btn-success">Edit</button></a></td>
+                                        <td><?php echo $row['title'];?></td>
+                                        <td><?php echo $row['mobile'];?></td>
+                                        <td><?php echo $row['date'];?></td>
+                                        <td><a href="<?php echo base_url();?>Admin/realestate_edit/<?php echo $row['realid'];?>"><button class="btn btn-success">Edit</button></a></td>
 								        <td><a href="<?php echo base_url();?>Admin/realestate/delete/<?php echo $row['realid'];?>"><button class="btn btn-danger">Delete</button></a></td>
-								      </tr>
-								      <?php }?>
+                                       </tr> 
+                                       <?php }?> 
                                 </tbody>
                             </table>
                         </div>
                     </div>
                 </div>
             </div>
-            <!-- #END# Exportable Table -->
-      </div>
+            <!-- #END# Exportable Table -->      </div>
 </section> 
+<!-- Jquery Core Js -->
+    <script src="<?php echo base_url();?>assets_admin/plugins/jquery/jquery.min.js"></script>
+
+    <!-- Bootstrap Core Js -->
+    <script src="<?php echo base_url();?>assets_admin/plugins/bootstrap/js/bootstrap.js"></script>
+
+    <!-- Select Plugin Js -->
+    <script src="<?php echo base_url();?>assets_admin/plugins/bootstrap-select/js/bootstrap-select.js"></script>
+
+    <!-- Slimscroll Plugin Js -->
+    <script src="<?php echo base_url();?>assets_admin/plugins/jquery-slimscroll/jquery.slimscroll.js"></script>
+
+    <!-- Waves Effect Plugin Js -->
+    <script src="<?php echo base_url();?>assets_admin/plugins/node-waves/waves.js"></script>
+
+    <!-- Jquery DataTable Plugin Js -->
+    <script src="<?php echo base_url();?>assets_admin/plugins/jquery-datatable/jquery.dataTables.js"></script>
+    <script src="<?php echo base_url();?>assets_admin/plugins/jquery-datatable/skin/bootstrap/js/dataTables.bootstrap.js"></script>
+    <script src="<?php echo base_url();?>assets_admin/plugins/jquery-datatable/extensions/export/dataTables.buttons.min.js"></script>
+    <script src="<?php echo base_url();?>assets_admin/plugins/jquery-datatable/extensions/export/buttons.flash.min.js"></script>
+    <script src="<?php echo base_url();?>assets_admin/plugins/jquery-datatable/extensions/export/jszip.min.js"></script>
+    <script src="<?php echo base_url();?>assets_admin/plugins/jquery-datatable/extensions/export/pdfmake.min.js"></script>
+    <script src="<?php echo base_url();?>assets_admin/plugins/jquery-datatable/extensions/export/vfs_fonts.js"></script>
+    <script src="<?php echo base_url();?>assets_admin/plugins/jquery-datatable/extensions/export/buttons.html5.min.js"></script>
+    <script src="<?php echo base_url();?>assets_admin/plugins/jquery-datatable/extensions/export/buttons.print.min.js"></script>
+
+    <!-- Custom Js -->
+    <script src="<?php echo base_url();?>assets_admin/js/admin.js"></script>
+    <script src="<?php echo base_url();?>assets_admin/js/pages/tables/jquery-datatable.js"></script>
+
+    <!-- Demo Js -->
+    <script src="<?php echo base_url();?>assets_admin/js/demo.js"></script>

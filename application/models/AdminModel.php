@@ -40,7 +40,7 @@ class AdminModel extends CI_Model{
 		$data['description']=$this->input->post('description');
 		$data['mobile']=$this->input->post('mobile');
 		$data['email']=$this->input->post('email');
-		$data['amenities']=$this->input->post('facilities');
+		$data['amenities']=$this->input->post('amenities');
 		$data['city']=$this->input->post('city');
 		$data['area']=$this->input->post('area');
 		$data['date']=date('Y-m-d H:i:s');
@@ -59,7 +59,7 @@ class AdminModel extends CI_Model{
 		$data['description'] = $this->input->post('description');
 		$data['mobile'] = $this->input->post('mobile');
 		$data['email'] = $this->input->post('email');
-		$data['amenities'] = $this->input->post('facilities');
+		$data['amenities'] = $this->input->post('amenities');
 		$data['city'] = $this->input->post('city');
 		$data['area'] = $this->input->post('area');
 		$data['date'] = date('Y-m-d H:i:s');
@@ -68,6 +68,7 @@ class AdminModel extends CI_Model{
 		$data['userid'] = $_SESSION['adminid'];
 		$this->db->where('userid',$data['userid']);
 		$this->db->where('realid',$realid);
+		
 		$this->db->update('realestate',$data);
 	}
 	
@@ -212,4 +213,93 @@ class AdminModel extends CI_Model{
 			}
 		}
 	}//Eof Image_upload
+	/* ************************************************************
+	 * 					IMAGE UPDATE
+	 *************************************************************/
+	function image_update($path,$data)
+	{	
+		if($path=="real"){
+			$category_data = array(
+					'category_id' =>'realid',
+					'category_table'=>'realestate',
+					'category_img_table'=>'real_img'
+			);
+			//TUTION
+		}elseif ($path=="tution"){
+			$category_data = array(
+					'category_id' =>'tutid',
+					'category_table'=>'tution',
+					'category_img_table'=>'tut_img'
+			);
+			//HOTEL
+		}elseif ($path=="hotel"){
+			$category_data = array(
+					'category_id' =>'hotelid',
+					'category_table'=>'hotel',
+					'category_img_table'=>'hotel_img'
+			);
+			//TRAVELLING
+		}elseif ($path=="travelling"){
+			$category_data = array(
+					'category_id' =>'travelid',
+					'category_table'=>'travelling',
+					'category_img_table'=>'travelling_img'
+			);
+			//AUTOMOBILE
+		}elseif ($path=="automobile"){
+			$category_data = array(
+					'category_id' =>'autoid',
+					'category_table'=>'automobile',
+					'category_img_table'=>'automobile_img'
+			);
+			//OTHER
+		}elseif ($path="other"){
+			$category_data = array(
+					'category_id' =>'otherid',
+					'category_table'=>'other',
+					'category_img_table'=>'other_img'
+			);
+		}
+		
+		$imageID = $data['imgid'];
+		$userid = $data['userid'];
+		$result = $this->db->get_where('real_img',array('id'=>$imageID));
+		$row = $result->row();
+		$imagePath = $row->path;
+		unlink($imagePath);
+		
+		$_FILES['img']['name'] = $_FILES['image']['name'];
+		$_FILES['img']['type'] = $_FILES['image']['type'];
+		$_FILES['img']['tmp_name'] = $_FILES['image']['tmp_name'];
+		$_FILES['img']['error'] = $_FILES['image']['error'];
+		$_FILES['img']['size'] = $_FILES['image']['size'];
+		
+		date_default_timezone_set('Asia/Kolkata');
+		$timestamp = date("Y-m-d_H-i-s_");
+		$config['upload_path']=  FCPATH."uploads/".$path."/".$userid."/";
+		$config['file_name']=$timestamp.'.jpg';
+		$config['allowed_types']= 'jpg|png';
+		$config['max_size']= 2048;
+		
+		$this->load->library('upload', $config);
+		$this->upload->initialize($config);
+			
+		if ( ! $this->upload->do_upload('img'))
+		{
+			$error = array('error' => $this->upload->display_errors());
+		}
+		else
+		{
+			$da = array('upload_data' => $this->upload->data());
+			$image_path = "uploads/$path"."/".$userid."/".$config['file_name'];
+			
+			$category_id = $category_data['category_id'];
+			$category_table = $category_data['category_table'];
+			$category_img_table = $category_data['category_img_table'];
+		
+			$this->db->query("UPDATE $category_img_table set path='$image_path' where id=$imageID");
+		}
+		
+	}//Eof Image_update
+	
 }

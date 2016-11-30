@@ -59,11 +59,11 @@
 	                                            <i class="material-icons">business</i> <span style="color: red;">*</span>
 	                                        </span>
 	                                        <div class="form-line">
-	                                            <select required="required">
-	                                            	<option>Rent</option>
-	                                            	<option>Sell</option>
+	                                            <select required="required" name="type">
+	                                            	<option value="Rent">Rent</option>
+	                                            	<option value="Sell">Sell</option>
 	                                            </select>
-	                                        </div>
+	                                        </div>    
 	                                    </div>
 	                                </div>
 	                                <div class="col-md-4">
@@ -179,18 +179,45 @@
             </div>
             <!-- #END# CONTAINER ADD -->
     </section>
-    <script type="text/javascript" src="<?php echo base_url();?>assets/js/jquery.min.js">
-	</script>
-    <script type="text/javascript" lang="javascript" src="<?php echo base_url();?>assets/js/validation.js">
-	</script>
-	
-	<!-- Bootstrap Notify Plugin Js -->
-    <script src="<?php echo base_url();?>assets_admin/plugins/bootstrap-notify/bootstrap-notify.js"></script>
-    
+    <!-- Jquery Core Js -->
+    <script src="<?php echo base_url();?>assets_admin/plugins/jquery/jquery.min.js"></script>
+
+    <!-- Bootstrap Core Js -->
+    <script src="<?php echo base_url();?>assets_admin/plugins/bootstrap/js/bootstrap.js"></script>
+
+    <!-- Select Plugin Js -->
+
+    <!-- Slimscroll Plugin Js -->
+    <script src="<?php echo base_url();?>assets_admin/plugins/jquery-slimscroll/jquery.slimscroll.js"></script>
+
+    <!-- Bootstrap Colorpicker Js -->
+    <script src="<?php echo base_url();?>assets_admin/plugins/bootstrap-colorpicker/js/bootstrap-colorpicker.js"></script>
+
+    <!-- Dropzone Plugin Js -->
+    <script src="<?php echo base_url();?>assets_admin/plugins/dropzone/dropzone.js"></script>
+
+    <!-- Input Mask Plugin Js -->
+    <script src="<?php echo base_url();?>assets_admin/plugins/jquery-inputmask/jquery.inputmask.bundle.js"></script>
+
+    <!-- Multi Select Plugin Js -->
+    <script src="<?php echo base_url();?>assets_admin/plugins/multi-select/js/jquery.multi-select.js"></script>
+
+    <!-- Jquery Spinner Plugin Js -->
+    <script src="<?php echo base_url();?>assets_admin/plugins/jquery-spinner/js/jquery.spinner.js"></script>
+
+    <!-- Bootstrap Tags Input Plugin Js -->
+    <script src="<?php echo base_url();?>assets_admin/plugins/bootstrap-tagsinput/bootstrap-tagsinput.js"></script>
+
+    <!-- noUISlider Plugin Js -->
+    <script src="<?php echo base_url();?>assets_admin/plugins/nouislider/nouislider.js"></script>
+
+    <!-- Waves Effect Plugin Js -->
+    <script src="<?php echo base_url();?>assets_admin/plugins/node-waves/waves.js"></script>
+
     <!-- Custom Js -->
-    <script src="<?php echo base_url();?>assets_admin/js/pages/ui/notifications.js"></script>
-    <script>
-	    $(".alert-warning").delay(4000).slideUp(200, function() {
-	        $(this).alert('close');
-	    });
-    </script>
+    <script src="<?php echo base_url();?>assets_admin/js/admin.js"></script>
+    <script src="<?php echo base_url();?>assets_admin/js/pages/forms/advanced-form-elements.js"></script>
+
+    <!-- Demo Js -->
+    <script src="<?php echo base_url();?>assets_admin/js/demo.js"></script>
+   

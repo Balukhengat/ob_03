@@ -26,6 +26,73 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			$this->session->set_flashdata('message','Successfully logout');
 			redirect(base_url().'Admin/Login');
 		}
+		
+		public function UpdateImage($path){
+			$data['userid'] = $_SESSION['adminid'];
+			$data['imgid'] = $this->input->post('imgid');
+			$postid = $this->input->post('postid');
+			$this->AdminModel->image_update('real',$data);
+			$this->session->set_flashdata('message','Image Updated Successfully');
+			/*
+			 *
+			 * 	PAGENAME SELECTION [ Add new category if any in elseif ] >>>
+			 *
+			 */
+			if($path=="real"){
+				$page_name = "realestate_edit";
+			}elseif ($path=="tution"){
+				$page_name = "tution_edit";
+			}elseif ($path=="hotel"){
+				$page_name = "hotel_edit";
+			}elseif ($path=="travelling"){
+				$page_name = "travelling_edit";
+			}elseif ($path=="automobile"){
+				$page_name = "automobile_edit";
+			}elseif ($path="other"){
+				$page_name = "other_edit";
+			}
+			redirect(base_url() . 'Admin/'.$page_name.'/'.$postid);
+		}
+		public function DeleteImage($path,$id,$realid){
+			/*
+			 *
+			 * 	PAGENAME SELECTION + Image database selection[ Add new category if any in elseif ] >>>
+			 *
+			 */
+			if($path=="real"){
+				$page_name = "realestate_edit";
+				$image_table = "real_img";
+			}elseif ($path=="tution"){
+				$page_name = "tution_edit";
+				$image_table = "tut_img";
+			}elseif ($path=="hotel"){
+				$page_name = "hotel_edit";
+				$image_table = "hotel_img";
+			}elseif ($path=="travelling"){
+				$page_name = "travelling_edit";
+				$image_table = "travelling_img";
+			}elseif ($path=="automobile"){
+				$page_name = "automobile_edit";
+				$image_table = "automobile_img";
+			}elseif ($path="other"){
+				$page_name = "other_edit";
+				$image_table = "other_img";
+			}
+			$result = $this->db->query("select path from $image_table where id=$id");
+			$row = $result->row();
+			$filename = $row->path;
+			
+			unlink($filename);
+			$this->db->query("delete from real_img where id=$id");
+			
+			$this->session->set_flashdata('message','Image Deleted');
+			redirect(base_url() . 'Admin/'.$page_name.'/'.$realid);
+		}
+		public function AddMoreImages($realid){
+			echo $realid; die();
+			//$this->AdminModel->image_upload('real',$userid);
+		}
+		
 		/* ************************************************************
 		 * 					REALESTATE
 		 *************************************************************/
@@ -75,6 +142,5 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			$data['pagename']="realestate_edit.php";
 			$this->load->view('Admin/pages/director',$data);
 		}
-		
 	}
 	

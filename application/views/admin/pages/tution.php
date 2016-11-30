@@ -1,28 +1,26 @@
-<?php 
-	$userid = $_SESSION['adminid'];
-	$query = "SELECT * from realestate WHERE realid='$realid' and userid='$userid'";
-	$realedit=$this->db->query($query);
-	if($this->db->affected_rows()==0){
-		$this->session->set_flashdata('message','Record not found !');
-		$data['pagename']="realestate_view.php";
-		$this->load->view('pages/profile/profile',$data);
-	}
-?>
 <section class="content">
         <div class="container-fluid">
             <div class="block-header">
-                <h2>REALESTATE / EDIT / ID : <?php echo $realid;?></h2>
+                <h2>TUTION / ADD</h2>
             </div>
+<!-- Notification Message -->
+	<?php if($this->session->flashdata('message')!=null){?>
+	<div class="alert alert-warning alert-dismissible" role="alert">
+		 <?php echo $this->session->flashdata('message');?>
+         <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span>
+         </button>
+	</div>
+	<?php }?>
             <!-- CONTAINER ADD -->
             <div class="row clearfix">
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                     <div class="card">
-                        <div class="header">
-                            <h2>Edit Realestate</h2>
-                        </div>
+                    <div class="header">
+                            <h2>
+                                Add realestate data
+                            </h2>
                         <div class="body">
-                        <?php foreach ($realedit->result_array() as $row){?>	
-                        	<form action="<?php echo base_url();?>Admin/realestate/update/<?php echo $row['realid'];?>" id="frmFileUpload" method="post" enctype="multipart/form-data">
+                        	<form action="<?php echo base_url();?>Admin/realestate/create" id="frmFileUpload" method="post" enctype="multipart/form-data">
 								<div class="row clearfix">
 	                                <div class="col-md-4">
 	                                    <div class="input-group">
@@ -30,7 +28,7 @@
 	                                            <i class="material-icons">person</i> <span style="color: red;">*</span> 
 	                                        </span>
 	                                        <div class="form-line">
-	                                            <input type="text" class="form-control date" placeholder="Vendors Name" name="name" value="<?php echo $row['name'];?>" required="required">
+	                                            <input type="text" class="form-control date" placeholder="Vendors Name" name="name" required="required">
 	                                        </div>
 	                                    </div>
 	                                </div>
@@ -40,7 +38,7 @@
 	                                            <i class="material-icons">title</i><span style="color: red;">*</span>
 	                                        </span>
 	                                        <div class="form-line">
-	                                            <input type="text" class="form-control date" placeholder="Title" name="title" value="<?php echo $row['title'];?>" required="required">
+	                                            <input type="text" class="form-control date" placeholder="Title" name="title" required="required">
 	                                        </div>
 	                                    </div>
 	                                </div>
@@ -51,7 +49,7 @@
 	                                            <i class="material-icons">contacts</i> <span style="color: red;">*</span>
 	                                        </span>
 	                                        <div class="form-line">
-	                                            <textarea class="form-control date" placeholder="address" name="address" required="required"><?php echo $row['address'];?></textarea>
+	                                            <textarea class="form-control date" placeholder="address" name="address" required="required"></textarea>
 	                                        </div>
 	                                    </div>
 	                                </div>
@@ -62,10 +60,10 @@
 	                                        </span>
 	                                        <div class="form-line">
 	                                            <select required="required" name="type">
-	                                            	<option <?php if($row['type']=="Rent"){ echo 'selected';}?> value="Rent">Rent</option>
-	                                            	<option <?php if($row['type']=="Sell"){ echo 'selected';}?> value="Sell">Sell</option>
+	                                            	<option value="Rent">Rent</option>
+	                                            	<option value="Sell">Sell</option>
 	                                            </select>
-	                                        </div>
+	                                        </div>    
 	                                    </div>
 	                                </div>
 	                                <div class="col-md-4">
@@ -74,7 +72,7 @@
 	                                            <i class="material-icons">crop_free</i>
 	                                        </span>
 	                                        <div class="form-line">
-	                                            <input type="text" class="form-control date" placeholder="Builtup area" name="builtup" value="<?php echo $row['builtup'];?>">
+	                                            <input type="text" class="form-control date" placeholder="Builtup area" name="builtup">
 	                                        </div>
 	                                    </div>
 	                                </div>
@@ -84,7 +82,7 @@
 	                                            <i class="material-icons">monetization_on</i>
 	                                        </span>
 	                                        <div class="form-line">
-	                                            <input type="text" class="form-control date" placeholder="price" name="price" value="<?php echo $row['price'];?>">
+	                                            <input type="text" class="form-control date" placeholder="price" name="price">
 	                                        </div>
 	                                    </div>
 	                                </div>
@@ -94,7 +92,7 @@
 	                                            <i class="material-icons">insert_comment</i> <span style="color: red;">*</span>
 	                                        </span>
 	                                        <div class="form-line">
-	                                            <textarea class="form-control date" placeholder="Description" name="description" required="required"><?php echo $row['description'];?></textarea>
+	                                            <textarea class="form-control date" placeholder="Description" name="description" required="required"></textarea>
 	                                        </div>
 	                                    </div>
 	                                </div>
@@ -104,7 +102,7 @@
 	                                            <i class="material-icons">call</i> <span style="color: red;">*</span>
 	                                        </span>
 	                                        <div class="form-line">
-	                                            <input type="text" class="form-control date" placeholder="Mobile" name="mobile" value="<?php echo $row['mobile'];?>" required="required">
+	                                            <input type="text" class="form-control date" placeholder="Mobile" name="mobile" required="required">
 	                                        </div>
 	                                    </div>
 	                                </div>
@@ -114,7 +112,7 @@
 	                                            <i class="material-icons">email</i> <span style="color: red;">*</span>
 	                                        </span>
 	                                        <div class="form-line">
-	                                            <input type="text" class="form-control date" placeholder="email" name="email" value="<?php echo $row['email'];?>" required="required">
+	                                            <input type="text" class="form-control date" placeholder="email" name="email" required="required">
 	                                        </div>
 	                                    </div>
 	                                </div>
@@ -124,7 +122,7 @@
 	                                            <i class="material-icons">label</i>
 	                                        </span>
 	                                        <div class="form-line">
-	                                            <textarea class="form-control date" placeholder="amenities" name="amenities"><?php echo $row['amenities'];?></textarea>
+	                                            <textarea class="form-control date" placeholder="amenities" name="amenities"></textarea>
 	                                        </div>
 	                                    </div>
 	                                </div>
@@ -134,7 +132,7 @@
 	                                            <i class="material-icons">location_city</i> <span style="color: red;">*</span>
 	                                        </span>
 	                                        <div class="form-line">
-	                                            <input type="text" class="form-control date" placeholder="city" name="city" value="<?php echo $row['city'];?>" required="required">
+	                                            <input type="text" class="form-control date" placeholder="city" name="city" required="required">
 	                                        </div>
 	                                    </div>
 	                                </div>
@@ -144,7 +142,7 @@
 	                                            <i class="material-icons">live_help</i> <span style="color: red;">*</span>
 	                                        </span>
 	                                        <div class="form-line">
-	                                            <input type="text" class="form-control date" placeholder="area" name="area" value="<?php echo $row['area'];?>" required="required">
+	                                            <input type="text" class="form-control date" placeholder="area" name="area" required="required">
 	                                        </div>
 	                                    </div>
 	                                </div>
@@ -154,72 +152,31 @@
 	                                            <i class="material-icons">access_timer</i> Offer End date
 	                                        </span>
 	                                        <div class="form-line">
-	                                            <input type="date" class="form-control date" placeholder="Offer End date" value="<?php echo $row['offerend'];?>" name="date">
+	                                            <input type="date" class="form-control date" placeholder="Offer End date" name="date">
 	                                        </div>
 	                                    </div>
 	                                </div>
 	                            </div>
 	                            <hr>
-	                                <input type="submit" class="btn btn-block btn-lg btn-success waves-effect" value="UPDATE">
+                                <div class="dropzone"> 
+	                                <div class="dz-message">
+	                                    <div class="drag-icon-cph">
+	                                        <i class="material-icons">touch_app</i>
+	                                    </div>
+	                                    <h3>Choose image<span style="color: red;">*</span> and submit post </h3>
+	                                </div>
+	                                <div class="fallback">
+	                                   <input type="file" id="image" multiple="multiple" name="image[]" required="required">
+	                                </div>
+                                </div>
+	                                <input type="submit" class="btn btn-block btn-lg btn-success waves-effect" value="SUBMIT">
                             </form>
-                            <?php }?>
                     </div>
                         </div> <!-- #END# CARD -->
                     </div>
                 </div>
-                <div class="row clearfix">
-                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                    <div class="card">
-                        <div class="header">
-                            <h2>Edit / Delete images</h2>
-                        </div>
-                        	 <?php 
-			                    $query = "SELECT realestate.realid, realestate.`name`, realestate.title, realestate.type, realestate.address, realestate.builtup, realestate.price, realestate.description, realestate.mobile, realestate.email, realestate.amenities, realestate.city, realestate.area, realestate.date, realestate.offerend, realestate.category, realestate.userid, real_img.realid, real_img.path, real_img.id FROM realestate INNER JOIN real_img ON realestate.realid = real_img.realid WHERE realestate.realid = $realid";
-			                    $realeditimg=$this->db->query($query);
-			                    foreach ($realeditimg->result_array() as $row_img){
-			                    ?>	
-			                    <div class="col-xs-12 col-sm-4 col-md-4 col-lg-3">
-			                    	<hr>
-									<img alt="<?php echo $row['title'];?>" src="<?php echo base_url();echo $row_img['path'];?>" width="200" height="200">
-					                <form action="<?php echo base_url();?>Admin/UpdateImage/real" method="post" enctype="multipart/form-data">
-					                	<input type="hidden" name="imgid" value="<?php echo $row_img["id"];?>">
-					                	<input type="hidden" name="postid" value="<?php echo $row_img["realid"];?>">
-					                	<input type="file" name="image" required="required">
-					                	<input type="submit" class="btn btn-success" value="Change Image">
-					                </form>
-					                <br>
-					                <a href="<?php echo base_url();?>Admin/DeleteImage/real/<?php echo $row_img["id"];?>/<?php echo $row_img["realid"];?>"><input type="submit" class="btn btn-danger" value="Delete Image  &nbsp;"></a>
-					                <hr>
-				                </div>
-				                <?php }?>
-                	</div> 
-                </div>       
-           	</div> 
-           	<div class="row clearfix">
-                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                	 <div class="card">
-                        <div class="header">
-                            <h2>Add more images to this post</h2>
-                        </div>
-                     </div>   
-                     <div class="body">
-                            <form action="<?php echo base_url();?>Admin/AddMoreImages/<?php echo $realid;?>" id="frmFileUpload" class="dropzone" method="post" enctype="multipart/form-data">
-                                <div class="dz-message">
-                                    <div class="drag-icon-cph">
-                                        <i class="material-icons">touch_app</i>
-                                    </div>
-                                    <h3>Drop files here or click to upload.</h3>
-                                    <em>(This is just a demo dropzone. Selected files are <strong>not</strong> actually uploaded.)</em>
-                                </div>
-                                <div class="fallback">
-                                    <input name="file" type="file" multiple />
-                                </div>
-                                <input type="submit" value="Upload" class="btn btn-success">
-                            </form>
-                        </div>
-                </div>
-            </div>    
-           	</div>
+            </div>
+            </div>
             <!-- #END# CONTAINER ADD -->
     </section>
     <!-- Jquery Core Js -->
@@ -263,3 +220,4 @@
 
     <!-- Demo Js -->
     <script src="<?php echo base_url();?>assets_admin/js/demo.js"></script>
+   

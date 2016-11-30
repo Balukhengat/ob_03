@@ -38,7 +38,6 @@
         <?php $this->load->view('admin/layout/rightsidebar')?>
     </section>
     <?php $this->load->view('admin/pages/'.$pagename)?>
-   <?php $this->load->view('admin/layout/js')?>
 </body>
 </html>
     <?php }else{
