@@ -26,7 +26,33 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			$this->session->set_flashdata('message','Successfully logout');
 			redirect(base_url().'Admin/Login');
 		}
-		
+		public function Pramotions(){
+			$post_id = $this->input->post("post_id");
+			$sub_days = $this->input->post("sub_days"); //Subscrioption days
+			$price = $this->input->post("price");
+			$category = $this->input->post("category");
+			
+			date_default_timezone_set("Asia/Kolkata");
+			$time = date("Y-m-d");
+			
+			$time_left = date('Y-m-d', strtotime("+$sub_days days"));
+			$data = array(
+					'post_id' => $post_id,
+					'sub_days' => $sub_days,
+					'price' => $price,
+					'category' => $category,
+					'dateadded' => $time,
+					'daysleft' => $time_left
+					
+			);
+			$this->db->insert('pramotion',$data);
+			redirect(base_url().'Admin');
+		}
+		public function DeletePramotions($postid){
+			$query = "delete from pramotion where post_id = $postid";
+			$this->db->query($query);
+			redirect(base_url().'Admin');
+		}
 		public function UpdateImage($path){
 			$data['userid'] = $_SESSION['adminid'];
 			$data['imgid'] = $this->input->post('imgid');
