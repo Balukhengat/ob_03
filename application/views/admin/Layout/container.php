@@ -4,6 +4,46 @@
                 <h2>DASHBOARD</h2>
             </div>
             <!-- Widgets -->
+            <?php 
+            	//Realestate
+            	$query1 = "SELECT COUNT(realid) from realestate";
+            	$result1 = $this->db->query($query1);
+            	foreach ($result1->result_array() as $row){
+            		$real_total = $row['COUNT(realid)'];
+            	}
+            	// Tution
+            	$query1 = "SELECT COUNT(tutid) from tution";
+            	$result1 = $this->db->query($query1);
+            	foreach ($result1->result_array() as $row){
+            		$tution_total = $row['COUNT(tutid)'];
+            	}
+            	//Hotel
+            	$query1 = "SELECT COUNT(hotelid) from hotel";
+            	$result1 = $this->db->query($query1);
+            	foreach ($result1->result_array() as $row){
+            		$hotel_total = $row['COUNT(hotelid)'];
+            	}
+            	//Travelling
+            	$query1 = "SELECT COUNT(travelid) from travelling";
+            	$result1 = $this->db->query($query1);
+            	foreach ($result1->result_array() as $row){
+            		$travelling_total = $row['COUNT(travelid)'];
+            	}
+            	//Automobile
+            	$query1 = "SELECT COUNT(autoid) from automobile";
+            	$result1 = $this->db->query($query1);
+            	foreach ($result1->result_array() as $row){
+            		$automobile_total = $row['COUNT(autoid)'];
+            	}
+            	//Other
+            	$query1 = "SELECT COUNT(otherid) from other";
+            	$result1 = $this->db->query($query1);
+            	foreach ($result1->result_array() as $row){
+            		$other_total = $row['COUNT(otherid)'];
+            	}
+            	
+            	$total_posts = $real_total + $tution_total + $hotel_total + $travelling_total + $automobile_total + $other_total;
+            ?>
             <div class="row clearfix">
                 <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
                      <div class="info-box bg-pink hover-expand-effect">
@@ -119,37 +159,44 @@
                                 <li>
                                     # Realestate  
 									 <span class="pull-right">
-                                        200
+                                        <?php echo $real_total;?>
                                     </span>
                                 </li>
                                 <li>
                                     # Tution
                                     <span class="pull-right">
-                                        200
+                                        <?php echo $tution_total;?>
                                     </span>
                                 </li>
                                 <li>
                                 	# Hotels
                                 	<span class="pull-right">
-                                        200
+                                        <?php echo $hotel_total;?>
                                     </span>
                                 </li>
                                 <li>
                                 	# Travelling
                                 	<span class="pull-right">
-                                        200
+										<?php echo $travelling_total;?>                                        
                                     </span>	
                                 </li>
                                 <li>
                                     # Automobile
                                     <span class="pull-right">
-                                        200
+                                        <?php echo $automobile_total;?>
                                     </span>
                                 </li>
                                 <li>
                                 	# Other
                                 	<span class="pull-right">
-                                        200
+                                        <?php echo $other_total;?>
+                                    </span>	
+                                </li>
+                                <hr>
+                                <li>
+                                	# Total Posts 
+                                	<span class="pull-right">
+                                        <?php echo $total_posts;?>
                                     </span>	
                                 </li>
                             </ul>
@@ -285,39 +332,6 @@
                                     <?php }?>    
                                     </tbody>
                                 </table>
-                        </div>
-                    </div>
-                </div>
-                <!-- #END# Task Info -->
-            </div>
-            <div class="row clearfix">
-                <!-- Task Info -->
-                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                    <div class="card">
-                        <div class="header">
-                            <h2>Latest posts</h2>
-                        </div>
-                        <div class="body">
-                            <div class="table-responsive">
-                                <table class="table table-hover dashboard-task-infos">
-                                    <thead>
-                                        <tr>
-                                            <th>Name</th>
-                                            <th>Title</th>
-                                            <th>Mobile</th>
-                                            <th>Email</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>Name</td>
-                                            <td>Home to sell</td>
-                                            <td>91554545445</td>
-                                            <td>ajslkdjf@gmail.com</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
                         </div>
                     </div>
                 </div>

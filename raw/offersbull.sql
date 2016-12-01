@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 23, 2016 at 02:00 PM
+-- Generation Time: Dec 01, 2016 at 12:13 PM
 -- Server version: 5.7.9
 -- PHP Version: 5.6.16
 
@@ -217,6 +217,31 @@ INSERT INTO `other` (`otherid`, `name`, `title`, `address`, `description`, `mobi
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `pramotion`
+--
+
+DROP TABLE IF EXISTS `pramotion`;
+CREATE TABLE IF NOT EXISTS `pramotion` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `post_id` int(11) DEFAULT NULL,
+  `sub_days` varchar(255) DEFAULT NULL,
+  `category` int(11) DEFAULT NULL,
+  `price` varchar(255) DEFAULT NULL,
+  `dateadded` date DEFAULT NULL,
+  `daysleft` date DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `pramotion`
+--
+
+INSERT INTO `pramotion` (`id`, `post_id`, `sub_days`, `category`, `price`, `dateadded`, `daysleft`) VALUES
+(9, 47, '100', 0, '1000', '2016-12-01', '2017-03-11');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `realestate`
 --
 
@@ -240,24 +265,15 @@ CREATE TABLE IF NOT EXISTS `realestate` (
   `category` tinyint(4) DEFAULT NULL,
   `userid` tinyint(4) DEFAULT NULL,
   PRIMARY KEY (`realid`)
-) ENGINE=MyISAM AUTO_INCREMENT=37 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=49 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `realestate`
 --
 
 INSERT INTO `realestate` (`realid`, `name`, `title`, `type`, `address`, `builtup`, `price`, `description`, `mobile`, `email`, `amenities`, `city`, `area`, `date`, `offerend`, `category`, `userid`) VALUES
-(25, 'Balu', 'Flat to rent', NULL, 'Pune', '', '', 'Nice flat', '48484848484', 'asdf', NULL, 'Pune', 'asdf', '2016-11-23 06:59:55', NULL, 0, 0),
-(22, 'abhijit', 'Home to sell in pune', NULL, 'Kharadi, Pune', '2000', '', 'Nice and awesome home', '9168277713', 'abhijitkumbhar001@gmail.com', NULL, 'Pune', 'Kharadi', '2016-11-23 06:36:25', NULL, 0, 0),
-(26, 'lkasdjf', 'kjsddfljasdf', NULL, 'ksdjf', 'asd', 'asdf', 'asdfa', 'dsfda', 'sff', NULL, 'asdfa', 'asdf', '2016-11-23 07:07:06', NULL, 0, 0),
-(27, 'asdf', 'sqw', NULL, 'dwww', 'ee', '', 'eee', 'ee', 'eeee', NULL, 'asdf', 'eeeeee', '2016-11-23 07:08:10', NULL, 0, 0),
-(28, 'asd', 'aaaaaaaaaa', NULL, 'aaaaaaaaaa', '', '', 'aaaaaaaaaa', 'aaaaaaaaaa', 'aaaaaaaaaa', NULL, 'aaaaaaaaaa', 'aaaaaaaaaa', '2016-11-23 07:10:03', NULL, 0, 0),
-(29, 'asdfsfd', 'sdfd', NULL, 'sdfs', '', '', 'sdf', 'sdf', 'sdf', NULL, 'sdf', 'sdf', '2016-11-23 07:12:19', NULL, 0, 0),
-(30, 'abhijit', 'asdf', NULL, 'sdfdf', 'df', 'dfd', 'fdfdf', 'dfdf', 'ffffffffs', NULL, 'sssss', 'ssss', '2016-11-23 07:26:55', NULL, 0, 0),
-(31, 'asdf', 'sdfd', NULL, 'fddfdffd', 'fdffdf', '', 'dfdf', 'fdfd', 'fdfdfdfd', NULL, 'fdfdfd', 'dffdf', '2016-11-23 07:33:46', NULL, 0, 0),
-(32, 'asdf', 'dddd', NULL, 'dddddd', '', '', 'dddd', 'ddd', 'ddd', NULL, 'ddd', 'ddd', '2016-11-23 07:34:38', NULL, 0, 0),
-(33, 'asdfsfdd', 'dd', NULL, 'ddddd', '', '', 'dddd', 'dfdfddf', 'dfdf', NULL, 'dfdfd', 'fdffd', '2016-11-23 07:35:20', NULL, 0, 0),
-(36, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2016-11-23 12:17:00', NULL, 0, NULL);
+(47, 'abhijit', 'Home to rent', 'Rent', 'Morwadi', '2500', '10000', 'Nice home', '9168277713', 'abhijitkumbhar001@gmail.com', 'awesome', 'Pimpri-Chinchavad', 'Pune', '2016-11-30 14:23:27', NULL, 0, 0),
+(48, 'abhijit', 'something something', 'Sell', 'daslkdjf', 'nice', 'jskjdfj', 'jlkdfj', 'ljflddjsf', 'jkdjfl', 'qjldkjf', 'jQJ', 'dfjl', '2016-11-30 14:28:58', NULL, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -272,37 +288,19 @@ CREATE TABLE IF NOT EXISTS `real_img` (
   `realid` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `real_id` (`realid`)
-) ENGINE=MyISAM AUTO_INCREMENT=64 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=97 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `real_img`
 --
 
 INSERT INTO `real_img` (`id`, `path`, `realid`) VALUES
-(40, 'uploads/real/24/2016-11-18_15-24-08_0.jpg', 197),
-(41, 'uploads/real/24/2016-11-18_15-24-08_1.jpg', 197),
-(42, 'uploads/real/24/2016-11-18_15-31-12_0.jpg', 199),
-(43, 'uploads/real/24/2016-11-18_15-31-12_1.jpg', 199),
-(44, 'uploads/real/24/2016-11-18_20-38-06_0.jpg', 200),
-(45, 'uploads/real/24/2016-11-18_20-38-54_0.jpg', 201),
-(46, 'uploads/real/101/2016-11-23_09-44-36_0.jpg', 7),
-(47, 'uploads/real/0/2016-11-23_09-54-28_0.jpg', 17),
-(48, 'uploads/real/0/2016-11-23_09-54-28_1.jpg', 17),
-(49, 'uploads/real/0/2016-11-23_10-12-50_0.jpg', 20),
-(50, 'uploads/real/0/2016-11-23_10-26-41_0.jpg', 21),
-(51, 'uploads/real/0/2016-11-23_10-28-35_0.jpg', 23),
-(52, 'uploads/real/101/2016-11-23_10-49-58_0.jpg', 24),
-(53, 'uploads/real/0/2016-11-23_12-29-55_0.jpg', 25),
-(54, 'uploads/real/0/2016-11-23_12-37-06_0.jpg', 26),
-(55, 'uploads/real/0/2016-11-23_12-38-10_0.jpg', 27),
-(56, 'uploads/real/0/2016-11-23_12-40-03_0.jpg', 28),
-(57, 'uploads/real/0/2016-11-23_12-42-19_0.jpg', 29),
-(58, 'uploads/real/0/2016-11-23_12-56-55_0.jpg', 30),
-(59, 'uploads/real/0/2016-11-23_13-03-46_0.jpg', 31),
-(60, 'uploads/real/0/2016-11-23_13-04-38_0.jpg', 32),
-(61, 'uploads/real/0/2016-11-23_13-05-20_0.jpg', 33),
-(62, 'uploads/real/0/2016-11-23_13-05-43_0.jpg', 34),
-(63, 'uploads/real/0/2016-11-23_13-08-51_0.jpg', 35);
+(89, 'uploads/real/0/2016-11-30_19-53-27_0.jpg', 47),
+(90, 'uploads/real/0/2016-11-30_19-53-27_1.jpg', 47),
+(91, 'uploads/real/0/2016-11-30_19-53-39_.jpg', 47),
+(93, 'uploads/real/0/2016-12-01_16-49-34_.jpg', 48),
+(94, 'uploads/real/0/2016-11-30_19-58-33_1.jpg', 48),
+(95, 'uploads/real/0/2016-11-30_19-58-33_2.jpg', 48);
 
 -- --------------------------------------------------------
 
