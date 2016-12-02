@@ -4,7 +4,48 @@
                 <h2>DASHBOARD</h2>
             </div>
             <!-- Widgets -->
-            <?php 
+            <?php
+            /*	FETCHING OF VISITS REALATED DATA */
+            //Realestate
+            $query1 = "select sum(visits) from realestate";
+            $result1 = $this->db->query($query1);
+            foreach ($result1->result_array() as $row){
+            	$real_total_visits = $row['sum(visits)'];
+            }
+            // Tution
+            $query1 = "SELECT sum(visits) from tution";
+            $result1 = $this->db->query($query1);
+            foreach ($result1->result_array() as $row){
+            	$tution_total_visits = $row['sum(visits)'];
+            }
+            //Hotel
+            $query1 = "SELECT sum(visits) from hotel";
+            $result1 = $this->db->query($query1);
+            foreach ($result1->result_array() as $row){
+            	$hotel_total_visits = $row['sum(visits)'];
+            }
+            //Travelling
+            $query1 = "SELECT sum(visits) from travelling";
+            $result1 = $this->db->query($query1);
+            foreach ($result1->result_array() as $row){
+            	$travelling_total_visits = $row['sum(visits)'];
+            }
+            //Automobile
+            $query1 = "SELECT sum(visits) from automobile";
+            $result1 = $this->db->query($query1);
+            foreach ($result1->result_array() as $row){
+            	$automobile_total_visits = $row['sum(visits)'];
+            }
+            //Other
+            $query1 = "SELECT sum(visits) from other";
+            $result1 = $this->db->query($query1);
+            foreach ($result1->result_array() as $row){
+            	$other_total_visits = $row['sum(visits)'];
+            }
+             
+            $total_posts_visits = $real_total_visits + $tution_total_visits + $hotel_total_visits + $travelling_total_visits + $automobile_total_visits + $other_total_visits;
+            
+            /*	FETCHING OF POST REALATED DATA */
             	//Realestate
             	$query1 = "SELECT COUNT(realid) from realestate";
             	$result1 = $this->db->query($query1);
@@ -52,7 +93,7 @@
                         </div>
                         <div class="content">
                             <div class="text">TOTAL VISITORS</div>
-                            <div class="number count-to" data-from="0" data-to="125" data-speed="15" data-fresh-interval="20"></div>
+                            <div class="number count-to" data-from="0" data-to="<?php echo $total_posts_visits;?>" data-speed="15" data-fresh-interval="20"></div>
                         </div>
                     </div>
                 </div>
@@ -63,7 +104,7 @@
                         </div>
                         <div class="content">
                             <div class="text">Real Estate</div>
-                            <div class="number count-to" data-from="0" data-to="257" data-speed="1000" data-fresh-interval="20"></div>
+                            <div class="number count-to" data-from="0" data-to="<?php echo $real_total_visits;?>" data-speed="1000" data-fresh-interval="20"></div>
                         </div>
                     </div>
                 </div>
@@ -74,7 +115,7 @@
                         </div>
                         <div class="content">
                             <div class="text">Tutions</div>
-                            <div class="number count-to" data-from="0" data-to="243" data-speed="1000" data-fresh-interval="20"></div>
+                            <div class="number count-to" data-from="0" data-to="<?php echo $tution_total_visits;?>" data-speed="1000" data-fresh-interval="20"></div>
                         </div>
                     </div>
                 </div>
@@ -85,7 +126,7 @@
                         </div>
                         <div class="content">
                             <div class="text">Hotel & Restaurents</div>
-                            <div class="number count-to" data-from="0" data-to="1225" data-speed="1000" data-fresh-interval="20"></div>
+                            <div class="number count-to" data-from="0" data-to="<?php echo $hotel_total_visits;?>" data-speed="1000" data-fresh-interval="20"></div>
                         </div>
                     </div>
                 </div>
@@ -96,7 +137,7 @@
                         </div>
                         <div class="content">
                             <div class="text">Travelling</div>
-                            <div class="number count-to" data-from="0" data-to="1225" data-speed="1000" data-fresh-interval="20"></div>
+                            <div class="number count-to" data-from="0" data-to="<?php echo $travelling_total_visits;?>" data-speed="1000" data-fresh-interval="20"></div>
                         </div>
                     </div>
                 </div>
@@ -107,7 +148,7 @@
                         </div>
                         <div class="content">
                             <div class="text">Automobiles</div>
-                            <div class="number count-to" data-from="0" data-to="1225" data-speed="1000" data-fresh-interval="20"></div>
+                            <div class="number count-to" data-from="0" data-to="<?php echo $automobile_total_visits;?>" data-speed="1000" data-fresh-interval="20"></div>
                         </div>
                     </div>
                 </div>
@@ -118,39 +159,14 @@
                         </div>
                         <div class="content">
                             <div class="text">Other</div>
-                            <div class="number count-to" data-from="0" data-to="1225" data-speed="1000" data-fresh-interval="20"></div>
+                            <div class="number count-to" data-from="0" data-to="<?php echo $other_total_visits;?>" data-speed="1000" data-fresh-interval="20"></div>
                         </div>
                     </div>
                 </div>
             </div>
             <!-- #END# Widgets -->
-            <div class="row clearfix">
-                <!-- Visitors -->
-                <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
-                    <div class="card">
-                        <div class="body bg-pink">
-                                 Total registered users
-                                 <hr>
-                            <ul class="dashboard-stat-list">
-                                <li>
-                                    TODAY
-                                    <span class="pull-right"><b>1 200</b> <small>USERS</small></span>
-                                </li>
-                                <li>
-                                    YESTERDAY
-                                    <span class="pull-right"><b>1 200</b> <small>USERS</small></span>
-                                </li>
-                                <li>
-                                   Total
-                                    <span class="pull-right"><b>3 872</b> <small>USERS</small></span>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <!-- #END# Visitors -->
                 <!-- Latest Social Trends -->
-                <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
                     <div class="card">
                         <div class="body bg-cyan">
                             <div class="m-b--35 font-bold">Total categorywise posts</div>
@@ -203,30 +219,38 @@
                         </div>
                     </div>
                 </div>
-                <!-- #END# Latest Social Trends -->
-                <!-- Answered Tickets -->
-                <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+                    <div class="row clearfix">
+                <!-- Visitors -->
+                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
                     <div class="card">
-                        <div class="body bg-teal">
-                            <div class="font-bold m-b--35">Top Posts</div>
+                        <div class="body bg-pink">
+                                 Total registered users
+                        <?php 
+                        	$regusers = "SELECT COUNT(reg_id) from register";
+                        	$regarray = $this->db->query($regusers);
+                        	foreach ($regarray->result_array() as $reg_users){
+                        		$total_regusers = $reg_users['COUNT(reg_id)'];
+                        	}
+                        ?>         
+                                 <hr>
                             <ul class="dashboard-stat-list">
-                            <hr>
                                 <li>
-                                    TODAY
-                                    <span class="pull-right"><b>12</b> <small>TICKETS</small></span>
+                                   Total
+                                    <span class="pull-right"><b><?php echo $total_regusers;?></b> <small>USERS</small></span>
                                 </li>
                             </ul>
                         </div>
                     </div>
                 </div>
-                <!-- #END# Answered Tickets -->
+                <!-- #END# Visitors -->
+                <!-- #END# Latest Social Trends -->
             </div>
 			 <div class="row clearfix">
                 <!-- Task Info -->
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                     <div class="card">
                         <div class="header">
-                            <h2>Paid user pramotions</h2>
+                            <h2>Paid user promotions</h2>
                         </div>
                         <div class="body">
                         	<form action="<?php echo base_url();?>Admin/Pramotions" method="post">
