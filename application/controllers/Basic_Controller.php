@@ -449,7 +449,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 						$cat_id =  $row->$category_id;
 						$pathdata = array(
 							'path'=>$image_path,
-							'realid'=>$cat_id,	
+							$category_id=>$cat_id,	
 						);
 						$this->db->insert($category_img_table,$pathdata);
 					}

@@ -202,19 +202,26 @@
                             <h2>Add more images to this post</h2>
                         </div>
                      </div>   
+                     <!-- Add more imgaes -->
                      <div class="body">
-                            <form action="<?php echo base_url();?>Admin/AddMoreImages/<?php echo $realid;?>" id="frmFileUpload" class="dropzone" method="post" enctype="multipart/form-data">
-                                <div class="dz-message">
-                                    <div class="drag-icon-cph">
-                                        <i class="material-icons">touch_app</i>
-                                    </div>
-                                    <h3>Drop files here or click to upload.</h3>
-                                    <em>(This is just a demo dropzone. Selected files are <strong>not</strong> actually uploaded.)</em>
+                            <form action="<?php echo base_url();?>Admin/AddMoreImages" id="frmFileUpload" class="" method="post" enctype="multipart/form-data">
+                                <input type="hidden" name="realid" value="<?php echo $realid;?>">
+                                <input type="hidden" name="category" value="real">
+                                <div class="dropzone"> 
+	                                <div class="dz-message">
+	                                    <div class="drag-icon-cph">
+	                                        <i class="material-icons">touch_app</i>
+	                                    </div>
+	                                    <h3>Choose image<span style="color: red;">*</span> and submit post </h3>
+	                                    <em>To choose multiple images press and hold CTRL key.</em>
+	                                </div>
+	                                <div class="fallback">
+	                                   <input type="file" id="image" multiple="multiple" name="image[]" required="required">
+	                                </div>
+	                                <br>
+	                                <input type="submit" value="Upload" class="btn btn-success" />
                                 </div>
-                                <div class="fallback">
-                                    <input name="file" type="file" multiple />
-                                </div>
-                                <input type="submit" value="Upload" class="btn btn-success">
+                                
                             </form>
                         </div>
                 </div>

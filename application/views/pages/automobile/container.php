@@ -13,7 +13,7 @@
 		<div class="container">
 			<span class="agile-breadcrumbs">
 				<a href="<?php echo base_url();?>index.php"><i class="fa fa-home home_1"></i></a> / 
-				<a href="<?php echo base_url();?>index.php"><span>Hotels & Restaurents</span></a>
+				<a href="<?php echo base_url();?>index.php"><span>Automobile</span></a>
 			</span>
 		</div>
 	</div>

@@ -38,9 +38,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 //			$data['query'] = $this->db->get('realestate',$config['per_page'],$this->uri->segment(3));
 			$this->load->view('pages/mainpage',$category);
 		}
-		public function manage_view($autoid)
+		public function manage_view($travelid)
 		{
-		  $id['autoid']=$autoid;
+		  $id['travelid']=$travelid;
 			$this->load->view('pages/travelling/travelling_view',$id);
 		}
 		public function search()

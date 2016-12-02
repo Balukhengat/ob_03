@@ -164,6 +164,7 @@
 	                                        <i class="material-icons">touch_app</i>
 	                                    </div>
 	                                    <h3>Choose image<span style="color: red;">*</span> and submit post </h3>
+	                                    <em>To choose multiple images press and hold CTRL key.</em>
 	                                </div>
 	                                <div class="fallback">
 	                                   <input type="file" id="image" multiple="multiple" name="image[]" required="required">

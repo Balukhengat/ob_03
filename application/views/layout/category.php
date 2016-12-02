@@ -7,7 +7,7 @@
 		<li class="dropdown head-dpdn"><a href="<?php echo base_url();?>Hotel/hotres"><i class="fa fa-bed" aria-hidden="true"></i>Hotels & Restaurents</a></li>
 		<li class="dropdown head-dpdn"><a href="<?php echo base_url();?>Travelling/travel"><i class="fa fa-plane" aria-hidden="true"></i>Travelling</a></li>
 		<li class="dropdown head-dpdn"><a href="<?php echo base_url();?>Automobile/auto"><i class="fa fa-car" aria-hidden="true"></i>Automobile</a></li>
-		<li class="dropdown head-dpdn"><a href="<?php echo base_url();?>Other/others"><i class="fa fa-car" aria-hidden="true"></i>Other</a></li>
+		<li class="dropdown head-dpdn"><a href="<?php echo base_url();?>Other/others"><i class="fa fa-plus-circle" aria-hidden="true"></i>Other</a></li>
 	</ul>
 	</div>
 	</div>

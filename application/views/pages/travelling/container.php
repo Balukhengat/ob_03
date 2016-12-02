@@ -78,8 +78,8 @@
 							?>
 								<a href="<?php echo base_url();?>Travelling/manage_view/<?php echo $row->travelid;?>">
 									<?php 
-									$travelid = $row->realid;
-									$query2 = "SELECT ravelling_img.path FROM travelling_img WHERE travelling_img.travelid = $travelid LIMIT 1";
+									$travelid = $row->travelid;
+									$query2 = "SELECT travelling_img.path FROM travelling_img WHERE travelling_img.travelid = $travelid LIMIT 1";
 									$result2 = $this->db->query($query2);
 									$row3 = $result2->row();
 									$img_path =  $row3->path;

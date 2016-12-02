@@ -14,14 +14,12 @@
 				  <input placeholder="Email" type="text" class="form-control" id="email" name="email">
 				  <div class="error"><?php echo form_error('message'); ?></div>
 				<textarea placeholder="Your Query" name="message" required=""></textarea>
-					
 					<input type="submit" value="submit">
 				</form>
 			
 				<h5>OR</h5>
 				<a href="<?php echo base_url();?>contact">Contact Us</a>
 			</div>
-			<?php $this->load->view('pages/helpandfaq/faq.php');?>
 		</div>	
 	</div>
 	<!-- // Faq -->
