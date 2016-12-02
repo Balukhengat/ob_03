@@ -77,8 +77,15 @@
 								{
 							?>
 								<a href="<?php echo base_url();?>tutions/manage_view/<?php echo $row->tutid;?>">
+									<?php 
+									$tutid = $row->tutid;
+									$query2 = "SELECT tut_img.path FROM tut_img WHERE tut_img.tutid = $tutid LIMIT 1";
+									$result2 = $this->db->query($query2);
+									$row3 = $result2->row();
+									$img_path =  $row3->path;
+									?>
 									<li>
-									<img src="<?php echo base_url();?>assets/images/r1.jpg" title="" alt="" />
+									<img src="<?php echo base_url();?><?php echo $img_path;?>" title="" alt="" />
 									<section class="list-left">
 									<h5 class="title"><?php echo $row->title?></h5>
 									<span class="adprice"><?php echo $row->name?></span>

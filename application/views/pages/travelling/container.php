@@ -77,8 +77,15 @@
 								{
 							?>
 								<a href="<?php echo base_url();?>Travelling/manage_view/<?php echo $row->travelid;?>">
+									<?php 
+									$travelid = $row->realid;
+									$query2 = "SELECT ravelling_img.path FROM travelling_img WHERE travelling_img.travelid = $travelid LIMIT 1";
+									$result2 = $this->db->query($query2);
+									$row3 = $result2->row();
+									$img_path =  $row3->path;
+									?>
 									<li>
-									<img src="<?php echo base_url();?>assets/images/r1.jpg" title="" alt="" />
+									<img src="<?php echo base_url();?><?php echo $img_path?>" title="" alt="" />
 									<section class="list-left">
 									<h5  class="title"><?php echo $row->title?></h5>
 									<span  class="adprice">RS.<?php echo $row->price?>/-</span>

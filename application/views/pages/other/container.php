@@ -76,8 +76,15 @@
 								{
 							?>
 								<a href="<?php echo base_url();?>other/manage_view/<?php echo $row->otherid;?>">
+									<?php 
+									$otherid = $row->otherid;
+									$query2 = "SELECT other_img.path FROM other_img WHERE other_img.otherid = $otherid LIMIT 1";
+									$result2 = $this->db->query($query2);
+									$row3 = $result2->row();
+									$img_path =  $row3->path;
+									?>
 									<li>
-									<img src="<?php echo base_url();?>assets/images/r1.jpg" title="" alt="" />
+									<img src="<?php echo base_url();?><?php echo $img_path;?>" title="" alt="" />
 									<section class="list-left">
 									<h5 class="title"><?php echo $row->title?></h5>
 									<span class="adprice"><?php echo $row->name?></span>
