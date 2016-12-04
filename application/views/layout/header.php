@@ -5,7 +5,7 @@
 				<ul>
 					<?php if(isset($_SESSION['userid'])){
 					?>	<li class="dropdown head-dpdn">
-						<a href="<?php echo base_url();?>Basic_controller/user_profile" aria-expanded="false"><i class="fa fa-user" aria-hidden="true"></i> Profile</a>
+						<a href="<?php echo base_url();?>Basic_controller/user_profile" aria-expanded="false"><i class="fa fa-user" aria-hidden="true"></i>My Profile</a>
 						</li>
 						<li class="dropdown head-dpdn">
 						<a href="<?php echo base_url();?>Basic_controller/user_logout" aria-expanded="false"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a>

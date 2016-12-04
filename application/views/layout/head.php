@@ -39,7 +39,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <script src="<?php echo base_url();?>assets/js/tabs.js"></script>
 <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/jquery.min.js"></script>
 <script src="<?php echo base_url();?>assets/js/bootstrap.js"></script>
-
+<!-- Light Gallery Plugin Css -->
+    <link href="<?php echo base_url();?>assets_admin/plugins/light-gallery/css/lightgallery.css" rel="stylesheet">
+<html>
 <script>
   $(document).ready(function () {
     var mySelect = $('#first-disabled2');

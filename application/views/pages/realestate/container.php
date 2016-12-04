@@ -88,12 +88,19 @@
 								{
 							?>
 								<a href="<?php echo base_url();?>realestate/manage_view/<?php echo $row->realid;?>">
+								<?php 
+									$realid = $row->realid;
+									$query2 = "SELECT real_img.path FROM real_img WHERE real_img.realid = $realid LIMIT 1";
+									$result2 = $this->db->query($query2);
+									$row3 = $result2->row();
+									$img_path =  $row3->path;
+								?>
 									<li>
-									<img src="<?php echo base_url();?>assets/images/r1.jpg" title="" alt="" />
+									<img src="<?php echo base_url();?><?php echo $img_path;?>" title="" alt="" />
 									<section class="list-left">
 									<h5 class="title"><?php echo $row->title?></h5>
 									<span class="adprice">RS. <?php echo $row->price?>/-</span>
-									<p class="catpath">Real Estate » <?php echo $row->type?></p>
+									<p class="catpath">Real Estate : <?php echo $row->type?></p>
 									</section>
 									<section class="list-right">
 									<span class="date"><?php echo $row->date?></span>
@@ -128,16 +135,16 @@
 											<img src="<?php echo base_url();?>assets/images/r1.jpg" title="" alt="" />
 											<section class="list-left">
 											<h5 class="title"><?php echo $row2['title'];?></h5>
-																		<span class="adprice">RS. <?php echo $row2['price']?>/-</span>
-																		<p class="catpath">Real Estate » <?php echo $row2['type']?></p>
-																		</section>
-																		<section class="list-right">
-																		<span class="date"><?php echo $row2['date']?></span>
-																		<span class="cityname"><?php echo $row2['city']?></span>
-																		</section>
-																		<div class="clearfix"></div>
-																		</li> 
-																	</a>
+											<span class="adprice">RS. <?php echo $row2['price']?>/-</span>
+											<p class="catpath">Real Estate » <?php echo $row2['type']?></p>
+											</section>
+											<section class="list-right">
+											<span class="date"><?php echo $row2['date']?></span>
+											<span class="cityname"><?php echo $row2['city']?></span>
+											</section>
+											<div class="clearfix"></div>
+											</li> 
+									</a>
 								
 								<?php }}?>
 							</ul>

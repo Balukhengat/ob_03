@@ -85,8 +85,15 @@
 								{
 							?>
 								<a href="<?php echo base_url();?>Hotel/manage_view/<?php echo $row->hotelid;?>">
+									<?php 
+									$hotelid = $row->hotelid;
+									$query2 = "SELECT hotel_img.path FROM hotel_img WHERE hotel_img.hotelid = $hotelid LIMIT 1";
+									$result2 = $this->db->query($query2);
+									$row3 = $result2->row();
+									$img_path =  $row3->path;
+								?>
 									<li>
-									<img src="<?php echo base_url();?>assets/images/r1.jpg" title="" alt="" />
+									<img src="<?php echo base_url();?><?php echo $img_path;?>" title="" alt="" />
 									<section class="list-left">
 									<h5 class="title"><?php echo $row->title?></h5>
 									<span class="adprice">RS. <?php echo $row->price?>/-</span>

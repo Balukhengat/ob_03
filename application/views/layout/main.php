@@ -141,97 +141,75 @@ date_default_timezone_set('Asia/Kolkata');
 			<div class="w3l-popular-ads">  
 				<h3><i class="fa fa-diamond" aria-hidden="true"></i> Most popular <i class="fa fa-diamond" aria-hidden="true"></i></h3>
 				 <div class="w3l-popular-ads-info">
-					<div class="col-md-4 w3ls-portfolio-left">
-						<div class="portfolio-img event-img">
-							<img src="assets/images/da1.jpg" class="img-responsive" alt=""/>
-							 <div class="over-image"></div>
-						</div>
-						<div class="portfolio-description">
-						   <h4><a href="jobs.html">BPO jobs</a></h4>
-						   <p>Suspendisse placerat mattis arcu nec por</p>
-							<a href="jobs.html">
-								<span>Explore</span>
-							</a>
-						</div>
-						<div class="clearfix"> </div>
-					</div>	<div class="col-md-4 w3ls-portfolio-left">
-						<div class="portfolio-img event-img">
-							<img src="assets/images/da1.jpg" class="img-responsive" alt=""/>
-							 <div class="over-image"></div>
-						</div>
-						<div class="portfolio-description">
-						   <h4><a href="real-estate.html">Apartments for Sale</a></h4>
-						   <p>Suspendisse placerat mattis arcu nec por</p>
-							<a href="real-estate.html">
-								<span>Explore</span>
-							</a>
-						</div>
-						<div class="clearfix"> </div>
-					</div>
-					<div class="col-md-4 w3ls-portfolio-left">
-						<div class="portfolio-img event-img">
-							<img src="assets/images/da1.jpg" class="img-responsive" alt=""/>
-							 <div class="over-image"></div>
-						</div>
-						<div class="portfolio-description">
-						   <h4><a href="jobs.html">BPO jobs</a></h4>
-						   <p>Suspendisse placerat mattis arcu nec por</p>
-							<a href="jobs.html">
-								<span>Explore</span>
-							</a>
-						</div>
-						<div class="clearfix"> </div>
-					</div>
-					<div class="col-md-4 w3ls-portfolio-left">
-						<div class="portfolio-img event-img">
-							<img src="assets/images/da1.jpg" class="img-responsive" alt=""/>
-							 <div class="over-image"></div>
-						</div>
-						<div class="portfolio-description">
-						   <h4><a href="electronics-appliances.html">Accessories</a></h4>
-						   <p>Suspendisse placerat mattis arcu nec por</p>
-							<a href="electronics-appliances.html">
-								<span>Explore</span>
-							</a>
-						</div>
-						<div class="clearfix"> </div>
-					</div>
-					<div class="col-md-4 w3ls-portfolio-left">
-						<div class="portfolio-img event-img">
-							<img src="assets/images/da1.jpg" class="img-responsive" alt=""/>
-							 <div class="over-image"></div>
-						</div>
-						<div class="portfolio-description">
-						   <h4><a href="furnitures.html">Home Appliances</a></h4>
-						   <p>Suspendisse placerat mattis arcu nec por</p>
-							<a href="furnitures.html">
-								<span>Explore</span>
-							</a>
-						</div>
-						<div class="clearfix"> </div>
-					</div>
-					<div class="col-md-4 w3ls-portfolio-left">
-						<div class="portfolio-img event-img">
-							<img src="assets/images/da1.jpg" class="img-responsive" alt=""/>
-							 <div class="over-image"></div>
-						</div>
-						<div class="portfolio-description">
-						   <h4><a href="fashion.html">Clothing</a></h4>
-						   <p>Suspendisse placerat mattis arcu nec por</p>
-							<a href="fashion.html">
-								<span>Explore</span>
-							</a>
-						</div>
-						<div class="clearfix"> </div>
-					</div>
+				 <?php 
+				 	$mostpopular = "SELECT * from pramotion";
+				 	$mostpopular_result = $this->db->query($mostpopular);
+				 	foreach ($mostpopular_result->result_array() as $mostpopular_row){
+				 		$post_id = $mostpopular_row['post_id'];
+				 		$category = $mostpopular_row['category'];
+				 		if($category == 0){
+				 			$real_id = $post_id;
+				 			$cat_id = "realid";
+				 			$cat_table = "realestate";
+				 			$cat_img_table = "real_img";
+				 		}elseif($category==1){
+				 			$real_id = $post_id;
+				 			$cat_id = "tutid";
+				 			$cat_table = "tution";
+				 			$cat_img_table = "tut_img";
+				 		}elseif($category == 2){
+				 			$real_id = $post_id;
+				 			$cat_id = "hotelid";
+				 			$cat_table = "hotel";
+				 			$cat_img_table = "hotel_img";
+				 		}elseif($category == 3){
+				 			$real_id = $post_id;
+				 			$cat_id = "travelid";
+				 			$cat_table = "travelling";
+				 			$cat_img_table = "travelling_img";
+				 		}elseif($category == 4){
+				 			$real_id = $post_id;
+				 			$cat_id = "autoid";
+				 			$cat_table = "automobile";
+				 			$cat_img_table = "automobile_img";
+				 		}elseif($category == 5){
+				 			$real_id = $post_id;
+				 			$cat_id = "otherid";
+				 			$cat_table = "other";
+				 			$cat_img_table = "other_img";
+				 		}
+				 			$fetchmostpopular = "SELECT $cat_table.$cat_id, $cat_table.`name`, $cat_table.title, $cat_table.description,  $cat_table.userid, $cat_table.visits, $cat_img_table.path FROM $cat_img_table INNER JOIN $cat_table ON $cat_table.$cat_id = $cat_img_table.$cat_id WHERE $cat_table.$cat_id = $real_id LIMIT 1";
+				 			$fetchmostpopular_result = $this->db->query($fetchmostpopular);
+				 			foreach ($fetchmostpopular_result->result_array() as $fetchmostpopular_row){
+				 			?>
+				 			<div class="col-md-4 w3ls-portfolio-left">
+								<div class="portfolio-img event-img">
+									 <img src="<?php echo $fetchmostpopular_row['path'];?>" class="img-responsive" alt="<?php echo $fetchmostpopular_row['title'];?>" height="250" width="350"/>
+									 <div class="over-image"></div>
+								</div>
+								<div class="portfolio-description">
+								   <h4><a href="<?php echo base_url();?>Realestate/manage_view/<?php echo $fetchmostpopular_row[$cat_id];?>"><?php echo $fetchmostpopular_row['title'];?></a></h4>
+								   <p><?php echo $fetchmostpopular_row['description'];?></p>
+									<a href="<?php echo base_url();?>Realestate/manage_view/<?php echo $fetchmostpopular_row[$cat_id];?>">
+										<span>Explore</span>
+									</a>
+								</div>
+								<div class="clearfix"> </div>
+							</div>
+				 			<?php 
+				 			}
+				 		
+				 		
+				 	}//Eof foreach	
+				 ?>
 					<div class="clearfix"> </div>
 				 </div>
 				 
 				 <!-- ADVERTISEMENT BANNER -->
 					
-					<div style="padding-top: 40px;">
+				<!-- 	<div style="padding-top: 40px;">
 						<img class="img-responsive" style="margin-left: auto;margin-right: auto;" alt="adds" src="<?php echo base_url();?>assets/images/adbanner.jpg" width="800" height="60">
-					</div>	
+ 					</div> -->	
 			 </div>
 			<!-- trending-ads -->									
 			<div class="trending-ads">

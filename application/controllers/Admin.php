@@ -114,11 +114,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			$this->session->set_flashdata('message','Image Deleted');
 			redirect(base_url() . 'Admin/'.$page_name.'/'.$realid);
 		}
-		public function AddMoreImages($realid){
-			echo $realid; die();
-			//$this->AdminModel->image_upload('real',$userid);
+		public function AddMoreImages(){
+			$realid = $this->input->post('realid');
+			$category = $this->input->post('category');
+			$file = $_FILES['image']['tmp_name'];
+			$this->AdminModel->image_upload_new($category,$realid);
 		}
-		
 		/* ************************************************************
 		 * 					REALESTATE
 		 *************************************************************/

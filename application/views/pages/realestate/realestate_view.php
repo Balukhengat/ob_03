@@ -1,5 +1,4 @@
-<html>
-<?php 	
+<?php
 	$real_info=$this->db->get_where('realestate',array('realid'=>$realid))->result_array();
 	$this->load->view('layout/head');
 	?>
@@ -27,10 +26,21 @@
 					<p> <i class="glyphicon glyphicon-map-marker"></i>Posted on | <?php echo $date = $row['date'];?> | Post id : <?php echo $row['realid']; ?></p>
 <!-- SLIEDER -->
 		<div id="slides">
-			<img src="<?php echo base_url()?>/assets/images/account-bg.jpg" width="500" height="400" class="img-responsive">
-			<img src="<?php echo base_url()?>/assets/images/r10.jpg" width="500" height="400" class="img-responsive">
-			<a href="#" class="slidesjs-previous slidesjs-navigation"><img src="<?php echo base_url();?>assets/images/slider-arrow-left.png"></a>
-      		<a href="#" class="slidesjs-next slidesjs-navigation"><img src="<?php echo base_url();?>assets/images/slider-arrow-right.png"></a>
+			<div class="body">
+                            <div id="aniimated-thumbnials" class="list-unstyled row clearfix">
+                                <?php 
+                                 $real_path = "SELECT path FROM real_img WHERE realid = $realid";
+                                 $real_path_result = $this->db->query($real_path)->result_array();
+								foreach ($real_path_result as $image_path){	
+								?>  
+                                <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                                    <a href="<?php echo base_url();?><?php echo $image_path['path'];?>" data-sub-html="Demo Description">
+                                        <img class="img-responsive thumbnail" src="<?php echo base_url();?><?php echo $image_path['path'];?>">
+                                    </a>
+                                </div>
+                                <?php }?>
+                            </div>
+            </div>
 		</div>
 <!-- EOF SLIEDER -->		
 		<div class="product-details">
@@ -82,140 +92,13 @@
 </div>
 		</div>
 		<?php }?>
-		
 	</div>
 	<!--//single-page-->
 		<?php $this->load->view('layout/footer');?>
 		<?php $this->load->view('layout/js');?>
 	</body>
-
 </html>
-<style>
-    #slides {
-      display: none
-    }
-
-    .container {
-      margin: 0 auto
-    }
-
-    /* For tablets & smart phones */
-    @media (max-width: 767px) {
-      body {
-        padding-left: 20px;
-        padding-right: 20px;
-      }
-      .container {
-        width: auto
-      }
-    }
-
-    /* For smartphones */
-    @media (max-width: 480px) {
-      .container {
-        width: auto
-      }
-    }
-
-    /* For smaller displays like laptops */
-    @media (min-width: 768px) and (max-width: 979px) {
-      .container {
-        width: 724px
-      }
-    }
-
-    /* For larger displays */
-    @media (min-width: 1200px) {
-      .container {
-        width: 1170px
-      }
-    }
-  </style>
-  <script src="<?php echo base_url();?>assets/js/jquery.slides.min.js"></script>
-  <script>
-    $(function() {
-      $('#slides').slidesjs({
-        width: 940,
-        height: 528,
-        navigation: false
-      });
-    });
-  </script>
-  <style>
-    #slides {
-      display: none
-    }
-
-    #slides .slidesjs-navigation {
-      margin-top:3px;
-    }
-
-    #slides .slidesjs-previous {
-      margin-right: 5px;
-      float: left;
-    }
-
-    #slides .slidesjs-next {
-      margin-right: 5px;
-      float: left;
-    }
-
-    .slidesjs-pagination {
-      margin: 6px 0 0;
-      float: right;
-      list-style: none;
-    }
-
-    .slidesjs-pagination li {
-      float: left;
-      margin: 0 1px;
-    }
-
-    .slidesjs-pagination li a {
-      display: block;
-      width: 13px;
-      height: 0;
-      padding-top: 13px;
-      background-image: url(img/pagination.png);
-      background-position: 0 0;
-      float: left;
-      overflow: hidden;
-    }
-
-    .slidesjs-pagination li a.active,
-    .slidesjs-pagination li a:hover.active {
-      background-position: 0 -13px
-    }
-
-    .slidesjs-pagination li a:hover {
-      background-position: 0 -26px
-    }
-
-    #slides a:link,
-    #slides a:visited {
-      color: #333
-    }
-
-    #slides a:hover,
-    #slides a:active {
-      color: #9e2020
-    }
-
-    .navbar {
-      overflow: hidden
-    }
-  </style>
-  
-  <!-- ZOOOMING OF IMAGE ON HOVER-->
-  <script src='<?php echo base_url();?>assets/js/jquery.zoom.js'></script>
-	<script>
-		$(document).ready(function(){
-			$('#ex1').zoom();
-			$('#ex2').zoom({ on:'grab' });
-			$('#ex3').zoom({ on:'click' });			 
-			$('#ex4').zoom({ on:'toggle' });
-		});
-	</script>
-<!-- 	<span class='zoom' id='ex1'> -->
-<!-- 					<img src="" width="500" height="400" class="img-responsive"> -->
-<!-- 	</span>	 -->
+	<!-- Light Gallery Plugin Js -->
+    <script src="<?php base_url();?>assets_admin/plugins/light-gallery/js/lightgallery-all.js"></script>
+    <!-- Custom Js -->
+    <script src="<?php base_url();?>assets_admin/js/pages/medias/image-gallery.js"></script>

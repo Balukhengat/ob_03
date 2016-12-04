@@ -33,7 +33,7 @@
 							<p>ha ha ! Thats really easy stuff, WOW ENJOY</p>
 						</div>
 						<div class="clearfix"></div>
-						<a class="work" href="<?php echo base_url();?>index.php/register">Get start Now</a>
+						<a class="work" href="<?php echo base_url()?>index.php/login/newuser">Get start Now</a>
 					</div>
 				
 				<!-- ### HOW WE WORK BLOCKS -->		

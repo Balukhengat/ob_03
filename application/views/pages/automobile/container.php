@@ -13,7 +13,7 @@
 		<div class="container">
 			<span class="agile-breadcrumbs">
 				<a href="<?php echo base_url();?>index.php"><i class="fa fa-home home_1"></i></a> / 
-				<a href="<?php echo base_url();?>index.php"><span>Hotels & Restaurents</span></a>
+				<a href="<?php echo base_url();?>index.php"><span>Automobile</span></a>
 			</span>
 		</div>
 	</div>
@@ -74,12 +74,19 @@
 								{
 							?>
 								<a href="<?php echo base_url();?>Automobile/manage_view/<?php echo $row->autoid;?>">
+								<?php 
+									$autoid = $row->autoid;
+									$query2 = "SELECT automobile_img.path FROM automobile_img WHERE automobile_img.autoid = $autoid LIMIT 1";
+									$result2 = $this->db->query($query2);
+									$row3 = $result2->row();
+									$img_path =  $row3->path;
+								?>	
 									<li>
-									<img src="<?php echo base_url();?>assets/images/r1.jpg" title="" alt="" />
+									<img src="<?php echo base_url();?><?php echo $img_path;?>" title="" alt="" />
 									<section class="list-left">
 									<h5 class="title"><?php echo $row->title?></h5>
 									<span class="adprice"><?php echo $row->name?></span>
-									<p class="catpath">Automobile» <?php echo $row->type?></p>
+									<p class="catpath">Automobile : <?php echo $row->type?></p>
 									</section>
 									<section class="list-right">
 									<span class="date"><?php echo $row->date?></span>
