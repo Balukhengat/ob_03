@@ -61,15 +61,15 @@
 						   <div>
 												<div id="container">
 								
-								<div class="sort">
-								   <div class="sort-by">
-										<label>Sort By : </label>
-										<select id="sort" name="sort">
-														<option value="AES">Price: Rs Low to High</option>
-														<option value="DESC">Price: Rs High to Low</option>
-										</select>
-									   </div>
-									 </div>
+<!-- 								<div class="sort"> -->
+<!-- 								   <div class="sort-by"> -->
+<!-- 										<label>Sort By : </label> -->
+<!-- 										<select id="sort" name="sort"> -->
+<!-- 														<option value="AES">Price: Rs Low to High</option> -->
+<!-- 														<option value="DESC">Price: Rs High to Low</option> -->
+<!-- 										</select> -->
+<!-- 									   </div> -->
+<!-- 									 </div> -->
 								<div class="clearfix"></div>
 							<ul id="result" class="list">
 							<?php   if($datas==null && $msearch==null){
