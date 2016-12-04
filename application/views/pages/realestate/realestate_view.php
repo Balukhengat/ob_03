@@ -1,6 +1,9 @@
 <?php
 	$real_info=$this->db->get_where('realestate',array('realid'=>$realid))->result_array();
 	$this->load->view('layout/head');
+	//Counter to update visits of each record.
+	$view_count_query = "update realestate set visits = visits+1 where realid = $realid";
+	$this->db->query($view_count_query);
 	?>
 	<body>
 	<?php $this->load->view('layout/leftsidebar.php');?>

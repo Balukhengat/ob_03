@@ -1,6 +1,9 @@
 <?php
 	$real_info=$this->db->get_where('tution',array('tutid'=>$tutid))->result_array();
 	$this->load->view('layout/head');
+	//Counter to update visits of each record.
+	$view_count_query = "update tution set visits = visits+1 where tutid = $tutid";
+	$this->db->query($view_count_query);
 	?>
 	<body>
 	<?php $this->load->view('layout/leftsidebar.php');?>
