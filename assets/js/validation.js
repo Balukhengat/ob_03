@@ -24,6 +24,13 @@ $(function(){
 	var error_area=false;
 	var error_price=false;
 	
+	$("#name").focusout(function(){
+		check_name();
+	});
+
+	$("#email").focusout(function(){
+		check_email();
+	});
 	$("#title").focusout(function(){
 		check_title();
 	});
@@ -51,9 +58,35 @@ $(function(){
 	$("#area").focusout(function(){
 		check_area();
 	});
+	$("#price").focusout(function(){
+		check_price();
+	});
 	$("#mobile").focusout(function(){
 		check_mobile();
 	});
+	
+	function check_name(){
+		var length=$("#name").val().length;
+		if(length<3){
+			$("#name_error").html("Please enter name");
+			$("#name_error").show();
+			error_city=true;
+		}else{
+			$("#city_error").hide();
+		}
+	}
+	function check_email(){ 
+		var email = $("#email").val();
+		var re =  /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;  
+		if (email == '' || !re.test(email))
+		{
+			$("#email_error").html("Please enter valid email");
+			$("#email_error").show();
+			error_email=true;
+		}else{
+			$("#email_error").hide();
+		}
+	}
 	function check_mobile(){
 		var pattern = new RegExp('[0-9]{10}');
 		var length=$("#mobile").val().length;
@@ -86,13 +119,14 @@ $(function(){
 		}
 	}
 	function check_price(){
-		var length=$("#price").val().length;
-		if(length==0){
-			$("#price_error").html("Price Field is required");
+		var pattern =/^(\s*|\d+)$/;
+		if(pattern.test($("#price").val())){
+			$("#price_error").hide();
+			
+		}else{
+			$("#price_error").html("Please enter correct price");
 			$("#price_error").show();
 			error_price=true;
-		}else{
-			$("#price_error").hide();
 		}
 	}
 	function check_address(){
@@ -178,6 +212,10 @@ $(function(){
 	});
 	//realestate form submition
 	$("#real_form").submit(function(){
+		error_name=false;
+		error_email=false;
+		error_mobile=false;
+		error_price=false;
 		error_title=false;
 		error_address=false;
 		error_description=false;
@@ -185,14 +223,18 @@ $(function(){
 		error_city=false;
 		error_area=false;
 		error_builtup=false;
+		 check_name();
 		 check_title();
 		 check_address();
 		 check_description();
+		 check_price();
 		 check_facilities();
 		 check_city();
+		 check_mobile();
+		 check_email();
 		 check_area();
 		 check_builtup();
-		 if(error_title==false && error_address==false && error_description==false && error_facilities==false && error_city==false && error_area==false && error_builtup==false){
+		 if(error_name==false && error_price==false && error_title==false && error_address==false && error_description==false && error_facilities==false && error_mobile==false && error_email==false && error_city==false && error_area==false && error_builtup==false){
 			 return true;
 		 }else{
 			 return false;
