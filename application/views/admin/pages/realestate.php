@@ -20,143 +20,89 @@
                                 Add realestate data
                             </h2>
                         <div class="body">
-                        	<form action="<?php echo base_url();?>Admin/realestate/create" id="frmFileUpload" method="post" enctype="multipart/form-data">
-								<div class="row clearfix">
-	                                <div class="col-md-4">
-	                                    <div class="input-group">
-	                                        <span class="input-group-addon">
-	                                            <i class="material-icons">person</i> <span style="color: red;">*</span> 
-	                                        </span>
-	                                        <div class="form-line">
-	                                            <input type="text" class="form-control date" placeholder="Vendors Name" name="name" required="required">
-	                                        </div>
-	                                    </div>
-	                                </div>
-	                                <div class="col-md-8">
-	                                    <div class="input-group">
-	                                        <span class="input-group-addon">
-	                                            <i class="material-icons">title</i><span style="color: red;">*</span>
-	                                        </span>
-	                                        <div class="form-line">
-	                                            <input type="text" class="form-control date" placeholder="Title" name="title" required="required">
-	                                        </div>
-	                                    </div>
-	                                </div>
-	                                
-	                                <div class="col-md-12">
-	                                    <div class="input-group">
-	                                        <span class="input-group-addon">
-	                                            <i class="material-icons">contacts</i> <span style="color: red;">*</span>
-	                                        </span>
-	                                        <div class="form-line">
-	                                            <textarea class="form-control date" placeholder="address" name="address" required="required"></textarea>
-	                                        </div>
-	                                    </div>
-	                                </div>
-	                                <div class="col-md-4">
-	                                    <div class="input-group">
-	                                        <span class="input-group-addon">
-	                                            <i class="material-icons">business</i> <span style="color: red;">*</span>
-	                                        </span>
-	                                        <div class="form-line">
-	                                            <select required="required" name="type">
-	                                            	<option value="Rent">Rent</option>
-	                                            	<option value="Sell">Sell</option>
-	                                            </select>
-	                                        </div>    
-	                                    </div>
-	                                </div>
-	                                <div class="col-md-4">
-	                                    <div class="input-group">
-	                                        <span class="input-group-addon">
-	                                            <i class="material-icons">crop_free</i>
-	                                        </span>
-	                                        <div class="form-line">
-	                                            <input type="text" class="form-control date" placeholder="Builtup area" name="builtup">
-	                                        </div>
-	                                    </div>
-	                                </div>
-	                                <div class="col-md-4">
-	                                    <div class="input-group">
-	                                        <span class="input-group-addon">
-	                                            <i class="material-icons">monetization_on</i>
-	                                        </span>
-	                                        <div class="form-line">
-	                                            <input type="text" class="form-control date" placeholder="price" name="price">
-	                                        </div>
-	                                    </div>
-	                                </div>
-	                                <div class="col-md-12">
-	                                    <div class="input-group">
-	                                        <span class="input-group-addon">
-	                                            <i class="material-icons">insert_comment</i> <span style="color: red;">*</span>
-	                                        </span>
-	                                        <div class="form-line">
-	                                            <textarea class="form-control date" placeholder="Description" name="description" required="required"></textarea>
-	                                        </div>
-	                                    </div>
-	                                </div>
-	                                <div class="col-md-4">
-	                                    <div class="input-group">
-	                                        <span class="input-group-addon">
-	                                            <i class="material-icons">call</i> <span style="color: red;">*</span>
-	                                        </span>
-	                                        <div class="form-line">
-	                                            <input type="text" class="form-control date" placeholder="Mobile" name="mobile" required="required">
-	                                        </div>
-	                                    </div>
-	                                </div>
-	                                <div class="col-md-8">
-	                                    <div class="input-group">
-	                                        <span class="input-group-addon">
-	                                            <i class="material-icons">email</i> <span style="color: red;">*</span>
-	                                        </span>
-	                                        <div class="form-line">
-	                                            <input type="text" class="form-control date" placeholder="email" name="email" required="required">
-	                                        </div>
-	                                    </div>
-	                                </div>
-	                                <div class="col-md-12">
-	                                    <div class="input-group">
-	                                        <span class="input-group-addon">
-	                                            <i class="material-icons">label</i>
-	                                        </span>
-	                                        <div class="form-line">
-	                                            <textarea class="form-control date" placeholder="amenities" name="amenities"></textarea>
-	                                        </div>
-	                                    </div>
-	                                </div>
-	                                <div class="col-md-6">
-	                                    <div class="input-group">
-	                                        <span class="input-group-addon">
-	                                            <i class="material-icons">location_city</i> <span style="color: red;">*</span>
-	                                        </span>
-	                                        <div class="form-line">
-	                                            <input type="text" class="form-control date" placeholder="city" name="city" required="required">
-	                                        </div>
-	                                    </div>
-	                                </div>
-	                                <div class="col-md-6">
-	                                    <div class="input-group">
-	                                        <span class="input-group-addon">
-	                                            <i class="material-icons">live_help</i> <span style="color: red;">*</span>
-	                                        </span>
-	                                        <div class="form-line">
-	                                            <input type="text" class="form-control date" placeholder="area" name="area" required="required">
-	                                        </div>
-	                                    </div>
-	                                </div>
-	                                 <div class="col-md-4">
-	                                    <div class="input-group">
-	                                        <span class="input-group-addon">
-	                                            <i class="material-icons">access_timer</i> Offer End date
-	                                        </span>
-	                                        <div class="form-line">
-	                                            <input type="date" class="form-control date" placeholder="Offer End date" name="date">
-	                                        </div>
-	                                    </div>
-	                                </div>
-	                            </div>
+                        	<form action="<?php echo base_url();?>Admin/realestate/create" id="real_form" method="post" enctype="multipart/form-data">
+								
+	<div class="col-md-6">
+	<div class="form-group">
+	  <label for="Name">Name</label><span style="color: red;">*</span><span style="color: red;" class="error" id="name_error"></span>
+	  <input type="text" class="form-control" id="name" name="name">
+	</div>
+	</div>
+	<div class="col-md-6">
+	<div class="form-group">
+	  <label for="id">Title</label><span style="color: red;">*</span> <span style="color: red;" class="error" id="title_error"></span>
+	  <input type="text" class="form-control" id="title" name="title">
+	</div>
+	</div>
+	<div class="col-md-6">
+	<div class="form-group">
+	  <label for="Type">Type</label><span style="color: red;">*</span> <span style="color: red;" class="error" id="type_error"></span>
+	  <select name="type" class="form-control">
+	  	<option>Sell</option>
+	  	<option>Rent</option>
+	  </select>
+	</div>
+	</div>
+	<div class="col-md-6">
+	<div class="form-group">
+	  <label for="Address">Address</label><span style="color: red;">*</span> <span style="color: red;" class="error" id="address_error"></span>
+	  <textarea class="form-control" id="address" name="address"></textarea>
+	</div>
+	</div>
+	<div class="col-md-12">
+	<div class="form-group">
+	  <label for="Description">Description</label><span style="color: red;">*</span> <span style="color: red;" class="error" id="description_error"></span>
+	  <textarea class="form-control" id="description" name="description"></textarea>
+	</div>
+	</div>
+	<div class="col-md-6">
+	<div class="form-group">
+	  <label for="builtup">Builtup</label><span style="color: red;">*</span><span style="color: red;" class="error" id="builtup_error"></span>
+	  <input type="text" class="form-control" id="builtup" name="builtup" placeholder="Enter area in Sq.ft">
+	</div>
+	</div>
+	<div class="col-md-6">
+	<div class="form-group">
+	  <label for="price">Price</label><span style="color: red;" class="error" id="price_error"></span>
+	  <input type="text" class="form-control" id="price" name="price">
+	</div>
+	</div>
+	<div class="col-md-6">
+	<div class="form-group">
+	  <label for="Mobile">Mobile</label><span style="color: red;">*</span> <span style="color: red;" class="error" id="mobile_error"></span>
+	  <input type="text" class="form-control" id="mobile" name="mobile">
+	</div>
+	</div>
+	<div class="col-md-6">
+	<div class="form-group">
+	  <label for="email">Email</label><span style="color: red;">*</span> <span style="color: red;" class="error" id="email_error"></span>
+	  <input type="text" class="form-control" id="email" name="email">
+	</div>
+	</div>
+	<div class="col-md-12">
+	<div class="form-group">
+	  <label for="Facilities">Facilities</label><span style="color: red;">*</span> <span style="color: red;" class="error" id="facilities_error"></span>
+	  <textarea rows="" cols="" class="form-control" id="facilities" name="facilities"></textarea>
+	</div>
+	</div>
+	<div class="col-md-6">
+	<div class="form-group">
+	  <label for="City">City</label><span style="color: red;">*</span> <span style="color: red;" class="error" id="city_error"></span>
+	  <input type="text" class="form-control" id="city" name="city">
+	</div>
+	</div>
+	<div class="col-md-6">
+	<div class="form-group">
+	  <label for="Area">Area</label><span style="color: red;">*</span><span style="color: red;" class="error" id="area_error"></span>
+	  <input type="text" class="form-control" id="area" name="area">
+	</div>
+	</div>
+	<div class="col-md-6">
+	<div class="form-group">
+	  <label for="Offerend">Offer end date</label>
+	  <input type="date" class="form-control" id="offerend" name="offerend">
+	</div>
+	</div>
 	                            <hr>
                                 <div class="dropzone"> 
 	                                <div class="dz-message">
@@ -181,7 +127,8 @@
     </section>
     <!-- Jquery Core Js -->
     <script src="<?php echo base_url();?>assets_admin/plugins/jquery/jquery.min.js"></script>
-
+<!-- Validation -->
+    <script src="<?php echo base_url();?>assets/js/validation.js"></script>
     <!-- Bootstrap Core Js -->
     <script src="<?php echo base_url();?>assets_admin/plugins/bootstrap/js/bootstrap.js"></script>
 

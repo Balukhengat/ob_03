@@ -140,7 +140,7 @@ class AdminModel extends CI_Model{
 				$config['upload_path']=  FCPATH.$basepath."/".$userid."/";
 				$config['file_name']=$timestamp.$i.'.jpg';
 				$config['allowed_types']= 'jpg|png';
-				$config['max_size']= 2048;
+				$config['max_size']= 5120;
 
 				$this->load->library('upload', $config);
 				$this->upload->initialize($config);
@@ -151,9 +151,20 @@ class AdminModel extends CI_Model{
 				}
 				else
 				{
-					$da = array('upload_data' => $this->upload->data());
-					$image_path = $basepath."/".$userid."/".$config['file_name'];
-	
+					$da =$this->upload->data();
+						$image_path =$basepath."/".$userid."/".$config['file_name'];
+						//echo $image_path;die();
+						$config['image_library'] = 'gd2';
+						$config['source_image'] =  $da['full_path'];
+						$config['create_thumb'] = FALSE;
+						$config['maintain_ratio'] = TRUE;
+						$config['quality']      = 100;
+						$config['width']         = 600;
+						$config['height']       = 350;
+						$this->image_lib->clear();
+						$this->load->library('image_lib', $config);
+						$this->image_lib->initialize($config);
+						$this->image_lib->resize();
 					$category_id = $category_data['category_id'];
 					$category_table = $category_data['category_table'];
 					$category_img_table = $category_data['category_img_table'];
@@ -183,7 +194,7 @@ class AdminModel extends CI_Model{
 				$config['upload_path']=  FCPATH.$basepath."/".$userid."/";
 				$config['file_name']=$timestamp.$i.'.jpg';
 				$config['allowed_types']= 'jpg|png';
-				$config['max_size']= 2048;
+				$config['max_size']= 5120;
 	
 				$this->load->library('upload', $config);
 				$this->upload->initialize($config);
@@ -194,8 +205,21 @@ class AdminModel extends CI_Model{
 				}
 				else
 				{
-					$da = array('upload_data' => $this->upload->data());
-					$image_path = $basepath."/".$userid."/".$config['file_name'];
+					$da =$this->upload->data();
+						$image_path = $basepath."/".$userid."/".$config['file_name'];
+						//echo $image_path;die();
+						$config['image_library'] = 'gd2';
+						$config['source_image'] =  $da['full_path'];
+						$config['create_thumb'] = FALSE;
+						$config['maintain_ratio'] = TRUE;
+						$config['quality']      = 100;
+						$config['width']         = 600;
+						$config['height']       = 350;
+						$this->image_lib->clear();
+						$this->load->library('image_lib', $config);
+						$this->image_lib->initialize($config);
+							
+						$this->image_lib->resize();
 	
 					$category_id = $category_data['category_id'];
 					$category_table = $category_data['category_table'];
@@ -279,7 +303,7 @@ class AdminModel extends CI_Model{
 		$config['upload_path']=  FCPATH."uploads/".$path."/".$userid."/";
 		$config['file_name']=$timestamp.'.jpg';
 		$config['allowed_types']= 'jpg|png';
-		$config['max_size']= 2048;
+		$config['max_size']= 5120;
 		
 		$this->load->library('upload', $config);
 		$this->upload->initialize($config);
@@ -290,8 +314,21 @@ class AdminModel extends CI_Model{
 		}
 		else
 		{
-			$da = array('upload_data' => $this->upload->data());
-			$image_path = "uploads/$path"."/".$userid."/".$config['file_name'];
+			$da =$this->upload->data();
+						$image_path = $basepath."/".$userid."/".$config['file_name'];
+						//echo $image_path;die();
+						$config['image_library'] = 'gd2';
+						$config['source_image'] =  $da['full_path'];
+						$config['create_thumb'] = FALSE;
+						$config['maintain_ratio'] = TRUE;
+						$config['quality']      = 100;
+						$config['width']         = 600;
+						$config['height']       = 350;
+						$this->image_lib->clear();
+						$this->load->library('image_lib', $config);
+						$this->image_lib->initialize($config);
+							
+						$this->image_lib->resize();
 			
 			$category_id = $category_data['category_id'];
 			$category_table = $category_data['category_table'];
