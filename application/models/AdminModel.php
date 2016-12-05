@@ -12,8 +12,8 @@ class AdminModel extends CI_Model{
 			foreach ($success as $row){
 				$adminid = $row['reg_id'];
 			}
-			//SETTING SESSION FOR ADMIN'S (ID 0-100 FOR ADMIN) *** !Important ***
-			if ($userid>=0 && $userid<=100){
+			//SETTING SESSION FOR ADMIN (ADMIN ID == 0)
+			if ($adminid==0){
 				$_SESSION['adminid']=$adminid;
 				redirect(base_url().'Admin');
 			}else{

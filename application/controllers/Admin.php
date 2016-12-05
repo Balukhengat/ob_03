@@ -1,6 +1,5 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-	
 	class Admin extends CI_Controller{
 		public function index(){
 			if(isset($_SESSION['adminid'])){
@@ -27,59 +26,72 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			redirect(base_url().'Admin/Login');
 		}
 		public function Pramotions(){
-			$post_id = $this->input->post("post_id");
-			$sub_days = $this->input->post("sub_days"); //Subscrioption days
-			$price = $this->input->post("price");
-			$category = $this->input->post("category");
-			
-			date_default_timezone_set("Asia/Kolkata");
-			$time = date("Y-m-d");
-			
-			$time_left = date('Y-m-d', strtotime("+$sub_days days"));
-			$data = array(
-					'post_id' => $post_id,
-					'sub_days' => $sub_days,
-					'price' => $price,
-					'category' => $category,
-					'dateadded' => $time,
-					'daysleft' => $time_left
-					
-			);
-			$this->db->insert('pramotion',$data);
-			redirect(base_url().'Admin');
+			if(isset($_SESSION['adminid'])){
+				$post_id = $this->input->post("post_id");
+				$sub_days = $this->input->post("sub_days"); //Subscrioption days
+				$price = $this->input->post("price");
+				$category = $this->input->post("category");
+				
+				date_default_timezone_set("Asia/Kolkata");
+				$time = date("Y-m-d");
+				
+				$time_left = date('Y-m-d', strtotime("+$sub_days days"));
+				$data = array(
+						'post_id' => $post_id,
+						'sub_days' => $sub_days,
+						'price' => $price,
+						'category' => $category,
+						'dateadded' => $time,
+						'daysleft' => $time_left
+						
+				);
+					$this->db->insert('pramotion',$data);
+					redirect(base_url().'Admin');
+				}else{
+					redirect(base_url().'Admin/login');
+				}
 		}
 		public function DeletePramotions($postid){
-			$query = "delete from pramotion where post_id = $postid";
-			$this->db->query($query);
-			redirect(base_url().'Admin');
+			if(isset($_SESSION['adminid'])){
+				$query = "delete from pramotion where post_id = $postid";
+				$this->db->query($query);
+				redirect(base_url().'Admin');
+			}else{
+				redirect(base_url().'Admin/login');
+			}
 		}
 		public function UpdateImage($path){
-			$data['userid'] = $_SESSION['adminid'];
-			$data['imgid'] = $this->input->post('imgid');
-			$postid = $this->input->post('postid');
-			$this->AdminModel->image_update('real',$data);
-			$this->session->set_flashdata('message','Image Updated Successfully');
-			/*
-			 *
-			 * 	PAGENAME SELECTION [ Add new category if any in elseif ] >>>
-			 *
-			 */
-			if($path=="real"){
-				$page_name = "realestate_edit";
-			}elseif ($path=="tution"){
-				$page_name = "tution_edit";
-			}elseif ($path=="hotel"){
-				$page_name = "hotel_edit";
-			}elseif ($path=="travelling"){
-				$page_name = "travelling_edit";
-			}elseif ($path=="automobile"){
-				$page_name = "automobile_edit";
-			}elseif ($path="other"){
-				$page_name = "other_edit";
-			}
-			redirect(base_url() . 'Admin/'.$page_name.'/'.$postid);
+			if(isset($_SESSION['adminid'])){
+				$data['userid'] = $_SESSION['adminid'];
+				$data['imgid'] = $this->input->post('imgid');
+				$postid = $this->input->post('postid');
+				$this->AdminModel->image_update('real',$data);
+				$this->session->set_flashdata('message','Image Updated Successfully');
+				/*
+				 *
+				 * 	PAGENAME SELECTION [ Add new category if any in elseif ] >>>
+				 *
+				 */
+				if($path=="real"){
+					$page_name = "realestate_edit";
+				}elseif ($path=="tution"){
+					$page_name = "tution_edit";
+				}elseif ($path=="hotel"){
+					$page_name = "hotel_edit";
+				}elseif ($path=="travelling"){
+					$page_name = "travelling_edit";
+				}elseif ($path=="automobile"){
+					$page_name = "automobile_edit";
+				}elseif ($path="other"){
+					$page_name = "other_edit";
+				}
+				redirect(base_url() . 'Admin/'.$page_name.'/'.$postid);
+			}else{
+				redirect(base_url().'Admin/login');
+			}	
 		}
 		public function DeleteImage($path,$id,$realid){
+			if(isset($_SESSION['adminid'])){
 			/*
 			 *
 			 * 	PAGENAME SELECTION + Image database selection[ Add new category if any in elseif ] >>>
@@ -113,17 +125,25 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			
 			$this->session->set_flashdata('message','Image Deleted');
 			redirect(base_url() . 'Admin/'.$page_name.'/'.$realid);
+			}else{
+				redirect(base_url().'Admin/login');
+			}
 		}
 		public function AddMoreImages(){
-			$realid = $this->input->post('realid');
-			$category = $this->input->post('category');
-			$file = $_FILES['image']['tmp_name'];
-			$this->AdminModel->image_upload_new($category,$realid);
+			if(isset($_SESSION['adminid'])){
+				$realid = $this->input->post('realid');
+				$category = $this->input->post('category');
+				$file = $_FILES['image']['tmp_name'];
+				$this->AdminModel->image_upload_new($category,$realid);
+			}else{
+				redirect(base_url().'Admin/login');
+			}
 		}
 		/* ************************************************************
 		 * 					REALESTATE
 		 *************************************************************/
 		public function realestate($task='',$realid=''){
+			if(isset($_SESSION['adminid'])){
 			if($task=='create'){
 				$userid=$_SESSION['adminid'];
 				$this->load->model('AdminModel');
@@ -158,16 +178,26 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			}
 			$data['pagename']="realestate.php";
 			$this->load->view('admin/pages/director',$data);
+			}else{
+				redirect(base_url().'Admin/login');
+			}
 		}
 		public function realestate_view(){
-			$data['pagename']="realestate_view.php";
-			$this->load->view('admin/pages/director',$data);
+			if(isset($_SESSION['adminid'])){
+				$data['pagename']="realestate_view.php";
+				$this->load->view('admin/pages/director',$data);
+			}else{
+				redirect(base_url().'Admin/login');
+			}
 		}
 		public function realestate_edit($realid){
-			$userid = $_SESSION['adminid'];
-			$data['realid'] = $realid;
-			$data['pagename']="realestate_edit.php";
-			$this->load->view('Admin/pages/director',$data);
+			if(isset($_SESSION['adminid'])){
+				$userid = $_SESSION['adminid'];
+				$data['realid'] = $realid;
+				$data['pagename']="realestate_edit.php";
+				$this->load->view('Admin/pages/director',$data);
+			}else{
+				redirect(base_url().'Admin/login');
+			}	
 		}
 	}
-	
