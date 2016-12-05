@@ -91,7 +91,7 @@
 									<p class="catpath">Other » <?php echo $row->mobile?></p>
 									</section>
 									<section class="list-right">
-									<span class="date"><?php echo $row->date?></span>
+									<span class="date"><?php $date =  strtotime($row->date); echo $date = date('F d, Y',$date);?></span>
 									<span class="cityname"><?php echo $row->city?></span>
 									</section>
 									<div class="clearfix"></div>

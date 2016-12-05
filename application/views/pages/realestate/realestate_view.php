@@ -26,7 +26,7 @@
 			<div class="product-desc">
 				<div class="col-md-7 product-view">
 					<h2><?php echo $row['title'];?></h2>
-					<p> <i class="glyphicon glyphicon-map-marker"></i>Posted on | <?php echo $date = $row['date'];?> | Post id : <?php echo $row['realid']; ?></p>
+					<p> <i class="glyphicon glyphicon-map-marker"></i>Posted on | <?php $date = strtotime($row['date']); echo $date = date('F d, Y',$date);?> | Post id : <?php echo $row['realid']; ?></p>
 <!-- SLIEDER -->
 		<div id="slides">
 			<div class="body">
