@@ -11,7 +11,6 @@
 						<?php }?>
 					<input type="submit" value="Sign In">
 					<div class="forgot-grid">
-						<label class="checkbox"><input type="checkbox" name="checkbox">Remember me</label>
 						<div class="forgot">
 							<a href="<?php echo base_url();?>login/forgotpassword" >Forgot Password?</a>
 						</div>
