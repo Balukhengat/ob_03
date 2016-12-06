@@ -1,4 +1,3 @@
-	<?php if(isset($_SESSION['email'])){?>
 	 <section>
 		<div id="agileits-sign-in-page" class="sign-in-wrapper">
 			<div class="agileinfo_signin">
@@ -11,8 +10,7 @@
 						<?php }?>
 					<input type="submit" value="Submit">
 				</form>
+				<span><a href="<?php echo base_url();?>Login/resendotp">Resend OTP</a></span>
 			</div>
 		</div>
-	</section><?php }else{ redirect(base_url().'Login/login');
-	$this->session->set_flashdata('message','Login here!!!');
-	}?>
+	</section>

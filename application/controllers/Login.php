@@ -30,31 +30,35 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			$this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email');
 			$this->form_validation->set_rules('password', 'Password', 'trim|required|min_length[8]');
 			$this->form_validation->set_rules('cpassword', 'Confirm Password', 'trim|required|min_length[8]|matches[password]', array('matches' => 'Password does not match'));
-    		if ($this->form_validation->run() == false) {
+    		if ($this->form_validation->run() == false) 
+    		{
     			$data['pagename']="registercontainer.php";
-    		 $this->load->view('pages/loginregi/login',$data);
-    		} else {
-    		
-			$email=$this->input->post('email');
-			$data['username']=$this->input->post('username');
-			$data['mobile']=$this->input->post('mobile');
-			$data['email']=$this->input->post('email');
-			$data['password']=sha1($this->input->post('password'));
-			$check=$this->db->get_where('register',array('email'=>$email))->row();
-			if(!$check){
-			$this->db->insert('register',$data);
-			$email_status = $this->BasicModel->email($email);
-			if($email_status){
-				$temp['pagename'] = 'otp.php'; 
-				$temp['email']=$email;
-				$this->load->view('pages/loginregi/login.php',$temp);
-			}else{
-				echo "failed";
-			}
-			}else {
-				$this->session->set_flashdata('message','Email already exits');
-				redirect(base_url().'login/newuser');
-			}
+    		 	$this->load->view('pages/loginregi/login',$data);
+    		} 
+    		else 
+    		{
+				$email=$this->input->post('email');
+				$data['username']=$this->input->post('username');
+				$data['mobile']=$this->input->post('mobile');
+				$data['email']=$this->input->post('email');
+				$data['password']=sha1($this->input->post('password'));
+				$check=$this->db->get_where('register',array('email'=>$email))->row();
+				if(!$check)
+				{
+					$this->db->insert('register',$data);
+					$email_status = $this->BasicModel->email($email);
+					if($email_status)
+					{
+						$temp['pagename'] = 'otp.php'; 
+						$temp['email']=$email;
+						$this->load->view('pages/loginregi/login.php',$temp);
+					}else{
+						echo "Error : EML-SND 001";
+					}
+				}else {
+					$this->session->set_flashdata('message','Email already exits');
+					redirect(base_url().'login/newuser');
+				}
 			}
 		}
 		public function verifyotp(){
@@ -105,6 +109,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				}
 			}
 		
+		}
+		public function resendotp(){
+			$temp['pagename'] = 'resend_otp.php';
+			$this->load->view('pages/loginregi/login.php',$temp);
 		}
 		public function changepassword($id="")
 		{
