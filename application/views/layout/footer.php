@@ -13,7 +13,6 @@
 								<li><a href="<?php echo base_url();?>help/howwework"><i class="fa fa-long-arrow-right" aria-hidden="true"></i>How OffersBull Works</a></li>						
 								<li><a href="<?php echo base_url();?>help"><i class="fa fa-long-arrow-right" aria-hidden="true"></i>Feedback</a></li>
 								<li><a href="<?php echo base_url();?>contact"><i class="fa fa-long-arrow-right" aria-hidden="true"></i>Contact</a></li>
-								<li><a href="<?php echo base_url()?>help/faq"><i class="fa fa-long-arrow-right" aria-hidden="true"></i>FAQ's</a></li>
 							</ul>
 						</div>
 						<div class="col-md-3 wthree-footer-grid">

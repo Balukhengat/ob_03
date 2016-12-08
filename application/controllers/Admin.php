@@ -25,6 +25,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			$this->session->set_flashdata('message','Successfully logout');
 			redirect(base_url().'Admin/Login');
 		}
+		//Promotions (Most populars of site)
 		public function Pramotions(){
 			if(isset($_SESSION['adminid'])){
 				$post_id = $this->input->post("post_id");
@@ -60,12 +61,18 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				redirect(base_url().'Admin/login');
 			}
 		}
+		/* ************************************************************************************
+		 * 
+		 * 					Image UPDATE / DELETE /ADD
+		 * 
+		 *************************************************************************************/
+		
 		public function UpdateImage($path){
 			if(isset($_SESSION['adminid'])){
 				$data['userid'] = $_SESSION['adminid'];
 				$data['imgid'] = $this->input->post('imgid');
 				$postid = $this->input->post('postid');
-				$this->AdminModel->image_update('real',$data);
+				$this->AdminModel->image_update($path,$data);
 				$this->session->set_flashdata('message','Image Updated Successfully');
 				/*
 				 *
@@ -121,10 +128,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			$filename = $row->path;
 			
 			unlink($filename);
-			$this->db->query("delete from real_img where id=$id");
+			$this->db->query("delete from $image_table where id=$id");
 			
 			$this->session->set_flashdata('message','Image Deleted');
-			redirect(base_url() . 'Admin/'.$page_name.'/'.$realid);
+			redirect(base_url() . 'Admin/'.$page_name.'/'.$realid);// DOnt change realid
 			}else{
 				redirect(base_url().'Admin/login');
 			}
@@ -135,6 +142,19 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				$category = $this->input->post('category');
 				$file = $_FILES['image']['tmp_name'];
 				$this->AdminModel->image_upload_new($category,$realid);
+				if($category=="real"){
+					redirect(base_url().'Admin/realestate_edit/'.$realid);
+				}elseif ($category=="tution"){
+					redirect(base_url().'Admin/tution_edit/'.$realid);// DONT change this to > tutid <
+				}elseif ($category=="hotel"){
+					redirect(base_url().'Admin/hotel_edit/'.$realid);// DONT change this to > hotelid <
+				}elseif($category=="travelling"){
+					redirect(base_url().'Admin/travelling_edit/'.$realid);// same for all category
+				}elseif($category=="automobile"){
+					redirect(base_url().'Admin/automobile_edit/'.$realid);
+				}elseif($category=="other"){
+					redirect(base_url().'Admin/other_edit/'.$realid);
+				}
 			}else{
 				redirect(base_url().'Admin/login');
 			}
@@ -200,4 +220,309 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				redirect(base_url().'Admin/login');
 			}	
 		}
-	}
+		/* ************************************************************
+		 * 					TUTION
+		 *************************************************************/
+		public function tution($task='',$realid=''){
+			if(isset($_SESSION['adminid'])){
+				if($task=='create'){
+					$userid=$_SESSION['adminid'];
+					$this->load->model('AdminModel');
+					$this->AdminModel->insert_user_tution();
+					$this->AdminModel->image_upload('tution',$userid);
+					$this->session->set_flashdata('message','Data Uploaded Successfully');
+					redirect(base_url() . 'Admin/tution');
+				}
+				if($task=='update'){
+					$this->load->model('AdminModel');
+					$this->AdminModel->update_user_tution($realid);
+					//$this->image_upload('real',$userid);
+					$this->session->set_flashdata('message','Data Updated Successfully');
+					//$data['pagename']="realestate_view.php";
+					redirect(base_url() . 'Admin/tution_view');
+				}
+				if($task=='delete'){
+					if(isset($_SESSION['adminid'])){
+						$userid = $_SESSION['adminid'];
+						$query = "DELETE FROM tution WHERE tutid='$realid' and userid='$userid'";
+						$this->db->query($query);
+						if($this->db->affected_rows()){
+							$this->session->set_flashdata('message','Record deleted !');
+						}else{
+							$this->session->set_flashdata('message','Record not found');
+						}
+						redirect(base_url() . 'Admin/tution_view');
+						//$data['pagename']="realestate_view.php";
+					}else{
+						redirect(base_url().'Admin/login');
+					}
+				}
+				$data['pagename']="tution.php";
+				$this->load->view('admin/pages/director',$data);
+			}else{
+				redirect(base_url().'Admin/login');
+			}
+		}
+		public function tution_view(){
+			if(isset($_SESSION['adminid'])){
+				$data['pagename']="tution_view.php";
+				$this->load->view('admin/pages/director',$data);
+			}else{
+				redirect(base_url().'Admin/login');
+			}
+		}
+		public function tution_edit($realid){ // dont change realid 
+			if(isset($_SESSION['adminid'])){
+				$userid = $_SESSION['adminid'];
+				$data['realid'] = $realid;
+				$data['pagename']="tution_edit.php";
+				$this->load->view('Admin/pages/director',$data);
+			}else{
+				redirect(base_url().'Admin/login');
+			}
+		}
+		/* ************************************************************
+		 * 					HOTEL
+		 *************************************************************/
+		public function hotel($task='',$realid=''){
+			if(isset($_SESSION['adminid'])){
+				if($task=='create'){
+					$userid=$_SESSION['adminid'];
+					$this->load->model('AdminModel');
+					$this->AdminModel->insert_user_hotel();
+					$this->AdminModel->image_upload('hotel',$userid);
+					$this->session->set_flashdata('message','Data Uploaded Successfully');
+					redirect(base_url() . 'Admin/hotel');
+				}
+				if($task=='update'){
+					$this->load->model('AdminModel');
+					$this->AdminModel->update_user_hotel($realid);
+					//$this->image_upload('real',$userid);
+					$this->session->set_flashdata('message','Data Updated Successfully');
+					//$data['pagename']="realestate_view.php";
+					redirect(base_url() . 'Admin/hotel_view');
+				}
+				if($task=='delete'){
+					if(isset($_SESSION['adminid'])){
+						$userid = $_SESSION['adminid'];
+						$query = "DELETE FROM hotel WHERE hotelid='$realid' and userid='$userid'";
+						$this->db->query($query);
+						if($this->db->affected_rows()){
+							$this->session->set_flashdata('message','Record deleted !');
+						}else{
+							$this->session->set_flashdata('message','Record not found');
+						}
+						redirect(base_url() . 'Admin/hotel_view');
+						//$data['pagename']="realestate_view.php";
+					}else{
+						redirect(base_url().'Admin/login');
+					}
+				}
+				$data['pagename']="hotel.php";
+				$this->load->view('admin/pages/director',$data);
+			}else{
+				redirect(base_url().'Admin/login');
+			}
+		}
+		public function hotel_view(){
+			if(isset($_SESSION['adminid'])){
+				$data['pagename']="hotel_view.php";
+				$this->load->view('admin/pages/director',$data);
+			}else{
+				redirect(base_url().'Admin/login');
+			}
+		}
+		public function hotel_edit($realid){
+			if(isset($_SESSION['adminid'])){
+				$userid = $_SESSION['adminid'];
+				$data['realid'] = $realid;
+				$data['pagename']="hotel_edit.php";
+				$this->load->view('Admin/pages/director',$data);
+			}else{
+				redirect(base_url().'Admin/login');
+			}
+		}
+		/* ************************************************************
+		 * 					TRAVELLING
+		 *************************************************************/
+		public function travelling($task='',$realid=''){
+			if(isset($_SESSION['adminid'])){
+				if($task=='create'){
+					$userid=$_SESSION['adminid'];
+					$this->load->model('AdminModel');
+					$this->AdminModel->insert_user_travelling();
+					$this->AdminModel->image_upload('travelling',$userid);
+					$this->session->set_flashdata('message','Data Uploaded Successfully');
+					redirect(base_url() . 'Admin/travelling');
+				}
+				if($task=='update'){
+					$this->load->model('AdminModel');
+					$this->AdminModel->update_user_travelling($realid);
+					//$this->image_upload('real',$userid);
+					$this->session->set_flashdata('message','Data Updated Successfully');
+					//$data['pagename']="realestate_view.php";
+					redirect(base_url() . 'Admin/travelling_view');
+				}
+				if($task=='delete'){
+					if(isset($_SESSION['adminid'])){
+						$userid = $_SESSION['adminid'];
+						$query = "DELETE FROM travelling WHERE travelid='$realid' and userid='$userid'";
+						$this->db->query($query);
+						if($this->db->affected_rows()){
+							$this->session->set_flashdata('message','Record deleted !');
+						}else{
+							$this->session->set_flashdata('message','Record not found');
+						}
+						redirect(base_url() . 'Admin/travelling_view');
+						//$data['pagename']="realestate_view.php";
+					}else{
+						redirect(base_url().'Admin/login');
+					}
+				}
+				$data['pagename']="travelling.php";
+				$this->load->view('admin/pages/director',$data);
+			}else{
+				redirect(base_url().'Admin/login');
+			}
+		}
+		public function travelling_view(){
+			if(isset($_SESSION['adminid'])){
+				$data['pagename']="travelling_view.php";
+				$this->load->view('admin/pages/director',$data);
+			}else{
+				redirect(base_url().'Admin/login');
+			}
+		}
+		public function travelling_edit($realid){
+			if(isset($_SESSION['adminid'])){
+				$userid = $_SESSION['adminid'];
+				$data['realid'] = $realid;
+				$data['pagename']="travelling_edit.php";
+				$this->load->view('Admin/pages/director',$data);
+			}else{
+				redirect(base_url().'Admin/login');
+			}
+		}
+		/* ************************************************************
+		 * 					AUTOMOBILE
+		 *************************************************************/
+		public function automobile($task='',$realid=''){
+			if(isset($_SESSION['adminid'])){
+				if($task=='create'){
+					$userid=$_SESSION['adminid'];
+					$this->load->model('AdminModel');
+					$this->AdminModel->insert_user_automobile();
+					$this->AdminModel->image_upload('automobile',$userid);
+					$this->session->set_flashdata('message','Data Uploaded Successfully');
+					redirect(base_url() . 'Admin/automobile');
+				}
+				if($task=='update'){
+					$this->load->model('AdminModel');
+					$this->AdminModel->update_user_automobile($realid);
+					//$this->image_upload('real',$userid);
+					$this->session->set_flashdata('message','Data Updated Successfully');
+					//$data['pagename']="realestate_view.php";
+					redirect(base_url() . 'Admin/automobile_view');
+				}
+				if($task=='delete'){
+					if(isset($_SESSION['adminid'])){
+						$userid = $_SESSION['adminid'];
+						$query = "DELETE FROM automobile WHERE autoid='$realid' and userid='$userid'";
+						$this->db->query($query);
+						if($this->db->affected_rows()){
+							$this->session->set_flashdata('message','Record deleted !');
+						}else{
+							$this->session->set_flashdata('message','Record not found');
+						}
+						redirect(base_url() . 'Admin/automobile_view');
+						//$data['pagename']="realestate_view.php";
+					}else{
+						redirect(base_url().'Admin/login');
+					}
+				}
+				$data['pagename']="automobile.php";
+				$this->load->view('admin/pages/director',$data);
+			}else{
+				redirect(base_url().'Admin/login');
+			}
+		}
+		public function automobile_view(){
+			if(isset($_SESSION['adminid'])){
+				$data['pagename']="automobile_view.php";
+				$this->load->view('admin/pages/director',$data);
+			}else{
+				redirect(base_url().'Admin/login');
+			}
+		}
+		public function automobile_edit($realid){
+			if(isset($_SESSION['adminid'])){
+				$userid = $_SESSION['adminid'];
+				$data['realid'] = $realid;
+				$data['pagename']="automobile_edit.php";
+				$this->load->view('Admin/pages/director',$data);
+			}else{
+				redirect(base_url().'Admin/login');
+			}
+		}
+		/* ************************************************************
+		 * 					OTHER
+		 *************************************************************/
+		public function other($task='',$realid=''){
+			if(isset($_SESSION['adminid'])){
+				if($task=='create'){
+					$userid=$_SESSION['adminid'];
+					$this->load->model('AdminModel');
+					$this->AdminModel->insert_user_other();
+					$this->AdminModel->image_upload('other',$userid);
+					$this->session->set_flashdata('message','Data Uploaded Successfully');
+					redirect(base_url() . 'Admin/other');
+				}
+				if($task=='update'){
+					$this->load->model('AdminModel');
+					$this->AdminModel->update_user_other($realid);
+					//$this->image_upload('real',$userid);
+					$this->session->set_flashdata('message','Data Updated Successfully');
+					//$data['pagename']="realestate_view.php";
+					redirect(base_url() . 'Admin/other_view');
+				}
+				if($task=='delete'){
+					if(isset($_SESSION['adminid'])){
+						$userid = $_SESSION['adminid'];
+						$query = "DELETE FROM other WHERE otherid='$realid' and userid='$userid'";
+						$this->db->query($query);
+						if($this->db->affected_rows()){
+							$this->session->set_flashdata('message','Record deleted !');
+						}else{
+							$this->session->set_flashdata('message','Record not found');
+						}
+						redirect(base_url() . 'Admin/other_view');
+						//$data['pagename']="realestate_view.php";
+					}else{
+						redirect(base_url().'Admin/login');
+					}
+				}
+				$data['pagename']="other.php";
+				$this->load->view('admin/pages/director',$data);
+			}else{
+				redirect(base_url().'Admin/login');
+			}
+		}
+		public function other_view(){
+			if(isset($_SESSION['adminid'])){
+				$data['pagename']="other_view.php";
+				$this->load->view('admin/pages/director',$data);
+			}else{
+				redirect(base_url().'Admin/login');
+			}
+		}
+		public function other_edit($realid){
+			if(isset($_SESSION['adminid'])){
+				$userid = $_SESSION['adminid'];
+				$data['realid'] = $realid;
+				$data['pagename']="other_edit.php";
+				$this->load->view('Admin/pages/director',$data);
+			}else{
+				redirect(base_url().'Admin/login');
+			}
+		}
+	}//EOF Admin

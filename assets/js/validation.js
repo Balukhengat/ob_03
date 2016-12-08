@@ -68,7 +68,7 @@ $(function(){
 	function check_name(){
 		var length=$("#name").val().length;
 		if(length<3){
-			$("#name_error").html("Please enter name");
+			$("#name_error").html("Please enter valid name");
 			$("#name_error").show();
 			error_city=true;
 		}else{

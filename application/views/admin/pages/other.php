@@ -1,7 +1,7 @@
 <section class="content">
         <div class="container-fluid">
             <div class="block-header">
-                <h2>TUTION / ADD</h2>
+                <h2>OTHER / ADD</h2>
             </div>
 <!-- Notification Message -->
 	<?php if($this->session->flashdata('message')!=null){?>
@@ -17,10 +17,10 @@
                     <div class="card">
                     <div class="header">
                             <h2>
-                                Add tution data
+                                Add other data
                             </h2>
                         <div class="body">
-                        	<form action="<?php echo base_url();?>Admin/tution/create" id="frmFileUpload" method="post" enctype="multipart/form-data">
+                        	<form action="<?php echo base_url();?>Admin/other/create" id="frmFileUpload" method="post" enctype="multipart/form-data">
 								<div class="row clearfix">
 	                                <div class="col-md-4">
 	                                    <label for="Name">Name </label><span style="color: red;"> * </span><span style="color: red;" class="error" id="name_error"></span>
@@ -31,7 +31,7 @@
 	                                <div class="col-md-8">
 	                                    <label for="title">Title </label><span style="color: red;"> * </span><span style="color: red;" class="error" id="title_error"></span>
 										  <div class="form-line">	
-										  	<textarea class="form-control" id="title" name="title" placeholder="tution" required="required"></textarea>
+										  	<textarea class="form-control" id="title" name="title" placeholder="title" required="required"></textarea>
 										  </div>	
 	                                </div>
 	                                <div class="col-md-12">

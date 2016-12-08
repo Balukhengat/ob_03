@@ -1,28 +1,28 @@
 <?php 
 	$userid = $_SESSION['adminid'];
-	$query = "SELECT * from realestate WHERE realid='$realid' and userid='$userid'";
+	$query = "SELECT * from hotel WHERE hotelid='$realid' and userid='$userid'";
 	$realedit=$this->db->query($query);
 	if($this->db->affected_rows()==0){
 		$this->session->set_flashdata('message','Record not found !');
-		$data['pagename']="realestate_view.php";
+		$data['pagename']="hotel_view.php";
 		$this->load->view('pages/profile/profile',$data);
 	}
 ?>
 <section class="content">
         <div class="container-fluid">
             <div class="block-header">
-                <h2>REALESTATE / EDIT / ID : <?php echo $realid;?></h2>
+                <h2>HOTEL / EDIT / ID : <?php echo $realid;?></h2>
             </div>
             <!-- CONTAINER ADD -->
             <div class="row clearfix">
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                     <div class="card">
                         <div class="header">
-                            <h2>Edit Realestate</h2>
+                            <h2>Edit Hotel</h2>
                         </div>
                         <div class="body">
                         <?php foreach ($realedit->result_array() as $row){?>	
-                        	<form action="<?php echo base_url();?>Admin/realestate/update/<?php echo $row['realid'];?>" id="frmFileUpload" method="post" enctype="multipart/form-data">
+                        	<form action="<?php echo base_url();?>Admin/hotel/update/<?php echo $row['hotelid'];?>" id="frmFileUpload" method="post" enctype="multipart/form-data">
 								<div class="row clearfix">
 	                                <div class="col-md-4">
 	                                    <label for="Name">Name </label><span style="color: red;"> * </span><span style="color: red;" class="error" id="name_error"></span>
@@ -50,12 +50,6 @@
 	                                            	<option <?php if($row['type']=="Rent"){ echo 'selected';}?> value="Rent">Rent</option>
 	                                            	<option <?php if($row['type']=="Sell"){ echo 'selected';}?> value="Sell">Sell</option>
 	                                        </select>
-										  </div>	
-	                                </div>
-	                                <div class="col-md-4">
-	                                    <label for="builtup">Builtup area </label><span style="color: red;"> * </span><span style="color: red;" class="error" id="builtup_error"></span>
-										  <div class="form-line">	
-										  	<input type="text" class="form-control" id="builtup" name="builtup" placeholder="Builtup area (in Sq.ft)" required="required" value="<?php echo $row['builtup'];?>">
 										  </div>	
 	                                </div>
 	                                 <div class="col-md-4">
@@ -121,21 +115,21 @@
                             <h2>Edit / Delete images</h2>
                         </div>
                         	 <?php 
-			                    $query = "SELECT realestate.realid, realestate.`name`, realestate.title, realestate.type, realestate.address, realestate.builtup, realestate.price, realestate.description, realestate.mobile, realestate.email, realestate.amenities, realestate.city, realestate.area, realestate.date, realestate.offerend, realestate.category, realestate.userid, real_img.realid, real_img.path, real_img.id FROM realestate INNER JOIN real_img ON realestate.realid = real_img.realid WHERE realestate.realid = $realid";
+			                    $query = "SELECT hotel.hotelid, hotel.`name`, hotel.title, hotel.type, hotel.address, hotel.price, hotel.description, hotel.mobile, hotel.email, hotel.amenities, hotel.city, hotel.area, hotel.date, hotel.offerend, hotel.category, hotel.userid, hotel_img.hotelid, hotel_img.path, hotel_img.id FROM hotel INNER JOIN hotel_img ON hotel.hotelid = hotel_img.hotelid WHERE hotel.hotelid = $realid";
 			                    $realeditimg=$this->db->query($query);
 			                    foreach ($realeditimg->result_array() as $row_img){
 			                    ?>	
 			                    <div class="col-xs-12 col-sm-4 col-md-4 col-lg-3">
 			                    	<hr>
 									<img alt="<?php echo $row['title'];?>" src="<?php echo base_url();echo $row_img['path'];?>" width="200" height="200">
-					                <form action="<?php echo base_url();?>Admin/UpdateImage/real" method="post" enctype="multipart/form-data">
+					                <form action="<?php echo base_url();?>Admin/UpdateImage/hotel" method="post" enctype="multipart/form-data">
 					                	<input type="hidden" name="imgid" value="<?php echo $row_img["id"];?>">
-					                	<input type="hidden" name="postid" value="<?php echo $row_img["realid"];?>">
+					                	<input type="hidden" name="postid" value="<?php echo $row_img["hotelid"];?>">
 					                	<input type="file" name="image" required="required">
 					                	<input type="submit" class="btn btn-success" value="Change Image">
 					                </form>
 					                <br>
-					                <a href="<?php echo base_url();?>Admin/DeleteImage/real/<?php echo $row_img["id"];?>/<?php echo $row_img["realid"];?>"><input type="submit" class="btn btn-danger" value="Delete Image  &nbsp;"></a>
+					                <a href="<?php echo base_url();?>Admin/DeleteImage/hotel/<?php echo $row_img["id"];?>/<?php echo $row_img["hotelid"];?>"><input type="submit" class="btn btn-danger" value="Delete Image  &nbsp;"></a>
 					                <hr>
 				                </div>
 				                <?php }?>
@@ -153,7 +147,7 @@
                      <div class="body">
                             <form action="<?php echo base_url();?>Admin/AddMoreImages" id="frmFileUpload" class="" method="post" enctype="multipart/form-data">
                                 <input type="hidden" name="realid" value="<?php echo $realid;?>">
-                                <input type="hidden" name="category" value="real">
+                                <input type="hidden" name="category" value="hotel">
                                 <div class="dropzone"> 
 	                                <div class="dz-message">
 	                                    <div class="drag-icon-cph">
