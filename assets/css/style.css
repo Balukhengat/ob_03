@@ -2353,18 +2353,18 @@ ul.location li:nth-child(2) {
 	text-align:left;
 }
 span.agile-breadcrumbs {
-    color: #fff;
+    color: #000;
     font-size: 15px;
 }
 span.agile-breadcrumbs a {
-	color:#fff;
+	color:#000;
 	margin:0 5px;
 }
 span.agile-breadcrumbs a:hover {
 	color:#fff;
 }
 span.agile-breadcrumbs a i {
-    color: #ffffff;
+    color: #000;
     font-size: 16px;
 	transition:0.5s all;
 	-webkit-transition:0.5s all;

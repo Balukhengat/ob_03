@@ -341,16 +341,8 @@ date_default_timezone_set('Asia/Kolkata');
 				<h3><i class="fa fa-briefcase" aria-hidden="true"></i> OUR CLIENTS <i class="fa fa-briefcase" aria-hidden="true"></i></h3>
 					<div class="container">
 						<ul>
-							<li><a href="#"><img class="img-responsive" src="assets/images/p-1.png" alt=""></a></li>
-							<li><a href="#"><img class="img-responsive" src="assets/images/p-2.png" alt=""></a></li>
-							<li><a href="#"><img class="img-responsive" src="assets/images/p-3.png" alt=""></a></li>
-							<li><a href="#"><img class="img-responsive" src="assets/images/p-4.png" alt=""></a></li>
-							<li><a href="#"><img class="img-responsive" src="assets/images/p-5.png" alt=""></a></li>
-							<li><a href="#"><img class="img-responsive" src="assets/images/p-6.png" alt=""></a></li>
-							<li><a href="#"><img class="img-responsive" src="assets/images/p-7.png" alt=""></a></li>
-							<li><a href="#"><img class="img-responsive" src="assets/images/p-8.png" alt=""></a></li>
-							<li><a href="#"><img class="img-responsive" src="assets/images/p-9.png" alt=""></a></li>
-							<li><a href="#"><img class="img-responsive" src="assets/images/p-10.png" alt=""></a></li>	
+							<li style="padding-left: 0px; padding-right: 0px;"><a href="#"><img class="img-responsive" src="assets/images/ruchi_banquets.jpg" alt="Ruchi Banquets"></a></li>
+						</ul>	
 					</div>
 				</div>	
 		<!--//partners-->	
