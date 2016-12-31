@@ -19,7 +19,6 @@
 							<h4 class="footer-head">Information</h4>
 							<ul>
 								<li><a href="<?php echo base_url()?>help/terms"><i class="fa fa-long-arrow-right" aria-hidden="true"></i>Terms and conditions</a></li>
-								<li><a href="<?php echo base_url()?>help/privacy"><i class="fa fa-long-arrow-right" aria-hidden="true"></i>Privacy Policy</a></li>
 							</ul>
 						</div>
 						<div class="col-md-3 wthree-footer-grid">
@@ -54,10 +53,10 @@
 				</div>
 				<div class="w3-footer-social-icons">
 					<ul>
-						<li><a class="facebook" href="#"><i class="fa fa-facebook" aria-hidden="true"></i><span>Facebook</span></a></li>
+						<li><a class="facebook" href="https://www.facebook.com/Offers-BULL-1338008276255936/"><i class="fa fa-facebook" aria-hidden="true"></i><span>Facebook</span></a></li>
 						<li><a class="googleplus" href="#"><i class="fa fa-google-plus" aria-hidden="true"></i><span>Google+</span></a></li>
-						<li><a class="twitter" href="#"><i class="fa fa-twitter" aria-hidden="true"></i><span>Twitter</span></a></li>
-						<li><a class="flickr" href="#"><i class="fa fa-youtube" aria-hidden="true"></i><span>YouTube</span></a></li>
+						<li><a class="twitter" href="https://twitter.com/OFFERSBULL1"><i class="fa fa-twitter" aria-hidden="true"></i><span>Twitter</span></a></li>
+						<li><a class="youtube" href="https://www.youtube.com/channel/UCe7EWAGfcE4SnpN87x5MCxw"><i class="fa fa-youtube" aria-hidden="true"></i><span>YouTube</span></a></li>
 					</ul>
 				</div>
 				<div class="copyrights">

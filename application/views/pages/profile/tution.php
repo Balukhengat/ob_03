@@ -73,7 +73,7 @@ foreach ($tution_info as $row){
 	<div class="col-md-6">
 	<div class="form-group">
 	  <label for="Image">Image:</label>
-	  <input type="file" class="form-control" id="image" name="image[]">
+	  <input type="file" class="form-control" id="image" name="image[]" multiple="multiple" required="required">
 	</div>
 	</div>
 	<div class="col-md-6">
@@ -87,7 +87,7 @@ foreach ($tution_info as $row){
 <script type="text/javascript" lang="javascript" src="<?php echo base_url();?>assets/js/validation.js">
 </script>
 <div class="col-md-3">
-	<h3>ADSENSE CODE GOES HERE</h3>
+	<h3></h3>
 </div>
 <script type="text/javascript" src="<?php echo base_url();?>assets/js/jquery.min.js">
 </script>

@@ -314,6 +314,26 @@ date_default_timezone_set('Asia/Kolkata');
 						</ul>
 				</div>
 			</div>
+			<div class="container">
+				<div class="agile-trend-ads">
+						<ul id="automoblie">
+							<li>
+							<?php $random_post_other = $this->db->query("SELECT * FROM other INNER JOIN other_img ON other.otherid = other_img.otherid GROUP BY other.otherid ORDER BY RAND() LIMIT 4");?>
+							<?php foreach ($random_post_other->result() as $random_other){?>
+								<div class="col-md-3 col-sm-3 col-xs-6 col-lg-3">
+									<a href="<?php echo base_url();?>Other/manage_view/<?php echo $random_other->otherid;?>">
+										<img src="<?php echo base_url();echo $random_other->path;?>" alt="<?php echo $random_other->title;?>" />
+									</a> 
+									<div class="w3-ad-info">
+										<h5><?php echo $random_other->title;?></h5>
+										<span><?php $date = $row['date'];echo time_elapsed_string($date);?></span>
+									</div>
+								</div>
+							<?php }?>
+							</li>
+						</ul>
+				</div>
+			</div>
 			<!-- //slider -->				
 			</div>
 			<!--partners-->

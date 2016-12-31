@@ -80,6 +80,7 @@ class BasicModel extends CI_Model{
 		$data['amenities']=$this->input->post('facilities');
 		$data['city']=$this->input->post('city');
 		$data['area']=$this->input->post('area');
+		date_default_timezone_set('Asia/Kolkata');
 		$data['date']=date('Y-m-d H:i:s');
 		$data['offerend']=$this->input->post('offerend');
 		$data['category']=0;
@@ -99,7 +100,8 @@ class BasicModel extends CI_Model{
 			$data['amenities'] = $this->input->post('facilities');
 			$data['city'] = $this->input->post('city');
 			$data['area'] = $this->input->post('area');
- 			$data['date'] = date('Y-m-d H:i:s');
+			date_default_timezone_set('Asia/Kolkata');
+			$data['date'] = date('Y-m-d H:i:s');
 			$data['offerend'] = $this->input->post('offerend');	
  			$data['category'] = 0;
 			$data['userid'] = $_SESSION['userid'];
@@ -120,6 +122,7 @@ class BasicModel extends CI_Model{
 		$data['email']=$this->input->post('email');
 		$data['city']=$this->input->post('city');
 		$data['area']=$this->input->post('area');
+		date_default_timezone_set('Asia/Kolkata');
 		$data['date']=date('Y-m-d H:i:s');
 		$data['offerend']=$this->input->post('offerend');
 		$data['category']=1;
@@ -135,6 +138,7 @@ class BasicModel extends CI_Model{
 		$data['email'] = $this->input->post('email');
 		$data['city'] = $this->input->post('city');
 		$data['area'] = $this->input->post('area');
+		date_default_timezone_set('Asia/Kolkata');
 		$data['date'] = date('Y-m-d H:i:s');
 		$data['offerend'] = $this->input->post('offerend');
 		$data['category'] = 1;
@@ -159,6 +163,7 @@ class BasicModel extends CI_Model{
 		$data['amenities']=$this->input->post('facilities');
 		$data['city']=$this->input->post('city');
 		$data['area']=$this->input->post('area');
+		date_default_timezone_set('Asia/Kolkata');
 		$data['date']=date('Y-m-d H:i:s');
 		$data['offerend']=$this->input->post('offerend');
 		$data['category']=2;
@@ -177,6 +182,7 @@ class BasicModel extends CI_Model{
 		$data['amenities']=$this->input->post('facilities');
 		$data['city'] = $this->input->post('city');
 		$data['area'] = $this->input->post('area');
+		date_default_timezone_set('Asia/Kolkata');
 		$data['date'] = date('Y-m-d H:i:s');
 		$data['offerend'] = $this->input->post('offerend');
 		$data['category'] = 2;
@@ -199,6 +205,7 @@ class BasicModel extends CI_Model{
 		$data['email']=$this->input->post('email');
 		$data['city']=$this->input->post('city');
 		$data['area']=$this->input->post('area');
+		date_default_timezone_set('Asia/Kolkata');
 		$data['date']=date('Y-m-d H:i:s');
 		$data['offerend']=$this->input->post('offerend');
 		$data['category']=3;
@@ -215,6 +222,7 @@ class BasicModel extends CI_Model{
 		$data['email'] = $this->input->post('email');
 		$data['city'] = $this->input->post('city');
 		$data['area'] = $this->input->post('area');
+		date_default_timezone_set('Asia/Kolkata');
 		$data['date'] = date('Y-m-d H:i:s');
 		$data['offerend'] = $this->input->post('offerend');
 		$data['category'] = 3;
@@ -237,6 +245,7 @@ class BasicModel extends CI_Model{
 		$data['email']=$this->input->post('email');
 		$data['city']=$this->input->post('city');
 		$data['area']=$this->input->post('area');
+		date_default_timezone_set('Asia/Kolkata');
 		$data['date']=date('Y-m-d H:i:s');
 		$data['offerend']=$this->input->post('offerend');
 		$data['category']=4;
@@ -253,6 +262,7 @@ class BasicModel extends CI_Model{
 		$data['email'] = $this->input->post('email');
 		$data['city'] = $this->input->post('city');
 		$data['area'] = $this->input->post('area');
+		date_default_timezone_set('Asia/Kolkata');
 		$data['date'] = date('Y-m-d H:i:s');
 		$data['offerend'] = $this->input->post('offerend');
 		$data['category'] = 0;
@@ -274,6 +284,7 @@ class BasicModel extends CI_Model{
 		$data['email']=$this->input->post('email');
 		$data['city']=$this->input->post('city');
 		$data['area']=$this->input->post('area');
+		date_default_timezone_set('Asia/Kolkata');
 		$data['date']=date('Y-m-d H:i:s');
 		$data['offerend']=$this->input->post('offerend');
 		$data['category']=5;
@@ -289,6 +300,7 @@ class BasicModel extends CI_Model{
 		$data['email'] = $this->input->post('email');
 		$data['city'] = $this->input->post('city');
 		$data['area'] = $this->input->post('area');
+		date_default_timezone_set('Asia/Kolkata');
 		$data['date'] = date('Y-m-d H:i:s');
 		$data['offerend'] = $this->input->post('offerend');
 		$data['category'] = 5;

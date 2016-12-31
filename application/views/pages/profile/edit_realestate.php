@@ -59,7 +59,7 @@
 	</div>
 	<div class="col-md-6">
 	<div class="form-group">
-	  <label for="price">Price:</label><span style="color: red;">*</span> <span class="error" id="price_error"></span>
+	  <label for="price">Price:</label> <span class="error" id="price_error"></span>
 	  <input type="text" class="form-control" id="price" name="price" value="<?php echo $row['price'];?>">
 	</div>
 	</div>
@@ -105,12 +105,6 @@
 	  <input type="date" class="form-control" id="offerend" name="offerend" value="<?php echo $row['offerend'];?>">
 	</div>
 	</div>
-	<div class="col-md-6">
-	<div class="form-group">
-	  <label for="Image">Image:</label>
-	  <input type="file" class="form-control" id="image" name="image[]">
-	</div>
-	</div>
 	<div class="col-md-9">
 	<button type="submit" class="btn btn-success">Update</button>
 	</div>
@@ -118,8 +112,9 @@
 <?php }?>
 </div>
 <div class="col-md-3">
-	<h3>ADSENSE CODE GOES HERE</h3>
+	<h3></h3>
 </div>
+<!-- edit delete images add code -->
 <script type="text/javascript" src="<?php echo base_url();?>assets/js/jquery.min.js">
 </script>
 <script type="text/javascript" lang="javascript" src="<?php echo base_url();?>assets/js/validation.js">

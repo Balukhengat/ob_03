@@ -43,7 +43,7 @@ $travel_data = $this->db->order_by('date','desc')->get_where('travelling',array(
   </table>
 </div>
 <div class="col-md-3">
-	<h3>ADSENSE CODE GOES HERE</h3>
+	<h3></h3>
 </div>
 <script type="text/javascript" src="<?php echo base_url();?>assets/js/jquery.min.js">
 </script>

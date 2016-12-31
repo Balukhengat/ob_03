@@ -35,7 +35,7 @@ foreach ($travelling_info as $row){
 	</div>
 	<div class="col-md-6">
 	<div class="form-group">
-	  <label for="price">Price:</label>
+	  <label for="price">Price:</label><span class="error" id="price_error"></span>
 	  <input type="text" class="form-control" id="price" name="price">
 	</div>
 	</div>
@@ -78,7 +78,7 @@ foreach ($travelling_info as $row){
 	<div class="col-md-6">
 	<div class="form-group">
 	  <label for="Image">Image:</label>
-	  <input type="file" class="form-control" id="image" name="image[]">
+	  <input type="file" class="form-control" id="image" name="image[]" multiple="multiple" required="required">
 	</div>
 	</div>
 	<div class="col-md-12">
