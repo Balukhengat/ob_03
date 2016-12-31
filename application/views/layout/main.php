@@ -358,11 +358,11 @@ date_default_timezone_set('Asia/Kolkata');
 			<div class="agile-info-mobile-app">
 				<div class="container">
 					<div class="col-md-5 w3-app-left">
-						<a href="mobileapp.html"><img src="assets/images/app.png" alt=""></a>
+						<a href=""><img src="assets/images/app.png" alt=""></a>
 					</div>
 					<div class="col-md-7 w3-app-right">
 						<h3>Offers BUll</h3><h3><span>WE PROVIDE YOU THE BEST DEAL HIGH QUALITY SERVICE. OUR AIM IS YOUR COMPLETE SATISFACTION.</span></h3>
-						<p>add text</p><div class="agileits-dwld-app">
+						<p></p><div class="agileits-dwld-app">
 							<h6>Download The App : 
 								<a href="#"><i class="fa fa-android"></i></a><p>Coming Soon...</p>
 							</h6>

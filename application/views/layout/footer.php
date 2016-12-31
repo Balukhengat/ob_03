@@ -54,7 +54,6 @@
 				<div class="w3-footer-social-icons">
 					<ul>
 						<li><a class="facebook" href="https://www.facebook.com/Offers-BULL-1338008276255936/"><i class="fa fa-facebook" aria-hidden="true"></i><span>Facebook</span></a></li>
-						<li><a class="googleplus" href="#"><i class="fa fa-google-plus" aria-hidden="true"></i><span>Google+</span></a></li>
 						<li><a class="twitter" href="https://twitter.com/OFFERSBULL1"><i class="fa fa-twitter" aria-hidden="true"></i><span>Twitter</span></a></li>
 						<li><a class="youtube" href="https://www.youtube.com/channel/UCe7EWAGfcE4SnpN87x5MCxw"><i class="fa fa-youtube" aria-hidden="true"></i><span>YouTube</span></a></li>
 					</ul>

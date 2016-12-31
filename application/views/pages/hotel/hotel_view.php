@@ -82,9 +82,6 @@
 			<i class="glyphicon glyphicon-earphone"></i><?php echo $row['email'];?></p>
 		</div>
 		<div class="tips">
-		<h4>Advertisement</h4>
-				Adsence goes here
-		</div>
 	</div>
 			<div class="clearfix"></div>
 </div>
