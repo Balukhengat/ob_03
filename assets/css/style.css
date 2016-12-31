@@ -2348,7 +2348,7 @@ ul.location li:nth-child(2) {
 
 /*-- breadcrumbs --*/
 .w3layouts-breadcrumbs {
-	background:#ff8989;
+	background:#ddd;
 	padding:11px 0;
 	text-align:left;
 }
@@ -3637,7 +3637,7 @@ h3.rate {
 	float:left;
 }
 .select-box {
-    background: rgba(255, 76, 76, 0.66);
+    background: #ddd;
     padding: 30px 30px;
     margin: 40px 0;
     border-radius: 6px;

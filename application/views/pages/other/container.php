@@ -24,22 +24,12 @@
 																					<!-- @ SEARCH -->
 			<form method="post" id="search" name="search" action="<?php echo base_url();?>Other/search">
 				<div class="select-city-for-local-ads ads-list">
-					<label>Select your city to see local ads</label>
-						<select id="city" name="city">	
-							<option>Select</option>
-							<option>Pune</option>
-							<option>Mumbai</option>						
-			            </select>
+					<label>Select your city</label>
+						<input type="text" id="city" name="city" />
 				</div>
 				<div class="browse-category ads-list">
-					<label>Course</label>
-					<select id="type" name="type">
-					  <option data-tokens="Java">Select</option>
-					  <option data-tokens="Java">Java</option>
-					  <option data-tokens=".NET">.NET</option>
-					  <option data-tokens="PHP">PHP</option>
-					  <option data-tokens="Testing">Testing</option>
-					</select>
+					<label>Your Product</label>
+					<input type="text" id="type" name="type" />
 				</div>
 			
 				<div class="search-product ads-list">

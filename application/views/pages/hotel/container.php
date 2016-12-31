@@ -25,12 +25,8 @@
 																					<!-- @ SEARCH -->
 			<form method="post" id="search" name="search" action="<?php echo base_url();?>Hotel/search">
 				<div class="select-city-for-local-ads ads-list">
-					<label>Select your city to see local ads</label>
-						<select id="city" name="city">	
-							<option>Select</option>
-							<option>Pune</option>
-							<option>Mumbai</option>						
-			            </select>
+					<label>Select your city</label>
+						<input type="text" id="city" name="city" />
 				</div>
 				<div class="browse-category ads-list">
 					<label>Hotel / lodging</label>
@@ -38,6 +34,7 @@
 					  <option data-tokens="Rent">Select</option>
 					  <option data-tokens="Rent">Hotel</option>
 					  <option data-tokens="purchase">lodging</option>
+					   <option data-tokens="purchase">Reataurent</option>
 					</select>
 				</div>
 				<div class="select-city-for-local-ads ads-list">

@@ -25,11 +25,7 @@
 			<form method="post" id=real_search name="search" action="<?php echo base_url();?>Realestate/search">
 				<div class="select-city-for-local-ads ads-list">
 					<label>Select your city</label><span style="color: red;">*</span> 
-						<select id="city" name="city">	
-							<option value="">Select</option>
-							<option>Pune</option>
-							<option>Mumbai</option>						
-			            </select>
+						<input type="text" id="city" name="city" />	
 			            <div><span class="error" id="city_error"></span></div>
 				</div>
 				<div class="browse-category ads-list">

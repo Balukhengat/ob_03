@@ -26,11 +26,7 @@
 			<form method="post" id="search" name="search" action="<?php echo base_url();?>Automobile/search">
 				<div class="select-city-for-local-ads ads-list">
 					<label>Select your city to see local ads</label>
-						<select id="city" name="city">	
-							<option>Select</option>
-							<option>Pune</option>
-							<option>Mumbai</option>						
-			            </select>
+						<input type="text" id="city" name="city" />
 				</div>
 				<div class="browse-category ads-list">
 					<label>Showroom / Service Center</label>

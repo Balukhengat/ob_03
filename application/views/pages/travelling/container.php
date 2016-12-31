@@ -26,19 +26,11 @@
 			<form method="post" id="search" name="search" action="<?php echo base_url();?>Travelling/search">
 				<div class="select-city-for-local-ads ads-list">
 					<label>Select your city to pick up</label>
-						<select id="city" name="city">	
-							<option>Select</option>
-							<option>Pune</option>
-							<option>Mumbai</option>						
-			            </select>
+						<input type="text" id="city" name="city" />	
 				</div>
 				<div class="browse-category ads-list">
 					<label>TO</label>
-					<select id="type" name="type">
-					  <option data-tokens="Rent">Select</option>
-					  <option data-tokens="Rent">Pune</option>
-					  <option data-tokens="purchase">Mumbai</option>
-					</select>
+					<input type="text" id="type" name="type" />
 				</div>
 				<div class="search-product ads-list">
 					<label>&nbsp;</label>
