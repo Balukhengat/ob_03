@@ -61,6 +61,6 @@
 </html>
 <?php 
 	}else{
-		redirect(base_url().'index.php/Admin');
+		redirect(base_url().'Admin');
 	}
 ?>

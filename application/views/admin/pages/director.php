@@ -41,6 +41,6 @@
 </body>
 </html>
     <?php }else{
-   					redirect(base_url().'index.php/Admin/login');
+   					redirect(base_url().'Admin/login');
    					$this->session->set_flashdata('message','You need to login first');
     }?>
