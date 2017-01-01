@@ -5,22 +5,22 @@
 				<ul>
 					<?php if(isset($_SESSION['userid'])){
 					?>	<li class="dropdown head-dpdn">
-						<a href="<?php echo base_url();?>Basic_controller/user_profile" aria-expanded="false"><i class="fa fa-user" aria-hidden="true"></i>My Profile</a>
+						<a href="<?php echo base_url();?>index.php/Basic_controller/user_profile" aria-expanded="false"><i class="fa fa-user" aria-hidden="true"></i>My Profile</a>
 						</li>
 						<li class="dropdown head-dpdn">
-						<a href="<?php echo base_url();?>Basic_controller/user_logout" aria-expanded="false"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a>
+						<a href="<?php echo base_url();?>index.php/Basic_controller/user_logout" aria-expanded="false"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a>
 						</li>
 					<?php 
 					}else{?>
 					<li class="dropdown head-dpdn">
-						<a href="<?php echo base_url();?>Login/login" aria-expanded="false"><i class="fa fa-user" aria-hidden="true"></i> Sign In</a>
+						<a href="<?php echo base_url();?>index.php/Login/login" aria-expanded="false"><i class="fa fa-user" aria-hidden="true"></i> Sign In</a>
 					</li>
 					<li class="dropdown head-dpdn">
-						<a href="<?php echo base_url();?>Login/newuser" aria-expanded="false"><i class="fa fa-user-plus" aria-hidden="true"></i> Register</a>
+						<a href="<?php echo base_url();?>index.php/Login/newuser" aria-expanded="false"><i class="fa fa-user-plus" aria-hidden="true"></i> Register</a>
 					</li>
 					<?php }?>
 					<li class="dropdown head-dpdn">
-						<a href="<?php echo base_url();?>help"><i class="fa fa-question-circle" aria-hidden="true"></i> Help</a>
+						<a href="<?php echo base_url();?>index.php/help"><i class="fa fa-question-circle" aria-hidden="true"></i> Help</a>
 					</li>
 					
 				</ul>
@@ -42,7 +42,7 @@
 				</div>	
 				<div class="col-xs-12 col-sm-12 col-lg-8 col-md 12">
 						<div class="agileits_search">
-						<form action="<?php echo base_url();?>Login/mainsearch" method="post">
+						<form action="<?php echo base_url();?>index.php/Login/mainsearch" method="post">
 							<input class="agileinfo_search-input" name="Search" type="text" placeholder="Get the best offers" required />
 							<select class="agileinfo_search-select" name="category" required>
 								<option value="">All Categories</option>

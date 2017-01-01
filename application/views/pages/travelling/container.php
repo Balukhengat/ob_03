@@ -23,7 +23,7 @@
 		<div class="container">
 			<div class="select-box">
 																					<!-- @ SEARCH -->
-			<form method="post" id="search" name="search" action="<?php echo base_url();?>Travelling/search">
+			<form method="post" id="search" name="search" action="<?php echo base_url();?>index.php/Travelling/search">
 				<div class="select-city-for-local-ads ads-list">
 					<label>Select your city to pick up</label>
 						<input type="text" id="city" name="city" />	
@@ -68,7 +68,7 @@
 								foreach ($query as $row)
 								{
 							?>
-								<a href="<?php echo base_url();?>Travelling/manage_view/<?php echo $row->travelid;?>">
+								<a href="<?php echo base_url();?>index.php/Travelling/manage_view/<?php echo $row->travelid;?>">
 									<?php 
 									$travelid = $row->travelid;
 									$query2 = "SELECT travelling_img.path FROM travelling_img WHERE travelling_img.travelid = $travelid LIMIT 1";
@@ -93,7 +93,7 @@
 								<?php } } elseif ($msearch==null) {
 									foreach ($datas as $row1)
 								{?>
-								<a href="<?php echo base_url();?>Travelling/manage_view/<?php echo $row1['travelid'];?>">
+								<a href="<?php echo base_url();?>index.php/Travelling/manage_view/<?php echo $row1['travelid'];?>">
 									<li>
 									<img src="<?php echo base_url();?>assets/images/r1.jpg" title="" alt="" />
 									<section class="list-left">
@@ -111,7 +111,7 @@
 								<?php }}else{
 									foreach ($msearch as $row2){
 								?> 
-									<a href="<?php echo base_url();?>Travelling/manage_view/<?php echo $row2['travelid'];?>">
+									<a href="<?php echo base_url();?>index.php/Travelling/manage_view/<?php echo $row2['travelid'];?>">
 											<li>
 											<img src="<?php echo base_url();?>assets/images/r1.jpg" title="" alt="" />
 											<section class="list-left">
@@ -131,7 +131,7 @@
 								
 							</ul>
 							<ul id="result1" class="list">
-							<a href="<?php echo base_url();?>Travelling/manage_view/<?php // echo $row['travelid'];?>">
+							<a href="<?php echo base_url();?>index.php/Travelling/manage_view/<?php // echo $row['travelid'];?>">
 									<li>
 									<img src="<?php echo base_url();?>assets/images/r1.jpg" title="" alt="" />
 									<section class="list-left">

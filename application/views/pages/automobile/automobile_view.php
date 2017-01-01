@@ -14,7 +14,7 @@
 		<div class="container">
 			<span class="agile-breadcrumbs">
 			<a href="<?php echo base_url();?>"><i class="fa fa-home home_1"></i></a> / 
-			<a href="<?php echo base_url();?>Automobile/auto">automobile</a> / 
+			<a href="<?php echo base_url();?>index.php/Automobile/auto">automobile</a> / 
 			<span>ID - <?php echo $autoid;?></span></span>
 		</div>
 	</div>

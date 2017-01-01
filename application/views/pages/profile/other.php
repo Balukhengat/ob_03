@@ -6,10 +6,10 @@ $other_info=$this->db->get_where('register',array('reg_id'=>$userid))->result_ar
 foreach ($other_info as $row){
 ?>
 <div class="col-md-9">
-	<a href="<?php echo base_url();?>Basic_Controller/user_other"><button class="btn btn-success">Add</button></a>
-	<a href="<?php echo base_url();?>Basic_Controller/user_other_view"><button class="btn btn-success">View</button></a>
+	<a href="<?php echo base_url();?>index.php/Basic_Controller/user_other"><button class="btn btn-success">Add</button></a>
+	<a href="<?php echo base_url();?>index.php/Basic_Controller/user_other_view"><button class="btn btn-success">View</button></a>
 </div>
-<form id=other_form method="post" action="<?php echo base_url();?>Basic_Controller/user_other/create" enctype="multipart/form-data">
+<form id=other_form method="post" action="<?php echo base_url();?>index.php/Basic_Controller/user_other/create" enctype="multipart/form-data">
 	<?php if($this->session->flashdata('message')!=null){?>
 	<div class="col-md-9">
 	<br>

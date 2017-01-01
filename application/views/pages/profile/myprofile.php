@@ -5,7 +5,7 @@
 	$profile_info = $this->db->get_where('register',array('reg_id'=>$userid))->result_array();
 	foreach ($profile_info as $row){
 ?>	
-<form id="profile" method="post" action="<?php echo base_url();?>Basic_Controller/updateprofile">
+<form id="profile" method="post" action="<?php echo base_url();?>index.php/Basic_Controller/updateprofile">
 		<?php if($this->session->flashdata('message')!=null){?>
 			<div class="col-md-12">
 				<div id="danger-alert" class="alert alert-danger"><?php echo $this->session->flashdata('message');?></div>

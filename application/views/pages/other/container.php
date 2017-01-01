@@ -22,7 +22,7 @@
 		<div class="container">
 			<div class="select-box">
 																					<!-- @ SEARCH -->
-			<form method="post" id="search" name="search" action="<?php echo base_url();?>Other/search">
+			<form method="post" id="search" name="search" action="<?php echo base_url();?>index.php/Other/search">
 				<div class="select-city-for-local-ads ads-list">
 					<label>Select your city</label>
 						<input type="text" id="city" name="city" />
@@ -65,7 +65,7 @@
 								foreach ($query as $row)
 								{
 							?>
-								<a href="<?php echo base_url();?>other/manage_view/<?php echo $row->otherid;?>">
+								<a href="<?php echo base_url();?>index.php/Other/manage_view/<?php echo $row->otherid;?>">
 									<?php 
 									$otherid = $row->otherid;
 									$query2 = "SELECT other_img.path FROM other_img WHERE other_img.otherid = $otherid LIMIT 1";
@@ -90,7 +90,7 @@
 								<?php } } elseif ($msearch==null)  { 
 									foreach ($datas as $row1)
 								{?>
-								<a href="<?php echo base_url();?>other/manage_view/<?php echo $row1['otherid'];?>">
+								<a href="<?php echo base_url();?>index.php/Other/manage_view/<?php echo $row1['otherid'];?>">
 									<li>
 									<img src="<?php echo base_url();?>assets/images/r1.jpg" title="" alt="" />
 									<section class="list-left">
@@ -108,7 +108,7 @@
 								<?php }}else{
 									foreach ($msearch as $row2){
 								?> 
-									<a href="<?php echo base_url();?>other/manage_view/<?php echo $row2['otherid'];?>">
+									<a href="<?php echo base_url();?>index.php/Other/manage_view/<?php echo $row2['otherid'];?>">
 											<li>
 											<img src="<?php echo base_url();?>assets/images/r1.jpg" title="" alt="" />
 											<section class="list-left">

@@ -5,8 +5,8 @@ $userid = $_SESSION['userid'];
 $realestate_data = $this->db->order_by('date','desc')->get_where('tution',array('userid' => $userid))->result_array();
 ?>
 <div class="col-md-9">
-	<a href="<?php echo base_url();?>Basic_Controller/user_tution"><button class="btn btn-success">Add</button></a>
-	<a href="<?php echo base_url();?>Basic_Controller/user_tution_view"><button class="btn btn-success">View</button></a>
+	<a href="<?php echo base_url();?>index.php/Basic_Controller/user_tution"><button class="btn btn-success">Add</button></a>
+	<a href="<?php echo base_url();?>index.php/Basic_Controller/user_tution_view"><button class="btn btn-success">View</button></a>
 </div>
 <?php if($this->session->flashdata('message')!=null){?>
 			<div class="col-md-12">
@@ -35,8 +35,8 @@ $realestate_data = $this->db->order_by('date','desc')->get_where('tution',array(
         		echo date("d F , Y",strtotime(str_replace('-','/', $postdate)));
         	?>
         </td>
-        <td><a href="<?php echo base_url();?>Basic_Controller/user_tution_edit/<?php echo $row['tutid'];?>"><button class="btn btn-success">Edit</button></a></td>
-        <td><a href="<?php echo base_url();?>Basic_Controller/user_tution/delete/<?php echo $row['tutid'];?>"><button class="btn btn-danger">Delete</button></a></td>
+        <td><a href="<?php echo base_url();?>index.php/Basic_Controller/user_tution_edit/<?php echo $row['tutid'];?>"><button class="btn btn-success">Edit</button></a></td>
+        <td><a href="<?php echo base_url();?>index.php/Basic_Controller/user_tution/delete/<?php echo $row['tutid'];?>"><button class="btn btn-danger">Delete</button></a></td>
       </tr>
       <?php }?>
     </tbody>

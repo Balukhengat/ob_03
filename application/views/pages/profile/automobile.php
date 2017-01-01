@@ -6,15 +6,15 @@ $travelling_info=$this->db->get_where('register',array('reg_id'=>$userid))->resu
 foreach ($travelling_info as $row){
 ?>
 <div class="col-md-9">
-	<a href="<?php echo base_url();?>Basic_Controller/user_automobile"><button class="btn btn-success">Add</button></a>
-	<a href="<?php echo base_url();?>Basic_Controller/user_automobile_view"><button class="btn btn-success">View</button></a>
+	<a href="<?php echo base_url();?>index.php/Basic_Controller/user_automobile"><button class="btn btn-success">Add</button></a>
+	<a href="<?php echo base_url();?>index.php/Basic_Controller/user_automobile_view"><button class="btn btn-success">View</button></a>
 </div>
 <?php if($this->session->flashdata('message')!=null){?>
 	<div class="col-md-12">
 		<div id="danger-alert" class="alert alert-danger"><?php echo $this->session->flashdata('message');?></div>
 	</div>	 
 	<?php }?>
-<form id=auto_form method="post" action="<?php echo base_url();?>Basic_Controller/user_automobile/create" enctype="multipart/form-data">
+<form id=auto_form method="post" action="<?php echo base_url();?>index.php/Basic_Controller/user_automobile/create" enctype="multipart/form-data">
 	<div class="col-md-6">
 	<div class="form-group">
 	  <label for="Name">Name:</label>

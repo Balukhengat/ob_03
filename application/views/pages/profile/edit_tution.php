@@ -1,8 +1,8 @@
 <?php if(isset($_SESSION['userid'])){?>
 <div class="col-md-9">
 <div class="col-md-12">
-	<a href="<?php echo base_url();?>Basic_Controller/user_tution"><button class="btn btn-success">Add</button></a>
-	<a href="<?php echo base_url();?>Basic_Controller/user_tution_view"><button class="btn btn-success">View</button></a>
+	<a href="<?php echo base_url();?>index.php/Basic_Controller/user_tution"><button class="btn btn-success">Add</button></a>
+	<a href="<?php echo base_url();?>index.php/Basic_Controller/user_tution_view"><button class="btn btn-success">View</button></a>
 </div>
 	<?php if($this->session->flashdata('message')!=null){?>
 	<div class="col-md-9">
@@ -22,7 +22,7 @@
 	//print_r($realedit);die();
 	foreach ($tutedit as $row){
 ?>
-<form id=tut_form method="post" action="<?php echo base_url();?>Basic_Controller/user_tution/update/<?php echo $row['tutid'];?>" enctype="multipart/form-data">
+<form id=tut_form method="post" action="<?php echo base_url();?>index.php/Basic_Controller/user_tution/update/<?php echo $row['tutid'];?>" enctype="multipart/form-data">
 	<div class="col-md-6">
 	<input type="hidden" name="tutid" value="<?php echo $row['tutid'];?>">
 	<div class="form-group">

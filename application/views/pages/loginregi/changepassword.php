@@ -6,7 +6,7 @@
 			foreach ($result as $query){
 			?>
 			<h3>Change Password</h3>
-				<form action="<?php echo  base_url();?>login/changepassword/<?php echo $query['reg_id'];?>" method="post">
+				<form action="<?php echo  base_url();?>index.php/login/changepassword/<?php echo $query['reg_id'];?>" method="post">
 					<input type="password" name="password" placeholder="New Password" required="">
 					<input type="password" name="confirmpassword" placeholder="Confirm Password" required="">
 					<input type="submit" value="Submit">

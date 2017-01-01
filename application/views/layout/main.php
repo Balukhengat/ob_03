@@ -20,7 +20,7 @@ date_default_timezone_set('Asia/Kolkata');
 									foreach ($realestate_latest->result_array() as $row){
 										$realid = $row['realid'];
 								?>
-										<a href="<?php echo base_url();?>Realestate/manage_view/<?php echo $row['realid'];?>">
+										<a href="<?php echo base_url();?>index.php/Realestate/manage_view/<?php echo $row['realid'];?>">
 											<div class="col-md-3 col-sm-3 col-xs-6">
 												<img src="<?php echo base_url().$row['path'];?>" class="img-responsive" alt="<?php echo $row['title'];?>"/>
 												<div class="w3-ad-info">
@@ -40,7 +40,7 @@ date_default_timezone_set('Asia/Kolkata');
 									foreach ($tution_latest->result_array() as $row){
 										$tutid = $row['tutid'];
 								?>
-										<a href="<?php echo base_url();?>tutions/manage_view/<?php echo $row['tutid'];?>">
+										<a href="<?php echo base_url();?>index.php/tutions/manage_view/<?php echo $row['tutid'];?>">
 											<div class="col-md-3 col-sm-3 col-xs-6">
 												<img src="<?php echo base_url();echo $row['path']?>" class="img-responsive" alt="<?php echo $row['title'];?>"/>
 												<div class="w3-ad-info">
@@ -61,7 +61,7 @@ date_default_timezone_set('Asia/Kolkata');
 									foreach ($hotel_latest->result_array() as $row){
 										$hotelid = $row['hotelid'];
 								?>
-										<a href="<?php echo base_url();?>Hotel/manage_view/<?php echo $row['hotelid'];?>">
+										<a href="<?php echo base_url();?>index.php/Hotel/manage_view/<?php echo $row['hotelid'];?>">
 											<div class="col-md-3 col-sm-3 col-xs-6">
 												<img src="<?php echo base_url();echo $row['path']?>" class="img-responsive" alt="<?php echo $row['title'];?>"/>
 												<div class="w3-ad-info">
@@ -82,7 +82,7 @@ date_default_timezone_set('Asia/Kolkata');
 									foreach ($travelling_latest->result_array() as $row){
 										$travelid = $row['travelid'];
 								?>
-										<a href="<?php echo base_url();?>Travelling/manage_view/<?php echo $row['travelid'];?>">
+										<a href="<?php echo base_url();?>index.php/Travelling/manage_view/<?php echo $row['travelid'];?>">
 											<div class="col-md-3 col-sm-3 col-xs-6">
 												<img src="<?php echo base_url();echo $row['path']?>" class="img-responsive" alt="<?php echo $row['title'];?>"/>
 												<div class="w3-ad-info">
@@ -103,7 +103,7 @@ date_default_timezone_set('Asia/Kolkata');
 									foreach ($automobile_latest->result_array() as $row){
 										$autoid = $row['autoid'];
 								?>
-										<a href="<?php echo base_url();?>Automobile/manage_view/<?php echo $row['autoid'];?>">
+										<a href="<?php echo base_url();?>index.php/Automobile/manage_view/<?php echo $row['autoid'];?>">
 											<div class="col-md-3 col-sm-3 col-xs-6">
 												<img src="<?php echo base_url();echo $row['path']?>" class="img-responsive" alt="<?php echo $row['title'];?>"/>
 												<div class="w3-ad-info">
@@ -188,9 +188,9 @@ date_default_timezone_set('Asia/Kolkata');
 									 <div class="over-image"></div>
 								</div>
 								<div class="portfolio-description">
-								   <h4><a href="<?php echo base_url();?>Realestate/manage_view/<?php echo $fetchmostpopular_row[$cat_id];?>"><?php echo $fetchmostpopular_row['title'];?></a></h4>
+								   <h4><a href="<?php echo base_url();?>index.php/Realestate/manage_view/<?php echo $fetchmostpopular_row[$cat_id];?>"><?php echo $fetchmostpopular_row['title'];?></a></h4>
 								   <p><?php echo $fetchmostpopular_row['description'];?></p>
-									<a href="<?php echo base_url();?>Realestate/manage_view/<?php echo $fetchmostpopular_row[$cat_id];?>">
+									<a href="<?php echo base_url();?>index.php/Realestate/manage_view/<?php echo $fetchmostpopular_row[$cat_id];?>">
 										<span>Explore</span>
 									</a>
 								</div>
@@ -221,7 +221,7 @@ date_default_timezone_set('Asia/Kolkata');
 							<?php $random_post_realestate = $this->db->query("SELECT realestate.realid, realestate.`name`, realestate.title, realestate.type, realestate.address, realestate.builtup, realestate.price, realestate.description, realestate.mobile, realestate.email, realestate.amenities, realestate.city, realestate.area, realestate.date, realestate.offerend, realestate.category, realestate.userid, real_img.path, real_img.id FROM realestate INNER JOIN real_img ON realestate.realid = real_img.realid GROUP BY realid ORDER BY RAND() LIMIT 4");?>
 							<?php foreach ($random_post_realestate->result() as $random_realestate){?>
 								<div class="col-md-3 col-sm-3 col-xs-6 col-lg-3">
-									<a href="<?php echo base_url();?>Realestate/manage_view/<?php echo $random_realestate->realid;?>">
+									<a href="<?php echo base_url();?>index.php/Realestate/manage_view/<?php echo $random_realestate->realid;?>">
 										<img src="<?php echo base_url();echo $random_realestate->path;?>" alt="<?php echo $random_realestate->title;?>" />
 									</a> 
 									<div class="w3-ad-info">
@@ -241,7 +241,7 @@ date_default_timezone_set('Asia/Kolkata');
 							<?php $random_post_tution = $this->db->query("SELECT * FROM tution INNER JOIN tut_img ON tution.tutid = tut_img.tutid GROUP BY tution.tutid ORDER BY RAND() LIMIT 4");?>
 							<?php foreach ($random_post_tution->result() as $random_tution){?>
 								<div class="col-md-3 col-sm-3 col-xs-6 col-lg-3">
-									<a href="<?php echo base_url();?>tutions/manage_view/<?php echo $random_tution->tutid;?>">
+									<a href="<?php echo base_url();?>index.php/tutions/manage_view/<?php echo $random_tution->tutid;?>">
 										<img src="<?php echo base_url();echo $random_tution->path;?>" alt="<?php echo $random_tution->title;?>" />
 									</a> 
 									<div class="w3-ad-info">
@@ -261,7 +261,7 @@ date_default_timezone_set('Asia/Kolkata');
 							<?php $random_post_hotel = $this->db->query("SELECT * FROM hotel INNER JOIN hotel_img ON hotel.hotelid = hotel_img.hotelid GROUP BY hotel.hotelid ORDER BY RAND() LIMIT 4");?>
 							<?php foreach ($random_post_hotel->result() as $random_hotel){?>
 								<div class="col-md-3 col-sm-3 col-xs-6 col-lg-3">
-									<a href="<?php echo base_url();?>Hotel/manage_view/<?php echo $random_hotel->hotelid;?>">
+									<a href="<?php echo base_url();?>index.php/Hotel/manage_view/<?php echo $random_hotel->hotelid;?>">
 										<img src="<?php echo base_url();echo $random_hotel->path;?>" alt="<?php echo $random_hotel->title;?>" />
 									</a> 
 									<div class="w3-ad-info">
@@ -281,7 +281,7 @@ date_default_timezone_set('Asia/Kolkata');
 							<?php $random_post_travelling = $this->db->query("SELECT * FROM travelling INNER JOIN travelling_img ON travelling.travelid = travelling_img.travelid GROUP BY travelling.travelid ORDER BY RAND() LIMIT 4");?>
 							<?php foreach ($random_post_travelling->result() as $random_travelling){?>
 								<div class="col-md-3 col-sm-3 col-xs-6 col-lg-3">
-									<a href="<?php echo base_url();?>Travelling/manage_view/<?php echo $random_travelling->travelid;?>">
+									<a href="<?php echo base_url();?>index.php/Travelling/manage_view/<?php echo $random_travelling->travelid;?>">
 										<img src="<?php echo base_url();echo $random_travelling->path;?>" alt="<?php echo $random_travelling->title;?>" />
 									</a> 
 									<div class="w3-ad-info">
@@ -301,7 +301,7 @@ date_default_timezone_set('Asia/Kolkata');
 							<?php $random_post_automobile = $this->db->query("SELECT * FROM automobile INNER JOIN automobile_img ON automobile.autoid = automobile_img.autoid GROUP BY automobile.autoid ORDER BY RAND() LIMIT 4");?>
 							<?php foreach ($random_post_automobile->result() as $random_automobile){?>
 								<div class="col-md-3 col-sm-3 col-xs-6 col-lg-3">
-									<a href="<?php echo base_url();?>Automobile/manage_view/<?php echo $random_automobile->autoid;?>">
+									<a href="<?php echo base_url();?>index.php/Automobile/manage_view/<?php echo $random_automobile->autoid;?>">
 										<img src="<?php echo base_url();echo $random_automobile->path;?>" alt="<?php echo $random_automobile->title;?>" />
 									</a> 
 									<div class="w3-ad-info">
@@ -321,7 +321,7 @@ date_default_timezone_set('Asia/Kolkata');
 							<?php $random_post_other = $this->db->query("SELECT * FROM other INNER JOIN other_img ON other.otherid = other_img.otherid GROUP BY other.otherid ORDER BY RAND() LIMIT 4");?>
 							<?php foreach ($random_post_other->result() as $random_other){?>
 								<div class="col-md-3 col-sm-3 col-xs-6 col-lg-3">
-									<a href="<?php echo base_url();?>Other/manage_view/<?php echo $random_other->otherid;?>">
+									<a href="<?php echo base_url();?>index.php/Other/manage_view/<?php echo $random_other->otherid;?>">
 										<img src="<?php echo base_url();echo $random_other->path;?>" alt="<?php echo $random_other->title;?>" />
 									</a> 
 									<div class="w3-ad-info">

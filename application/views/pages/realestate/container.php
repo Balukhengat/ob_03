@@ -12,7 +12,7 @@
 		<div class="container">
 			<span class="agile-breadcrumbs">
 				<a href="<?php echo base_url();?>"><i class="fa fa-home home_1"></i></a> / 
-				<a href="<?php echo base_url();?>Realestate/real"><span>Real Estate</span></a>
+				<a href="<?php echo base_url();?>index.php/Realestate/real"><span>Real Estate</span></a>
 			</span>
 		</div>
 	</div>
@@ -22,7 +22,7 @@
 		<div class="container">
 			<div class="select-box">
 																					<!-- @ SEARCH -->
-			<form method="post" id=real_search name="search" action="<?php echo base_url();?>Realestate/search">
+			<form method="post" id=real_search name="search" action="<?php echo base_url();?>index.php/Realestate/search">
 				<div class="select-city-for-local-ads ads-list">
 					<label>Select your city</label><span style="color: red;">*</span> 
 						<input type="text" id="city" name="city" />	
@@ -83,7 +83,7 @@
 								foreach ($query as $row)
 								{
 							?>
-								<a href="<?php echo base_url();?>realestate/manage_view/<?php echo $row->realid;?>">
+								<a href="<?php echo base_url();?>index.php/realestate/manage_view/<?php echo $row->realid;?>">
 								<?php 
 									$realid = $row->realid;
 									$query2 = "SELECT real_img.path FROM real_img WHERE real_img.realid = $realid LIMIT 1";
@@ -108,7 +108,7 @@
 								<?php } } elseif ($msearch==null) { 
 									foreach ($datas as $row1)
 								{?>
-								<a href="<?php echo base_url();?>realestate/manage_view/<?php echo $row1->realid;?>">
+								<a href="<?php echo base_url();?>index.php/realestate/manage_view/<?php echo $row1->realid;?>">
 									<li>
 									<img src="<?php echo base_url();?>assets/images/r1.jpg" title="" alt="" />
 									<section class="list-left">
@@ -126,7 +126,7 @@
 								<?php }}else{
 									foreach ($msearch as $row2){
 								?> 
-									<a href="<?php echo base_url();?>realestate/manage_view/<?php echo $row2['realid'];?>">
+									<a href="<?php echo base_url();?>index.php/realestate/manage_view/<?php echo $row2['realid'];?>">
 											<li>
 											<img src="<?php echo base_url();?>assets/images/r1.jpg" title="" alt="" />
 											<section class="list-left">

@@ -1,8 +1,8 @@
 <?php if(isset($_SESSION['userid'])){?>
 <div class="col-md-9">
 <div class="col-md-12">
-	<a href="<?php echo base_url();?>Basic_Controller/user_travelling"><button class="btn btn-success">Add</button></a>
-	<a href="<?php echo base_url();?>Basic_Controller/user_travelling_view"><button class="btn btn-success">View</button></a>
+	<a href="<?php echo base_url();?>index.php/Basic_Controller/user_travelling"><button class="btn btn-success">Add</button></a>
+	<a href="<?php echo base_url();?>index.php/Basic_Controller/user_travelling_view"><button class="btn btn-success">View</button></a>
 </div>
 	<?php if($this->session->flashdata('message')!=null){?>
 	<div class="col-md-9">
@@ -22,7 +22,7 @@
 	//print_r($realedit);die();
 	foreach ($realedit->result_array() as $row){
 ?>
-<form id=travel_form method="post" action="<?php echo base_url();?>Basic_Controller/user_travelling/update/<?php echo $row['travelid'];?>" enctype="multipart/form-data">
+<form id=travel_form method="post" action="<?php echo base_url();?>index.php/Basic_Controller/user_travelling/update/<?php echo $row['travelid'];?>" enctype="multipart/form-data">
 	<div class="col-md-6">
 	<input type="hidden" name="travelid" value="<?php echo $row['travelid'];?>">
 	<div class="form-group">

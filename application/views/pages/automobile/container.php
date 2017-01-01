@@ -23,7 +23,7 @@
 		<div class="container">
 			<div class="select-box">
 																					<!-- @ SEARCH -->
-			<form method="post" id="search" name="search" action="<?php echo base_url();?>Automobile/search">
+			<form method="post" id="search" name="search" action="<?php echo base_url();?>index.php/Automobile/search">
 				<div class="select-city-for-local-ads ads-list">
 					<label>Select your city to see local ads</label>
 						<input type="text" id="city" name="city" />
@@ -69,7 +69,7 @@
 								foreach ($query as $row)
 								{
 							?>
-								<a href="<?php echo base_url();?>Automobile/manage_view/<?php echo $row->autoid;?>">
+								<a href="<?php echo base_url();?>index.php/Automobile/manage_view/<?php echo $row->autoid;?>">
 								<?php 
 									$autoid = $row->autoid;
 									$query2 = "SELECT automobile_img.path FROM automobile_img WHERE automobile_img.autoid = $autoid LIMIT 1";
@@ -94,7 +94,7 @@
 								<?php } } elseif ($msearch==null) { 
 									foreach ($datas as $row1)
 								{?>
-								<a href="<?php echo base_url();?>Automobile/manage_view/<?php echo $row1['autoid'];?>">
+								<a href="<?php echo base_url();?>index.php/Automobile/manage_view/<?php echo $row1['autoid'];?>">
 									<li>
 									<img src="<?php echo base_url();?>assets/images/r1.jpg" title="" alt="" />
 									<section class="list-left">
@@ -112,7 +112,7 @@
 								<?php }}else{
 									foreach ($msearch as $row2){
 								?> 
-									<a href="<?php echo base_url();?>Automobile/manage_view/<?php echo $row2['autoid'];?>">
+									<a href="<?php echo base_url();?>index.php/Automobile/manage_view/<?php echo $row2['autoid'];?>">
 											<li>
 											<img src="<?php echo base_url();?>assets/images/r1.jpg" title="" alt="" />
 											<section class="list-left">

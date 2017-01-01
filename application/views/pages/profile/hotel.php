@@ -1,15 +1,15 @@
 <?php if(isset($_SESSION['userid'])){?>
 <div class="col-md-12">
 <div class="col-md-9">
-	<a href="<?php echo base_url();?>Basic_Controller/user_hotel"><button class="btn btn-success">Add</button></a>
-	<a href="<?php echo base_url();?>Basic_Controller/user_hotel_view"><button class="btn btn-success">View</button></a>
+	<a href="<?php echo base_url();?>index.php/Basic_Controller/user_hotel"><button class="btn btn-success">Add</button></a>
+	<a href="<?php echo base_url();?>index.php/Basic_Controller/user_hotel_view"><button class="btn btn-success">View</button></a>
 </div>
 <?php  
 $userid = $_SESSION['userid'];
 $hotel_info=$this->db->get_where('register',array('reg_id'=>$userid))->result_array();
 foreach ($hotel_info as $row){
 ?>
-<form id=hotel_form method="post" action="<?php echo base_url();?>Basic_Controller/user_hotel/create" enctype="multipart/form-data">
+<form id=hotel_form method="post" action="<?php echo base_url();?>index.php/Basic_Controller/user_hotel/create" enctype="multipart/form-data">
 	<div class="col-md-9">
 	<?php if($this->session->flashdata('message')!=null){?>
 	<div id="danger-alert" class="alert alert-danger"><?php echo $this->session->flashdata('message');?></div> 

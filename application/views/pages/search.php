@@ -22,7 +22,7 @@
 		<div class="container">
 			<div class="select-box">
 																					<!-- @ SEARCH -->
-			<form method="post" id="search" name="search" action="<?php echo base_url();?>Realestate/search">
+			<form method="post" id="search" name="search" action="<?php echo base_url();?>index.php/Realestate/search">
 				<div class="select-city-for-local-ads ads-list">
 					<label>Select your city to see local ads</label>
 						<select id="city" name="city">	
@@ -85,7 +85,7 @@
 								foreach ($query->result() as $row)
 								{
 							?>
-								<a href="<?php echo base_url();?>realestate/manage_view/<?php echo $row->realid;?>">
+								<a href="<?php echo base_url();?>index.php/realestate/manage_view/<?php echo $row->realid;?>">
 									<li>
 									<img src="<?php echo base_url();?>assets/images/r1.jpg" title="" alt="" />
 									<section class="list-left">
@@ -103,7 +103,7 @@
 								<?php } } else { 
 									foreach ($datas as $row1)
 								{?>
-								<a href="<?php echo base_url();?>realestate/manage_view/<?php echo $row1['realid'];?>">
+								<a href="<?php echo base_url();?>index.php/realestate/manage_view/<?php echo $row1['realid'];?>">
 									<li>
 									<img src="<?php echo base_url();?>assets/images/r1.jpg" title="" alt="" />
 									<section class="list-left">

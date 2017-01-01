@@ -23,7 +23,7 @@
 		<div class="container">
 			<div class="select-box">
 																					<!-- @ SEARCH -->
-			<form method="post" id="search" name="search" action="<?php echo base_url();?>Tutions/search">
+			<form method="post" id="search" name="search" action="<?php echo base_url();?>index.php/Tutions/search">
 				<div class="select-city-for-local-ads ads-list">
 					<label>Select your city</label>
 						<input type="text" id="city" name="city" />	
@@ -66,7 +66,7 @@
 								foreach ($query as $row)
 								{
 							?>
-								<a href="<?php echo base_url();?>tutions/manage_view/<?php echo $row->tutid;?>">
+								<a href="<?php echo base_url();?>index.php/tutions/manage_view/<?php echo $row->tutid;?>">
 									<?php 
 									$tutid = $row->tutid;
 									$query2 = "SELECT tut_img.path FROM tut_img WHERE tut_img.tutid = $tutid LIMIT 1";
@@ -91,7 +91,7 @@
 								<?php } } elseif ($msearch==null)  { 
 									foreach ($datas as $row1)
 								{?>
-								<a href="<?php echo base_url();?>tutions/manage_view/<?php echo $row1['tutid'];?>">
+								<a href="<?php echo base_url();?>index.php/tutions/manage_view/<?php echo $row1['tutid'];?>">
 									<li>
 									<img src="<?php echo base_url();?>assets/images/r1.jpg" title="" alt="" />
 									<section class="list-left">

@@ -14,7 +14,7 @@
 		<div class="container">
 			<span class="agile-breadcrumbs">
 			<a href="<?php echo base_url();?>"><i class="fa fa-home home_1"></i></a> / 
-			<a href="<?php echo base_url();?>Hotel/travel">Travelling</a> / 
+			<a href="<?php echo base_url();?>index.php/Travelling/travel">Travelling</a> / 
 			<span>ID - <?php echo $travelid;?></span></span>
 		</div>
 	</div>

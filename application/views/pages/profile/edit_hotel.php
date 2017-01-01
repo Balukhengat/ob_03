@@ -1,8 +1,8 @@
 <?php if(isset($_SESSION['userid'])){?>
 <div class="col-md-9">
 <div class="col-md-12">
-	<a href="<?php echo base_url();?>Basic_Controller/user_hotel"><button class="btn btn-success">Add</button></a>
-	<a href="<?php echo base_url();?>Basic_Controller/user_hotel_view"><button class="btn btn-success">View</button></a>
+	<a href="<?php echo base_url();?>index.php/Basic_Controller/user_hotel"><button class="btn btn-success">Add</button></a>
+	<a href="<?php echo base_url();?>index.php/Basic_Controller/user_hotel_view"><button class="btn btn-success">View</button></a>
 </div>
 	<?php if($this->session->flashdata('message')!=null){?>
 	<div class="col-md-9">
@@ -22,7 +22,7 @@
 	//print_r($realedit);die();
 	foreach ($hoteledit->result_array() as $row){
 ?>
-<form id=hotel_form method="post" action="<?php echo base_url();?>Basic_Controller/user_hotel/update/<?php echo $row['hotelid'];?>" enctype="multipart/form-data">
+<form id=hotel_form method="post" action="<?php echo base_url();?>index.php/Basic_Controller/user_hotel/update/<?php echo $row['hotelid'];?>" enctype="multipart/form-data">
 	<div class="col-md-6">
 	<input type="hidden" name="tutid" value="<?php echo $row['hotelid'];?>">
 	<div class="form-group">

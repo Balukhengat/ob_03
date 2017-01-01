@@ -4,7 +4,7 @@
 			<div class="wthree-help">
 				<h3>How Can We help you</h3>
 				<br>
-				<form action="<?php base_url();?>Contact/feedback" method="post"> 
+				<form action="<?php base_url();?>index.php/Contact/feedback" method="post"> 
 					<?php if($this->session->flashdata('message')!=null){?>
 						<div id="danger-alert" class="alert alert-danger"><?php echo $this->session->flashdata('message');?></div> 
 						<?php }?>
@@ -18,7 +18,7 @@
 				</form>
 			
 				<h5>OR</h5>
-				<a href="<?php echo base_url();?>contact">Contact Us</a>
+				<a href="<?php echo base_url();?>index.php/contact">Contact Us</a>
 			</div>
 		</div>	
 	</div>
