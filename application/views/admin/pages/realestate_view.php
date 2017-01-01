@@ -47,8 +47,8 @@
                                         <td><?php echo $row['title'];?></td>
                                         <td><?php echo $row['mobile'];?></td>
                                         <td><?php $date = strtotime($row['date']); $date = date("F d, Y",$date); echo $date;?></td>
-                                        <td><a href="<?php echo base_url();?>Admin/realestate_edit/<?php echo $row['realid'];?>"><button class="btn btn-success">Edit</button></a></td>
-								        <td><a href="<?php echo base_url();?>Admin/realestate/delete/<?php echo $row['realid'];?>"><button class="btn btn-danger">Delete</button></a></td>
+                                        <td><a href="<?php echo base_url();?>index.php/Admin/realestate_edit/<?php echo $row['realid'];?>"><button class="btn btn-success">Edit</button></a></td>
+								        <td><a href="<?php echo base_url();?>index.php/Admin/realestate/delete/<?php echo $row['realid'];?>"><button class="btn btn-danger">Delete</button></a></td>
                                        </tr> 
                                        <?php }?> 
                                 </tbody>

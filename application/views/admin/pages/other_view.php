@@ -47,8 +47,8 @@
                                         <td><?php echo $row['title'];?></td>
                                         <td><?php echo $row['mobile'];?></td>
                                         <td><?php $date = strtotime($row['date']); $date = date("F d, Y",$date); echo $date;?></td>
-                                        <td><a href="<?php echo base_url();?>Admin/other_edit/<?php echo $row['otherid'];?>"><button class="btn btn-success">Edit</button></a></td>
-								        <td><a href="<?php echo base_url();?>Admin/other/delete/<?php echo $row['otherid'];?>"><button class="btn btn-danger">Delete</button></a></td>
+                                        <td><a href="<?php echo base_url();?>index.php/Admin/other_edit/<?php echo $row['otherid'];?>"><button class="btn btn-success">Edit</button></a></td>
+								        <td><a href="<?php echo base_url();?>index.php/Admin/other/delete/<?php echo $row['otherid'];?>"><button class="btn btn-danger">Delete</button></a></td>
                                        </tr> 
                                        <?php }?> 
                                 </tbody>

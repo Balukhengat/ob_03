@@ -22,7 +22,7 @@
                         </div>
                         <div class="body">
                         <?php foreach ($realedit->result_array() as $row){?>	
-                        	<form action="<?php echo base_url();?>Admin/realestate/update/<?php echo $row['realid'];?>" id="frmFileUpload" method="post" enctype="multipart/form-data">
+                        	<form action="<?php echo base_url();?>index.php/Admin/realestate/update/<?php echo $row['realid'];?>" id="frmFileUpload" method="post" enctype="multipart/form-data">
 								<div class="row clearfix">
 	                                <div class="col-md-4">
 	                                    <label for="Name">Name </label><span style="color: red;"> * </span><span style="color: red;" class="error" id="name_error"></span>
@@ -128,14 +128,14 @@
 			                    <div class="col-xs-12 col-sm-4 col-md-4 col-lg-3">
 			                    	<hr>
 									<img alt="<?php echo $row['title'];?>" src="<?php echo base_url();echo $row_img['path'];?>" width="200" height="200">
-					                <form action="<?php echo base_url();?>Admin/UpdateImage/real" method="post" enctype="multipart/form-data">
+					                <form action="<?php echo base_url();?>index.php/Admin/UpdateImage/real" method="post" enctype="multipart/form-data">
 					                	<input type="hidden" name="imgid" value="<?php echo $row_img["id"];?>">
 					                	<input type="hidden" name="postid" value="<?php echo $row_img["realid"];?>">
 					                	<input type="file" name="image" required="required">
 					                	<input type="submit" class="btn btn-success" value="Change Image">
 					                </form>
 					                <br>
-					                <a href="<?php echo base_url();?>Admin/DeleteImage/real/<?php echo $row_img["id"];?>/<?php echo $row_img["realid"];?>"><input type="submit" class="btn btn-danger" value="Delete Image  &nbsp;"></a>
+					                <a href="<?php echo base_url();?>index.php/Admin/DeleteImage/real/<?php echo $row_img["id"];?>/<?php echo $row_img["realid"];?>"><input type="submit" class="btn btn-danger" value="Delete Image  &nbsp;"></a>
 					                <hr>
 				                </div>
 				                <?php }?>
@@ -151,7 +151,7 @@
                      </div>   
                      <!-- Add more imgaes -->
                      <div class="body">
-                            <form action="<?php echo base_url();?>Admin/AddMoreImages" id="frmFileUpload" class="" method="post" enctype="multipart/form-data">
+                            <form action="<?php echo base_url();?>index.php/Admin/AddMoreImages" id="frmFileUpload" class="" method="post" enctype="multipart/form-data">
                                 <input type="hidden" name="realid" value="<?php echo $realid;?>">
                                 <input type="hidden" name="category" value="real">
                                 <div class="dropzone"> 
