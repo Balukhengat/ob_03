@@ -18,7 +18,7 @@
                         <i class="material-icons" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">keyboard_arrow_down</i>
                         <ul class="dropdown-menu pull-right">
                             <li><a href="javascript:void(0);"><i class="material-icons">person</i>Profile</a></li>
-                            <li><a href="<?php echo base_url();?>Admin/logout"><i class="material-icons">input</i>Sign Out</a></li>
+                            <li><a href="<?php echo base_url();?>index.php/Admin/logout"><i class="material-icons">input</i>Sign Out</a></li>
                         </ul>
                     </div>
                 </div>
@@ -30,7 +30,7 @@
                 <ul class="list">
                     <li class="header">CATEGORIES <?php echo "Ses-ID: ".$_SESSION['adminid'];?></li>
                     <li class="active">
-                        <a href="<?php echo base_url();?>Admin">
+                        <a href="<?php echo base_url();?>index.php/Admin">
                             <i class="material-icons">dashboard</i>
                             <span>Dashboard </span>
                         </a>
@@ -42,12 +42,12 @@
                         </a>
                         <ul class="ml-menu">
                             <li>
-                                <a href="<?php echo base_url();?>Admin/realestate" class="">
+                                <a href="<?php echo base_url();?>index.php/Admin/realestate" class="">
                                     <span>Add</span>
                                 </a>
                             </li>
                             <li>
-                                <a href="<?php echo base_url();?>Admin/realestate_view" class="">
+                                <a href="<?php echo base_url();?>index.php/Admin/realestate_view" class="">
                                     <span>View</span>
                                 </a>
                             </li>
@@ -60,12 +60,12 @@
                         </a>
                          <ul class="ml-menu">
                             <li>
-                                <a href="<?php echo base_url();?>Admin/tution" class="">
+                                <a href="<?php echo base_url();?>index.php/Admin/tution" class="">
                                     <span>Add</span>
                                 </a>
                             </li>
                             <li>
-                                <a href="<?php echo base_url();?>Admin/tution_view" class="">
+                                <a href="<?php echo base_url();?>index.php/Admin/tution_view" class="">
                                     <span>View</span>
                                 </a>
                             </li>
@@ -78,12 +78,12 @@
                         </a>
                         <ul class="ml-menu">
                             <li>
-                                <a href="<?php echo base_url();?>Admin/hotel" class="">
+                                <a href="<?php echo base_url();?>index.php/Admin/hotel" class="">
                                     <span>Add</span>
                                 </a>
                             </li>
                             <li>
-                                <a href="<?php echo base_url();?>Admin/hotel_view" class="">
+                                <a href="<?php echo base_url();?>index.php/Admin/hotel_view" class="">
                                     <span>View</span>
                                 </a>
                             </li>
@@ -96,12 +96,12 @@
                         </a>
                          <ul class="ml-menu">
                             <li>
-                                <a href="<?php echo base_url();?>Admin/travelling" class="">
+                                <a href="<?php echo base_url();?>index.php/Admin/travelling" class="">
                                     <span>Add</span>
                                 </a>
                             </li>
                             <li>
-                                <a href="<?php echo base_url();?>Admin/travelling_view" class="">
+                                <a href="<?php echo base_url();?>index.php/Admin/travelling_view" class="">
                                     <span>View</span>
                                 </a>
                             </li>
@@ -114,12 +114,12 @@
                         </a>
                          <ul class="ml-menu">
                             <li>
-                                <a href="<?php echo base_url();?>Admin/automobile" class="">
+                                <a href="<?php echo base_url();?>index.php/Admin/automobile" class="">
                                     <span>Add</span>
                                 </a>
                             </li>
                             <li>
-                                <a href="<?php echo base_url();?>Admin/automobile_view" class="">
+                                <a href="<?php echo base_url();?>index.php/Admin/automobile_view" class="">
                                     <span>View</span>
                                 </a>
                             </li>
@@ -132,12 +132,12 @@
                         </a>
                          <ul class="ml-menu">
                             <li>
-                                <a href="<?php echo base_url();?>Admin/other" class="">
+                                <a href="<?php echo base_url();?>index.php/Admin/other" class="">
                                     <span>Add</span>
                                 </a>
                             </li>
                             <li>
-                                <a href="<?php echo base_url();?>Admin/other_view" class="">
+                                <a href="<?php echo base_url();?>index.php/Admin/other_view" class="">
                                     <span>View</span>
                                 </a>
                             </li>

@@ -20,7 +20,7 @@
                                 Add automobile data
                             </h2>
                         <div class="body">
-                        	<form action="<?php echo base_url();?>Admin/automobile/create" id="frmFileUpload" method="post" enctype="multipart/form-data">
+                        	<form action="<?php echo base_url();?>index.php/Admin/automobile/create" id="frmFileUpload" method="post" enctype="multipart/form-data">
 								<div class="row clearfix">
 	                                <div class="col-md-4">
 	                                    <label for="Name">Name </label><span style="color: red;"> * </span><span style="color: red;" class="error" id="name_error"></span>

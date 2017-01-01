@@ -253,7 +253,7 @@
                             <h2>Paid user promotions</h2>
                         </div>
                         <div class="body">
-                        	<form action="<?php echo base_url();?>Admin/Pramotions" method="post">
+                        	<form action="<?php echo base_url();?>index.php/Admin/Pramotions" method="post">
                         		 <div class="col-md-2">
 	                                    <div class="input-group">
 	                                        <div class="form-line">
@@ -351,7 +351,7 @@
                                             <td><?php echo $row->title;?></td>
                                             <td><?php echo $row->mobile;?></td>
                                             <td><?php echo $row->email;?></td>
-                                           <td><a href="<?php echo base_url();?>Admin/DeletePramotions/<?php echo $promo_row['post_id'];?>"><button class="btn btn-danger">Delete</button></a></td>
+                                           <td><a href="<?php echo base_url();?>index.php/Admin/DeletePramotions/<?php echo $promo_row['post_id'];?>"><button class="btn btn-danger">Delete</button></a></td>
                                         </tr>
                                     <?php }?>    
                                     </tbody>

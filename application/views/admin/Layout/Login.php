@@ -13,7 +13,7 @@
         </div>
         <div class="card">
             <div class="body">
-                <form id="sign_in" method="POST" action="<?php echo base_url();?>Admin/loginCheck">
+                <form id="sign_in" method="POST" action="<?php echo base_url();?>index.php/Admin/loginCheck">
                     <div class="msg">Sign in to start your session</div>
                     <div class="input-group">
                         <span class="input-group-addon">
@@ -61,6 +61,6 @@
 </html>
 <?php 
 	}else{
-		redirect(base_url().'Admin');
+		redirect(base_url().'index.php/Admin');
 	}
 ?>

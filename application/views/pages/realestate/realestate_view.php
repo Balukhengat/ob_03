@@ -66,7 +66,7 @@
 		<div class="item-price">
 			<div class="product-price">
 				<p class="p-price">Price</p>
-				<h3 class="">RS. <?php echo number_format($row['price'],2)?>/-</h3>
+				<h3 class="">RS. <?php if($row['price']!=null){echo number_format($row['price'],2);}else{echo "Unavailable";}?>/-</h3>
 				<div class="clearfix"></div>
 			</div>
 			<div class="condition">

@@ -25,8 +25,8 @@
 <!-- meta tags -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="keywords" content="Resale Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
-Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony Ericsson, Motorola web design" />
+<meta name="keywords" content="Relestate, Tutions, Hotels, Restaurents, Travelling, automobile, offers, offersbull, best offers" />
+<meta name="description" content="OffersBull is continuosly developing and growing to provide best deals and offers and all information regarding products/organizations in several fields such as realestate, tutions, hotels and many more...">
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 <!-- //meta tags -->
 <!--fonts-->

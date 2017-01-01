@@ -30,8 +30,8 @@ class BasicModel extends CI_Model{
 		$config['smtp_host'] = 'ssl://smtp.gmail.com';
 		$config['smtp_timeout']=5;
 		$config['smtp_port'] = '465';
-		$config['smtp_user'] = 'uitsoftwares@gmail.com';
-		$config['smtp_pass'] = 'King$001#000';
+		$config['smtp_user'] = 'offersbullhelp@gmail.com';
+		$config['smtp_pass'] = 'Gilbilerahul@123';
 		$config['mailtype'] = 'html';
 		$config['charset'] = 'utf-8';
 		$config['newline'] = "\r\n";
@@ -39,7 +39,7 @@ class BasicModel extends CI_Model{
 		$this->load->library('email');
 		$this->email->initialize($config);
 	
-		$this->email->from('uitsoftwares@gmail.com', 'Uitsoftwares');
+		$this->email->from('offersbullhelp@gmail.com', 'OffersBull');
 		$this->email->to($email);
 		$this->email->subject('OFFERS BULL Verification');
 		$this->email->message('Please verify your account, Your OTP is:'.$otp);
