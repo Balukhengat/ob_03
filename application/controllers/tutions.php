@@ -4,7 +4,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		public function index(){
 			
 		}
-		public function tution(){
+		public function Tution(){
 			$category['template'] = "tution";
 			$category['datas']=null;
 			$category['msearch']=null;
