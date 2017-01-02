@@ -28,7 +28,7 @@
             <!-- Menu -->
            <div class="menu">
                 <ul class="list">
-                    <li class="header">CATEGORIES <?php echo "Ses-ID: ".$_SESSION['adminid'];?></li>
+                    <li class="header">CATEGORIES </li>
                     <li class="active">
                         <a href="<?php echo base_url();?>index.php/Admin">
                             <i class="material-icons">dashboard</i>

@@ -4,7 +4,7 @@
 	{
 ?>
 <html>
-<?php $this->load->view('admin/layout/head');?>
+<?php $this->load->view('admin/Layout/head');?>
 <body class="login-page">
     <div class="login-box">
         <div class="logo">

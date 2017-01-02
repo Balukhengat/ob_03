@@ -21,7 +21,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				$data['message']=$this->input->post('message');
 				$this->db->insert('feedback',$data);
 				$this->session->set_flashdata('message','Feedback sent Successfully');
-				redirect(base_url().'Help');
+				redirect(base_url().'index.php/Help');
 			}
 		}
 	}

@@ -1,4 +1,4 @@
-<?php $this->load->view('admin/layout/head')?>
+<?php $this->load->view('admin/Layout/head')?>
 <body class="theme-red">
     <!-- Page Loader -->
 <!--     <div class="page-loader-wrapper"> -->
@@ -31,14 +31,14 @@
         </div>
     </div>
     <!-- #END# Search Bar -->
-   <?php $this->load->view('admin/layout/header')?>
+   <?php $this->load->view('admin/Layout/Header')?>
    
     <section>
-        <?php $this->load->view('admin/layout/leftsidebar')?>
-        <?php $this->load->view('admin/layout/rightsidebar')?>
+        <?php $this->load->view('admin/Layout/leftsidebar')?>
+        <?php $this->load->view('admin/Layout/rightsidebar')?>
     </section>
-    <?php $this->load->view('admin/layout/container')?>
-   <?php $this->load->view('admin/layout/js')?>
+    <?php $this->load->view('admin/Layout/container')?>
+   <?php $this->load->view('admin/Layout/js')?>
 </body>
 
 </html>

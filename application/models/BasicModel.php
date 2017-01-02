@@ -16,11 +16,11 @@ class BasicModel extends CI_Model{
 // 			$this->session->set_userdata($userid);
 			$_SESSION['userid']=$userid;
 			$this->session->set_flashdata('message','Sigin Successfully');
-			redirect(base_url().'Basic_Controller/user_profile');
+			redirect(base_url().'index.php/Basic_Controller/user_profile');
 		}
 		else{
 			$this->session->set_flashdata('message','Login Failed,invaid email or password');
-			redirect(base_url().'login/login');
+			redirect(base_url().'index.php/login/login');
 		}
 	}
 	//OTP email (SignIN)

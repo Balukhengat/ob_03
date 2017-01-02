@@ -49,4 +49,4 @@ $other_data = $this->db->order_by('date','desc')->get_where('other',array('useri
 </script>
 <script type="text/javascript" lang="javascript" src="<?php echo base_url();?>assets/js/validation.js">
 </script>
-<?php }else{redirect(base_url().'Login/login');}?>
+<?php }else{redirect(base_url().'index.php/Login/login');}?>

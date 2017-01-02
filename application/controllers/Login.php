@@ -45,19 +45,19 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				$check=$this->db->get_where('register',array('email'=>$email))->row();
 				if(!$check)
 				{
-					$this->db->insert('register',$data);
 					$email_status = $this->BasicModel->email($email);
 					if($email_status)
 					{
 						$temp['pagename'] = 'otp.php'; 
 						$temp['email']=$email;
+						$this->db->insert('register',$data);
 						$this->load->view('pages/loginregi/login.php',$temp);
 					}else{
 						echo "Error : EML-SND 001";
 					}
 				}else {
 					$this->session->set_flashdata('message','Email already exits');
-					redirect(base_url().'login/newuser');
+					redirect(base_url().'index.php/login/newuser');
 				}
 			}
 		}
@@ -98,7 +98,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			$check=$this->db->get_where('register',array('email'=>$email))->row();
 			if(!$check){ 
 				$this->session->set_flashdata('message','Email NOt exits');
-				redirect(base_url().'login/forgotpassword');
+				redirect(base_url().'index.php/login/forgotpassword');
 				
 				}else{
 				$email_status = $this->BasicModel->email($email);

@@ -4,7 +4,7 @@
 			<div class="wthree-help">
 				<h3>How Can We help you</h3>
 				<br>
-				<form action="<?php base_url();?>index.php/Contact/feedback" method="post"> 
+				<form action="<?php base_url();?>Contact/feedback" method="post"> 
 					<?php if($this->session->flashdata('message')!=null){?>
 						<div id="danger-alert" class="alert alert-danger"><?php echo $this->session->flashdata('message');?></div> 
 						<?php }?>

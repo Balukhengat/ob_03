@@ -91,4 +91,4 @@ foreach ($travelling_info as $row){
 </script>
 <script type="text/javascript" lang="javascript" src="<?php echo base_url();?>assets/js/validation.js">
 </script>
-<?php }else{redirect(base_url().'Login/login');}?>
+<?php }else{redirect(base_url().'index.php/Login/login');}?>

@@ -5,10 +5,10 @@
 				<ul>
 					<?php if(isset($_SESSION['userid'])){
 					?>	<li class="dropdown head-dpdn">
-						<a href="<?php echo base_url();?>index.php/Basic_controller/user_profile" aria-expanded="false"><i class="fa fa-user" aria-hidden="true"></i>My Profile</a>
+						<a href="<?php echo base_url();?>index.php/Basic_Controller/user_profile" aria-expanded="false"><i class="fa fa-user" aria-hidden="true"></i>My Profile</a>
 						</li>
 						<li class="dropdown head-dpdn">
-						<a href="<?php echo base_url();?>index.php/Basic_controller/user_logout" aria-expanded="false"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a>
+						<a href="<?php echo base_url();?>index.php/Basic_Controller/user_logout" aria-expanded="false"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a>
 						</li>
 					<?php 
 					}else{?>

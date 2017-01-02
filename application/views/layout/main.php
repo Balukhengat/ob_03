@@ -152,31 +152,37 @@ date_default_timezone_set('Asia/Kolkata');
 				 			$cat_id = "realid";
 				 			$cat_table = "realestate";
 				 			$cat_img_table = "real_img";
+				 			$controller_name = "Realestate";
 				 		}elseif($category==1){
 				 			$real_id = $post_id;
 				 			$cat_id = "tutid";
 				 			$cat_table = "tution";
 				 			$cat_img_table = "tut_img";
+				 			$controller_name = "Tutions";
 				 		}elseif($category == 2){
 				 			$real_id = $post_id;
 				 			$cat_id = "hotelid";
 				 			$cat_table = "hotel";
 				 			$cat_img_table = "hotel_img";
+				 			$controller_name = "Hotel";
 				 		}elseif($category == 3){
 				 			$real_id = $post_id;
 				 			$cat_id = "travelid";
 				 			$cat_table = "travelling";
 				 			$cat_img_table = "travelling_img";
+				 			$controller_name = "Travelling";
 				 		}elseif($category == 4){
 				 			$real_id = $post_id;
 				 			$cat_id = "autoid";
 				 			$cat_table = "automobile";
 				 			$cat_img_table = "automobile_img";
+				 			$controller_name = "Automobile";
 				 		}elseif($category == 5){
 				 			$real_id = $post_id;
 				 			$cat_id = "otherid";
 				 			$cat_table = "other";
 				 			$cat_img_table = "other_img";
+				 			$controller_name = "Other";
 				 		}
 				 			$fetchmostpopular = "SELECT $cat_table.$cat_id, $cat_table.`name`, $cat_table.title, $cat_table.description,  $cat_table.userid, $cat_table.visits, $cat_img_table.path FROM $cat_img_table INNER JOIN $cat_table ON $cat_table.$cat_id = $cat_img_table.$cat_id WHERE $cat_table.$cat_id = $real_id LIMIT 1";
 				 			$fetchmostpopular_result = $this->db->query($fetchmostpopular);
@@ -188,9 +194,9 @@ date_default_timezone_set('Asia/Kolkata');
 									 <div class="over-image"></div>
 								</div>
 								<div class="portfolio-description">
-								   <h4><a href="<?php echo base_url();?>index.php/Realestate/manage_view/<?php echo $fetchmostpopular_row[$cat_id];?>"><?php echo $fetchmostpopular_row['title'];?></a></h4>
+								   <h4><a href="<?php echo base_url();?>index.php/<?php echo $controller_name;?>/manage_view/<?php echo $fetchmostpopular_row[$cat_id];?>"><?php echo $fetchmostpopular_row['title'];?></a></h4>
 								   <p><?php echo $fetchmostpopular_row['description'];?></p>
-									<a href="<?php echo base_url();?>index.php/Realestate/manage_view/<?php echo $fetchmostpopular_row[$cat_id];?>">
+									<a href="<?php echo base_url();?>index.php/<?php echo $controller_name;?>/manage_view/<?php echo $fetchmostpopular_row[$cat_id];?>">
 										<span>Explore</span>
 									</a>
 								</div>

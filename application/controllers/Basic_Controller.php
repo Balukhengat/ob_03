@@ -9,7 +9,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		public function user_logout(){
 			unset($_SESSION['userid']);
 			$this->session->set_flashdata('message','Successfully logout');
-			redirect(base_url().'login/login');
+			redirect(base_url().'index.php/Login/login');
 		}
 		public function user_profile(){
 				$data['pagename']="myprofile.php";
@@ -24,14 +24,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				$this->BasicModel->insert_user_realestate($realid);
 				$this->image_upload('real',$userid);
 				$this->session->set_flashdata('message','Data Uploaded Successfully');
-				redirect(base_url() . 'Basic_Controller/user_realestate');
+				redirect(base_url() . 'index.php/Basic_Controller/user_realestate');
 			}
 			if($task=='update'){
 				$this->BasicModel->update_user_realestate($realid);
 				//$this->image_upload('real',$userid);
 				$this->session->set_flashdata('message','Data Updated Successfully');
 				//$data['pagename']="realestate_view.php";
-				redirect(base_url() . 'Basic_Controller/user_realestate_view');
+				redirect(base_url() . 'index.php/Basic_Controller/user_realestate_view');
 			}
 			if($task=='delete'){
 				$userid = $_SESSION['userid'];
@@ -42,7 +42,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				}else{
 					$this->session->set_flashdata('message','Record not found');
 				}
-				redirect(base_url() . 'Basic_Controller/user_realestate');
+				redirect(base_url() . 'index.php/Basic_Controller/user_realestate');
 				//$data['pagename']="realestate_view.php";
 			}
 			$data['pagename']="realestate.php";
@@ -68,14 +68,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				$this->BasicModel->insert_user_tution($tutid);
 				$this->image_upload('tution',$userid);
 				$this->session->set_flashdata('message','Data Uploaded Successfully');
-				redirect(base_url() . 'Basic_Controller/user_tution');
+				redirect(base_url() . 'index.php/Basic_Controller/user_tution');
 			}
 			if($task=='update'){
 				$this->BasicModel->update_user_tution($tutid);
 				//$this->image_upload('real',$userid);
 				$this->session->set_flashdata('message','Data Updated Successfully');
 				//$data['pagename']="realestate_view.php";
-				redirect(base_url() . 'Basic_Controller/user_tution_view');
+				redirect(base_url() . 'index.php/Basic_Controller/user_tution_view');
 			}
 			if($task=='delete'){
 				$userid = $_SESSION['userid'];
@@ -86,7 +86,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				}else{
 					$this->session->set_flashdata('message','Record not found');
 				}
-				redirect(base_url() . 'Basic_Controller/user_tution_view');
+				redirect(base_url() . 'index.php/Basic_Controller/user_tution_view');
 				//$data['pagename']="realestate_view.php";
 			}
 			$data['pagename']="tution.php";
@@ -111,14 +111,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				$this->BasicModel->insert_user_hotel($hotelid);
 				$this->image_upload('hotel',$userid);
 				$this->session->set_flashdata('message','Data Uploaded Successfully');
-				redirect(base_url() . 'Basic_Controller/user_hotel');
+				redirect(base_url() . 'index.php/Basic_Controller/user_hotel');
 			}
 			if($task=='update'){
 				$this->BasicModel->update_user_hotel($hotelid);
 				//$this->image_upload('real',$userid);
 				$this->session->set_flashdata('message','Data Updated Successfully');
 				//$data['pagename']="realestate_view.php";
-				redirect(base_url() . 'Basic_Controller/user_hotel_view');
+				redirect(base_url() . 'index.php/Basic_Controller/user_hotel_view');
 			}
 			if($task=='delete'){
 				$userid = $_SESSION['userid'];
@@ -129,7 +129,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				}else{
 					$this->session->set_flashdata('message','Record not found');
 				}
-				redirect(base_url() . 'Basic_Controller/user_hotel_view');
+				redirect(base_url() . 'index.php/Basic_Controller/user_hotel_view');
 				//$data['pagename']="realestate_view.php";
 			}
 			$data['pagename']="hotel.php";
@@ -154,14 +154,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				$this->BasicModel->insert_user_travelling($travelid);
 				$this->image_upload('travelling',$userid);
 				$this->session->set_flashdata('message','Data Uploaded Successfully');
-				redirect(base_url() . 'Basic_Controller/user_travelling_view');
+				redirect(base_url() . 'index.php/Basic_Controller/user_travelling_view');
 			}
 			if($task=='update'){
 				$this->BasicModel->update_user_travelling($travelid);
 				//$this->image_upload('real',$userid);
 				$this->session->set_flashdata('message','Data Updated Successfully');
 				//$data['pagename']="realestate_view.php";
-				redirect(base_url() . 'Basic_Controller/user_travelling_view');
+				redirect(base_url() . 'index.php/Basic_Controller/user_travelling_view');
 			}
 			if($task=='delete'){
 				$userid = $_SESSION['userid'];
@@ -172,7 +172,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				}else{
 					$this->session->set_flashdata('message','Record not found');
 				}
-				redirect(base_url() . 'Basic_Controller/user_travelling_view');
+				redirect(base_url() . 'index.php/Basic_Controller/user_travelling_view');
 				//$data['pagename']="realestate_view.php";
 			}
 			$data['pagename']="travelling.php";
@@ -198,14 +198,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				$this->BasicModel->insert_user_automobile($autoid);
 				$this->image_upload('automobile',$userid);
 				$this->session->set_flashdata('message','Data Uploaded Successfully');
-				redirect(base_url() . 'Basic_Controller/user_automobile_view');
+				redirect(base_url() . 'index.php/Basic_Controller/user_automobile_view');
 			}
 			if($task=='update'){
 				$this->BasicModel->update_user_automobile($autoid);
 				//$this->image_upload('real',$userid);
 				$this->session->set_flashdata('message','Data Updated Successfully');
 				//$data['pagename']="realestate_view.php";
-				redirect(base_url() . 'Basic_Controller/user_automobile_view');
+				redirect(base_url() . 'index.php/Basic_Controller/user_automobile_view');
 			}
 			if($task=='delete'){
 				$userid = $_SESSION['userid'];
@@ -216,7 +216,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				}else{
 					$this->session->set_flashdata('message','Record not found');
 				}
-				redirect(base_url() . 'Basic_Controller/user_automobile_view');
+				redirect(base_url() . 'index.php/Basic_Controller/user_automobile_view');
 				//$data['pagename']="realestate_view.php";
 			}
 			$data['pagename']="automobile.php";
@@ -242,14 +242,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				$this->BasicModel->insert_user_other($otherid);
 				$this->image_upload('other',$userid);
 				$this->session->set_flashdata('message','Data Uploaded Successfully');
-				redirect(base_url() . 'Basic_Controller/user_other');
+				redirect(base_url() . 'index.php/Basic_Controller/user_other');
 			}
 			if($task=='update'){
 				$this->BasicModel->update_user_other($otherid);
 				//$this->image_upload('real',$userid);
 				$this->session->set_flashdata('message','Data Updated Successfully');
 				//$data['pagename']="realestate_view.php";
-				redirect(base_url() . 'Basic_Controller/user_other_view');
+				redirect(base_url() . 'index.php/Basic_Controller/user_other_view');
 			}
 			if($task=='delete'){
 				$userid = $_SESSION['userid'];
@@ -260,7 +260,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				}else{
 					$this->session->set_flashdata('message','Record not found');
 				}
-				redirect(base_url() . 'Basic_Controller/user_other');
+				redirect(base_url() . 'index.php/Basic_Controller/user_other');
 				//$data['pagename']="realestate_view.php";
 			}
 			$data['pagename']="other.php";
@@ -283,7 +283,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		public function updateprofile(){
 				$this->BasicModel->updateprofile();
 				$this->session->set_flashdata('message','Data Updated Successfully');
-				redirect(base_url().'Basic_Controller/user_profile');
+				redirect(base_url().'index.php/Basic_Controller/user_profile');
 		}
 		public function realestate(){
 			$category = "realestate";

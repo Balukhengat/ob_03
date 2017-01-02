@@ -15,15 +15,15 @@ class AdminModel extends CI_Model{
 			//SETTING SESSION FOR ADMIN (ADMIN ID == 0)
 			if ($adminid==0){
 				$_SESSION['adminid']=$adminid;
-				redirect(base_url().'Admin');
+				redirect(base_url().'index.php/Admin');
 			}else{
 				$this->session->set_flashdata('message','Unauthorized access!!!');
-				redirect(base_url().'Admin/Login');
+				redirect(base_url().'index.php/Admin/Login');
 			}
 		}
 		else{
 			$this->session->set_flashdata('message','Login Failed, invaid email or password');
-			redirect(base_url().'Admin/Login');
+			redirect(base_url().'index.php/Admin/Login');
 		}
 	}
 	/* ************************************************************
@@ -43,6 +43,7 @@ class AdminModel extends CI_Model{
 		$data['amenities']=$this->input->post('amenities');
 		$data['city']=$this->input->post('city');
 		$data['area']=$this->input->post('area');
+		date_default_timezone_set('Asia/Kolkata');
 		$data['date']=date('Y-m-d H:i:s');
 		$data['offerend']=$this->input->post('offerend');
 		$data['category']=0;
@@ -62,6 +63,7 @@ class AdminModel extends CI_Model{
 		$data['amenities'] = $this->input->post('amenities');
 		$data['city'] = $this->input->post('city');
 		$data['area'] = $this->input->post('area');
+		date_default_timezone_set('Asia/Kolkata');
 		$data['date'] = date('Y-m-d H:i:s');
 		$data['offerend'] = $this->input->post('offerend');
 		$data['category'] = 0;
@@ -84,6 +86,7 @@ class AdminModel extends CI_Model{
 		$data['email']=$this->input->post('email');
 		$data['city']=$this->input->post('city');
 		$data['area']=$this->input->post('area');
+		date_default_timezone_set('Asia/Kolkata');
 		$data['date']=date('Y-m-d H:i:s');
 		$data['offerend']=$this->input->post('offerend');
 		$data['category']=1;
@@ -99,6 +102,7 @@ class AdminModel extends CI_Model{
 		$data['email'] = $this->input->post('email');
 		$data['city'] = $this->input->post('city');
 		$data['area'] = $this->input->post('area');
+		date_default_timezone_set('Asia/Kolkata');
 		$data['date'] = date('Y-m-d H:i:s');
 		$data['offerend'] = $this->input->post('offerend');
 		$data['category'] = 1;
@@ -124,6 +128,7 @@ class AdminModel extends CI_Model{
 		$data['amenities']=$this->input->post('amenities');
 		$data['city']=$this->input->post('city');
 		$data['area']=$this->input->post('area');
+		date_default_timezone_set('Asia/Kolkata');
 		$data['date']=date('Y-m-d H:i:s');
 		$data['offerend']=$this->input->post('offerend');
 		$data['category']=2;
@@ -142,6 +147,7 @@ class AdminModel extends CI_Model{
 		$data['amenities'] = $this->input->post('amenities');
 		$data['city'] = $this->input->post('city');
 		$data['area'] = $this->input->post('area');
+		date_default_timezone_set('Asia/Kolkata');
 		$data['date'] = date('Y-m-d H:i:s');
 		$data['offerend'] = $this->input->post('offerend');
 		$data['category'] = 2;
@@ -164,6 +170,7 @@ class AdminModel extends CI_Model{
 		$data['email']=$this->input->post('email');
 		$data['city']=$this->input->post('city');
 		$data['area']=$this->input->post('area');
+		date_default_timezone_set('Asia/Kolkata');
 		$data['date']=date('Y-m-d H:i:s');
 		$data['offerend']=$this->input->post('offerend');
 		$data['category']=3;
@@ -180,6 +187,7 @@ class AdminModel extends CI_Model{
 		$data['email'] = $this->input->post('email');
 		$data['city'] = $this->input->post('city');
 		$data['area'] = $this->input->post('area');
+		date_default_timezone_set('Asia/Kolkata');
 		$data['date'] = date('Y-m-d H:i:s');
 		$data['offerend'] = $this->input->post('offerend');
 		$data['category'] = 2;
@@ -203,6 +211,7 @@ class AdminModel extends CI_Model{
 		$data['email']=$this->input->post('email');
 		$data['city']=$this->input->post('city');
 		$data['area']=$this->input->post('area');
+		date_default_timezone_set('Asia/Kolkata');
 		$data['date']=date('Y-m-d H:i:s');
 		$data['offerend']=$this->input->post('offerend');
 		$data['category']=4;
@@ -219,6 +228,7 @@ class AdminModel extends CI_Model{
 		$data['email'] = $this->input->post('email');
 		$data['city'] = $this->input->post('city');
 		$data['area'] = $this->input->post('area');
+		date_default_timezone_set('Asia/Kolkata');
 		$data['date'] = date('Y-m-d H:i:s');
 		$data['offerend'] = $this->input->post('offerend');
 		$data['category'] = 4;
@@ -241,6 +251,7 @@ class AdminModel extends CI_Model{
 		$data['email']=$this->input->post('email');
 		$data['city']=$this->input->post('city');
 		$data['area']=$this->input->post('area');
+		date_default_timezone_set('Asia/Kolkata');
 		$data['date']=date('Y-m-d H:i:s');
 		$data['offerend']=$this->input->post('offerend');
 		$data['category']=5;
@@ -256,6 +267,7 @@ class AdminModel extends CI_Model{
 		$data['email'] = $this->input->post('email');
 		$data['city'] = $this->input->post('city');
 		$data['area'] = $this->input->post('area');
+		date_default_timezone_set('Asia/Kolkata');
 		$data['date'] = date('Y-m-d H:i:s');
 		$data['offerend'] = $this->input->post('offerend');
 		$data['category'] = 5;
