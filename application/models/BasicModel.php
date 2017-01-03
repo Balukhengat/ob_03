@@ -8,15 +8,25 @@ class BasicModel extends CI_Model{
 	//Validate signin
 	public function validate_signin($data){
 		$success=$this->db->get_where('register',$data)->result_array();
+		$email =  $data['email'];
 		if(count($success) > 0)
 		{
-			foreach ($success as $row){
-				$userid = $row['reg_id'];
-			}
-// 			$this->session->set_userdata($userid);
-			$_SESSION['userid']=$userid;
-			$this->session->set_flashdata('message','Sigin Successfully');
-			redirect(base_url().'index.php/Basic_Controller/user_profile');
+				$user_details = $this->db->query("select * from register where email='$email'");
+				foreach ($user_details->result() as $row)
+				{
+					$status =  $row->status;
+					if($status == 0){
+						$this->session->set_flashdata('message','You need to verify your email id');
+						redirect(base_url().'index.php/Login/resendotp');
+					}else{
+						foreach ($success as $row){
+							$userid = $row['reg_id'];
+						}
+						$_SESSION['userid']=$userid;
+						$this->session->set_flashdata('message','Sigin Successfully');
+						redirect(base_url().'index.php/Basic_Controller/user_profile');
+					}
+				}
 		}
 		else{
 			$this->session->set_flashdata('message','Login Failed,invaid email or password');
@@ -31,7 +41,7 @@ class BasicModel extends CI_Model{
 		$config['smtp_timeout']=5;
 		$config['smtp_port'] = '465';
 		$config['smtp_user'] = 'offersbullhelp@gmail.com';
-		$config['smtp_pass'] = 'Gilbilerahul@123';
+		$config['smtp_pass'] = '@123';
 		$config['mailtype'] = 'html';
 		$config['charset'] = 'utf-8';
 		$config['newline'] = "\r\n";

@@ -94,7 +94,7 @@
 				<ul>
 					<li><i class="fa fa-map-marker" aria-hidden="true"></i>Pune, India</li>
 					<li><i class="fa fa-phone" aria-hidden="true"></i>  +91 9689 02 7676</li>
-					<li><i class="fa fa-envelope" aria-hidden="true"></i><a href="mailto:info@example.com"> info@offersbull.com  offersbull@help@gmail.com</a></li>
+					<li><i class="fa fa-envelope" aria-hidden="true"></i><a href="mailto:info@example.com"> info@offersbull.com  offersbullhelp@gmail.com</a></li>
 				</ul>
 			</div>
 		</div>

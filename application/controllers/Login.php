@@ -45,15 +45,17 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				$check=$this->db->get_where('register',array('email'=>$email))->row();
 				if(!$check)
 				{
+					$this->db->insert('register',$data);
 					$email_status = $this->BasicModel->email($email);
 					if($email_status)
 					{
 						$temp['pagename'] = 'otp.php'; 
 						$temp['email']=$email;
-						$this->db->insert('register',$data);
 						$this->load->view('pages/loginregi/login.php',$temp);
 					}else{
-						echo "Error : EML-SND 001";
+						$this->db->query("delete from register where email ='$email'");
+						$this->session->set_flashdata('message','ERROR CODE : EMLSF1 , Try again');
+						redirect(base_url().'index.php/login/newuser');
 					}
 				}else {
 					$this->session->set_flashdata('message','Email already exits');

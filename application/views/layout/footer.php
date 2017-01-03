@@ -37,7 +37,7 @@
 								<div class="clearfix"> </div>
 								<ul class="location">
 									<li><span class="glyphicon glyphicon-envelope"></span></li>
-									<li><a href="">info@offursbull.com</a></li>
+									<li><a href="">info@offersbull.com</a></li>
 									&emsp;&emsp;&emsp;<li><a href="">offersbullhelp@gmail.com</a></li>
 								</ul>						
 							</address>
