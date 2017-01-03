@@ -1,10 +1,10 @@
 <?php
 date_default_timezone_set('Asia/Kolkata');
-	$realestate_latest = $this->db->query("SELECT * FROM realestate INNER JOIN real_img ON realestate.realid = real_img.realid ORDER BY date DESC LIMIT 4");
-	$automobile_latest = $this->db->query("SELECT * FROM automobile INNER JOIN automobile_img ON automobile.autoid = automobile_img.autoid ORDER BY date DESC LIMIT 4");
-	$hotel_latest = $this->db->query("SELECT * FROM hotel INNER JOIN hotel_img ON hotel.hotelid = hotel_img.hotelid ORDER BY date DESC LIMIT 4");
-	$travelling_latest = $this->db->query("SELECT * FROM travelling INNER JOIN travelling_img ON travelling.travelid = travelling_img.travelid ORDER BY date DESC LIMIT 4");
-	$tution_latest = $this->db->query("SELECT * FROM tution INNER JOIN tut_img ON tution.tutid = tut_img.tutid ORDER BY date DESC LIMIT 4");
+	$realestate_latest = $this->db->query("SELECT * FROM realestate INNER JOIN real_img ON realestate.realid = real_img.realid GROUP BY realestate.realid ORDER BY date DESC LIMIT 4");
+	$automobile_latest = $this->db->query("SELECT * FROM automobile INNER JOIN automobile_img ON automobile.autoid = automobile_img.autoid GROUP BY automobile.autoid ORDER BY date DESC LIMIT 4");
+	$hotel_latest = $this->db->query("SELECT * FROM hotel INNER JOIN hotel_img ON hotel.hotelid = hotel_img.hotelid GROUP BY hotel.hotelid ORDER BY date DESC LIMIT 4");
+	$travelling_latest = $this->db->query("SELECT * FROM travelling INNER JOIN travelling_img ON travelling.travelid = travelling_img.travelid GROUP BY travelling.travelid ORDER BY date DESC LIMIT 4");
+	$tution_latest = $this->db->query("SELECT * FROM tution INNER JOIN tut_img ON tution.tutid = tut_img.tutid GROUP BY tution.tutid ORDER BY date DESC LIMIT 4");
 	//$other_latest = $this->db->query("SELECT * FROM other INNER JOIN other_img ON other.otherid = other_img.otherid ORDER BY date DESC LIMIT 4");
 ?>
 <!-- content-starts-here -->
