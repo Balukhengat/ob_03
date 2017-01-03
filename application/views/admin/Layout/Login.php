@@ -8,7 +8,8 @@
 <body class="login-page">
     <div class="login-box">
         <div class="logo">
-            <a href="javascript:void(0);"><b>Offers</b><b style="color:red;">bull</b></a>
+            	<img class="img-responsive" src="<?php echo base_url();?>assets/images/logo.png" style="width: 150px; height: 100px;margin: auto;">
+            <hr>
             <small>authorised login only</small>
         </div>
         <div class="card">
