@@ -45,8 +45,8 @@
 										  <div class="form-line">	
 										  	<select required="required" name="type">
 										  			<option value="">Select</option>
-	                                            	<option value="Rent">Rent</option>
-	                                            	<option value="Sell">Sell</option>
+	                                            	<option value="Rent">Hotel</option>
+	                                            	<option value="Sell">Restaurants</option>
 	                                        </select>
 										  </div>	
 	                                </div>

@@ -32,7 +32,7 @@ foreach ($hotel_info as $row){
 	  <label for="Type">Type:</label>
 	  <select name="type" class="form-control">
 	  	<option>Hotel</option>
-	  	<option>Resturent</option>
+	  	<option>Restaurants</option>
 	  	<option>Other</option>
 	  </select>
 	</div>
