@@ -11,7 +11,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			//pagination
 			$this->load->library('pagination');
 			$config = array();
-			$config["base_url"] = base_url()."Hotel/hotel";
+			$config["base_url"] = base_url()."index.php/Hotel/hotel";
 			$config["per_page"] = 5;
 			$config["num_links"] = 5;
 			$config["total_rows"] = $this->db->get('hotel')->num_rows();

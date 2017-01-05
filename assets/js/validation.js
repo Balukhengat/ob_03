@@ -142,11 +142,11 @@ $(function(){
 	function check_builtup(){
 		var pattern = new RegExp('[0-9]');
 		var length=$("#builtup").val().length;
-		if(pattern.test($("#builtup").val()) && length>3){
+		if(pattern.test($("#builtup").val()) && length>2){
 			$("#builtup_error").hide();
 			
 		}else{
-			$("#builtup_error").html("Please enter builtup");
+			$("#builtup_error").html("Please enter valid builtup area");
 			$("#builtup_error").show();
 			error_builtup=true;
 		}
@@ -154,7 +154,7 @@ $(function(){
 	function check_description(){
 		var length=$("#description").val().length;
 		if(length<=3){
-			$("#description_error").html("Please enter description");
+			$("#description_error").html("Please enter description, description contains atlest 4 characters");
 			$("#description_error").show();
 			error_description=true;
 		}else{
@@ -164,7 +164,7 @@ $(function(){
 	function check_facilities(){
 		var length=$("#facilities").val().length;
 		if(length<=3){
-			$("#facilities_error").html("Please enter facilities");
+			$("#facilities_error").html("Please enter facilities, Facilities must contains atleast 4 characters");
 			$("#facilities_error").show();
 			error_facilities=true;
 		}else{
@@ -173,8 +173,8 @@ $(function(){
 	}
 	function check_city(){
 		var length=$("#city").val().length;
-		if(length<=3){
-			$("#city_error").html("Please enter city");
+		if(length<=2){
+			$("#city_error").html("Please enter valid city name");
 			$("#city_error").show();
 			error_city=true;
 		}else{
@@ -183,7 +183,7 @@ $(function(){
 	}
 	function check_area(){
 		var length=$("#area").val().length;
-		if(length<=3){
+		if(length<=2){
 			$("#area_error").html("Please enter area");
 			$("#area_error").show();
 			error_area=true;

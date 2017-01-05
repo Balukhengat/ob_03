@@ -37,9 +37,9 @@ class BasicModel extends CI_Model{
 	public function email($email){
 		$otp=rand(111111,999999);
 		$config['protocol'] = 'smtp';
-		$config['smtp_host'] = 'ssl://smtp.gmail.com';
+		$config['smtp_host'] = 'ssl://smtp.gmail.com';//localhost OR smtp.secureserver.net OR relay-hosting.secureserver.net (Godaddy)
 		$config['smtp_timeout']=5;
-		$config['smtp_port'] = '465';
+		$config['smtp_port'] = '465'; // 25 (Godaddy)
 		$config['smtp_user'] = 'offersbullhelp@gmail.com';
 		$config['smtp_pass'] = 'Gilbilerahul@123';
 		$config['mailtype'] = 'html';
