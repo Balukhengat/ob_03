@@ -114,7 +114,7 @@
 									<section class="list-left">
 									<h5 class="title"><?php echo $row1->title?></h5>
 									<span class="adprice">RS. <?php echo $row1->price?>/-</span>
-									<p class="catpath">Real Estate » <?php echo $row1->type?></p>
+									<p class="catpath">Real Estate : <?php echo $row1->type?></p>
 									</section>
 									<section class="list-right">
 									<span class="date"><?php echo $row1->date?></span>
@@ -132,7 +132,7 @@
 											<section class="list-left">
 											<h5 class="title"><?php echo $row2['title'];?></h5>
 											<span class="adprice">RS. <?php echo $row2['price']?>/-</span>
-											<p class="catpath">Real Estate » <?php echo $row2['type']?></p>
+											<p class="catpath">Real Estate : <?php echo $row2['type']?></p>
 											</section>
 											<section class="list-right">
 											<span class="date"><?php echo $row2['date']?></span>

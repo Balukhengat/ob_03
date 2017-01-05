@@ -78,7 +78,7 @@
 									<section class="list-left">
 									<h5 class="title"><?php echo $row->title?></h5>
 									<span class="adprice"><?php echo $row->name?></span>
-									<p class="catpath">Other » <?php echo $row->mobile?></p>
+									<p class="catpath">Other : <?php echo $row->mobile?></p>
 									</section>
 									<section class="list-right">
 									<span class="date"><?php $date =  strtotime($row->date); echo $date = date('F d, Y',$date);?></span>
@@ -96,7 +96,7 @@
 									<section class="list-left">
 									<h5 class="title"><?php echo $row1['title']?></h5>
 									<span class="adprice"><?php echo $row1['name']?></span>
-									<p class="catpath">Other » <?php echo $row1['mobile']?></p>
+									<p class="catpath">Other : <?php echo $row1['mobile']?></p>
 									</section>
 									<section class="list-right">
 									<span class="date"><?php echo $row1['date']?></span>

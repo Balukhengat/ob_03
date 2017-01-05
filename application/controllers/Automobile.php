@@ -53,7 +53,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			//pagination if query returns empty results
 			$this->load->library('pagination');
 			$config = array();
-			$config["base_url"] = base_url()."Automobile/auto";
+			$config["base_url"] = base_url()."index.php/Automobile/auto";
 			$config["per_page"] = 5;
 			$config["num_links"] = 5;
 			$config["total_rows"] = $this->db->get('automobile')->num_rows();

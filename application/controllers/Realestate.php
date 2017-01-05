@@ -56,7 +56,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			//$sum=count($result['datas']);echo $sum;die();
 			//print_r($result['datas']);die();
 			//pagination if query returns empty results
-			$config["base_url"] = base_url()."Realestate/search";
+			$config["base_url"] = base_url()."index.php/Realestate/search";
 			$config["uri_segment"] = 3;
 			$config["total_rows"] = count($result['datas']);//$this->db->get('realestate')->num_rows();
 			$config["num_links"] = floor($config["total_rows"]/$config["per_page"]);

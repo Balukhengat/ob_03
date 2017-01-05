@@ -100,7 +100,7 @@
 									<section class="list-left">
 									<h5 class="title"><?php echo $row1['title']?></h5>
 									<span class="adprice"><?php echo $row1['title']?></span>
-									<p class="catpath">Automobile » <?php echo $row1['type']?></p>
+									<p class="catpath">Automobile : <?php echo $row1['type']?></p>
 									</section>
 									<section class="list-right">
 									<span class="date"><?php echo $row1['date']?></span>
