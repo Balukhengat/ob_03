@@ -84,12 +84,6 @@
 	  <input type="date" class="form-control" id="offerend" name="offerend" value="<?php echo $row['offerend'];?>">
 	</div>
 	</div>
-	<div class="col-md-6">
-	<div class="form-group">
-	  <label for="Image">Image:</label>
-	  <input type="file" class="form-control" id="image" name="image[]">
-	</div>
-	</div>
 	<div class="col-md-9">
 	<button type="submit" class="btn btn-success">Update</button>
 	</div>
