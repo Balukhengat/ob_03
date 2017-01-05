@@ -238,6 +238,7 @@ date_default_timezone_set('Asia/Kolkata');
 							<?php }?>
 							</li>
 						</ul>
+						<hr>
 				</div>
 			</div>
 			<div class="container">

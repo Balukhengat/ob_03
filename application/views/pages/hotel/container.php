@@ -94,7 +94,7 @@
 									<section class="list-left">
 									<h5 class="title"><?php echo $row->title?></h5>
 									<span class="adprice">RS. <?php echo $row->price?>/-</span>
-									<p class="catpath">Hotels : <?php echo $row->type?></p>
+									<p class="catpath">Type : <?php echo $row->type?></p>
 									</section>
 									<section class="list-right">
 									<span class="date"><?php $date =  strtotime($row->date); echo $date = date('F d, Y',$date);?></span>
@@ -112,7 +112,7 @@
 									<section class="list-left">
 									<h5 class="title"><?php echo $row1['title']?></h5>
 									<span class="adprice">RS. <?php echo $row1['price']?>/-</span>
-									<p class="catpath">Hotels : <?php echo $row1['type']?></p>
+									<p class="catpath">Type : <?php echo $row1['type']?></p>
 									</section>
 									<section class="list-right">
 									<span class="date"><?php echo $row1['date']?></span>
