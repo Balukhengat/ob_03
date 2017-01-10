@@ -12,6 +12,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		public function Login(){
 			$this->load->view('admin/Layout/Login');
 		}
+		public function Allusers(){
+			$data['pagename']="allusers.php";
+			$this->load->view('admin/pages/director',$data);
+		}
 		// Login credential checking 
 		public function loginCheck(){
 			$data['email']=$this->input->post('email');

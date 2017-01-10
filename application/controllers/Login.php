@@ -42,6 +42,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				$data['mobile']=$this->input->post('mobile');
 				$data['email']=$this->input->post('email');
 				$data['password']=sha1($this->input->post('password'));
+				date_default_timezone_set('Asia/Kolkata');
+				$data['regdate']=date('Y-m-d H:i:s');
 				$check=$this->db->get_where('register',array('email'=>$email))->row();
 				if(!$check)
 				{

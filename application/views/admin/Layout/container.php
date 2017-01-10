@@ -232,7 +232,7 @@
                         		$total_regusers = $reg_users['COUNT(reg_id)'];
                         	}
                         	
-                        	$latest_registered = "SELECT username,email from register";
+                        	$latest_registered = "SELECT username,email from register ORDER BY regdate DESC limit 5";
                         	$latest_registered_array = $this->db->query($latest_registered);
                         ?>         
                                  <hr>
@@ -251,8 +251,8 @@
                                     <span class="pull-right"><b><?php echo $total_regusers;?></b> <small>USERS</small></span>
                                 </li>
                                 <hr>
-								<button class="btn btn-primary">view all</button>
                             </ul>
+                            <a href="<?php echo base_url();?>index.php/Admin/Allusers"><button class="btn btn-primary">All users</button></a>
                         </div>
                     </div>
                 </div>
