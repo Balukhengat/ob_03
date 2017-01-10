@@ -231,13 +231,27 @@
                         	foreach ($regarray->result_array() as $reg_users){
                         		$total_regusers = $reg_users['COUNT(reg_id)'];
                         	}
+                        	
+                        	$latest_registered = "SELECT username,email from register";
+                        	$latest_registered_array = $this->db->query($latest_registered);
                         ?>         
                                  <hr>
                             <ul class="dashboard-stat-list">
+	                            <?php   
+	                             	foreach ($latest_registered_array->result_array() as $reg_latest){
+	                             ?>
+                                <li>
+                                   <?php echo $reg_latest['username'];?>
+                                    <span class="pull-right"> <?php echo $reg_latest['email']?></span>
+                                </li>
+								<?php 	}?>
+                                <br>
                                 <li>
                                    Total
                                     <span class="pull-right"><b><?php echo $total_regusers;?></b> <small>USERS</small></span>
                                 </li>
+                                <hr>
+								<button class="btn btn-primary">view all</button>
                             </ul>
                         </div>
                     </div>

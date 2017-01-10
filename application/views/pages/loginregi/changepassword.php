@@ -13,6 +13,6 @@
 				</form><?php }?>
 			</div>
 		</div>
-	</section><?php }else{ redirect(base_url().'Login/login');
+	</section><?php }else{ redirect(base_url().'index.php/Login/login');
 	$this->session->set_flashdata('message','Login here!!!');
 	}?>

@@ -47,14 +47,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				{
 					$this->db->insert('register',$data);
 					$email_status = $this->BasicModel->email($email);
+
 					if($email_status)
 					{
 						$temp['pagename'] = 'otp.php'; 
 						$temp['email']=$email;
 						$this->load->view('pages/loginregi/login.php',$temp);
 					}else{
+					
 						$this->db->query("delete from register where email ='$email'");
-						$this->session->set_flashdata('message','ERROR CODE : EMLSF1 , Try again');
+						$this->session->set_flashdata('message','ERROR CODE : EML#001 , Try again');
 						redirect(base_url().'index.php/login/newuser');
 					}
 				}else {
