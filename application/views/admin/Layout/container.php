@@ -5,6 +5,13 @@
             </div>
             <!-- Widgets -->
             <?php
+            //Total home page visitors
+            $query_homecount = "select count from usercount";
+            $result_homecount = $this->db->query($query_homecount);
+            foreach ($result_homecount->result_array() as $row){
+            	$home_visitors = $row['count'];
+            }
+             
             /*	FETCHING OF VISITS REALATED DATA */
             //Realestate
             $query1 = "select sum(visits) from realestate";
@@ -86,6 +93,17 @@
             	$total_posts = $real_total + $tution_total + $hotel_total + $travelling_total + $automobile_total + $other_total;
             ?>
             <div class="row clearfix">
+                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                     <div class="info-box bg-pink hover-expand-effect">
+                        <div class="icon">
+                            <i class="material-icons">group</i>
+                        </div>
+                        <div class="content">
+                            <div class="text">TOTAL HOME VISITS</div>
+                            <div class="number count-to" data-from="0" data-to="<?php echo $home_visitors;?>" data-speed="15" data-fresh-interval="20"></div>
+                        </div>
+                    </div>
+                </div>
                 <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
                      <div class="info-box bg-pink hover-expand-effect">
                         <div class="icon">

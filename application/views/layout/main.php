@@ -6,7 +6,8 @@ date_default_timezone_set('Asia/Kolkata');
 	$travelling_latest = $this->db->query("SELECT * FROM travelling INNER JOIN travelling_img ON travelling.travelid = travelling_img.travelid GROUP BY travelling.travelid ORDER BY date DESC LIMIT 4");
 	$tution_latest = $this->db->query("SELECT * FROM tution INNER JOIN tut_img ON tution.tutid = tut_img.tutid GROUP BY tution.tutid ORDER BY date DESC LIMIT 4");
 	//$other_latest = $this->db->query("SELECT * FROM other INNER JOIN other_img ON other.otherid = other_img.otherid ORDER BY date DESC LIMIT 4");
-?>
+	$this->db->query("UPDATE usercount set count=count+1");
+	?>
 <!-- content-starts-here -->
 		<div class="main-content">
 			<div class="w3-categories">
@@ -232,7 +233,7 @@ date_default_timezone_set('Asia/Kolkata');
 									</a> 
 									<div class="w3-ad-info">
 										<h5><?php echo $random_realestate->title;?></h5>
-										<span><?php $date = $row['date'];echo time_elapsed_string($date);?></span>
+										<span><?php $date = $random_realestate->date;;echo time_elapsed_string($date);?></span>
 									</div>
 								</div>
 							<?php }?>
@@ -253,7 +254,7 @@ date_default_timezone_set('Asia/Kolkata');
 									</a> 
 									<div class="w3-ad-info">
 										<h5><?php echo $random_tution->title;?></h5>
-										<span><?php $date = $row['date'];echo time_elapsed_string($date);?></span>
+										<span><?php $date = $random_tution->date;;echo time_elapsed_string($date);?></span>
 									</div>
 								</div>
 							<?php }?>
@@ -273,7 +274,7 @@ date_default_timezone_set('Asia/Kolkata');
 									</a> 
 									<div class="w3-ad-info">
 										<h5><?php echo $random_hotel->title;?></h5>
-										<span><?php $date = $row['date'];echo time_elapsed_string($date);?></span>
+										<span><?php $date = $random_hotel->date;;echo time_elapsed_string($date);?></span>
 									</div>
 								</div>
 							<?php }?>
@@ -293,7 +294,7 @@ date_default_timezone_set('Asia/Kolkata');
 									</a> 
 									<div class="w3-ad-info">
 										<h5><?php echo $random_travelling->title;?></h5>
-										<span><?php $date = $row['date'];echo time_elapsed_string($date);?></span>
+										<span><?php $date = $random_travelling->date;;echo time_elapsed_string($date);?></span>
 									</div>
 								</div>
 							<?php }?>
@@ -313,7 +314,7 @@ date_default_timezone_set('Asia/Kolkata');
 									</a> 
 									<div class="w3-ad-info">
 										<h5><?php echo $random_automobile->title;?></h5>
-										<span><?php $date = $row['date'];echo time_elapsed_string($date);?></span>
+										<span><?php $date = $random_automobile->date;;echo time_elapsed_string($date);?></span>
 									</div>
 								</div>
 							<?php }?>
@@ -333,7 +334,7 @@ date_default_timezone_set('Asia/Kolkata');
 									</a> 
 									<div class="w3-ad-info">
 										<h5><?php echo $random_other->title;?></h5>
-										<span><?php $date = $row['date'];echo time_elapsed_string($date);?></span>
+										<span><?php $date = $random_other->date;echo time_elapsed_string($date);?></span>
 									</div>
 								</div>
 							<?php }?>
