@@ -34,7 +34,7 @@
 					  <option data-tokens="Rent">Select</option>
 					  <option data-tokens="Rent">Hotel</option>
 					  <option data-tokens="purchase">lodging</option>
-					   <option data-tokens="purchase">Reataurent</option>
+					   <option data-tokens="purchase">Restaurants</option>
 					</select>
 				</div>
 				<div class="select-city-for-local-ads ads-list">

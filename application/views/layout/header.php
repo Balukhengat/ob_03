@@ -47,7 +47,7 @@
 							<select class="agileinfo_search-select" name="category" required>
 								<option value="">All Categories</option>
 								<option value="realestate">Real Estates</option>
-								<option value="tution">Tutions</option>
+								<option value="tution">Tuition</option>
 								<option value="hotel">Hotels & Restaurents </option>
 								<option value="travelling">Travelling</option>
 								<option value="automobile">Automobiles</option>

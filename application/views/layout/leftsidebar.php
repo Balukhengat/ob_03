@@ -6,7 +6,7 @@
 					<div class="icon-list">
 						<!-- <a href="#"><h1>Offers Bull</h1></a> -->
 						<a href="<?php echo base_url()?>index.php/Realestate/real"><i class="fa fa-home"></i><span>Real Estate</span></a>
-						<a href="<?php echo base_url()?>index.php/Tutions/tution"><i class="fa fa-book"></i><span>Tution</span></a>
+						<a href="<?php echo base_url()?>index.php/Tutions/tution"><i class="fa fa-book"></i><span>Tuition</span></a>
 						<a href="<?php echo base_url()?>index.php/Hotel/hotels"><i class="fa fa-bed"></i><span>Hotels & Restaurents</span></a>
 						<a href="<?php echo base_url()?>index.php/Travelling/travel"><i class="fa fa-plane"></i><span>Travelling</span></a>
 						<a href="<?php echo base_url()?>index.php/Automobile/auto"><i class="fa fa-car"></i><span>Automobiles</span></a>

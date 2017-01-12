@@ -115,7 +115,7 @@
 											<section class="list-left">
 											<h5 class="title"><?php echo $row2['title'];?></h5>
 																		<span class="adprice"><?php echo $row2['name']?></span>
-																		<p class="catpath">Tution » <?php echo $row2['mobile']?></p>
+																		<p class="catpath">Tuition » <?php echo $row2['mobile']?></p>
 																		</section>
 																		<section class="list-right">
 																		<span class="date"><?php echo $row2['date']?></span>
