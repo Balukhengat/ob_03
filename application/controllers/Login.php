@@ -103,7 +103,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			$_SESSION['email']=$email;
 			$check=$this->db->get_where('register',array('email'=>$email))->row();
 			if(!$check){ 
-				$this->session->set_flashdata('message','Email NOt exits');
+				$this->session->set_flashdata('message','Email Not exits');
 				redirect(base_url().'index.php/login/forgotpassword');
 				
 				}else{
@@ -122,21 +122,26 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		}
 		public function changepassword($id="")
 		{
-			$pass=$this->input->post("password");
-			$confirmpass=$this->input->post("confirmpassword");
-			if($pass==$confirmpass){
-			 $this->db->set('password',sha1($pass));
-			 $this->db->where('reg_id',$id);
-			 $this->db->update('register');
-			unset($_SESSION['email']);
-			 $this->session->set_flashdata('message','Password Changed Successfully');
-			 $temp['pagename'] = 'logincontainer.php';
-			 $this->load->view('pages/loginregi/login',$temp);
+			if(isset($_SESSION['userid'])){
+				$pass=$this->input->post("password");
+				$confirmpass=$this->input->post("confirmpassword");
+				if($pass==$confirmpass){
+				 $this->db->set('password',sha1($pass));
+				 $this->db->where('reg_id',$id);
+				 $this->db->update('register');
+				unset($_SESSION['email']);
+				 $this->session->set_flashdata('message','Password Changed Successfully');
+				 $temp['pagename'] = 'logincontainer.php';
+				 $this->load->view('pages/loginregi/login',$temp);
+				}else{
+					$this->session->set_flashdata('message','Password not matched');
+					$temp['pagename'] = 'changepassword.php';
+					$temp['email']=$email;
+					$this->load->view('pages/loginregi/login',$temp);
+				}
 			}else{
-				$this->session->set_flashdata('message','Password not matched');
-				$temp['pagename'] = 'changepassword.php';
-				$temp['email']=$email;
-				$this->load->view('pages/loginregi/login',$temp);
+				$this->session->set_flashdata('message','Login to change password');
+				redirect(base_url().'index.php/Login/login');
 			}
 		}
 		
