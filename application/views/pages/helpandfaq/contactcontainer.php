@@ -92,16 +92,16 @@
 		<div class="container">
 			<div class="agileits-get-us">
 				<ul>
-					<li><i class="fa fa-map-marker" aria-hidden="true"></i>Broome St, Canada, NY 10002, USA</li>
-					<li><i class="fa fa-phone" aria-hidden="true"></i>  +033 111 222 4567</li>
-					<li><i class="fa fa-envelope" aria-hidden="true"></i><a href="mailto:info@example.com"> mail@example.com</a></li>
+					<li><i class="fa fa-map-marker" aria-hidden="true"></i>Pune, India</li>
+					<li><i class="fa fa-phone" aria-hidden="true"></i>  +91 9689 02 7676</li>
+					<li><i class="fa fa-envelope" aria-hidden="true"></i><a href="mailto:info@example.com"> info@offersbull.com  offersbullhelp@gmail.com</a></li>
 				</ul>
 			</div>
 		</div>
 		<!-- //address -->
 		<div class="map-w3layouts">
 			<h3>Location</h3>
-			<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d22702.22744502486!2d11.113366067229226!3d44.662878362361056!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x477fc3eca9065c15%3A0x12ec8a03aadae866!2s40019+Sant'Agata+Bolognese+BO%2C+Italy!5e0!3m2!1sen!2sin!4v1451281303075" allowfullscreen=""></iframe>
+			<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d867.4919594103103!2d73.829173042516!3d18.482471860321322!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2bfe2bb8142ab%3A0xc9be5c7f9f93414a!2zMTjCsDI4JzU2LjIiTiA3M8KwNDknNDQuNiJF!5e0!3m2!1sen!2sin!4v1480689193970" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
 		</div>
 	</div>
 

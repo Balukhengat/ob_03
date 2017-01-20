@@ -28,6 +28,12 @@
 			});
 		  });
 		</script>
+		<!-- alert script -->
+	<script>
+	$("#danger-alert").fadeTo(2000, 500).slideUp(500, function(){
+	    $("#danger-alert").slideUp(500);
+	});
+	</script>
 		<!-- language-select -->
 		<script type="text/javascript" src="<?php echo base_url();?>assets/js/jquery.leanModal.min.js"></script>
 		<link href="<?php echo base_url();?>assets/css/jquery.uls.css" rel="stylesheet"/>
@@ -125,3 +131,17 @@
 			</script>
 			<!-- start-smoth-scrolling -->
 		<!-- //here ends scrolling icon -->
+		
+		<!-- Profile menu selector -->
+		<script type="text/javascript">
+			$(".well").mouseenter(
+			  function(){
+			    $(this).css('background-color','#d72c31');
+			  });
+			
+			 $(".well").mouseleave(
+			  function(){
+			    $(this).css('background-color','#f5f5f5');
+			  });
+		</script>
+		

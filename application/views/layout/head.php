@@ -1,30 +1,47 @@
 <head>
 <title>OffersBull</title>
-<link rel="stylesheet" href="<?php echo base_url();?>assets/css/bootstrap.min.css"><!-- bootstrap-CSS -->
+<link rel="stylesheet" href="<?php echo base_url();?>assets/css/bootstrap.min.css">
+<link rel="stylesheet" href="<?php echo base_url();?>assets/js/bootstrap.js"><!-- bootstrap-CSS -->
 <link rel="stylesheet" href="<?php echo base_url();?>assets/css/bootstrap-select.css"><!-- bootstrap-select-CSS -->
 <link href="<?php echo base_url();?>assets/css/style.css" rel="stylesheet" type="text/css" media="all" /><!-- style.css -->
 <link rel="stylesheet" href="<?php echo base_url();?>assets/css/flexslider.css" type="text/css" media="screen" /><!-- flexslider-CSS -->
 <link rel="stylesheet" type="text/css" href="<?php base_url();?>assets/css/jquery-ui1.css">
 <link rel="stylesheet" href="<?php echo base_url();?>assets/css/font-awesome.min.css" /><!-- fontawesome-CSS -->
 <link rel="stylesheet" href="<?php echo base_url();?>assets/css/menu_sideslide.css" type="text/css" media="all"><!-- Navigation-CSS -->
+<link rel="stylesheet" href="http://cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css"> 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script src="http://cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css"></script>
+<!-- Google FONTS -->
+<link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+<!-- Magnification -->
+<link href="<?php echo base_url();?>assets/magnification/css/mag.css" rel="stylesheet">
+<link href="<?php echo base_url();?>assets/magnification/theme/default.css" rel="stylesheet">
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.12/jquery.mousewheel.js"></script>
+<script src="<?php echo base_url();?>assets/magnification/js/jquery.event.drag.js"></script>
+<script src="<?php echo base_url();?>assets/magnification/js/mag.js"></script>
+<script src="<?php echo base_url();?>assets/magnification/js/mag-jquery.js"></script>
+	
 <!-- meta tags -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="keywords" content="Resale Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
-Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony Ericsson, Motorola web design" />
+<meta name="keywords" content="Relestate, Tutions, Hotels, Restaurents, Travelling, automobile, offers, offersbull, best offers" />
+<meta name="description" content="OffersBull is continuosly developing and growing to provide best deals and offers and all information regarding products/organizations in several fields such as realestate, tutions, hotels and many more...">
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 <!-- //meta tags -->
 <!--fonts-->
 <link href='//fonts.googleapis.com/css?family=Ubuntu+Condensed' rel='stylesheet' type='text/css'>
 <link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
 <!--//fonts-->	
-
-
+<!-- Datatable JS -->
+<script src="cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
 <!-- switcher-grid and list alignment -->
 <script src="<?php echo base_url();?>assets/js/tabs.js"></script>
 <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/jquery.min.js"></script>
 <script src="<?php echo base_url();?>assets/js/bootstrap.js"></script>
-
+<!-- Light Gallery Plugin Css -->
+    <link href="<?php echo base_url();?>assets_admin/plugins/light-gallery/css/lightgallery.css" rel="stylesheet">
+<html>
 <script>
   $(document).ready(function () {
     var mySelect = $('#first-disabled2');
@@ -111,5 +128,9 @@ $(document).ready(function(){
         });
 });
 </script>
-
+<script>
+$(document).ready(function(){
+    $('#example').DataTable();
+});
+</script>
 </head>

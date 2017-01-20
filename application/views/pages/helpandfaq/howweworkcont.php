@@ -33,7 +33,7 @@
 							<p>ha ha ! Thats really easy stuff, WOW ENJOY</p>
 						</div>
 						<div class="clearfix"></div>
-						<a class="work" href="<?php echo base_url();?>index.php/register">Get start Now</a>
+						<a class="work" href="<?php echo base_url()?>index.php/login/newuser">Get start Now</a>
 					</div>
 				
 				<!-- ### HOW WE WORK BLOCKS -->		
@@ -42,53 +42,53 @@
 		</div>	
 		<div class="happy-clients">
 				<div class="container">
-					<div class="happy-clients-head text-center wow fadeInRight" data-wow-delay="0.4s">
-						<h3>Happy Clients</h3>
-						<p>We are explain who is using our business solutions</p>
-					</div>
-					<div class="happy-clients-grids">
-						<div class="col-md-6 happy-clients-grid wow bounceIn" data-wow-delay="0.4s">
-							<div class="client">
-								<img src="<?php echo base_url();?>assets/images/client_1.jpg" alt="" />
-							</div>
-							<div class="client-info">
-								<p><img src="<?php echo base_url();?>assets/images/open-quatation.jpg" class="open" alt="" />Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make.<img src="<?php echo base_url();?>assets/images/close-quatation.jpg" class="closeq" alt="" /></p>
-								<h4><a href="#">Darwin Michle, </a>Project manager</h4>
-							</div>
-							<div class="clearfix"></div>
-						</div>
-						<div class="col-md-6 happy-clients-grid span_66 wow bounceIn" data-wow-delay="0.4s">
-							<div class="client">
-								<img src="<?php echo base_url();?>assets/images/client_2.jpg" alt="" />
-							</div>
-							<div class="client-info">
-								<p><img src="<?php echo base_url();?>assets/images/open-quatation.jpg" class="open" alt="" />Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.<img src="<?php echo base_url();?>assets/images/close-quatation.jpg" class="closeq" alt="" /></p>
-								<h4><a href="#">Madam Elisabath, </a>Creative Director</h4>
-							</div>
-							<div class="clearfix"></div>
-						</div>
-						<div class="col-md-6 happy-clients-grid wow bounceIn" data-wow-delay="0.4s">
-							<div class="client">
-								<img src="<?php echo base_url();?>assets/images/client_3.jpg" alt="" />
-							</div>
-							<div class="client-info">
-								<p><img src="<?php echo base_url();?>assets/images/open-quatation.jpg" class="open" alt="" />Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make.<img src="<?php echo base_url();?>assets/images/close-quatation.jpg" class="closeq" alt="" /></p>
-								<h4><a href="#">Clips arter, </a>Lipsum director</h4>
-							</div>
-							<div class="clearfix"></div>
-						</div>
-						<div class="col-md-6 happy-clients-grid span_66 wow bounceIn" data-wow-delay="0.4s">
-							<div class="client">
-								<img src="<?php echo base_url();?>assets/images/client_4.jpg" alt="" />
-							</div>
-							<div class="client-info">
-								<p><img src="<?php echo base_url();?>assets/images/open-quatation.jpg" class="open" alt="" />Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.<img src="<?php echo base_url();?>assets/images/close-quatation.jpg" class="closeq" alt="" /></p>
-								<h4><a href="#">zam cristafr,  </a>manager</h4>
-							</div>
-							<div class="clearfix"></div>
-						</div>
-						<div class="clearfix"></div>
-					</div>
+<!-- 					<div class="happy-clients-head text-center wow fadeInRight" data-wow-delay="0.4s"> -->
+<!-- 						<h3>Happy Clients</h3> -->
+<!-- 						<p>We are explain who is using our business solutions</p> -->
+<!-- 					</div> -->
+<!-- 					<div class="happy-clients-grids"> -->
+<!-- 						<div class="col-md-6 happy-clients-grid wow bounceIn" data-wow-delay="0.4s"> -->
+<!-- 							<div class="client"> -->
+<!-- 								<img src="assets/images/client_1.jpg" alt="" /> -->
+<!-- 							</div> -->
+<!-- 							<div class="client-info"> -->
+								<!-- <p><img src="assets/images/open-quatation.jpg" class="open" alt="" /><!--  Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make.<img src="assets/images/close-quatation.jpg" class="closeq" alt="" /></p>-->
+<!-- 								<h4><a href="#">Darwin Michle, </a>Project manager</h4> -->
+<!-- 							</div> -->
+<!-- 							<div class="clearfix"></div> -->
+<!-- 						</div> -->
+<!-- 						<div class="col-md-6 happy-clients-grid span_66 wow bounceIn" data-wow-delay="0.4s"> -->
+<!-- 							<div class="client"> -->
+<!-- 								<img src="assets/images/client_2.jpg" alt="" /> -->
+<!-- 							</div> -->
+<!-- 							<div class="client-info"> -->
+								 <!--  <p><img src="assets/images/open-quatation.jpg" class="open" alt="" /><!-- Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.<img src="assets/images/close-quatation.jpg" class="closeq" alt="" /></p>-->
+<!-- 								<h4><a href="#">Madam Elisabath, </a>Creative Director</h4> -->
+<!-- 							</div> -->
+<!-- 							<div class="clearfix"></div> -->
+<!-- 						</div> -->
+<!-- 						<div class="col-md-6 happy-clients-grid wow bounceIn" data-wow-delay="0.4s"> -->
+<!-- 							<div class="client"> -->
+<!-- 								<img src="assets/images/client_3.jpg" alt="" /> -->
+<!-- 							</div> -->
+<!-- 							<div class="client-info"> -->
+								<!-- <p><img src="assets/images/open-quatation.jpg" class="open" alt="" /><!--Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make.<img src="assets/images/close-quatation.jpg" class="closeq" alt="" /></p>-->
+<!-- 								<h4><a href="#">Clips arter, </a>Lipsum director</h4> -->
+<!-- 							</div> -->
+<!-- 							<div class="clearfix"></div> -->
+<!-- 						</div> -->
+<!-- 						<div class="col-md-6 happy-clients-grid span_66 wow bounceIn" data-wow-delay="0.4s"> -->
+<!-- 							<div class="client"> -->
+<!-- 								<img src="assets/images/client_4.jpg" alt="" /> -->
+<!-- 							</div> -->
+<!-- 							<div class="client-info"> -->
+								<!-- <p><img src="assets/images/open-quatation.jpg" class="open" alt="" /><!--  Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.<img src="assets/images/close-quatation.jpg" class="closeq" alt="" /></p>-->
+<!-- 								<h4><a href="#">zam cristafr,  </a>manager</h4> -->
+<!-- 							</div> -->
+<!-- 							<div class="clearfix"></div> -->
+<!-- 						</div> -->
+<!-- 						<div class="clearfix"></div> -->
+<!-- 					</div> -->
 				</div>
 			</div>
 	<!-- // How it works -->
